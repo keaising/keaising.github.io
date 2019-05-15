@@ -2,9 +2,8 @@
 title: "CLI in C# 其二"
 date: 2019-05-12
 draft: false
-tags: ["CSharp", "dotnet core"]
+tags: ["cli in csharp", "dotnet core"]
 categories: ["programming"]
-series: ["cli-in-csharp"]
 ---
 
 这是 CLI in C# 系列的第二篇，本篇主要介绍`gen`的开发过程。

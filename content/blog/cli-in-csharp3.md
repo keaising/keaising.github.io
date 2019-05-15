@@ -2,7 +2,7 @@
 title: "CLI in C# 其三"
 date: 2019-05-14
 draft: false
-tags: ["CSharp", "dotnet core"]
+tags: ["cli in csharp", "dotnet core"]
 categories: ["programming"]
 series: ["CLI in C#"]
 ---

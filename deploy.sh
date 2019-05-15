@@ -8,7 +8,7 @@ hugo # if using a theme, replace with `hugo -t <YOURTHEME>`
 # Go To Public folder
 cd public
 # Add changes to git.
-git add -A
+git add .
 
 # Commit changes.
 msg="rebuilding site `date`"
@@ -22,3 +22,11 @@ git push origin gh-pages
 
 # Come Back up to the Project Root
 cd ..
+
+git add .
+
+git commit -m msg
+
+git push origin master
+
+echo -e "\033[0;32mDone!\033[0m"
