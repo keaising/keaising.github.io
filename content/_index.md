@@ -6,16 +6,16 @@ menu: "main"
 weight: 2
 ---
 
-You can find me at 
+略显荒凉，因为正在逐步将老内容从 jekyll 迁移过来，可以在下面找到我：
 
-+ [GitHub](https://github.com/keaising)
++ 看我在干什么：[GitHub](https://github.com/keaising)
 
-+ [LinkedIn](https://www.linkedin.com/in/wangshuxiao/)
++ 给我涨点工资：[LinkedIn](https://www.linkedin.com/in/wangshuxiao/)
 
-+ [Instagram](https://www.instagram.com/asukayui/)
++ 看我珍视之物：[Instagram](https://www.instagram.com/asukayui/)
 
-+ [Steam](https://steamcommunity.com/id/asukayui/)
++ 守护远古遗迹：[Steam](https://steamcommunity.com/id/asukayui/)
 
-+ [a2VhaXNpbmdAZ21haWwuY29t](https://en.wikipedia.org/wiki/Base64)
++ 保持一些联系：[a2VhaXNpbmdAZ21haWwuY29t](https://en.wikipedia.org/wiki/Base64)
 
 **つづく** 
