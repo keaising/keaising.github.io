@@ -6,7 +6,7 @@ tags: ["cli in csharp", "dotnet core"]
 categories: ["programming"]
 ---
 
-这是 CLI in C# 系列的第二篇，本篇主要介绍`gen`的开发过程。
+这是 CLI App in C# 系列的第二篇，本篇主要介绍`gen`的开发过程。
 
 ## 新建项目
 

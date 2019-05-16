@@ -7,6 +7,8 @@ categories: ["programming"]
 series: ["CLI in C#"]
 ---
 
+这是 CLI App in C# 系列的第三篇，本篇主要介绍`gen`的打包和发布。
+
 .Net Core控制台应用的打包方法主要是两类：
 
 + nuget包，对应dotnet core global tool的部署方法
