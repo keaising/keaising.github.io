@@ -23,7 +23,7 @@ cd ../..
 
 git add .
 
-msg="commit gen at `date +%FT%H:%M:%S`"
+msg="commit blog at `date +%FT%H:%M:%S`"
 git commit -m "$msg"
 
 git push origin master
