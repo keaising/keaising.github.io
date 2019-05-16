@@ -6,3 +6,6 @@
 	path = themes/hugo-primer
 	url = git@github.com:keaising/hugo-primer.git
 	branch = master
+[submodule "src/gen"]
+	path = src/gen
+	url = git@github.com:keaising/gen.git
