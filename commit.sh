@@ -4,6 +4,9 @@ echo -e "\033[0;32mCommit updates to GitHub...\033[0m"
 
 # Go To src/gen folder
 cd src/gen
+
+git checkout origin master
+
 # Add changes to git.
 git add .
 
