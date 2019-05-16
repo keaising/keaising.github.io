@@ -1,5 +1,5 @@
 ---
-title: "CLI in C# 其三"
+title: "CLI App in C# 其三"
 date: 2019-05-14
 draft: false
 tags: ["cli in csharp", "dotnet core"]
