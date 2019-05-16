@@ -11,7 +11,7 @@ cd public
 git add .
 
 # Commit changes.
-msg="rebuilding site `date`"
+msg="rebuilding site at `date +%FT%H:%M:%S`"
 if [ $# -eq 1 ]
   then msg="$1"
 fi
@@ -25,7 +25,7 @@ cd ..
 
 git add .
 
-msg="rebuilding site `date`"
+msg="rebuilding site at `date +%FT%H:%M:%S`"
 git commit -m "$msg"
 
 git push origin master
