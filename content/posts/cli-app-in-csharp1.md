@@ -6,7 +6,7 @@ tags: ["cli in csharp", "dotnet core"]
 categories: ["programming"]
 ---
 
-这是 CLI App in C# 系列的第一篇
+这是 CLI App in C# 系列的{{< ruby rb="第一篇" rt="Wa Da Keng" >}}
 
 写这个系列的目的是介绍用C#写一个命令行工具的所有内容，从规划、选型、编码、到打包和自动化编译的系列工作都会介绍到
 

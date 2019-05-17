@@ -28,3 +28,8 @@ public void OnExecute(IConsole console)
 }
 
 {{< / highlight >}}
+
+
+{{< ruby rb="深表悲痛" rt="Xi Wen Le Jian" >}}
+
+ {{< ruby rb="My heart is broken." rt="I'm happy for that." >}}
