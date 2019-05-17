@@ -135,3 +135,54 @@ dotnet tool install --global gen --version 1.0.0
 1. 每次只需要运行脚本即可完成任务
 2. 将打包过程固化，不用再写文档也不怕忘记
 
+powershell的打包脚本如下，bash脚本类似，只需要修改几个特有的命令即可
+
++ 1-5行 定义了后续要使用的路径
++ 7-11行 从项目中获取版本号信息
++ step 0 对项目进行clean和restore
++ step 1 发布exe
++ step 2 打包成单文件
++ step 3 打包nuget
++ step 4 将生成的文件压缩成一个zip，并删除中间文件夹
++ step 5 并没有什么实际用途
+
+{{< highlight powershell "linenos=table, hl_lines=0,linenostart=1" >}}
+$ResultPath = 'pakcages'
+$exePath = 'bin/Release/gen' 
+$nugetPath = 'bin/Release'
+$genExe = 'gen.csproj'
+$genNuget = 'gen-nuget.csproj'
+
+$xml = [Xml] (Get-Content $genExe)
+$version = [Version] $xml.Project.PropertyGroup.Version
+$zip = 'gen-v' + $version + '.zip'
+$genExeName = 'gen.' + $version + '.exe'
+$genNugetName = 'gen.' +$version + '.nupkg'
+
+write '>>> 0. clean and restore <<<'
+dotnet clean -o $exePath $genExe
+rm 'obj' -Force -Recurse
+dotnet restore $genExe
+
+write '>>> 1. dotnet publish <<<'
+dotnet publish -r win10-x64 --self-contained true -c Release -o $exePath $genExe
+
+write '>>> 2. warp-packer package <<<'
+warp-packer --arch windows-x64 --input_dir $exePath --exec gen.exe --output ($nugetPath + '/' + $genExeName)
+
+
+write '>>> 3. dotnet pack <<<'
+rm 'obj' -Force -Recurse
+dotnet restore $genNuget
+dotnet pack --output $nugetPath -c Release $genNuget
+
+write '>>> 4. all files => zip <<<'
+
+mkdir $ResultPath -ErrorAction SilentlyContinue
+Compress-Archive -Path ($nugetPath + '/' + $genExeName), ($nugetPath + '/' + $genNugetName) -DestinationPath ($ResultPath + '/' + $zip) -Force
+
+rm -Force -Recurse $nugetPath -ErrorAction SilentlyContinue
+
+write ">>> 5. success! you can find zip file in $($ResultPath + '\' + $zip) <<<"
+
+{{< / highlight >}}
