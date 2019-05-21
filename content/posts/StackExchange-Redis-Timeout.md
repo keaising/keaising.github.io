@@ -59,7 +59,7 @@ categories: ["bug on face"]
 
 对我们的应用来说，总共有3个线程池， 
 
-1. StackExchange.Redis自带的线程池mgr：(10/10)
+1. StackExchange.Redis自带的线程池mgr：(10 / 10)
 2. IOCP: (Busy=0,Free=1000,Min=8,Max=1000)
 3. WORKER: (Busy=77,Free=32690,Min=8,Max=32767)
 
