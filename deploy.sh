@@ -9,7 +9,7 @@ hugo # if using a theme, replace with `hugo -t <YOURTHEME>`
 cd public
 # Add changes to git.
 
-git checkout gh-pages
+git checkout master
 git add -A
 
 # Commit changes.
@@ -20,8 +20,11 @@ fi
 git commit -m "$msg"
 
 # Push source and build repos.
-git pull origin gh-pages -r
-git push origin gh-pages
+
+echo -e "\033[0;32mpublish blog content...\033[0m"
+
+git pull origin master -r
+git push origin master
 
 # Come Back up to the Project Root
 cd ..
@@ -31,6 +34,7 @@ git add -A
 msg="rebuilding site at `date +%FT%H:%M:%S`"
 git commit -m "$msg"
 
+echo -e "\033[0;32msync blog ...\033[0m"
 git pull origin master -r
 git push origin master
 
