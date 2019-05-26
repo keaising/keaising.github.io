@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# bach to root
+cd `dirname "$0"`
+cd ..
+
 echo -e "\033[0;32mCommit updates to GitHub...\033[0m"
 
 # src/gen 
