@@ -23,6 +23,18 @@ git pull origin master -r
 git push origin master
 
 # Come Back up to the Project Root
+echo -e "\033[0;32mCommit themes...\033[0m"
+cd ../../themes/hugo-primer
+
+git add -A
+
+msg="commit blog at `date +%FT%H:%M:%S`"
+git commit -m "$msg"
+
+git pull origin master -r
+git push origin master
+
+# Come Back up to the Project Root
 echo -e "\033[0;32mCommit root...\033[0m"
 cd ../..
 
