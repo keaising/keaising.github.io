@@ -1,7 +1,7 @@
 [submodule "public"]
 	path = public
-	url = git@github.com:keaising/blackhistory.git
-	branch = gh-pages
+	url = git@github.com:keaising/keaising.github.io.git
+	branch = master
 [submodule "themes/hugo-primer"]
 	path = themes/hugo-primer
 	url = git@github.com:keaising/hugo-primer.git
