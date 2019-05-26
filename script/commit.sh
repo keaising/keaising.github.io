@@ -8,7 +8,7 @@ echo -e "\033[0;32mCommit updates to GitHub...\033[0m"
 
 # src/gen 
 
-echo -e "\033[0;32mCommit src/gen...\033[0m"
+echo -e "\033[0;32mCommit keaising/gen...\033[0m"
 cd src/gen
 git checkout master
 git add -A
@@ -23,7 +23,7 @@ git pull origin master -r
 git push origin master
 
 # Come Back up to the Project Root
-echo -e "\033[0;32mCommit themes...\033[0m"
+echo -e "\033[0;32mCommit keaising/hugo-primer...\033[0m"
 cd ../../themes/hugo-primer
 
 git add -A
@@ -35,7 +35,7 @@ git pull origin master -r
 git push origin master
 
 # Come Back up to the Project Root
-echo -e "\033[0;32mCommit root...\033[0m"
+echo -e "\033[0;32mCommit keaising/blog...\033[0m"
 cd ../..
 
 git add -A
