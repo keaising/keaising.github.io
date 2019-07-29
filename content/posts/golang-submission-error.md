@@ -6,9 +6,59 @@ tags: ["golang"]
 categories: ["programming"]
 ---
 
+## Review
+
+过了一段时间自己看都觉得这代码写得好蠢，于是改了一版，如下：
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println(permute([]int{1,0}))
+}
+
+func permute(nums []int) [][]int {
+	if len(nums) == 1 {
+		return [][]int{
+			nums,
+		}
+	}
+	array = &nums
+	var result [][]int
+	var array []int
+	generate(len(nums), &array, &result)
+	return result
+}
+
+func generate(k int, array *[]int, result *[][]int) {
+	if k == 1 {
+		result = append(result, append([]int{}, (*array)...))
+	} else {
+		generate(k - 1, array, result)
+		for i := 0; i < k-1; i++ {
+			if k%2 == 0 {
+				swap(i, k-1)
+			} else {
+				swap(0, k-1)
+			}
+			generate(k - 1, array, result)
+		}
+	}
+}
+
+func swap(i, j int) {
+	(*array)[i], (*array)[j] = (*array)[j], (*array)[i]
+}
+
+```
+
+## Original
+
 刷[LeetCode全排列时](https://leetcode.com/problems/permutations)，我用了一个很简单的Heap's Algorithm，自己本地跑单元测试和在LeetCode Console跑单个case的时候轻轻松松过，于是就提交了，还以为能一把过，结果连续Wrong Answer，就有点懵，代码如下
 
-{{< highlight go "linenos=table, hl_lines=20,linenostart=1" >}}
+```go
 package main
 
 import "fmt"
@@ -55,7 +105,7 @@ func swap(i, j int) {
 	(*array)[i] = (*array)[j]
 	(*array)[j] = tem
 }
-{{< / highlight >}}
+```
 
 还可以去[play.golang.org](https://play.golang.org/p/3-Faj8nt74g)直接运行
 
