@@ -16,40 +16,39 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println(permute([]int{1,0}))
+    fmt.Println(permute([]int{1,0,3}))
 }
 
 func permute(nums []int) [][]int {
-	if len(nums) == 1 {
-		return [][]int{
-			nums,
-		}
-	}
-	array = &nums
-	var result [][]int
-	var array []int
-	generate(len(nums), &array, &result)
-	return result
+    if len(nums) == 1 {
+        return [][]int{
+            nums,
+        }
+    }
+    array := nums
+    var result [][]int
+    generate(len(nums), &array, &result)
+    return result
 }
 
 func generate(k int, array *[]int, result *[][]int) {
-	if k == 1 {
-		result = append(result, append([]int{}, (*array)...))
-	} else {
-		generate(k - 1, array, result)
-		for i := 0; i < k-1; i++ {
-			if k%2 == 0 {
-				swap(i, k-1)
-			} else {
-				swap(0, k-1)
-			}
-			generate(k - 1, array, result)
-		}
-	}
+    if k == 1 {
+        *result = append(*result, append([]int{}, (*array)...))
+    } else {
+        generate(k - 1, array, result)
+        for i := 0; i < k-1; i++ {
+            if k%2 == 0 {
+                swap(i, k-1, array)
+            } else {
+                swap(0, k-1, array)
+            }
+            generate(k - 1, array, result)
+        }
+    }
 }
 
-func swap(i, j int) {
-	(*array)[i], (*array)[j] = (*array)[j], (*array)[i]
+func swap(i, j int, array *[]int) {
+    (*array)[i], (*array)[j] = (*array)[j], (*array)[i]
 }
 
 ```
