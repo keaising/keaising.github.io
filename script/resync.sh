@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # bach to root
 cd `dirname "$0"`
 cd ..
