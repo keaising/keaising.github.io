@@ -7,6 +7,8 @@ cd ..
 git submodule sync
 git submodule update --init --recursive --remote
 
+git submodule foreach git pull
+
 cd public
 git checkout master
 
