@@ -14,6 +14,8 @@ weight: 2
 
 + 给我涨点工资：[LinkedIn](https://www.linkedin.com/in/wangshuxiao/)
 
++ 気になります: [Eureka!](https://eureka.shuxiao.wang)
+
 + 看我珍视之物：[Instagram](https://www.instagram.com/asukayui/)
 
 + 守护远古遗迹：[Steam](https://steamcommunity.com/id/asukayui/)
