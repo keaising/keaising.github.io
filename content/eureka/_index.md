@@ -1,5 +1,5 @@
 ---
-title: "Eureka"
+title: "Eureka!"
 menu: "main"
 weight: 1
 ---
