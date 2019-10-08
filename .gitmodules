@@ -1,11 +1,11 @@
 [submodule "public"]
 	path = public
-	url = git@github.com:keaising/keaising.github.io.git
+	url = https://github.com:keaising/keaising.github.io.git
 	branch = master
 [submodule "themes/hugo-primer"]
 	path = themes/hugo-primer
-	url = git@github.com:keaising/hugo-primer.git
+	url = https://github.com/keaising/hugo-primer.git
 	branch = master
 [submodule "src/gen"]
 	path = src/gen
-	url = git@github.com:keaising/gen.git
+	url = https://github.com:keaising/gen.git
