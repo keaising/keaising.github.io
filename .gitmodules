@@ -5,6 +5,3 @@
 [submodule "src/gen"]
 	path = src/gen
 	url = https://github.com/keaising/gen.git
-[submodule "keaising.github.io"]
-	path = keaising.github.io
-	url = https://github.com/keaising/keaising.github.io
