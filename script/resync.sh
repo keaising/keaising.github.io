@@ -4,18 +4,10 @@
 cd `dirname "$0"`
 cd ..
 
-git submodule sync
-git submodule update --init --recursive --remote
 
-git submodule foreach git pull
+rm -rf theme
+git clone https://github.com/keaising/hugo-primer.git themes/hugo-primer
 
-cd public
-git checkout master
+rm -rf public
+git clone https://github.com/keaising/keaising.github.io.git public
 
-cd ..
-cd src/gen
-git checkout master
-
-cd ../..
-cd themes/hugo-primer
-git checkout master
