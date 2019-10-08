@@ -109,9 +109,9 @@
 
     
     <div class="float-md-right">
-      <span title="Lastmod: 2019-05-26. Published at: 2016-04-21.">
+      <span title="Lastmod: 2019-10-08. Published at: 2016-04-21.">
         
-          Lastmod: 2019-05-26
+          Lastmod: 2019-10-08
         
       </span>
     </div>
@@ -136,35 +136,35 @@ Eclipse IDE for Java Developers</a>64位版本，下载下来之后解压缩到�
 <p><img src="/images/algs4-translation/algs2.png" alt="algs2" /></p>
 
 <p>代码如下：</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">edu.princeton.cs.algs4.StdDraw</span><span class="o">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nf">edu</span><span class="p">.</span><span class="na">princeton</span><span class="p">.</span><span class="na">cs</span><span class="p">.</span><span class="na">algs4</span><span class="p">.</span><span class="na">StdDraw</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestAlgs4</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">StdDraw</span><span class="o">.</span><span class="na">setScale</span><span class="o">(-</span><span class="n">1</span><span class="o">,</span> <span class="n">1</span><span class="o">);</span>
-        <span class="n">StdDraw</span><span class="o">.</span><span class="na">clear</span><span class="o">(</span><span class="n">StdDraw</span><span class="o">.</span><span class="na">BLACK</span><span class="o">);</span>
+<span class="kd">public</span> <span class="nf">class</span> <span class="n">TestAlgs4</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="nf">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">StdDraw</span><span class="p">.</span><span class="na">setScale</span><span class="p">(</span><span class="o">-</span><span class="n">1</span><span class="p">,</span> <span class="n">1</span><span class="p">);</span>
+        <span class="n">StdDraw</span><span class="p">.</span><span class="na">clear</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">BLACK</span><span class="p">);</span>
         
-        <span class="n">StdDraw</span><span class="o">.</span><span class="na">setPenColor</span><span class="o">(</span><span class="n">StdDraw</span><span class="o">.</span><span class="na">WHITE</span><span class="o">);</span>
-        <span class="n">StdDraw</span><span class="o">.</span><span class="na">square</span><span class="o">(</span><span class="n">0</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">1</span><span class="o">);</span>
+        <span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">WHITE</span><span class="p">);</span>
+        <span class="n">StdDraw</span><span class="p">.</span><span class="na">square</span><span class="p">(</span><span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">1</span><span class="p">);</span>
         
         <span class="c1">// write some text
-</span><span class="c1"></span>        <span class="n">StdDraw</span><span class="o">.</span><span class="na">setPenColor</span><span class="o">(</span><span class="n">StdDraw</span><span class="o">.</span><span class="na">WHITE</span><span class="o">);</span>
-        <span class="n">StdDraw</span><span class="o">.</span><span class="na">text</span><span class="o">(</span><span class="n">0</span><span class="o">,</span> <span class="o">+</span><span class="n">0</span><span class="o">.</span><span class="na">95</span><span class="o">,</span> <span class="s">&#34;Hello, world! This is a test Java program.&#34;</span><span class="o">);</span>
-        <span class="n">StdDraw</span><span class="o">.</span><span class="na">text</span><span class="o">(</span><span class="n">0</span><span class="o">,</span> <span class="o">-</span><span class="n">0</span><span class="o">.</span><span class="na">95</span><span class="o">,</span> <span class="s">&#34;Close this window to finish the installation.&#34;</span><span class="o">);</span>
+</span><span class="c1"></span>        <span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">WHITE</span><span class="p">);</span>
+        <span class="n">StdDraw</span><span class="p">.</span><span class="na">text</span><span class="p">(</span><span class="n">0</span><span class="p">,</span> <span class="o">+</span><span class="n">0</span><span class="p">.</span><span class="na">95</span><span class="p">,</span> <span class="s">&#34;Hello, world! This is a test Java program.&#34;</span><span class="p">);</span>
+        <span class="n">StdDraw</span><span class="p">.</span><span class="na">text</span><span class="p">(</span><span class="n">0</span><span class="p">,</span> <span class="o">-</span><span class="n">0</span><span class="p">.</span><span class="na">95</span><span class="p">,</span> <span class="s">&#34;Close this window to finish the installation.&#34;</span><span class="p">);</span>
         
         <span class="c1">// draw the bullseye
-</span><span class="c1"></span>        <span class="n">StdDraw</span><span class="o">.</span><span class="na">setPenColor</span><span class="o">(</span><span class="n">StdDraw</span><span class="o">.</span><span class="na">BOOK_BLUE</span><span class="o">);</span>
-        <span class="n">StdDraw</span><span class="o">.</span><span class="na">filledCircle</span><span class="o">(</span><span class="n">0</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">0</span><span class="o">.</span><span class="na">9</span><span class="o">);</span>
-        <span class="n">StdDraw</span><span class="o">.</span><span class="na">setPenColor</span><span class="o">(</span><span class="n">StdDraw</span><span class="o">.</span><span class="na">BLACK</span><span class="o">);</span>
-        <span class="n">StdDraw</span><span class="o">.</span><span class="na">filledCircle</span><span class="o">(</span><span class="n">0</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">0</span><span class="o">.</span><span class="na">8</span><span class="o">);</span>
-        <span class="n">StdDraw</span><span class="o">.</span><span class="na">setPenColor</span><span class="o">(</span><span class="n">StdDraw</span><span class="o">.</span><span class="na">BOOK_BLUE</span><span class="o">);</span>
-        <span class="n">StdDraw</span><span class="o">.</span><span class="na">filledCircle</span><span class="o">(</span><span class="n">0</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">0</span><span class="o">.</span><span class="na">7</span><span class="o">);</span>
-        <span class="n">StdDraw</span><span class="o">.</span><span class="na">setPenColor</span><span class="o">(</span><span class="n">StdDraw</span><span class="o">.</span><span class="na">BLACK</span><span class="o">);</span>
-        <span class="n">StdDraw</span><span class="o">.</span><span class="na">filledCircle</span><span class="o">(</span><span class="n">0</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">0</span><span class="o">.</span><span class="na">6</span><span class="o">);</span>
+</span><span class="c1"></span>        <span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">BOOK_BLUE</span><span class="p">);</span>
+        <span class="n">StdDraw</span><span class="p">.</span><span class="na">filledCircle</span><span class="p">(</span><span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="na">9</span><span class="p">);</span>
+        <span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">BLACK</span><span class="p">);</span>
+        <span class="n">StdDraw</span><span class="p">.</span><span class="na">filledCircle</span><span class="p">(</span><span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="na">8</span><span class="p">);</span>
+        <span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">BOOK_BLUE</span><span class="p">);</span>
+        <span class="n">StdDraw</span><span class="p">.</span><span class="na">filledCircle</span><span class="p">(</span><span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="na">7</span><span class="p">);</span>
+        <span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">BLACK</span><span class="p">);</span>
+        <span class="n">StdDraw</span><span class="p">.</span><span class="na">filledCircle</span><span class="p">(</span><span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="na">6</span><span class="p">);</span>
 
         <span class="c1">// draw a picture of the textbook        
-</span><span class="c1"></span>        <span class="n">StdDraw</span><span class="o">.</span><span class="na">picture</span><span class="o">(</span><span class="n">0</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="s">&#34;cover.jpg&#34;</span><span class="o">,</span> <span class="n">0</span><span class="o">.</span><span class="na">65</span><span class="o">,</span> <span class="n">0</span><span class="o">.</span><span class="na">80</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span></code></pre></div>
+</span><span class="c1"></span>        <span class="n">StdDraw</span><span class="p">.</span><span class="na">picture</span><span class="p">(</span><span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="s">&#34;cover.jpg&#34;</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="na">65</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="na">80</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
 <p>这时候Eclipse应该会报错无数，不要急，添加对教材库Algs4.jar的引用：</p>
 
 <p>右键工程名（我这里是HelloWorld）-&gt; Properties -&gt; Java Build Path -&gt; Libraries -&gt; Add Extenernal JARs，选中C:\Users\username\algs4\algs4.jar 即可，如图：</p>

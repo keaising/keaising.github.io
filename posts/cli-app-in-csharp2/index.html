@@ -109,9 +109,9 @@
 
     
     <div class="float-md-right">
-      <span title="Lastmod: 2019-05-26. Published at: 2019-05-12.">
+      <span title="Lastmod: 2019-10-08. Published at: 2019-05-12.">
         
-          Lastmod: 2019-05-26
+          Lastmod: 2019-10-08
         
       </span>
     </div>
@@ -164,11 +164,11 @@
 <span class="k">using</span> <span class="nn">McMaster.Extensions.CommandLineUtils</span><span class="p">;</span>
 
 <span class="k">namespace</span> <span class="nn">gen</span>
-<span class="p">{</span><span class="na">
-</span><span class="na">    [Command(Name = &#34;gen&#34;, Description = &#34;A simple console app.&#34;)]</span>
+<span class="p">{</span>
+<span class="na">    [Command(Name = &#34;gen&#34;, Description = &#34;A simple console app.&#34;)]</span>
     <span class="k">class</span> <span class="nc">Program</span>
     <span class="p">{</span>
-        <span class="k">public</span> <span class="k">static</span> <span class="kt">int</span> <span class="n">Main</span><span class="p">(</span><span class="kt">string</span><span class="na">[]</span> <span class="n">args</span><span class="p">)</span>
+        <span class="k">public</span> <span class="k">static</span> <span class="kt">int</span> <span class="n">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
             <span class="p">=&gt;</span> <span class="n">CommandLineApplication</span><span class="p">.</span><span class="n">Execute</span><span class="p">&lt;</span><span class="n">Program</span><span class="p">&gt;(</span><span class="n">args</span><span class="p">);</span>
 
         <span class="k">private</span> <span class="kt">int</span> <span class="n">OnExecute</span><span class="p">(</span><span class="n">CommandLineApplication</span> <span class="n">app</span><span class="p">,</span> <span class="n">IConsole</span> <span class="n">console</span><span class="p">)</span>
@@ -188,8 +188,8 @@
 <p>添加一个<code>Mobile.cs</code>文件，实现生成一个随机手机号的功能</p>
 <div class="highlight"><pre class="chroma"><code class="language-C#" data-lang="C#"><span class="k">using</span> <span class="nn">McMaster.Extensions.CommandLineUtils</span><span class="p">;</span>
 <span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">System</span><span class="p">;</span><span class="na">
-</span><span class="na">
+<span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="na">
 </span><span class="na">[Command(&#34;mobile&#34;, Description = &#34;generate mobile numbers.&#34;)]</span>
 <span class="k">public</span> <span class="k">class</span> <span class="nc">Mobile</span>
 <span class="p">{</span>
@@ -223,22 +223,22 @@ $ <span class="m">13137575348</span></code></pre></div>
 
 <p>此处通过引入<code>Option</code>，来实现在命令后增加<code>-l</code>或者<code>-s</code>来区分18位和15位的身份证号，</p>
 <div class="highlight"><pre class="chroma"><code class="language-cs" data-lang="cs"><span class="na">[Option(ShortName = &#34;l&#34;, LongName = &#34;eighteen&#34;, ShowInHelpText = true, Description = &#34;18位身份证号&#34;)]</span>
-<span class="k">public</span> <span class="kt">bool</span> <span class="n">Long</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span><span class="na">
-</span><span class="na">
+<span class="k">public</span> <span class="kt">bool</span> <span class="n">Long</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="na">
 </span><span class="na">[Option(&#34;-s|--fifteen&#34;, Description = &#34;15位身份证号&#34;)]</span>
 <span class="k">public</span> <span class="kt">bool</span> <span class="n">Short</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
 </code></pre></div>
 <p>当用户输入<code>gen id -l</code>时，bool类型的<code>Long</code>字段的值为<code>true</code>，<code>Short</code>字段没有处理，值是默认值<code>false</code>，以此为据进行分支选择，代码如下：</p>
 <div class="highlight"><pre class="chroma"><code class="language-cs" data-lang="cs"><span class="k">public</span> <span class="k">void</span> <span class="n">OnExecute</span><span class="p">(</span><span class="n">IConsole</span> <span class="n">console</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">Long</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">genLong</span><span class="p">());</span>
-    <span class="p">}</span>
-    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">Short</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">genShort</span><span class="p">());</span>
-    <span class="p">}</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">Long</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">genLong</span><span class="p">());</span>
+	<span class="p">}</span>
+	<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">Short</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">genShort</span><span class="p">());</span>
+	<span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>此外，<code>Option</code>还有多种写法和多个选项可供配置，详情参阅文档</p>
@@ -252,14 +252,14 @@ $ <span class="m">13137575348</span></code></pre></div>
 <p><code>Start</code>参数为<code>Id</code>子命令的第一个参数（0），名字是<code>Start</code>，代码里对应的是<code>StartWith</code>字段，代码如下：</p>
 <div class="highlight"><pre class="chroma"><code class="language-cs" data-lang="cs"><span class="k">private</span> <span class="kt">string</span> <span class="n">genLong</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="kt">var</span> <span class="n">r</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">();</span>
-    <span class="kt">var</span> <span class="n">myValues</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="na">[]</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="m">8</span><span class="p">,</span> <span class="m">9</span><span class="p">,</span> <span class="m">0</span> <span class="p">};</span> 
-    <span class="kt">var</span> <span class="n">head</span> <span class="p">=</span> <span class="n">Enumerable</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">6</span> <span class="p">-</span> <span class="n">StartWith</span><span class="p">.</span><span class="n">Length</span><span class="p">).</span><span class="n">Select</span><span class="p">(</span><span class="n">e</span> <span class="p">=&gt;</span> <span class="n">myValue</span><span class="na">[r.Next(myValues.Length)]</span><span class="p">);</span>
-    <span class="kt">var</span> <span class="n">year</span> <span class="p">=</span> <span class="n">r</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="m">1970</span><span class="p">,</span> <span class="m">2018</span><span class="p">);</span>
-    <span class="kt">var</span> <span class="n">month</span> <span class="p">=</span> <span class="s">$&#34;{r.Next(1, 12)}&#34;</span><span class="p">.</span><span class="n">PadLeft</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="sc">&#39;0&#39;</span><span class="p">);</span>
-    <span class="kt">var</span> <span class="n">day</span> <span class="p">=</span> <span class="s">$&#34;{r.Next(1, 28)}&#34;</span><span class="p">.</span><span class="n">PadLeft</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="sc">&#39;0&#39;</span><span class="p">);</span>
-    <span class="kt">var</span> <span class="n">tail</span> <span class="p">=</span> <span class="n">Enumerable</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">4</span><span class="p">).</span><span class="n">Select</span><span class="p">(</span><span class="n">e</span> <span class="p">=&gt;</span> <span class="n">myValues</span><span class="na">[r.Nex(myValues.Length)]</span><span class="p">);</span>
-    <span class="k">return</span> <span class="n">StartWith</span> <span class="p">+</span> <span class="kt">string</span><span class="p">.</span><span class="n">Join</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">,</span> <span class="n">head</span><span class="p">)</span> <span class="p">+</span> <span class="n">year</span> <span class="p">+</span> <span class="n">month</span> <span class="p">+</span> <span class="n">day</span> <span class="p">+</span> <span class="kt">string</span><span class="p">.</span><span class="n">Join</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">,</span> <span class="n">tail</span><span class="p">);</span>
+	<span class="kt">var</span> <span class="n">r</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">();</span>
+	<span class="kt">var</span> <span class="n">myValues</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[]</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="m">8</span><span class="p">,</span> <span class="m">9</span><span class="p">,</span> <span class="m">0</span> <span class="p">};</span> 
+	<span class="kt">var</span> <span class="n">head</span> <span class="p">=</span> <span class="n">Enumerable</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">6</span> <span class="p">-</span> <span class="n">StartWith</span><span class="p">.</span><span class="n">Length</span><span class="p">).</span><span class="n">Select</span><span class="p">(</span><span class="n">e</span> <span class="p">=&gt;</span> <span class="n">myValue</span><span class="p">[</span><span class="n">r</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="n">myValues</span><span class="p">.</span><span class="n">Length</span><span class="p">)]);</span>
+	<span class="kt">var</span> <span class="n">year</span> <span class="p">=</span> <span class="n">r</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="m">1970</span><span class="p">,</span> <span class="m">2018</span><span class="p">);</span>
+	<span class="kt">var</span> <span class="n">month</span> <span class="p">=</span> <span class="s">$&#34;{r.Next(1, 12)}&#34;</span><span class="p">.</span><span class="n">PadLeft</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="sc">&#39;0&#39;</span><span class="p">);</span>
+	<span class="kt">var</span> <span class="n">day</span> <span class="p">=</span> <span class="s">$&#34;{r.Next(1, 28)}&#34;</span><span class="p">.</span><span class="n">PadLeft</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="sc">&#39;0&#39;</span><span class="p">);</span>
+	<span class="kt">var</span> <span class="n">tail</span> <span class="p">=</span> <span class="n">Enumerable</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">4</span><span class="p">).</span><span class="n">Select</span><span class="p">(</span><span class="n">e</span> <span class="p">=&gt;</span> <span class="n">myValues</span><span class="p">[</span><span class="n">r</span><span class="p">.</span><span class="n">Nex</span><span class="p">(</span><span class="n">myValues</span><span class="p">.</span><span class="n">Length</span><span class="p">)]);</span>
+	<span class="k">return</span> <span class="n">StartWith</span> <span class="p">+</span> <span class="kt">string</span><span class="p">.</span><span class="n">Join</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">,</span> <span class="n">head</span><span class="p">)</span> <span class="p">+</span> <span class="n">year</span> <span class="p">+</span> <span class="n">month</span> <span class="p">+</span> <span class="n">day</span> <span class="p">+</span> <span class="kt">string</span><span class="p">.</span><span class="n">Join</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">,</span> <span class="n">tail</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="调试-运行">调试 &amp; 运行</h2>

@@ -105,9 +105,9 @@
 
     
     <div class="float-md-right">
-      <span title="Lastmod: 2019-07-29. Published at: 2019-05-31.">
+      <span title="Lastmod: 2019-10-08. Published at: 2019-05-31.">
         
-          Lastmod: 2019-07-29
+          Lastmod: 2019-10-08
         
       </span>
     </div>
@@ -169,18 +169,18 @@
 <span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
 
 <span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nf">permute</span><span class="p">([]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">}))</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nf">permute</span><span class="p">([]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">}))</span>
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="nf">permute</span><span class="p">(</span><span class="nx">nums</span> <span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="p">[][]</span><span class="kt">int</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">nums</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="p">[][]</span><span class="kt">int</span><span class="p">{</span>
-            <span class="nx">nums</span><span class="p">,</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="nx">array</span> <span class="p">=</span> <span class="o">&amp;</span><span class="nx">nums</span>
-    <span class="nf">generate</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nx">nums</span><span class="p">))</span>
-    <span class="k">return</span> <span class="nx">result</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">nums</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="p">[][]</span><span class="kt">int</span><span class="p">{</span>
+			<span class="nx">nums</span><span class="p">,</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="nx">array</span> <span class="p">=</span> <span class="o">&amp;</span><span class="nx">nums</span>
+	<span class="nf">generate</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nx">nums</span><span class="p">))</span>
+	<span class="k">return</span> <span class="nx">result</span>
 <span class="p">}</span>
 
 <span class="kd">var</span> <span class="nx">result</span> <span class="p">[][]</span><span class="kt">int</span>
@@ -188,27 +188,27 @@
 <span class="kd">var</span> <span class="nx">array</span> <span class="o">*</span><span class="p">[]</span><span class="kt">int</span>
 
 <span class="kd">func</span> <span class="nf">generate</span><span class="p">(</span><span class="nx">k</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="nx">k</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">{</span>
-        <span class="nx">ret</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="o">*</span><span class="nx">array</span><span class="p">))</span>
-        <span class="nb">copy</span><span class="p">(</span><span class="nx">ret</span><span class="p">,</span> <span class="o">*</span><span class="nx">array</span><span class="p">)</span>
-        <span class="nx">result</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">result</span><span class="p">,</span> <span class="nx">ret</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="nf">generate</span><span class="p">(</span><span class="nx">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nx">k</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="nx">k</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
-                <span class="nf">swap</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="nf">swap</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-            <span class="p">}</span>
-            <span class="nf">generate</span><span class="p">(</span><span class="nx">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+	<span class="k">if</span> <span class="nx">k</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">{</span>
+		<span class="nx">ret</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="o">*</span><span class="nx">array</span><span class="p">))</span>
+		<span class="nb">copy</span><span class="p">(</span><span class="nx">ret</span><span class="p">,</span> <span class="o">*</span><span class="nx">array</span><span class="p">)</span>
+		<span class="nx">result</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">result</span><span class="p">,</span> <span class="nx">ret</span><span class="p">)</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+		<span class="nf">generate</span><span class="p">(</span><span class="nx">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+		<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nx">k</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+			<span class="k">if</span> <span class="nx">k</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+				<span class="nf">swap</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+			<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+				<span class="nf">swap</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+			<span class="p">}</span>
+			<span class="nf">generate</span><span class="p">(</span><span class="nx">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="nf">swap</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">tem</span> <span class="o">:=</span> <span class="p">(</span><span class="o">*</span><span class="nx">array</span><span class="p">)[</span><span class="nx">i</span><span class="p">]</span>
-    <span class="p">(</span><span class="o">*</span><span class="nx">array</span><span class="p">)[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="p">(</span><span class="o">*</span><span class="nx">array</span><span class="p">)[</span><span class="nx">j</span><span class="p">]</span>
-    <span class="p">(</span><span class="o">*</span><span class="nx">array</span><span class="p">)[</span><span class="nx">j</span><span class="p">]</span> <span class="p">=</span> <span class="nx">tem</span>
+	<span class="nx">tem</span> <span class="o">:=</span> <span class="p">(</span><span class="o">*</span><span class="nx">array</span><span class="p">)[</span><span class="nx">i</span><span class="p">]</span>
+	<span class="p">(</span><span class="o">*</span><span class="nx">array</span><span class="p">)[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="p">(</span><span class="o">*</span><span class="nx">array</span><span class="p">)[</span><span class="nx">j</span><span class="p">]</span>
+	<span class="p">(</span><span class="o">*</span><span class="nx">array</span><span class="p">)[</span><span class="nx">j</span><span class="p">]</span> <span class="p">=</span> <span class="nx">tem</span>
 <span class="p">}</span></code></pre></div>
 <p>还可以去<a href="https://play.golang.org/p/3-Faj8nt74g">play.golang.org</a>直接运行</p>
 
