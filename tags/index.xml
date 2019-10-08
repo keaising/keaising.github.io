@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on 流水沉微</title>
+    <link>http://shuxiao.wang/tags/</link>
+    <description>Recent content in Tags on 流水沉微</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn</language>
+    <copyright>&amp;copy;keaising 2014 - 2019</copyright>
+    <lastBuildDate>Fri, 13 Sep 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://shuxiao.wang/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>redis</title>
+      <link>http://shuxiao.wang/tags/redis/</link>
+      <pubDate>Fri, 13 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/tags/redis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IIS</title>
+      <link>http://shuxiao.wang/tags/iis/</link>
+      <pubDate>Mon, 29 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/tags/iis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>http://shuxiao.wang/tags/golang/</link>
+      <pubDate>Fri, 31 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cli in csharp</title>
+      <link>http://shuxiao.wang/tags/cli-in-csharp/</link>
+      <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/tags/cli-in-csharp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dotnet core</title>
+      <link>http://shuxiao.wang/tags/dotnet-core/</link>
+      <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/tags/dotnet-core/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>translation</title>
+      <link>http://shuxiao.wang/tags/translation/</link>
+      <pubDate>Thu, 21 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/tags/translation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tutorial</title>
+      <link>http://shuxiao.wang/tags/tutorial/</link>
+      <pubDate>Thu, 21 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/tags/tutorial/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>homework</title>
+      <link>http://shuxiao.wang/tags/homework/</link>
+      <pubDate>Sat, 25 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/tags/homework/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 流水沉微</title>
+    <link>http://shuxiao.wang/posts/</link>
+    <description>Recent content in Posts on 流水沉微</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn</language>
+    <copyright>&amp;copy;keaising 2014 - 2019</copyright>
+    
+	<atom:link href="http://shuxiao.wang/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Redis 复制时的 fork 的子进程</title>
+      <link>http://shuxiao.wang/posts/redis-rdb-fork/</link>
+      <pubDate>Fri, 13 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/posts/redis-rdb-fork/</guid>
+      <description>背景 问：Redis 主从节点同步知道吗？ 答：知道一点，不太熟 问：从节点申请同步的时候主节点做了什么？ 答</description>
+    </item>
+    
+    <item>
+      <title>A fatal communication error with WAS</title>
+      <link>http://shuxiao.wang/posts/was-error/</link>
+      <pubDate>Mon, 29 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/posts/was-error/</guid>
+      <description>背景情况 也是工作里遇到的一个问题，一个 host 在 IIS 上的古老项目（最早可以追溯到 16 年前），时不时会报下面这个</description>
+    </item>
+    
+    <item>
+      <title>P0: Golang Submission Error</title>
+      <link>http://shuxiao.wang/posts/golang-submission-error/</link>
+      <pubDate>Fri, 31 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/posts/golang-submission-error/</guid>
+      <description>Review 过了一段时间自己看都觉得这代码写得好蠢，于是改了一版，如下： package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(permute([]int{1,0,3})) } func permute(nums []int) [][]int { if len(nums) == 1 {</description>
+    </item>
+    
+    <item>
+      <title>CLI App in C# 其三</title>
+      <link>http://shuxiao.wang/posts/cli-app-in-csharp3/</link>
+      <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/posts/cli-app-in-csharp3/</guid>
+      <description>这是 CLI App in C# 系列的第三篇，本篇主要介绍gen的打包和发布。 .Net Core控制台应用的打包方法主要是两类：</description>
+    </item>
+    
+    <item>
+      <title>CLI App in C# 其二</title>
+      <link>http://shuxiao.wang/posts/cli-app-in-csharp2/</link>
+      <pubDate>Sun, 12 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/posts/cli-app-in-csharp2/</guid>
+      <description>这是 CLI App in C# 系列的第二篇，本篇主要介绍gen的开发过程。教程里的所有代码参见keaising/gen</description>
+    </item>
+    
+    <item>
+      <title>CLI App in C# 其一</title>
+      <link>http://shuxiao.wang/posts/cli-app-in-csharp1/</link>
+      <pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/posts/cli-app-in-csharp1/</guid>
+      <description>这是 CLI App in C# 系列的 第一篇 (Wa Da Keng) 写这个系列的目的是介绍用C#写一个命令行工具的所有内容，从规划、选型、</description>
+    </item>
+    
+    <item>
+      <title>处理dotnet core Redis超时异常</title>
+      <link>http://shuxiao.wang/posts/stackexchange-redis-timeout/</link>
+      <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/posts/stackexchange-redis-timeout/</guid>
+      <description>压力测试过程中遇到的一个问题，框架是asp.net core 2.2，redis组件是StackExchang</description>
+    </item>
+    
+    <item>
+      <title>在Eclipse中调用Algs4库</title>
+      <link>http://shuxiao.wang/posts/algs4-eclipse/</link>
+      <pubDate>Thu, 21 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/posts/algs4-eclipse/</guid>
+      <description>这篇是接上一篇继续讲的，上一篇讲了如何在DrJava和命令行中使用javac-algs4和java-</description>
+    </item>
+    
+    <item>
+      <title>在Windows上安装「算法 第四版」组件</title>
+      <link>http://shuxiao.wang/posts/algs4-windows/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/posts/algs4-windows/</guid>
+      <description>这篇日志翻译自Hello, World in Java on Windows，翻译的原因是知乎的一个回答，回答完这个问题之后，得</description>
+    </item>
+    
+    <item>
+      <title>基于C#的蚁群算法实现</title>
+      <link>http://shuxiao.wang/posts/ant-algs-based-on-csharp/</link>
+      <pubDate>Sat, 25 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/posts/ant-algs-based-on-csharp/</guid>
+      <description>这学期有门课，最优化与最优控制，任课老师任华玲，虽然在课堂上我什么都没有学到，但是最后任老师让每个人</description>
+    </item>
+    
+  </channel>
+</rss>

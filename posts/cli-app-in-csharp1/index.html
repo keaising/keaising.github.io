@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  CLI App in C# 其一 &ndash; 流水沉微
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="这是 CLI App in C# 系列的 第一篇 (Wa Da Keng) 写这个系列的目的是介绍用C#写一个命令行工具的所有内容，从规划、选型、|Hacking to the world">
+    
+
+    <meta name="apple-mobile-web-app-title" content="流水沉微">
+    
+    
+    <link rel="icon" href="/favicon-64.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="mask-icon" size="any" href="/pinned-icon.svg">
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://shuxiao.wang">
+    流水沉微
+  </a>
+
+  
+  
+  <div class="UnderlineNav-body">
+    
+    
+    <a class="UnderlineNav-item " href="/eureka/">
+      
+      <span>Eureka!</span>
+    </a>
+    
+    
+    
+    <a class="UnderlineNav-item " href="/posts/">
+      
+      <span>Posts</span>
+    </a>
+    
+    
+    
+    <a class="UnderlineNav-item " href="/">
+      
+      <span>About</span>
+    </a>
+    
+    
+    
+    <a class="UnderlineNav-item " href="/resume/">
+      
+      <span>Resume</span>
+    </a>
+    
+    
+  </div>
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">CLI App in C# 其一</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+<a href='/categories/programming' class="muted-link">
+  <span class="Label Label--gray-darker">programming</span>
+</a>
+
+
+
+<a href='/tags/cli-in-csharp' class="muted-link">
+  <span class="Label Label--gray">cli in csharp</span>
+</a>
+
+<a href='/tags/dotnet-core' class="muted-link">
+  <span class="Label Label--gray">dotnet core</span>
+</a>
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2019-05-26. Published at: 2019-05-11.">
+        
+          Lastmod: 2019-05-26
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    
+
+<p>这是 CLI App in C# 系列的<ruby>
+    第一篇 <rp> (</rp><rt>Wa Da Keng</rt><rp>) </rp>
+</ruby>
+</p>
+
+<p>写这个系列的目的是介绍用C#写一个命令行工具的所有内容，从规划、选型、编码、到打包和自动化编译的系列工作都会介绍到</p>
+
+<ul>
+<li><p>其一：演示应用的主要功能、技术选型及原因</p></li>
+
+<li><p>其二：编码细节</p></li>
+
+<li><p>其三：打包部署（包括dotnet core global tool和命令行两种方式），自动化编译</p></li>
+</ul>
+
+<p>那就开始吧</p>
+
+<h2 id="演示应用介绍">演示应用介绍</h2>
+
+<p>如果经常在命令行使用<code>git</code>的话对<code>Command SubCommand Option</code>这种命令形式应该比较熟悉，比如<code>git push origin master</code>、<code>git clone https://github.com/torvalds/linux.git</code>，演示应用参考了这种形式</p>
+
+<p>演示应用的主要作用是生成各种号码，命名为<code>gen</code>，它可以根据不同的子命令和选项生成不同的号码，功能列表如下：</p>
+
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+<th>结果</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>gen mobile</code></td>
+<td>生成手机号</td>
+<td>15810885678</td>
+</tr>
+
+<tr>
+<td><code>gen id</code></td>
+<td>生成18位身份证号</td>
+<td>210765199707122345</td>
+</tr>
+
+<tr>
+<td><code>gen id -l 110</code></td>
+<td>生成以110开头的18位身份证号</td>
+<td>110765199707122345</td>
+</tr>
+
+<tr>
+<td><code>gen id -s</code></td>
+<td>生成15位身份证号</td>
+<td>456719970712234</td>
+</tr>
+
+<tr>
+<td><code>gen -v</code></td>
+<td>打印应用信息</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="术语介绍">术语介绍</h2>
+
+<p>在命令<code>gen id -l 110</code>中，术语如下：</p>
+
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>术语</th>
+<th>备注</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>gen</code></td>
+<td>Command</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>id</code></td>
+<td>SubCommand</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>-l</code></td>
+<td>Option</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>'110'</code></td>
+<td>Verbs</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="技术选型">技术选型</h2>
+
+<h4 id="框架">框架</h4>
+
+<p>选择 dotnet core 2.1，这是目前 dotnet 平台最新的 LTS 框架</p>
+
+<h4 id="解析命令行参数">解析命令行参数</h4>
+
+<p>使用<a href="https://github.com/natemcmaster/CommandLineUtils"><code>CommandLineUtils</code></a>来处理命令行工具的参数。虽然也可以手动处理<code>main</code>函数的<code>string[] args</code>达到处理SubCommand和Option的目的，但是相当麻烦而且容易出错。</p>
+
+<p><a href="https://github.com/natemcmaster/CommandLineUtils"><code>CommandLineUtils</code></a>的前身是ASP.NET团队在开发dotnet core的过程中，为开发dotnet cli而开发的扩展库，后来ASP.NET团队觉得这个功能跟ASP.NET的开发关系不大，于是转入<a href="https://github.com/aspnet/Extensions/issues/257#issuecomment-322623120">不活跃状态</a>，后续被ASP.NET团队的一个开发小哥以<a href="https://github.com/aspnet/Extensions/issues/257#issuecomment-326726754">私人身份fork并继续维护</a>，于是就有了现在用的这个库。</p>
+
+<h4 id="打包">打包</h4>
+
+<p>dotnet core提供打包工具<code>build</code>和<code>pack</code>，分别用于打包普通控制台应用和nuget包（用于dotnet core global tool的分发）。</p>
+
+<p>dotnet core的打包工具的打包结果会是一大堆exe、dll和相关配置文件，为了最终获得一个单独的exe文件，使用<a href="https://github.com/dgiagio/warp">wrap</a>库来将所有的文件打包成一个exe，方便部署和使用。</p>
+
+<p><strong>つづく</strong></p>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>CLI App in C# 其一</b>
+      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#演示应用介绍">演示应用介绍</a></li>
+<li><a href="#术语介绍">术语介绍</a></li>
+<li><a href="#技术选型">技术选型</a>
+<ul>
+<li>
+<ul>
+<li><a href="#框架">框架</a></li>
+<li><a href="#解析命令行参数">解析命令行参数</a></li>
+<li><a href="#打包">打包</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    &copy;keaising 2014 - 2019 &middot; 
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+  </body>
+</html>
