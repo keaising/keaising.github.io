@@ -1,6 +1,6 @@
 [submodule "public"]
 	path = public
-	url = https://github.com:keaising/keaising.github.io.git
+	url = https://github.com/keaising/keaising.github.io.git
 	branch = master
 [submodule "themes/hugo-primer"]
 	path = themes/hugo-primer
@@ -8,4 +8,4 @@
 	branch = master
 [submodule "src/gen"]
 	path = src/gen
-	url = https://github.com:keaising/gen.git
+	url = https://github.com/keaising/gen.git
