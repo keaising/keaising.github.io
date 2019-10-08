@@ -1,8 +1,6 @@
 before_install:
-  - git submodule sync
-  - git submodule update --init --recursive --remote
   - rm -rf public
-  - cd ../.. ; cd themes/hugo-primer; git checkout master
+  - mkdir themes; cd themes; git clone https://github.com/keaising/hugo-primer.git
 
 install:
   - apt-get install hugo
