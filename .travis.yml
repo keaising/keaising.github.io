@@ -1,5 +1,6 @@
-git:
-  submodule: false
+branches:
+  only:
+  - source
 
 before_install:
   - rm -rf public
@@ -19,12 +20,11 @@ deploy:
   provider: pages
   skip-cleanup: true
   local_dir: public
-  repo: keaising/keaising.github.io
   target_branch: master
   github-token: $GITHUB_TOKEN
   keep-history: true
   on:
-    branch: master
+    branch: source
 
 notifications:
   email:
