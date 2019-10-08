@@ -1,6 +1,6 @@
 before_install:
   - rm -rf public
-  - mkdir themes; cd themes; git clone https://github.com/keaising/hugo-primer.git
+  #- mkdir themes; cd themes; git clone https://github.com/keaising/hugo-primer.git
 
 install:
   - apt-get install hugo
