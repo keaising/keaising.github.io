@@ -4,7 +4,7 @@ git:
 before_install:
   - rm -rf public
   - rm -rf themes
-  - mkdir themes; cd themes; git clone https://github.com/keaising/hugo-primer.git
+  - git clone https://github.com/keaising/hugo-primer.git themes/hugo-primer
 
 install:
   - wget https://github.com/gohugoio/hugo/releases/download/v0.58.3/hugo_0.58.3_Linux-64bit.deb

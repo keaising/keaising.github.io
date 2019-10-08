@@ -5,7 +5,7 @@ cd `dirname "$0"`
 cd ..
 
 
-rm -rf theme
+rm -rf themes
 git clone https://github.com/keaising/hugo-primer.git themes/hugo-primer
 
 rm -rf public
