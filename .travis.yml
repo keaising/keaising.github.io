@@ -1,3 +1,7 @@
+git:
+  submodules: false
+  depth: 1
+
 before_install:
   - rm -rf public
   - mkdir themes; cd themes; git clone https://github.com/keaising/hugo-primer.git
