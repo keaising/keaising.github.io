@@ -4,6 +4,7 @@ date: 2014-10-25
 layout: post
 tags: ["homework"]
 categories: ["programming"]
+guid: 2ef3550f-8cf3-400b-a55b-c512c9af8bw1
 aliases:
     - /2014/10/25/ant-colony-optimization-based-on-c-sharp.html
 

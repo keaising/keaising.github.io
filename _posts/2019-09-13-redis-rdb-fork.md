@@ -4,6 +4,7 @@ date: 2019-09-13
 layout: post
 tags: ["redis"]
 categories: ["interview question"]
+guid: 2ef3550f-8cf3-400b-a55b-c512c9af8bu1s
 ---
 
 ## 背景

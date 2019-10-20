@@ -4,6 +4,7 @@ date: 2019-05-31
 layout: post
 tags: ["golang"]
 categories: ["programming"]
+guid: 2ef3550f-8cf3-400b-a55b-c512c9af8bw8
 ---
 
 ## Review

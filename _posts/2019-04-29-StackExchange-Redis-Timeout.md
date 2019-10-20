@@ -4,6 +4,7 @@ date: 2019-04-29
 layout: post
 tags: ["redis", "dotnet core"]
 categories: ["bug on face"]
+guid: 2ef3550f-8cf3-400b-a55b-c512c9af8bw4
 ---
 
 压力测试过程中遇到的一个问题，框架是asp.net core 2.2，redis组件是[StackExchange.Redis 2.0.601](https://stackexchange.github.io/StackExchange.Redis/)，在高并发场景下会报错，报错信息：

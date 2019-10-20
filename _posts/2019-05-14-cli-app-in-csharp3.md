@@ -4,6 +4,7 @@ date: 2019-05-14
 layout: post
 tags: ["cli in csharp", "dotnet core"]
 categories: ["programming"]
+guid: 2ef3550f-8cf3-400b-a55b-c512c9af8bw7
 ---
 
 这是 CLI App in C# 系列的第三篇，本篇主要介绍`gen`的打包和发布。

@@ -4,6 +4,7 @@ date: 2016-04-21
 layout: post
 tags: ["tutorial", "translation"]
 categories: ["programming"]
+guid: 2ef3550f-8cf3-400b-a55b-c512c9af8bw3
 aliases: 
     - /2016/04/21/algs4-Eclipse.html
 ---

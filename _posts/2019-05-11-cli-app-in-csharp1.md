@@ -4,6 +4,7 @@ date: 2019-05-11
 layout: post
 tags: ["cli in csharp", "dotnet core"]
 categories: ["programming"]
+guid: 2ef3550f-8cf3-400b-a55b-c512c9af8bw5
 ---
 
 这是 CLI App in C# 系列的第一篇

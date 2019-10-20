@@ -4,6 +4,7 @@ date: 2019-05-12
 layout: post
 tags: ["cli in csharp", "dotnet core"]
 categories: ["programming"]
+guid: 2ef3550f-8cf3-400b-a55b-c512c9af8bw6
 ---
 
 这是 CLI App in C# 系列的第二篇，本篇主要介绍`gen`的开发过程。教程里的所有代码参见[keaising/gen](https://github.com/keaising/gen)
