@@ -1,4 +1,4 @@
-task :default => :generate
+task :default => :server
 
 desc 'Create new post with rake "post[post-name]"'
 task :post, [:title] do |t, args|
@@ -25,7 +25,7 @@ task :server => [:clean, :scss] do
 end
 
 desc 'Deploy with rake "depoly[comment]"'
-task :deploy, [:comment] => :generate do |t, args|
+task :deploy, [:comment] do |t, args|
   if args.comment then
     `git commit . -m '#{args.comment}' && git push origin master && git push origin master:jekyll`
   else
