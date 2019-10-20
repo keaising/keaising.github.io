@@ -27,9 +27,9 @@ end
 desc 'Deploy with rake "depoly[comment]"'
 task :deploy, [:comment] => :generate do |t, args|
   if args.comment then
-    `git commit . -m '#{args.comment}' && git push`
+    `git commit . -m '#{args.comment}' && git push origin master && git push origin master:jekyll`
   else
-    `git commit . -m 'new deployment' && git push`
+    `git commit . -m 'new deployment' && git push origin master && git push origin master:jekyll`
   end
 end
 
@@ -40,7 +40,7 @@ end
 
 desc 'Push to repo'
 task :push do
-  `git push origin gh-pages-jekyll && git push origin gh-pages-jekyll:gh-pages`
+  `git push origin master && git push origin master:jekyll`
 end
 
 def new_post(title)

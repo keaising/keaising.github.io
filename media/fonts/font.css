@@ -3,36 +3,18 @@
 
 
 @font-face {
-    font-family: 'sf_pro_displayregular';
-    src: url('sf-pro-display-regular-webfont.woff2') format('woff2'),
-         url('sf-pro-display-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'sf_pro_textregular';
-    src: url('sf-pro-text-regular-webfont.woff2') format('woff2'),
-         url('sf-pro-text-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'sf_monoregular';
-    src: url('sfmono-regular-webfont.woff2') format('woff2'),
-         url('sfmono-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'ubunturegular';
+    font-family: 'ubuntu';
     src: url('ubuntu-r-webfont.woff2') format('woff2'),
          url('ubuntu-r-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'source_code_pro';
+    src: url('sourcecodepro-webfont.woff2') format('woff2'),
+         url('sourcecodepro-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 

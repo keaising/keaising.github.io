@@ -12,12 +12,12 @@
 @import url(/media/fonts/font.css);
 @import "media-queries";
 
-$font-name: "sf_pro_textregular";
-$head-font: "sf_pro_displayregular";
+$font-name: "-apple-system", "BlinkMacSystemFont","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell";;
+$head-font: $font-name;
 $font: $font-name, "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-$monospace: "sf_monoregular", monospace;
+$monospace: "source_code_pro", monospace;
 $label-font: $head-font, "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-$time-font: "ubunturegular", $monospace;
+$time-font: "ubuntu";
 $background-color: #f9f9f9;
 
 @mixin page {
