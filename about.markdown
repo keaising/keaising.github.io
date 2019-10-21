@@ -11,7 +11,7 @@ layout: page
 
 + 给我涨点工资：[LinkedIn](https://www.linkedin.com/in/wangshuxiao/)
 
-+ 気になります: [Eureka!](/eureka)
++ 気になります: [Eureka!](/eureka.html)
 
 + 看我珍视之物：[Instagram](https://www.instagram.com/asukayui/)
 
