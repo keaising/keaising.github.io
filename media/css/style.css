@@ -15,7 +15,7 @@
   padding: 0; }
 
 body {
-  font-size: 16px;
+  font-size: 14px;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Microsoft YaHei, Hiragino Sans GB, sans-serif;
   color: #555;
   background-color: #f9f9f9;
@@ -133,8 +133,8 @@ ol {
   list-style-type: decimal; }
 
 li {
-  margin-top: -15px;
-  margin-bottom: -15px; }
+  margin-top: -8px;
+  margin-bottom: -8px; }
 
 #content {
   margin: 0 auto;
