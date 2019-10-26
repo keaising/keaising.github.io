@@ -1,7 +1,8 @@
 ---
 title: LeetCode
 name: index
-layout: post
+layout: collection-index
+intro: 面白い Problems
 date: 2019-10-19
 ---
 

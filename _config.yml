@@ -40,3 +40,9 @@ collections:
     output: true
     permalink: /:collection/:title
     sort_by: date
+  book:
+    name: Book
+    url: book
+    output: true
+    permalink: /:collection/:title
+    sort_by: date

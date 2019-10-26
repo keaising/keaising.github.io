@@ -92,9 +92,9 @@ header {
   @media screen and (min-width: 414px) {
     header {
       width: 400px; } }
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 600px) {
     header {
-      width: 750px; } }
+      width: 550px; } }
   header:after {
     content: '';
     width: 100%;
@@ -138,7 +138,7 @@ li {
 
 #content {
   margin: 0 auto;
-  line-height: 2em; }
+  line-height: 1.9em; }
   @media screen and (min-width: 320px) {
     #content {
       width: 300px; } }
@@ -148,11 +148,17 @@ li {
   @media screen and (min-width: 414px) {
     #content {
       width: 400px; } }
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 600px) {
     #content {
-      width: 750px; } }
+      width: 550px; } }
   #content .main-listing {
     margin-bottom: 2em; }
+
+dt {
+  font-weight: bold; }
+
+dd {
+  padding-left: 2em; }
 
 ul.listing {
   margin-top: 1em; }
@@ -176,7 +182,8 @@ ul.listing {
 article {
   margin: 2em 0; }
   article p {
-    padding: .5em 0; }
+    margin-bottom: 1.5em;
+    margin-top: 1.5em; }
   article .title {
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Hiragino Sans GB, Microsoft YaHei, sans-serif; }
     article .title header #header h1 a, header #header h1 article .title a, article .title a, article .title .meta .tags a, article .meta .tags .title a {
@@ -245,13 +252,17 @@ footer {
   @media screen and (min-width: 414px) {
     footer {
       width: 400px; } }
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 600px) {
     footer {
-      width: 750px; } }
+      width: 550px; } }
   footer a, footer header #header h1 a, header #header h1 footer a, footer article .title a, article .title footer a, footer article .meta .tags a, article .meta .tags footer a, footer article .divider a, article .divider footer a {
     color: #cccccc; }
     footer a:hover, footer header #header h1 a:hover, header #header h1 footer a:hover, footer article .meta .tags a:hover, article .meta .tags footer a:hover {
       color: #999999; }
+
+blockquote p, pre code p {
+  margin-top: .7em;
+  margin-bottom: .8em; }
 
 #tag_cloud {
   margin-bottom: 1em; }
