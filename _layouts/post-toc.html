@@ -34,6 +34,7 @@ layout: default
   {% endif %}
   </section>
   <section class="post">
+  {% include toc.html html=content h_max=3 %}
   {{ content }}
   </section>
   {% if page.guid %}
@@ -45,7 +46,6 @@ layout: default
     <i class="fa fa-circle"></i>
     {% endif %}
     </span>
-
     <span>
     {% if page.next %}
     <a href="{{ page.next.url }}"><i class="fa fa-chevron-right"></i></a>

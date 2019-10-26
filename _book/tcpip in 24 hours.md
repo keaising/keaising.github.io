@@ -1,6 +1,6 @@
 ---
 title: Sams Teach Yourself TCP/IP in 24 Hours
-layout: post
+layout: post-toc
 guid: 4a17045b-26df-4271-9228-064200b9b916
 date: 2019-10-26
 tags:
