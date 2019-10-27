@@ -141,8 +141,8 @@ ul.listing {
 article {
   margin: 2em 0;
   p {
-      margin-bottom: 1.5em;
-      margin-top: 1.5em;
+      margin-bottom: 1.2em;
+      margin-top: 1.2em;
   }
   .title {
     font-family: #{$label-font};
@@ -201,6 +201,27 @@ footer {
   margin: 1em auto;
   a { color: #cccccc; &:hover { color: #999999; }; }
 
+}
+
+td, th {
+    padding: .3em 1.5em;
+}
+
+th {
+    font-weight: bold;
+}
+
+thead {
+    border-top: #dfe2e5 2px solid;
+    border-bottom: #dfe2e5 1px solid;
+}
+
+tbody {
+    border-bottom: #dfe2e5 2px solid;
+}
+
+table {
+    border-collapse: collapse;
 }
 
 blockquote {

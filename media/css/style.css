@@ -182,8 +182,8 @@ ul.listing {
 article {
   margin: 2em 0; }
   article p {
-    margin-bottom: 1.5em;
-    margin-top: 1.5em; }
+    margin-bottom: 1.2em;
+    margin-top: 1.2em; }
   article .title {
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Hiragino Sans GB, Microsoft YaHei, sans-serif; }
     article .title header #header h1 a, header #header h1 article .title a, article .title a, article .title .meta .tags a, article .meta .tags .title a {
@@ -259,6 +259,22 @@ footer {
     color: #cccccc; }
     footer a:hover, footer header #header h1 a:hover, header #header h1 footer a:hover, footer article .meta .tags a:hover, article .meta .tags footer a:hover {
       color: #999999; }
+
+td, th {
+  padding: .3em 1.5em; }
+
+th {
+  font-weight: bold; }
+
+thead {
+  border-top: #dfe2e5 2px solid;
+  border-bottom: #dfe2e5 1px solid; }
+
+tbody {
+  border-bottom: #dfe2e5 2px solid; }
+
+table {
+  border-collapse: collapse; }
 
 blockquote p, pre code p {
   margin-top: .7em;
