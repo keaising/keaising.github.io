@@ -9,7 +9,7 @@ layout: page
 
 + 看我在干什么：[GitHub](https://github.com/keaising)
 + 给我涨点工资：[LinkedIn](https://www.linkedin.com/in/wangshuxiao/)
-+ 気になります: [Eureka!](/eureka.html)
++ 気になります：[Eureka!](/eureka.html)
 + 看我珍视之物：[Instagram](https://www.instagram.com/asukayui/)
 + 守护远古遗迹：[Steam](https://steamcommunity.com/id/asukayui/)
 + 保持一些联系：[a2VhaXNpbmdAZ21haWwuY29t](https://en.wikipedia.org/wiki/Base64)
