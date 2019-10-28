@@ -211,13 +211,31 @@ th {
     font-weight: bold;
 }
 
+
 thead {
     border-top: #dfe2e5 2px solid;
     border-bottom: #dfe2e5 1px solid;
 }
 
+@mixin even() {
+    &:nth-child(even) {
+      @content
+    }
+}
+
+@mixin odd() {
+    &:nth-child(odd) {
+      @content
+    }
+}
+
 tbody {
     border-bottom: #dfe2e5 2px solid;
+    tr {
+        @include even() {
+            background: #ecf0f1;
+        }
+    }
 }
 
 table {

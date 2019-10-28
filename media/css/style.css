@@ -272,6 +272,8 @@ thead {
 
 tbody {
   border-bottom: #dfe2e5 2px solid; }
+  tbody tr:nth-child(even) {
+    background: #ecf0f1; }
 
 table {
   border-collapse: collapse; }

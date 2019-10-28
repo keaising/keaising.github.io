@@ -17,3 +17,4 @@ tags:
 |日期|内容|进度|
 |------|:----:|-----:|
 |2019-10-27|[Scheme 初步](https://onevcat.com/2015/05/scheme/)|完成|
+|2019-10-28|[Scheme 语言简明教程](http://songjinghe.github.io/TYS-zh-translation/)|进行中|
