@@ -34,21 +34,12 @@ Input: (2 -&amp;gt; 4 -&amp;gt; 3) + (5 -&amp;gt; 6 -&amp;gt; 4)</description>
     </item>
     
     <item>
-      <title>Eureka</title>
+      <title>Eureka!</title>
       <link>http://shuxiao.wang/eureka/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/eureka/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>CV</title>
-      <link>http://shuxiao.wang/resume/</link>
-      <pubDate>Sat, 03 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://shuxiao.wang/resume/</guid>
-      <description>这里是对纸质简历的补充 本页中Instagram、Twitter、GitHub资源可能需要科学上网 教育经历 时间 学校 院系 专业 学位 2010.09 - 2014.06 北京交通大</description>
     </item>
     
     <item>
@@ -130,6 +121,15 @@ Do not modify the linked list.
       
       <guid>http://shuxiao.wang/leetcode/334.-increasing-triplet-subsequence/</guid>
       <description>increasing-triplet-subsequence 这是我在搜索 trie tree 的时候弹出来到一个题，乍一看觉得挺简单，但是对时间和空间都有要求，我能想到到办法就是以每个数为第一个数开始向后搜索，但是这</description>
+    </item>
+    
+    <item>
+      <title>自己的主题</title>
+      <link>http://shuxiao.wang/posts/my-own-theme/</link>
+      <pubDate>Thu, 07 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/posts/my-own-theme/</guid>
+      <description>终于自己做了主题 从2014年末开始，我就尝试写一点什么来记录自己，也就开始寻找做自己的博客的方法。最初使用的是jekyll，在知乎上看到有人</description>
     </item>
     
     <item>
