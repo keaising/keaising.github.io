@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" class="han-init">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/assets/han.css">
+    <link rel="stylesheet" href="/assets/normalize.css">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/syntax.css">
+</head>
+
+<body>
+    <div class="content index width mx-auto px2 my4">
+        <div class="top-header">
+  <a class="site-title" href="http://shuxiao.wang">
+    流水沉微
+  </a>
+
+  
+  
+  <div class="nav-body">
+    
+    
+    <a class="nav-item " href="/posts/">
+      
+      <span>Posts</span>
+    </a>
+    
+    
+    
+    <a class="nav-item " href="/cloud/">
+      
+      <span>Cloud</span>
+    </a>
+    
+    
+    
+    <a class="nav-item " href="/eureka/">
+      
+      <span>Eureka</span>
+    </a>
+    
+    
+    
+    <a class="nav-item " href="/resume/">
+      
+      <span>CV</span>
+    </a>
+    
+    
+  </div>
+  
+</div>
+
+        <div>
+            
+
+
+<div class="Subhead">
+    <div class="Subhead-heading">
+        <h1>21. Merge Two Sorted Lists</h1>
+    </div>
+</div>
+
+
+
+
+<article>
+    
+    <div>
+        
+
+<p><a href="https://leetcode.com/problems/merge-two-sorted-lists/">merge-two-sorted-lists</a></p>
+
+<h2 id="explain">Explain</h2>
+
+<p>Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.</p>
+
+<blockquote>
+<p><strong>Example</strong></p>
+
+<p>Input: 1-&gt;2-&gt;4, 1-&gt;3-&gt;4</p>
+
+<p>Output: 1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4</p>
+</blockquote>
+
+<h2 id="solve">Solve</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Definition for singly-linked list.</span>
+<span class="c1"># class ListNode:</span>
+<span class="c1">#     def __init__(self, x):</span>
+<span class="c1">#         self.val = x</span>
+<span class="c1">#         self.next = None</span>
+
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">mergeTwoLists</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">l1</span><span class="p">:</span> <span class="n">ListNode</span><span class="p">,</span> <span class="n">l2</span><span class="p">:</span> <span class="n">ListNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ListNode</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">l1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">l2</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">l2</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">l1</span>
+        <span class="k">if</span> <span class="n">l1</span><span class="o">.</span><span class="n">val</span> <span class="o">&lt;</span> <span class="n">l2</span><span class="o">.</span><span class="n">val</span><span class="p">:</span>
+            <span class="n">l1</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mergeTwoLists</span><span class="p">(</span><span class="n">l1</span><span class="o">.</span><span class="n">next</span><span class="p">,</span> <span class="n">l2</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">l1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">l2</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mergeTwoLists</span><span class="p">(</span><span class="n">l2</span><span class="o">.</span><span class="n">next</span><span class="p">,</span> <span class="n">l1</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">l2</span>    </code></pre></div>
+<h2 id="performace">Performace</h2>
+
+<p>Runtime: 40 ms, faster than 88.50% of Python3 online submissions for Merge Two Sorted Lists.</p>
+
+<p>Memory Usage: 13.9 MB, less than 6.61% of Python3 online submissions for Merge Two Sorted Lists.</p>
+
+<p>性能一般，但是思路很赞，非常简洁得用递归解决了问题</p>
+
+    </div>
+
+    <div class="page-info">
+        <div>
+            
+
+<div>
+    
+</div>
+
+
+
+<div>
+    <a href='/tags/leetcode' class="tags-url">
+        <span class="tags">leetcode</span>
+    </a>
+</div>
+
+<div>
+    <a href='/tags/medium' class="tags-url">
+        <span class="tags">medium</span>
+    </a>
+</div>
+
+<div>
+    <a href='/tags/linked-list' class="tags-url">
+        <span class="tags">Linked List</span>
+    </a>
+</div>
+
+<div>
+    <a href='/tags/python' class="tags-url">
+        <span class="tags">Python</span>
+    </a>
+</div>
+
+
+
+        </div>
+        
+            
+                <div class="publish-date">
+                    <span
+                        title="Lastmod: 2019-10-02. Published at: 2019-10-02.">
+                        2 Nov 2019
+                    </span>
+                </div>
+            
+        
+    </div>
+</article>
+
+
+
+
+
+        </div>
+        <div id="footer" class="pt-2 pb-3 bg-white text-center">
+            
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/keaising/kitto" class="link-gray-dark">Kitto</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+        </div>
+    </div>
+
+    
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="/assets/han.js"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+</body>
+
+</html>

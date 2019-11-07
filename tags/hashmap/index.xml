@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HashMap on 流水沉微</title>
+    <link>http://shuxiao.wang/tags/hashmap/</link>
+    <description>Recent content in HashMap on 流水沉微</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn</language>
+    <lastBuildDate>Wed, 02 Oct 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://shuxiao.wang/tags/hashmap/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>146. LRU Cache</title>
+      <link>http://shuxiao.wang/leetcode/146.-lru-cache/</link>
+      <pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/leetcode/146.-lru-cache/</guid>
+      <description>lru-cache LRU 来自于 Cache replacement policies，是缓存淘汰策略的一种，很实用也有比较简洁的实现方法，用来面试正好，足够难、又足够简单 Explain Design and implement a data structure for Least Recently Used (LRU)</description>
+    </item>
+    
+  </channel>
+</rss>

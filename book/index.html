@@ -55,59 +55,36 @@
         <div>
             
 
-
-<div class="Subhead">
-    <div class="Subhead-heading">
-        <h1>我读</h1>
-    </div>
-</div>
-
-
-
-
-<article>
-    
-    <div>
-        <ul class="listing">
-{% assign posts = site.book | where_exp: "post", "post.name != 'index'" %}
-{% for post in posts %}
-  <li class="listing-item">
-  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-  </li>
-{% endfor %}
-</ul>
-
-    </div>
-
-    <div class="page-info">
-        <div>
-            
-
 <div>
+
+  <h1>Book</h1>
+  
+
+  
     
+    
+<div class="post-item">
+    <span class="datetime-span" title="Lastmod: 2019-10-27. Published at: 2019-10-27.">
+        2019-10-27
+    </span>
+    <a href="/book/essentials-of-programming-languages/" class="post-item-title">
+        <div class="h2 mt-1 mb-1">Essentials of Programming Languages</div>
+    </a>
 </div>
+  
+    
+    
+<div class="post-item">
+    <span class="datetime-span" title="Lastmod: 2019-10-26. Published at: 2019-10-26.">
+        2019-10-26
+    </span>
+    <a href="/book/tcpip-in-24-hours/" class="post-item-title">
+        <div class="h2 mt-1 mb-1">Sams Teach Yourself TCP/IP in 24 Hours</div>
+    </a>
+</div>
+  
 
-
-
-
-
-        </div>
-        
-            
-                <div class="publish-date">
-                    <span
-                        title="Lastmod: 2019-10-26. Published at: 2019-10-26.">
-                        26 Nov 2019
-                    </span>
-                </div>
-            
-        
-    </div>
-</article>
-
-
-
+</div>
 
 
         </div>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" class="han-init">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/assets/han.css">
+    <link rel="stylesheet" href="/assets/normalize.css">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/syntax.css">
+</head>
+
+<body>
+    <div class="content index width mx-auto px2 my4">
+        <div class="top-header">
+  <a class="site-title" href="http://shuxiao.wang">
+    流水沉微
+  </a>
+
+  
+  
+  <div class="nav-body">
+    
+    
+    <a class="nav-item " href="/posts/">
+      
+      <span>Posts</span>
+    </a>
+    
+    
+    
+    <a class="nav-item " href="/cloud/">
+      
+      <span>Cloud</span>
+    </a>
+    
+    
+    
+    <a class="nav-item " href="/eureka/">
+      
+      <span>Eureka</span>
+    </a>
+    
+    
+    
+    <a class="nav-item " href="/resume/">
+      
+      <span>CV</span>
+    </a>
+    
+    
+  </div>
+  
+</div>
+
+        <div>
+            
+
+
+<div class="Subhead">
+    <div class="Subhead-heading">
+        <h1>Configuration</h1>
+    </div>
+</div>
+
+
+
+
+<article>
+    
+    <div>
+        
+
+<h2 id="shell">Shell</h2>
+
+<h3 id="export">export</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">export</span> <span class="nv">GO111MODULE</span><span class="o">=</span>on
+<span class="nb">export</span> <span class="nv">GOPROXY</span><span class="o">=</span><span class="s1">&#39;https://goproxy.io&#39;</span></code></pre></div>
+<h3 id="alias">alias</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">alias</span> <span class="nv">ll</span><span class="o">=</span><span class="s1">&#39;ls -al&#39;</span>
+
+<span class="nb">alias</span> <span class="nv">goproxy</span><span class="o">=</span><span class="s1">&#39;export http_proxy=http://127.0.0.1:7777 https_proxy=http://127.0.0.1:7777&#39;</span>
+<span class="nb">alias</span> <span class="nv">disproxy</span><span class="o">=</span><span class="s1">&#39;unset http_proxy https_proxy&#39;</span></code></pre></div>
+<h2 id="gitconfig">.gitconfig</h2>
+<div class="highlight"><pre class="chroma"><code class="language-conf" data-lang="conf">[user]
+	name = keaising
+	email = keaising@gmail.com
+[core]
+	editor = vi
+[color]
+	ui = true
+[alias]
+	co = checkout
+	st = status
+	br = branch
+	ci = commit -m 
+	cod = checkout develop
+	cor = checkout release
+	com = checkout master
+	pushm = push origin master
+	pullm = pull -r origin master
+    pulld = pull -r origin develop
+	pushd = push origin develop
+	pullr = pull -r origin release
+	pushr = push origin release
+	unstage = reset HEAD--
+	last = log-1 HEAD
+    lg = log --color --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit
+
+[pull]
+	rebase = true</code></pre></div>
+<h2 id="ssh-key">ssh key</h2>
+
+<h3 id="create-ssh-key">create ssh key</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># generating key</span>
+ssh-keygen -t rsa -b <span class="m">4096</span> -C <span class="s2">&#34;email@yours.com&#34;</span>
+
+<span class="c1"># start the ssh-agent in the background</span>
+<span class="nb">eval</span> <span class="k">$(</span>ssh-agent -s<span class="k">)</span>
+
+<span class="c1"># add to agent</span>
+ssh-add ~/.ssh/id_rsa</code></pre></div>
+<h3 id="permanently-add-ssh-key">permanently add ssh key</h3>
+
+<p>来源：<a href="https://segmentfault.com/q/1010000000835302">是否必须每次添加ssh-add</a></p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">vi ~/.ssh/config
+
+<span class="c1"># 1. 永久添加 public key 到本地 ssh agent</span>
+IdentityFile ~/.ssh/id_rsa
+
+<span class="c1"># 2. 根据不同 host 进行配置</span>
+Host github.com
+    User keaising
+    IdentityFile ~/.ssh/githubKey
+    PreferredAuthentications publickey
+
+<span class="c1"># 3. 每次登录 shell 时自动添加 (Not recommend)</span>
+ssh-add ~/.ssh/id_rsa <span class="p">&amp;</span>&gt;/dev/null
+
+<span class="c1"># 如果没有权限</span>
+chmod <span class="m">600</span> ~/.ssh/config</code></pre></div>
+<h2 id="systemd-service">Systemd Service</h2>
+
+<h3 id="cow-service">cow.service</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># sudo vi /usr/lib/systemd/system/cow.service</span>
+<span class="c1"># sudo systemctl daemon-reload</span>
+<span class="c1"># sudo systemctl start cow</span>
+<span class="c1"># sudo systemctl enable cow</span>
+
+<span class="o">[</span>Unit<span class="o">]</span>
+<span class="nv">Description</span><span class="o">=</span>cow
+<span class="nv">After</span><span class="o">=</span>network.target
+
+<span class="o">[</span>Service<span class="o">]</span>
+<span class="nv">Type</span><span class="o">=</span>simple
+<span class="c1"># Warning: cow文件不可以在/home/account目录下，会导致没有权限运行的问题</span>
+<span class="nv">ExecStart</span><span class="o">=</span>/usr/local/bin/cow -rc<span class="o">=</span>/home/user/.cow/rc
+
+<span class="o">[</span>Install<span class="o">]</span>
+<span class="nv">WantedBy</span><span class="o">=</span>multi-user.target</code></pre></div>
+    </div>
+
+    <div class="page-info">
+        <div>
+            
+
+<div>
+    
+</div>
+
+
+
+
+
+        </div>
+        
+            
+                <div class="publish-date">
+                    <span
+                        title="Lastmod: 2014-01-01. Published at: 2014-01-01.">
+                        1 Nov 2014
+                    </span>
+                </div>
+            
+        
+    </div>
+</article>
+
+
+
+
+
+        </div>
+        <div id="footer" class="pt-2 pb-3 bg-white text-center">
+            
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/keaising/kitto" class="link-gray-dark">Kitto</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+        </div>
+    </div>
+
+    
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="/assets/han.js"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+</body>
+
+</html>

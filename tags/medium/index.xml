@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>medium on 流水沉微</title>
+    <link>http://shuxiao.wang/tags/medium/</link>
+    <description>Recent content in medium on 流水沉微</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn</language>
+    <lastBuildDate>Wed, 02 Oct 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://shuxiao.wang/tags/medium/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>21. Merge Two Sorted Lists</title>
+      <link>http://shuxiao.wang/leetcode/21.-merge-two-sorted-lists/</link>
+      <pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/leetcode/21.-merge-two-sorted-lists/</guid>
+      <description>merge-two-sorted-lists Explain Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists. Example Input: 1-&amp;gt;2-&amp;gt;4, 1-&amp;gt;3-&amp;gt;4 Output: 1-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;4 Solve # Definition for singly-linked list. # class ListNode: # def __init__(self, x): # self.val = x # self.next = None class Solution: def mergeTwoLists(self, l1: ListNode, l2: ListNode) -&amp;gt; ListNode: if not l1:</description>
+    </item>
+    
+    <item>
+      <title>142. Linked List Cycle II</title>
+      <link>http://shuxiao.wang/leetcode/142.-linked-list-cycle-ii/</link>
+      <pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/leetcode/142.-linked-list-cycle-ii/</guid>
+      <description>linked-list-cycle-ii
+Explain Given a linked list, return the node where the cycle begins. If there is no cycle, return null.
+To represent a cycle in the given linked list, we use an integer pos which represents the position (0-indexed) in the linked list where tail connects to. If pos is -1, then there is no cycle in the linked list.
+ Note:
+Do not modify the linked list.
+ Solve # Definition for singly-linked list.</description>
+    </item>
+    
+    <item>
+      <title>146. LRU Cache</title>
+      <link>http://shuxiao.wang/leetcode/146.-lru-cache/</link>
+      <pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/leetcode/146.-lru-cache/</guid>
+      <description>lru-cache LRU 来自于 Cache replacement policies，是缓存淘汰策略的一种，很实用也有比较简洁的实现方法，用来面试正好，足够难、又足够简单 Explain Design and implement a data structure for Least Recently Used (LRU)</description>
+    </item>
+    
+    <item>
+      <title>208. Implement Trie (Prefix Tree)</title>
+      <link>http://shuxiao.wang/leetcode/208.-implement-trie/</link>
+      <pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/leetcode/208.-implement-trie/</guid>
+      <description>implement-trie-prefix-tree Explain Implement a trie with insert, search, and startsWith methods. Example Trie trie = new Trie(); trie.insert(&amp;ldquo;apple&amp;rdquo;); trie.search(&amp;ldquo;apple&amp;rdquo;); // returns true trie.search(&amp;ldquo;app&amp;rdquo;); // returns false trie.startsWith(&amp;ldquo;app&amp;rdquo;); // returns true trie.insert(&amp;ldquo;app&amp;rdquo;); trie.search(&amp;ldquo;app&amp;rdquo;); // returns true Note You may assume that all inputs are consist of lowercase letters a-z. All inputs are guaranteed to be non-empty strings. Solve class Node: def __init__(self): self.children = {} self.is_word = False class Trie: def</description>
+    </item>
+    
+    <item>
+      <title>236. Lowest Common Ancestor of a Binary Tree</title>
+      <link>http://shuxiao.wang/leetcode/236.-lowest-common-ancestor-of-a-binary-tree/</link>
+      <pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/leetcode/236.-lowest-common-ancestor-of-a-binary-tree/</guid>
+      <description>lowest-common-ancestor-of-a-binary-tree Explain Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree. According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itse</description>
+    </item>
+    
+    <item>
+      <title>334. Increasing Triplet Subsequence</title>
+      <link>http://shuxiao.wang/leetcode/334.-increasing-triplet-subsequence/</link>
+      <pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/leetcode/334.-increasing-triplet-subsequence/</guid>
+      <description>increasing-triplet-subsequence 这是我在搜索 trie tree 的时候弹出来到一个题，乍一看觉得挺简单，但是对时间和空间都有要求，我能想到到办法就是以每个数为第一个数开始向后搜索，但是这</description>
+    </item>
+    
+  </channel>
+</rss>
