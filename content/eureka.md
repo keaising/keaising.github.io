@@ -1,5 +1,5 @@
 ---
-title: Eureka
+title: Eureka!
 type: collect
 layout: section
 menu: main

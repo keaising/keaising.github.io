@@ -1,8 +1,8 @@
 ---
 title: CV
 date: 2019-08-03
-type: "top"
-menu: "main"
+menu: main
+draft: true
 weight: 4
 ---
 
