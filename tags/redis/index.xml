@@ -6,7 +6,6 @@
     <description>Recent content in redis on 流水沉微</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <copyright>&amp;copy;keaising 2014 - 2019</copyright>
     <lastBuildDate>Fri, 13 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://shuxiao.wang/tags/redis/index.xml" rel="self" type="application/rss+xml" />
@@ -18,7 +17,7 @@
       <pubDate>Fri, 13 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/posts/redis-rdb-fork/</guid>
-      <description>背景 问：Redis 主从节点同步知道吗？ 答：知道一点，不太熟 问：从节点申请同步的时候主节点做了什么？ 答</description>
+      <description>背景 问：Redis 主从节点同步知道吗？ 答：知道一点，不太熟 问：从节点申请同步的时候主节点做了什么？ 答：fork 一个子线程做同步 问：是子进程，</description>
     </item>
     
     <item>
@@ -27,7 +26,7 @@
       <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/posts/stackexchange-redis-timeout/</guid>
-      <description>压力测试过程中遇到的一个问题，框架是asp.net core 2.2，redis组件是StackExchang</description>
+      <description>压力测试过程中遇到的一个问题，框架是asp.net core 2.2，redis组件是StackExchange.Redis 2.0.601，在高并发场</description>
     </item>
     
   </channel>

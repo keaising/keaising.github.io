@@ -1,120 +1,74 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    
-    
-    
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>
-      
-  在Windows上安装「算法 第四版」组件 &ndash; 流水沉微
+<html lang="zh-Hans" class="han-init">
 
-    </title>
-    
-    
-    <meta name="description" property="og:description" content="这篇日志翻译自Hello, World in Java on Windows，翻译的原因是知乎的一个回答，回答完这个问题之后，得|Hacking to the world">
-    
-
-    <meta name="apple-mobile-web-app-title" content="流水沉微">
-    
-    
-    <link rel="icon" href="/favicon-64.png">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="mask-icon" size="any" href="/pinned-icon.svg">
-    
-    
-    
-
-
-    <link rel="stylesheet" href="/assets/syntax.css">
-    <link rel="stylesheet" href="/assets/primer-build.css">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/assets/han.css">
+    <link rel="stylesheet" href="/assets/normalize.css">
     <link rel="stylesheet" href="/assets/style.css">
-  </head>
+    <link rel="stylesheet" href="/assets/syntax.css">
+</head>
 
-
-  <body class="bg-gray">
-    <div id="holy" class="container-lg bg-white h-100">
-
-      <div id="header" class="px-1 bg-white">
-        <nav class="UnderlineNav UnderlineNav--right px-2">
-  <a class="UnderlineNav-actions muted-link h2" href="http://shuxiao.wang">
+<body>
+    <div class="content index width mx-auto px2 my4">
+        <div class="top-header">
+  <a class="site-title" href="http://shuxiao.wang">
     流水沉微
   </a>
 
   
   
-  <div class="UnderlineNav-body">
+  <div class="nav-body">
     
     
-    <a class="UnderlineNav-item " href="/posts/">
+    <a class="nav-item " href="/posts/">
       
       <span>Posts</span>
     </a>
     
     
     
-    <a class="UnderlineNav-item " href="/">
+    <a class="nav-item " href="/cloud/">
       
-      <span>About</span>
+      <span>Cloud</span>
     </a>
     
     
     
-    <a class="UnderlineNav-item " href="/resume/">
+    <a class="nav-item " href="/eureka/">
       
-      <span>Resume</span>
+      <span>Eureka</span>
+    </a>
+    
+    
+    
+    <a class="nav-item " href="/resume/">
+      
+      <span>CV</span>
     </a>
     
     
   </div>
   
-</nav>
+</div>
 
-      </div>
+        <div>
+            
 
-      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
-        
 
 <div class="Subhead">
-  <div class="Subhead-heading">
-    <div class="h1 mt-3 mb-1">在Windows上安装「算法 第四版」组件</div>
-  </div>
-  <div class="Subhead-description">
-    
-
-
-<a href='/categories/programming' class="muted-link">
-  <span class="Label Label--gray-darker">programming</span>
-</a>
-
-
-
-<a href='/tags/tutorial' class="muted-link">
-  <span class="Label Label--gray">tutorial</span>
-</a>
-
-<a href='/tags/translation' class="muted-link">
-  <span class="Label Label--gray">translation</span>
-</a>
-
-
-
-    
-    <div class="float-md-right">
-      <span title="Lastmod: 2019-10-08. Published at: 2016-04-20.">
-        
-          Lastmod: 2019-10-08
-        
-      </span>
+    <div class="Subhead-heading">
+        <h1>在Windows上安装「算法 第四版」组件</h1>
     </div>
-    
-  </div>
 </div>
+
+
+
+
 <article>
-  
-  <section class="pb-6 mb-3 border-bottom">
     
+    <div>
+        
 
 <p>这篇日志翻译自<a href="http://algs4.cs.princeton.edu/windows/">Hello, World in Java on Windows</a>，翻译的原因是<a href="https://www.zhihu.com/question/36491917/answer/67791083">知乎的一个回答</a>，回答完这个问题之后，得到了广泛的。。嗯。。。私信，私信我如何处理相关问题。惭愧地说，其实我也没有刷完这本书的所有题，但是处理一点入门型的问题好像还可以。但是我也没有精力挨个回复，所以翻译一下官方的回复，应该是够用了。所以说：其实大部分伸手党在伸手之前连官方文档都没有看全<em>(:з」∠)</em></p>
 
@@ -156,11 +110,12 @@
 <li><p>在上一节中的安装包已经在桌面上创建了DrJava的快捷方式『译者注：如果不慎删掉，还可以在如下目录中找到该程序：C:\Users\Username\algs4』。双击以启动DrJava，如果你收到一个Windows安装警告，点击「允许运行」或者「不禁止」</p></li>
 
 <li><p>在DrJava的主窗体中，请向下面一样准确无误得输入<a href="http://introcs.cs.princeton.edu/java/11hello/HelloWorld.java.html">HelloWorld.java</a>中的代码，哪怕你只是漏掉了一个分号，这个程序也不会运行,在你输入的时候，DrJava会为你准备缩进</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">HelloWorld</span> <span class="p">{</span>
-<span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="nf">args</span><span class="p">)</span> <span class="p">{</span> 
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Hello, World&#34;</span><span class="p">);</span>
+<div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">HelloWorld</span> <span class="p">{</span>
+<span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span> 
+    <span class="n">System</span><span class="p">.</span><span class="k">out</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&#34;Hello, World&#34;</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="p">}</span></code></pre></div></li>
+<span class="p">}</span>
+</code></pre></div></li>
 
 <li><p>最后，点击「保存」按钮来保存该文件，使用DrJava创建文件夹C:\Users\username\algs4\hello并将文件命名为「HelloWorld.java」，这个文件名是大小写敏感的而且必须匹配Java程序中的类名，其中username是你的Windows用户名</p></li>
 </ul>
@@ -423,71 +378,77 @@ C:\Users\username\algs4\java\bin\java.exe
 
 <p>A: PowerShell是一个比命令行更高级的命令行工具，但是，它现在还不支持重定向标准输入</p>
 
-  </section>
+    </div>
 
-  <section>
+    <div class="page-info">
+        <div>
+            
+
+<div>
     
-      
+    <a href='/categories/programming' class="categories-url">
+        <span class="categories">programming</span>
+    </a>
     
-  </section>
+</div>
+
+
+
+<div>
+    <a href='/tags/tutorial' class="tags-url">
+        <span class="tags">tutorial</span>
+    </a>
+</div>
+
+<div>
+    <a href='/tags/translation' class="tags-url">
+        <span class="tags">translation</span>
+    </a>
+</div>
+
+
+
+        </div>
+        
+            
+                <div class="publish-date">
+                    <span
+                        title="Lastmod: 2016-04-20. Published at: 2016-04-20.">
+                        20 Nov 2016
+                    </span>
+                </div>
+            
+        
+    </div>
 </article>
 
-      </div>
 
-      <div id="side" class="pr-1 bg-white">
-        <aside class="pr-3">
-          
-  
-    <div id="toc" class="Box Box--blue mb-3">
-      <b>在Windows上安装「算法 第四版」组件</b>
-      <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#简介">简介</a></li>
-<li><a href="#0-安装开发环境">0. 安装开发环境</a></li>
-<li><a href="#1-在drjava中创建程序">1. 在DrJava中创建程序</a></li>
-<li><a href="#2-在drjava中编译程序">2. 在DrJava中编译程序</a></li>
-<li><a href="#3-在drjava中运行程序">3. 在DrJava中运行程序</a></li>
-<li><a href="#4-命令行界面">4. 命令行界面</a></li>
-<li><a href="#5-在命令行中编译程序">5. 在命令行中编译程序</a></li>
-<li><a href="#6-在命令行中运行程序">6. 在命令行中运行程序</a></li>
-<li><a href="#7-检查风格和查找bug">7. 检查风格和查找bug</a></li>
-<li><a href="#常见问题">常见问题</a></li>
-</ul></li>
-</ul>
-</nav>
-    </div>
-  
 
-  
-    <div>
-      
-    </div>
-  
 
-        </aside>
-      </div>
 
-      <div id="footer" class="pt-2 pb-3 bg-white text-center">
-        
+        </div>
+        <div id="footer" class="pt-2 pb-3 bg-white text-center">
+            
 
   <span class="text-small text-gray">
-    &copy;keaising 2014 - 2019 &middot; 
+    
 
     Powered by the
-    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://github.com/keaising/kitto" class="link-gray-dark">Kitto</a> theme for
     <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
   </span>
 
 
-      </div>
+        </div>
     </div>
 
+    
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="/assets/han.js"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+</body>
 
-    
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
-  </body>
 </html>

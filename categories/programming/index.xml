@@ -6,7 +6,6 @@
     <description>Recent content in programming on 流水沉微</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <copyright>&amp;copy;keaising 2014 - 2019</copyright>
     <lastBuildDate>Fri, 31 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://shuxiao.wang/categories/programming/index.xml" rel="self" type="application/rss+xml" />
@@ -18,7 +17,7 @@
       <pubDate>Fri, 31 May 2019 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/posts/golang-submission-error/</guid>
-      <description>Review 过了一段时间自己看都觉得这代码写得好蠢，于是改了一版，如下： package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(permute([]int{1,0,3})) } func permute(nums []int) [][]int { if len(nums) == 1 {</description>
+      <description>Review 过了一段时间自己看都觉得这代码写得好蠢，于是改了一版，如下： package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(permute([]int{1,0,3})) } func permute(nums []int) [][]int { if len(nums) == 1 { return [][]int{ nums, } } array := nums var result [][]int generate(len(nums), &amp;amp;array, &amp;amp;result) return result } func generate(k int,</description>
     </item>
     
     <item>
@@ -27,7 +26,7 @@
       <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/posts/cli-app-in-csharp3/</guid>
-      <description>这是 CLI App in C# 系列的第三篇，本篇主要介绍gen的打包和发布。 .Net Core控制台应用的打包方法主要是两类：</description>
+      <description>这是 CLI App in C# 系列的第三篇，本篇主要介绍gen的打包和发布。 .Net Core控制台应用的打包方法主要是两类： 可执行文件，对应直接运行，Windows</description>
     </item>
     
     <item>
@@ -36,7 +35,7 @@
       <pubDate>Sun, 12 May 2019 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/posts/cli-app-in-csharp2/</guid>
-      <description>这是 CLI App in C# 系列的第二篇，本篇主要介绍gen的开发过程。教程里的所有代码参见keaising/gen</description>
+      <description>这是 CLI App in C# 系列的第二篇，本篇主要介绍gen的开发过程。教程里的所有代码参见keaising/gen 新建项目 在合适的地方使用dotnet new console</description>
     </item>
     
     <item>
@@ -45,7 +44,7 @@
       <pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/posts/cli-app-in-csharp1/</guid>
-      <description>这是 CLI App in C# 系列的 第一篇 (Wa Da Keng) 写这个系列的目的是介绍用C#写一个命令行工具的所有内容，从规划、选型、</description>
+      <description>这是 CLI App in C# 系列的 第一篇 (Wa Da Keng) 写这个系列的目的是介绍用C#写一个命令行工具的所有内容，从规划、选型、编码、到打包和自动化编译的系列工作都会介</description>
     </item>
     
     <item>
@@ -54,7 +53,7 @@
       <pubDate>Thu, 21 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/posts/algs4-eclipse/</guid>
-      <description>这篇是接上一篇继续讲的，上一篇讲了如何在DrJava和命令行中使用javac-algs4和java-</description>
+      <description>这篇是接上一篇继续讲的，上一篇讲了如何在DrJava和命令行中使用javac-algs4和java-algs4，这一篇将讲述如何在Eclip</description>
     </item>
     
     <item>
@@ -63,7 +62,7 @@
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/posts/algs4-windows/</guid>
-      <description>这篇日志翻译自Hello, World in Java on Windows，翻译的原因是知乎的一个回答，回答完这个问题之后，得</description>
+      <description>这篇日志翻译自Hello, World in Java on Windows，翻译的原因是知乎的一个回答，回答完这个问题之后，得到了广泛的。。嗯。。。私信，私信我如何处</description>
     </item>
     
     <item>
@@ -72,7 +71,7 @@
       <pubDate>Sat, 25 Oct 2014 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/posts/ant-algs-based-on-csharp/</guid>
-      <description>这学期有门课，最优化与最优控制，任课老师任华玲，虽然在课堂上我什么都没有学到，但是最后任老师让每个人</description>
+      <description>这学期有门课，最优化与最优控制，任课老师任华玲，虽然在课堂上我什么都没有学到，但是最后任老师让每个人自己选一篇最优化方向的论文，把其中的算法</description>
     </item>
     
   </channel>

@@ -6,7 +6,6 @@
     <description>Recent content in homework on 流水沉微</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <copyright>&amp;copy;keaising 2014 - 2019</copyright>
     <lastBuildDate>Sat, 25 Oct 2014 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://shuxiao.wang/tags/homework/index.xml" rel="self" type="application/rss+xml" />
@@ -18,7 +17,7 @@
       <pubDate>Sat, 25 Oct 2014 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/posts/ant-algs-based-on-csharp/</guid>
-      <description>这学期有门课，最优化与最优控制，任课老师任华玲，虽然在课堂上我什么都没有学到，但是最后任老师让每个人</description>
+      <description>这学期有门课，最优化与最优控制，任课老师任华玲，虽然在课堂上我什么都没有学到，但是最后任老师让每个人自己选一篇最优化方向的论文，把其中的算法</description>
     </item>
     
   </channel>

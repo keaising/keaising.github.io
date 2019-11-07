@@ -6,7 +6,6 @@
     <description>Recent content in golang on 流水沉微</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <copyright>&amp;copy;keaising 2014 - 2019</copyright>
     <lastBuildDate>Fri, 31 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://shuxiao.wang/tags/golang/index.xml" rel="self" type="application/rss+xml" />
@@ -18,7 +17,7 @@
       <pubDate>Fri, 31 May 2019 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/posts/golang-submission-error/</guid>
-      <description>Review 过了一段时间自己看都觉得这代码写得好蠢，于是改了一版，如下： package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(permute([]int{1,0,3})) } func permute(nums []int) [][]int { if len(nums) == 1 {</description>
+      <description>Review 过了一段时间自己看都觉得这代码写得好蠢，于是改了一版，如下： package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(permute([]int{1,0,3})) } func permute(nums []int) [][]int { if len(nums) == 1 { return [][]int{ nums, } } array := nums var result [][]int generate(len(nums), &amp;amp;array, &amp;amp;result) return result } func generate(k int,</description>
     </item>
     
   </channel>

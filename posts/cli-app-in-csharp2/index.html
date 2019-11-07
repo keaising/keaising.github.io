@@ -1,120 +1,74 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    
-    
-    
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>
-      
-  CLI App in C# 其二 &ndash; 流水沉微
+<html lang="zh-Hans" class="han-init">
 
-    </title>
-    
-    
-    <meta name="description" property="og:description" content="这是 CLI App in C# 系列的第二篇，本篇主要介绍gen的开发过程。教程里的所有代码参见keaising/gen|Hacking to the world">
-    
-
-    <meta name="apple-mobile-web-app-title" content="流水沉微">
-    
-    
-    <link rel="icon" href="/favicon-64.png">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="mask-icon" size="any" href="/pinned-icon.svg">
-    
-    
-    
-
-
-    <link rel="stylesheet" href="/assets/syntax.css">
-    <link rel="stylesheet" href="/assets/primer-build.css">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/assets/han.css">
+    <link rel="stylesheet" href="/assets/normalize.css">
     <link rel="stylesheet" href="/assets/style.css">
-  </head>
+    <link rel="stylesheet" href="/assets/syntax.css">
+</head>
 
-
-  <body class="bg-gray">
-    <div id="holy" class="container-lg bg-white h-100">
-
-      <div id="header" class="px-1 bg-white">
-        <nav class="UnderlineNav UnderlineNav--right px-2">
-  <a class="UnderlineNav-actions muted-link h2" href="http://shuxiao.wang">
+<body>
+    <div class="content index width mx-auto px2 my4">
+        <div class="top-header">
+  <a class="site-title" href="http://shuxiao.wang">
     流水沉微
   </a>
 
   
   
-  <div class="UnderlineNav-body">
+  <div class="nav-body">
     
     
-    <a class="UnderlineNav-item " href="/posts/">
+    <a class="nav-item " href="/posts/">
       
       <span>Posts</span>
     </a>
     
     
     
-    <a class="UnderlineNav-item " href="/">
+    <a class="nav-item " href="/cloud/">
       
-      <span>About</span>
+      <span>Cloud</span>
     </a>
     
     
     
-    <a class="UnderlineNav-item " href="/resume/">
+    <a class="nav-item " href="/eureka/">
       
-      <span>Resume</span>
+      <span>Eureka</span>
+    </a>
+    
+    
+    
+    <a class="nav-item " href="/resume/">
+      
+      <span>CV</span>
     </a>
     
     
   </div>
   
-</nav>
+</div>
 
-      </div>
+        <div>
+            
 
-      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
-        
 
 <div class="Subhead">
-  <div class="Subhead-heading">
-    <div class="h1 mt-3 mb-1">CLI App in C# 其二</div>
-  </div>
-  <div class="Subhead-description">
-    
-
-
-<a href='/categories/programming' class="muted-link">
-  <span class="Label Label--gray-darker">programming</span>
-</a>
-
-
-
-<a href='/tags/cli-in-csharp' class="muted-link">
-  <span class="Label Label--gray">cli in csharp</span>
-</a>
-
-<a href='/tags/dotnet-core' class="muted-link">
-  <span class="Label Label--gray">dotnet core</span>
-</a>
-
-
-
-    
-    <div class="float-md-right">
-      <span title="Lastmod: 2019-10-08. Published at: 2019-05-12.">
-        
-          Lastmod: 2019-10-08
-        
-      </span>
+    <div class="Subhead-heading">
+        <h1>CLI App in C# 其二</h1>
     </div>
-    
-  </div>
 </div>
+
+
+
+
 <article>
-  
-  <section class="pb-6 mb-3 border-bottom">
     
+    <div>
+        
 
 <p>这是 CLI App in C# 系列的第二篇，本篇主要介绍<code>gen</code>的开发过程。教程里的所有代码参见<a href="https://github.com/keaising/gen">keaising/gen</a></p>
 
@@ -282,74 +236,77 @@ $ <span class="m">13137575348</span></code></pre></div>
 
 <p><strong>つづく</strong></p>
 
-  </section>
+    </div>
 
-  <section>
+    <div class="page-info">
+        <div>
+            
+
+<div>
     
-      
+    <a href='/categories/programming' class="categories-url">
+        <span class="categories">programming</span>
+    </a>
     
-  </section>
+</div>
+
+
+
+<div>
+    <a href='/tags/cli-in-csharp' class="tags-url">
+        <span class="tags">cli in csharp</span>
+    </a>
+</div>
+
+<div>
+    <a href='/tags/dotnet-core' class="tags-url">
+        <span class="tags">dotnet core</span>
+    </a>
+</div>
+
+
+
+        </div>
+        
+            
+                <div class="publish-date">
+                    <span
+                        title="Lastmod: 2019-05-12. Published at: 2019-05-12.">
+                        12 Nov 2019
+                    </span>
+                </div>
+            
+        
+    </div>
 </article>
 
-      </div>
 
-      <div id="side" class="pr-1 bg-white">
-        <aside class="pr-3">
-          
-  
-    <div id="toc" class="Box Box--blue mb-3">
-      <b>CLI App in C# 其二</b>
-      <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#新建项目">新建项目</a></li>
-<li><a href="#添加引用">添加引用</a></li>
-<li><a href="#改造programs文件">改造Programs文件</a></li>
-<li><a href="#生成手机号">生成手机号</a></li>
-<li><a href="#生成身份证号">生成身份证号</a>
-<ul>
-<li>
-<ul>
-<li><a href="#身份证号码类型">身份证号码类型</a></li>
-<li><a href="#身份证号码开头">身份证号码开头</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#调试-运行">调试 &amp; 运行</a></li>
-</ul></li>
-</ul>
-</nav>
-    </div>
-  
 
-  
-    <div>
-      
-    </div>
-  
 
-        </aside>
-      </div>
 
-      <div id="footer" class="pt-2 pb-3 bg-white text-center">
-        
+        </div>
+        <div id="footer" class="pt-2 pb-3 bg-white text-center">
+            
 
   <span class="text-small text-gray">
-    &copy;keaising 2014 - 2019 &middot; 
+    
 
     Powered by the
-    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://github.com/keaising/kitto" class="link-gray-dark">Kitto</a> theme for
     <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
   </span>
 
 
-      </div>
+        </div>
     </div>
 
+    
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="/assets/han.js"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+</body>
 
-    
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
-  </body>
 </html>

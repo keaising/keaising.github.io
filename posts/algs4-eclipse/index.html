@@ -1,120 +1,74 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    
-    
-    
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>
-      
-  在Eclipse中调用Algs4库 &ndash; 流水沉微
+<html lang="zh-Hans" class="han-init">
 
-    </title>
-    
-    
-    <meta name="description" property="og:description" content="这篇是接上一篇继续讲的，上一篇讲了如何在DrJava和命令行中使用javac-algs4和java-|Hacking to the world">
-    
-
-    <meta name="apple-mobile-web-app-title" content="流水沉微">
-    
-    
-    <link rel="icon" href="/favicon-64.png">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="mask-icon" size="any" href="/pinned-icon.svg">
-    
-    
-    
-
-
-    <link rel="stylesheet" href="/assets/syntax.css">
-    <link rel="stylesheet" href="/assets/primer-build.css">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/assets/han.css">
+    <link rel="stylesheet" href="/assets/normalize.css">
     <link rel="stylesheet" href="/assets/style.css">
-  </head>
+    <link rel="stylesheet" href="/assets/syntax.css">
+</head>
 
-
-  <body class="bg-gray">
-    <div id="holy" class="container-lg bg-white h-100">
-
-      <div id="header" class="px-1 bg-white">
-        <nav class="UnderlineNav UnderlineNav--right px-2">
-  <a class="UnderlineNav-actions muted-link h2" href="http://shuxiao.wang">
+<body>
+    <div class="content index width mx-auto px2 my4">
+        <div class="top-header">
+  <a class="site-title" href="http://shuxiao.wang">
     流水沉微
   </a>
 
   
   
-  <div class="UnderlineNav-body">
+  <div class="nav-body">
     
     
-    <a class="UnderlineNav-item " href="/posts/">
+    <a class="nav-item " href="/posts/">
       
       <span>Posts</span>
     </a>
     
     
     
-    <a class="UnderlineNav-item " href="/">
+    <a class="nav-item " href="/cloud/">
       
-      <span>About</span>
+      <span>Cloud</span>
     </a>
     
     
     
-    <a class="UnderlineNav-item " href="/resume/">
+    <a class="nav-item " href="/eureka/">
       
-      <span>Resume</span>
+      <span>Eureka</span>
+    </a>
+    
+    
+    
+    <a class="nav-item " href="/resume/">
+      
+      <span>CV</span>
     </a>
     
     
   </div>
   
-</nav>
+</div>
 
-      </div>
+        <div>
+            
 
-      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
-        
 
 <div class="Subhead">
-  <div class="Subhead-heading">
-    <div class="h1 mt-3 mb-1">在Eclipse中调用Algs4库</div>
-  </div>
-  <div class="Subhead-description">
-    
-
-
-<a href='/categories/programming' class="muted-link">
-  <span class="Label Label--gray-darker">programming</span>
-</a>
-
-
-
-<a href='/tags/tutorial' class="muted-link">
-  <span class="Label Label--gray">tutorial</span>
-</a>
-
-<a href='/tags/translation' class="muted-link">
-  <span class="Label Label--gray">translation</span>
-</a>
-
-
-
-    
-    <div class="float-md-right">
-      <span title="Lastmod: 2019-10-08. Published at: 2016-04-21.">
-        
-          Lastmod: 2019-10-08
-        
-      </span>
+    <div class="Subhead-heading">
+        <h1>在Eclipse中调用Algs4库</h1>
     </div>
-    
-  </div>
 </div>
+
+
+
+
 <article>
-  
-  <section class="pb-6 mb-3 border-bottom">
-    <p>这篇是接<a href="http://shuxiao.wang/2016/04/20/algs4-windows.html">上一篇</a>继续讲的，上一篇讲了如何在DrJava和命令行中使用javac-algs4和java-algs4，这一篇将讲述如何在Eclipse中调用教材库，也就是Algs4.jar</p>
+    
+    <div>
+        <p>这篇是接<a href="http://shuxiao.wang/2016/04/20/algs4-windows.html">上一篇</a>继续讲的，上一篇讲了如何在DrJava和命令行中使用javac-algs4和java-algs4，这一篇将讲述如何在Eclipse中调用教材库，也就是Algs4.jar</p>
 
 <p>首先<a href="https://www.eclipse.org/downloads/">下载Eclipse</a>，我选择的是<a href="http://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/mars2">
 Eclipse IDE for Java Developers</a>64位版本，下载下来之后解压缩到喜欢的位置然后双击Eclipse.exe启动</p>
@@ -129,35 +83,36 @@ Eclipse IDE for Java Developers</a>64位版本，下载下来之后解压缩到�
 <p><img src="/images/algs4-translation/algs2.png" alt="algs2" /></p>
 
 <p>代码如下：</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nf">edu</span><span class="p">.</span><span class="na">princeton</span><span class="p">.</span><span class="na">cs</span><span class="p">.</span><span class="na">algs4</span><span class="p">.</span><span class="na">StdDraw</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-C#" data-lang="C#"><span class="n">import</span> <span class="n">edu</span><span class="p">.</span><span class="n">princeton</span><span class="p">.</span><span class="n">cs</span><span class="p">.</span><span class="n">algs4</span><span class="p">.</span><span class="n">StdDraw</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="nf">class</span> <span class="n">TestAlgs4</span> <span class="p">{</span>
-    <span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="nf">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">StdDraw</span><span class="p">.</span><span class="na">setScale</span><span class="p">(</span><span class="o">-</span><span class="n">1</span><span class="p">,</span> <span class="n">1</span><span class="p">);</span>
-        <span class="n">StdDraw</span><span class="p">.</span><span class="na">clear</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">BLACK</span><span class="p">);</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">TestAlgs4</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">main</span> <span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">StdDraw</span><span class="p">.</span><span class="n">setScale</span><span class="p">(-</span><span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
+        <span class="n">StdDraw</span><span class="p">.</span><span class="n">clear</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="n">BLACK</span><span class="p">);</span>
         
-        <span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">WHITE</span><span class="p">);</span>
-        <span class="n">StdDraw</span><span class="p">.</span><span class="na">square</span><span class="p">(</span><span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">1</span><span class="p">);</span>
+        <span class="n">StdDraw</span><span class="p">.</span><span class="n">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="n">WHITE</span><span class="p">);</span>
+        <span class="n">StdDraw</span><span class="p">.</span><span class="n">square</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
         
         <span class="c1">// write some text
-</span><span class="c1"></span>        <span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">WHITE</span><span class="p">);</span>
-        <span class="n">StdDraw</span><span class="p">.</span><span class="na">text</span><span class="p">(</span><span class="n">0</span><span class="p">,</span> <span class="o">+</span><span class="n">0</span><span class="p">.</span><span class="na">95</span><span class="p">,</span> <span class="s">&#34;Hello, world! This is a test Java program.&#34;</span><span class="p">);</span>
-        <span class="n">StdDraw</span><span class="p">.</span><span class="na">text</span><span class="p">(</span><span class="n">0</span><span class="p">,</span> <span class="o">-</span><span class="n">0</span><span class="p">.</span><span class="na">95</span><span class="p">,</span> <span class="s">&#34;Close this window to finish the installation.&#34;</span><span class="p">);</span>
+</span><span class="c1"></span>        <span class="n">StdDraw</span><span class="p">.</span><span class="n">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="n">WHITE</span><span class="p">);</span>
+        <span class="n">StdDraw</span><span class="p">.</span><span class="n">text</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="p">+</span><span class="m">0.95</span><span class="p">,</span> <span class="s">&#34;Hello, world! This is a test Java program.&#34;</span><span class="p">);</span>
+        <span class="n">StdDraw</span><span class="p">.</span><span class="n">text</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="p">-</span><span class="m">0.95</span><span class="p">,</span> <span class="s">&#34;Close this window to finish the installation.&#34;</span><span class="p">);</span>
         
         <span class="c1">// draw the bullseye
-</span><span class="c1"></span>        <span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">BOOK_BLUE</span><span class="p">);</span>
-        <span class="n">StdDraw</span><span class="p">.</span><span class="na">filledCircle</span><span class="p">(</span><span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="na">9</span><span class="p">);</span>
-        <span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">BLACK</span><span class="p">);</span>
-        <span class="n">StdDraw</span><span class="p">.</span><span class="na">filledCircle</span><span class="p">(</span><span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="na">8</span><span class="p">);</span>
-        <span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">BOOK_BLUE</span><span class="p">);</span>
-        <span class="n">StdDraw</span><span class="p">.</span><span class="na">filledCircle</span><span class="p">(</span><span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="na">7</span><span class="p">);</span>
-        <span class="n">StdDraw</span><span class="p">.</span><span class="na">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="na">BLACK</span><span class="p">);</span>
-        <span class="n">StdDraw</span><span class="p">.</span><span class="na">filledCircle</span><span class="p">(</span><span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="na">6</span><span class="p">);</span>
+</span><span class="c1"></span>        <span class="n">StdDraw</span><span class="p">.</span><span class="n">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="n">BOOK_BLUE</span><span class="p">);</span>
+        <span class="n">StdDraw</span><span class="p">.</span><span class="n">filledCircle</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.9</span><span class="p">);</span>
+        <span class="n">StdDraw</span><span class="p">.</span><span class="n">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="n">BLACK</span><span class="p">);</span>
+        <span class="n">StdDraw</span><span class="p">.</span><span class="n">filledCircle</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.8</span><span class="p">);</span>
+        <span class="n">StdDraw</span><span class="p">.</span><span class="n">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="n">BOOK_BLUE</span><span class="p">);</span>
+        <span class="n">StdDraw</span><span class="p">.</span><span class="n">filledCircle</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.7</span><span class="p">);</span>
+        <span class="n">StdDraw</span><span class="p">.</span><span class="n">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="n">BLACK</span><span class="p">);</span>
+        <span class="n">StdDraw</span><span class="p">.</span><span class="n">filledCircle</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.6</span><span class="p">);</span>
 
         <span class="c1">// draw a picture of the textbook        
-</span><span class="c1"></span>        <span class="n">StdDraw</span><span class="p">.</span><span class="na">picture</span><span class="p">(</span><span class="n">0</span><span class="p">,</span> <span class="n">0</span><span class="p">,</span> <span class="s">&#34;cover.jpg&#34;</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="na">65</span><span class="p">,</span> <span class="n">0</span><span class="p">.</span><span class="na">80</span><span class="p">);</span>
+</span><span class="c1"></span>        <span class="n">StdDraw</span><span class="p">.</span><span class="n">picture</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="s">&#34;cover.jpg&#34;</span><span class="p">,</span> <span class="m">0.65</span><span class="p">,</span> <span class="m">0.80</span><span class="p">);</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span>
+</code></pre></div>
 <p>这时候Eclipse应该会报错无数，不要急，添加对教材库Algs4.jar的引用：</p>
 
 <p>右键工程名（我这里是HelloWorld）-&gt; Properties -&gt; Java Build Path -&gt; Libraries -&gt; Add Extenernal JARs，选中C:\Users\username\algs4\algs4.jar 即可，如图：</p>
@@ -172,55 +127,77 @@ Eclipse IDE for Java Developers</a>64位版本，下载下来之后解压缩到�
 
 <p>PS：以前只写过C#，没有用过Eclipse也对Java不太熟悉，都是按照C#和.Net的思路在配置，如果有不对的地方还请指出（知乎私信或者发邮件都可以），谢谢！</p>
 
-  </section>
+    </div>
 
-  <section>
+    <div class="page-info">
+        <div>
+            
+
+<div>
     
-      
+    <a href='/categories/programming' class="categories-url">
+        <span class="categories">programming</span>
+    </a>
     
-  </section>
+</div>
+
+
+
+<div>
+    <a href='/tags/tutorial' class="tags-url">
+        <span class="tags">tutorial</span>
+    </a>
+</div>
+
+<div>
+    <a href='/tags/translation' class="tags-url">
+        <span class="tags">translation</span>
+    </a>
+</div>
+
+
+
+        </div>
+        
+            
+                <div class="publish-date">
+                    <span
+                        title="Lastmod: 2016-04-21. Published at: 2016-04-21.">
+                        21 Nov 2016
+                    </span>
+                </div>
+            
+        
+    </div>
 </article>
 
-      </div>
 
-      <div id="side" class="pr-1 bg-white">
-        <aside class="pr-3">
-          
-  
-    <div id="toc" class="Box Box--blue mb-3">
-      <b>在Eclipse中调用Algs4库</b>
-      
-    </div>
-  
 
-  
-    <div>
-      
-    </div>
-  
 
-        </aside>
-      </div>
 
-      <div id="footer" class="pt-2 pb-3 bg-white text-center">
-        
+        </div>
+        <div id="footer" class="pt-2 pb-3 bg-white text-center">
+            
 
   <span class="text-small text-gray">
-    &copy;keaising 2014 - 2019 &middot; 
+    
 
     Powered by the
-    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://github.com/keaising/kitto" class="link-gray-dark">Kitto</a> theme for
     <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
   </span>
 
 
-      </div>
+        </div>
     </div>
 
+    
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="/assets/han.js"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+</body>
 
-    
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
-  </body>
 </html>

@@ -6,19 +6,63 @@
     <description>Recent content in About on 流水沉微</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <copyright>&amp;copy;keaising 2014 - 2019</copyright>
     <lastBuildDate>Tue, 14 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://shuxiao.wang/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Resume</title>
+      <title>Cloud</title>
+      <link>http://shuxiao.wang/cloud/</link>
+      <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/cloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Eureka</title>
+      <link>http://shuxiao.wang/eureka/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/eureka/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CV</title>
       <link>http://shuxiao.wang/resume/</link>
       <pubDate>Sat, 03 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/resume/</guid>
-      <description>这里是对纸质简历的补充 本页中Instagram、Twitter、GitHub资源可能需要科学上网 教育</description>
+      <description>这里是对纸质简历的补充 本页中Instagram、Twitter、GitHub资源可能需要科学上网 教育经历 时间 学校 院系 专业 学位 2010.09 - 2014.06 北京交通大</description>
+    </item>
+    
+    <item>
+      <title>我读</title>
+      <link>http://shuxiao.wang/book/</link>
+      <pubDate>Sat, 26 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/book/</guid>
+      <description>{% assign posts = site.book | where_exp: &#34;post&#34;, &#34;post.name != &#39;index&#39;&#34; %} {% for post in posts %} {{ post.date | date:&#34;%Y-%m-%d&#34; }} {{ post.title }} {% endfor %}</description>
+    </item>
+    
+    <item>
+      <title>楼梯有多少种走法</title>
+      <link>http://shuxiao.wang/posts/ladder/</link>
+      <pubDate>Mon, 21 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/posts/ladder/</guid>
+      <description>这是在 telegram 网鱼网咖群里聊天时，Haruhi贴的一个题，题目如下： 思路很简单 可以从14、13、12级跨到第15级 f(15)=f(14)+f(13)+f(12) 递推公式出来鸟~ 当然要得到一个</description>
+    </item>
+    
+    <item>
+      <title>LeetCode</title>
+      <link>http://shuxiao.wang/leetcode/</link>
+      <pubDate>Sat, 19 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/leetcode/</guid>
+      <description>{% assign posts = site.leetcode | where_exp: &#34;post&#34;, &#34;post.name != &#39;index&#39;&#34; %} {% for post in posts %} {{ post.date | date:&#34;%Y-%m-%d&#34; }} {{ post.title }} {% endfor %}</description>
     </item>
     
     <item>
@@ -27,7 +71,7 @@
       <pubDate>Fri, 13 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/posts/redis-rdb-fork/</guid>
-      <description>背景 问：Redis 主从节点同步知道吗？ 答：知道一点，不太熟 问：从节点申请同步的时候主节点做了什么？ 答</description>
+      <description>背景 问：Redis 主从节点同步知道吗？ 答：知道一点，不太熟 问：从节点申请同步的时候主节点做了什么？ 答：fork 一个子线程做同步 问：是子进程，</description>
     </item>
     
     <item>
@@ -36,7 +80,7 @@
       <pubDate>Mon, 29 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/posts/was-error/</guid>
-      <description>背景情况 也是工作里遇到的一个问题，一个 host 在 IIS 上的古老项目（最早可以追溯到 16 年前），时不时会报下面这个</description>
+      <description>背景情况 也是工作里遇到的一个问题，一个 host 在 IIS 上的古老项目（最早可以追溯到 16 年前），时不时会报下面这个错误： 应用程序池 “.NET” 提供服务的进</description>
     </item>
     
     <item>
@@ -45,7 +89,7 @@
       <pubDate>Fri, 31 May 2019 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/posts/golang-submission-error/</guid>
-      <description>Review 过了一段时间自己看都觉得这代码写得好蠢，于是改了一版，如下： package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(permute([]int{1,0,3})) } func permute(nums []int) [][]int { if len(nums) == 1 {</description>
+      <description>Review 过了一段时间自己看都觉得这代码写得好蠢，于是改了一版，如下： package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(permute([]int{1,0,3})) } func permute(nums []int) [][]int { if len(nums) == 1 { return [][]int{ nums, } } array := nums var result [][]int generate(len(nums), &amp;amp;array, &amp;amp;result) return result } func generate(k int,</description>
     </item>
     
     <item>
@@ -54,7 +98,7 @@
       <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/posts/cli-app-in-csharp3/</guid>
-      <description>这是 CLI App in C# 系列的第三篇，本篇主要介绍gen的打包和发布。 .Net Core控制台应用的打包方法主要是两类：</description>
+      <description>这是 CLI App in C# 系列的第三篇，本篇主要介绍gen的打包和发布。 .Net Core控制台应用的打包方法主要是两类： 可执行文件，对应直接运行，Windows</description>
     </item>
     
     <item>
@@ -63,7 +107,7 @@
       <pubDate>Sun, 12 May 2019 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/posts/cli-app-in-csharp2/</guid>
-      <description>这是 CLI App in C# 系列的第二篇，本篇主要介绍gen的开发过程。教程里的所有代码参见keaising/gen</description>
+      <description>这是 CLI App in C# 系列的第二篇，本篇主要介绍gen的开发过程。教程里的所有代码参见keaising/gen 新建项目 在合适的地方使用dotnet new console</description>
     </item>
     
     <item>
@@ -72,7 +116,7 @@
       <pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/posts/cli-app-in-csharp1/</guid>
-      <description>这是 CLI App in C# 系列的 第一篇 (Wa Da Keng) 写这个系列的目的是介绍用C#写一个命令行工具的所有内容，从规划、选型、</description>
+      <description>这是 CLI App in C# 系列的 第一篇 (Wa Da Keng) 写这个系列的目的是介绍用C#写一个命令行工具的所有内容，从规划、选型、编码、到打包和自动化编译的系列工作都会介</description>
     </item>
     
     <item>
@@ -81,7 +125,7 @@
       <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/posts/stackexchange-redis-timeout/</guid>
-      <description>压力测试过程中遇到的一个问题，框架是asp.net core 2.2，redis组件是StackExchang</description>
+      <description>压力测试过程中遇到的一个问题，框架是asp.net core 2.2，redis组件是StackExchange.Redis 2.0.601，在高并发场</description>
     </item>
     
     <item>
@@ -90,7 +134,7 @@
       <pubDate>Thu, 21 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/posts/algs4-eclipse/</guid>
-      <description>这篇是接上一篇继续讲的，上一篇讲了如何在DrJava和命令行中使用javac-algs4和java-</description>
+      <description>这篇是接上一篇继续讲的，上一篇讲了如何在DrJava和命令行中使用javac-algs4和java-algs4，这一篇将讲述如何在Eclip</description>
     </item>
     
     <item>
@@ -99,7 +143,7 @@
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/posts/algs4-windows/</guid>
-      <description>这篇日志翻译自Hello, World in Java on Windows，翻译的原因是知乎的一个回答，回答完这个问题之后，得</description>
+      <description>这篇日志翻译自Hello, World in Java on Windows，翻译的原因是知乎的一个回答，回答完这个问题之后，得到了广泛的。。嗯。。。私信，私信我如何处</description>
     </item>
     
     <item>
@@ -108,7 +152,16 @@
       <pubDate>Sat, 25 Oct 2014 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/posts/ant-algs-based-on-csharp/</guid>
-      <description>这学期有门课，最优化与最优控制，任课老师任华玲，虽然在课堂上我什么都没有学到，但是最后任老师让每个人</description>
+      <description>这学期有门课，最优化与最优控制，任课老师任华玲，虽然在课堂上我什么都没有学到，但是最后任老师让每个人自己选一篇最优化方向的论文，把其中的算法</description>
+    </item>
+    
+    <item>
+      <title>CS</title>
+      <link>http://shuxiao.wang/cs/</link>
+      <pubDate>Sat, 01 Jan 0000 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/cs/</guid>
+      <description>{% assign posts = site.cs | where_exp: &#34;post&#34;, &#34;post.name != &#39;index&#39;&#34; %} {% for post in posts %} {{ post.date | date:&#34;%Y-%m-%d&#34; }} {{ post.title }}  {% endfor %}  </description>
     </item>
     
   </channel>

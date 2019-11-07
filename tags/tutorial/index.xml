@@ -6,7 +6,6 @@
     <description>Recent content in tutorial on 流水沉微</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <copyright>&amp;copy;keaising 2014 - 2019</copyright>
     <lastBuildDate>Thu, 21 Apr 2016 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://shuxiao.wang/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
@@ -18,7 +17,7 @@
       <pubDate>Thu, 21 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/posts/algs4-eclipse/</guid>
-      <description>这篇是接上一篇继续讲的，上一篇讲了如何在DrJava和命令行中使用javac-algs4和java-</description>
+      <description>这篇是接上一篇继续讲的，上一篇讲了如何在DrJava和命令行中使用javac-algs4和java-algs4，这一篇将讲述如何在Eclip</description>
     </item>
     
     <item>
@@ -27,7 +26,7 @@
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/posts/algs4-windows/</guid>
-      <description>这篇日志翻译自Hello, World in Java on Windows，翻译的原因是知乎的一个回答，回答完这个问题之后，得</description>
+      <description>这篇日志翻译自Hello, World in Java on Windows，翻译的原因是知乎的一个回答，回答完这个问题之后，得到了广泛的。。嗯。。。私信，私信我如何处</description>
     </item>
     
   </channel>
