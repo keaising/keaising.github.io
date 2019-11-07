@@ -24,7 +24,7 @@ Eclipse IDE for Java Developers](http://www.eclipse.org/downloads/packages/eclip
 
 代码如下：
 
-```java
+```C#
 import edu.princeton.cs.algs4.StdDraw;
 
 public class TestAlgs4 {

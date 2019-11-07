@@ -1,31 +1,12 @@
-# config.toml
-
 baseURL = "http://shuxiao.wang"
 title = "流水沉微"
-theme = "hugo-primer"
+theme = "kitto"
+
 languageCode = "cn"
-# If you are using Chinese, Japanese, or Korean, I highly recommend you to set this true.
 hasCJKLanguage = true
-summaryLength = 50
-# Code pen
 pygmentsCodeFences = true
+disableFastRender = true
 pygmentsUseClasses = true
-googleAnalytics = ""
 
-# Enter a copyright notice to display in the site footer.
-# To display a copyright symbol, type `&copy;`.
-copyright = "&copy;keaising 2014 - 2019"
-
-[frontmatter]
-# update sitemap.xml's lastmod datetime by file change time, instead of git.
-lastmod = ["lastmod", ":fileModTime", ":default"]
-
-[params]
-description = "Hacking to the world"
-twitter = "keaising"
 # You can use favicon by addin them manually.
 useIcon = true
-# useTwitterCard = true
-
-#shareTo = ["Twitter", "Hatena", "Facebook", "Pocket"]
-showFooterCredits = true

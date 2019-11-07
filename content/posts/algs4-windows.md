@@ -43,7 +43,7 @@ aliases:
 
 + 在DrJava的主窗体中，请向下面一样准确无误得输入[HelloWorld.java](http://introcs.cs.princeton.edu/java/11hello/HelloWorld.java.html)中的代码，哪怕你只是漏掉了一个分号，这个程序也不会运行,在你输入的时候，DrJava会为你准备缩进
 
-```java
+``` csharp
 public class HelloWorld {
     public static void main(String[] args) { 
         System.out.println("Hello, World");

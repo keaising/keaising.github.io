@@ -1,9 +1,9 @@
 ---
-title: "Resume"
+title: CV
 date: 2019-08-03
 type: "top"
 menu: "main"
-weight: 3
+weight: 4
 ---
 
 > 这里是对纸质简历的补充
