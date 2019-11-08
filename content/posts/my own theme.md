@@ -14,14 +14,14 @@ tags:
 
 此时遇到了[Hugo](https://gohugo.io/)，对Windows用户非常友好，生成速度超快，主题丰富，同时模板系统和分类系统都极其灵活，支持非常多的想法，还是用Go写的，实在不行我自己改生成器本身也可以
 
-一开始我使用的是[qqhann](https://qqhann.dev/)的主题，[我还帮他加上](https://github.com/qqhann/hugo-primer/pull/29)了对[ruby语法](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ruby)的支持。但是这个主题的中英文混排并不能让我满意，于是我找到了[漢字標準格式](https://hanzi.pro/)，也正好在同时期遇到了两个主题：[I/O OVER](https://ioover.net/)和[Typeof.net](https://typeof.net/)，很遗憾，这两个主题都是闭源的，前者基于jekyll，后者基于Hexo。
+一开始我使用的是[qqhann](https://qqhann.dev/)的主题，[我还帮他加上](https://github.com/qqhann/hugo-primer/pull/29)了对[ruby语法](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ruby)的支持。但是这个主题的中英文混排并不能让我满意，于是我找到了[漢字標準格式](https://hanzi.pro/)，也正好在同时期遇到了两个主题：[I/O OVER](https://ioover.net/)和[Typeof.net](https://typeof.net/)，很遗憾，这两个主题都是闭源的，前者基于jekyll，后者基于Hexo。正好此时我开始读[EOPL](https://book.douban.com/subject/3136252/)，发现这本书貌似因为没有中文翻译而读者甚少，但是读过的人都评价甚高，堪比SICP，所以我打算一边读一边做翻译，如果翻译一本书的话，有一个自己能自由控制格式的站点就很有必要了
 
 我萌生了写一个样式和结构都满足自己需求的主题的想法，就是现在这样
 
 + 主题：基于[Hugo](https://gohugo.io/)
 + 基本框架：来自[qqhann](https://qqhann.dev/)
 + 红色基调：来自[rusty shutter](https://lhzhang.com/)
-+ 设计风格：尽量贴近[Typeof.net](https://typeof.net/)，但是我放弃了他最显眼的衬线字体
++ 设计风格：尽量贴近[Typeof.net](https://typeof.net/)，但是我放弃了他最显眼的衬线字体，衬线字体比较老派，控制不好就会显得老气，我还是老老实实用非衬线讨好习惯了小屏幕的用户吧
 + 代码样式、导航栏样式：来自[I/O OVER](https://ioover.net/)
 + 排版：[漢字標準格式](https://hanzi.pro/)
 
