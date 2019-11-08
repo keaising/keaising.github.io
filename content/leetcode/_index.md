@@ -1,6 +1,6 @@
 ---
 title: LeetCode
 name: index
-desc: 面白い Problems
+desc: 面白いアルゴリズム、じゃない
 orderby: weight
 ---
