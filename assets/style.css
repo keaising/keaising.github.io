@@ -16,8 +16,8 @@
     background-image: url(../favicon.ico);
     background-size: cover;
     display: inline-block;
-    width: 1.5em;
-    height: 1.5em;
+    width: 1.2em;
+    height: 1.2em;
     color: transparent;
 }
 .site-title, .nav-item {
@@ -54,15 +54,26 @@
     background-color: #eaecef;
 }
 
+.collection-set {
+    margin: auto;
+}
+.grid-cell {
+    -webkit-box-flex: 1;
+    flex: 1;
+}
 .post-item {
     align-content: center;
     display: flex;
-    margin-left: 2.3em;
+    list-style: none;
     margin-top: 1em;
 }
-
+.post-item-time {
+    flex: 20%;
+    text-align: right;
+}
 .post-item-title {
-    margin-left: 3em;
+    flex: none;
+    flex: 41.8% !important;
 }
 
 article blockquote:lang(zh-Hans), blockquote:lang(zh-Hans) {
@@ -91,18 +102,6 @@ h2 {
     display: flex;
     padding: .4em;
 }
-.collect-title {
-    margin-top: 2em;
-    margin-bottom: -.5em;
-    font-size: 1.2em;
-}
-.collect-head {
-    margin-top: 2em;
-}
-.collect-title::before {
-    content: "⭠ ";
-    color: #ccc;
-}
 .collect-desc {
     margin-left: 2.2em;
     margin-top: .5em;
@@ -110,10 +109,22 @@ h2 {
     color: #999999
     /* text-align: center; */
 }
-.collect-title a {
-    margin-left: .6em;
-}
 
+.tag-title {
+    flex: 1;
+    display: flex;
+    margin-top: 3em;    
+}
+.tag-title-left {
+    flex: 20%;
+    text-align: right;
+    font-size: 1.4em;
+
+}
+.tag-title-right {
+    flex: 41.8%;
+    text-align: left;
+}
 
 img {
     width: 100%;
@@ -293,13 +304,44 @@ article .divider a {
     .post-item-title {
         margin-left: 1.3em;
     }    
+    .post-item-time {
+        flex: 25%;
+        text-align: right;
+    }
+    .post-item-title {
+        flex: none;
+        flex: 51.8% !important;
+    }
+    .tag-title {
+        margin-top: 3em;    
+    }
+    .tag-title-left {
+        flex: 99%;
+        text-align: center;
+        font-size: 1.4em;
+    }
+    .tag-title-right {
+        flex: 1%;
+        text-align: left;
+    }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
     .content {
         padding: 2em .2em;
         margin-top: .2em;
         font-size: .9rem;
+    }
+    .post-item-time {
+        flex: 1;
+        text-align: right;
+    }
+    .post-item-title {
+        flex: none;
+        flex: 61.8% !important;
+    }
+    .tag-title-left {
+        text-align: left;
     }
 }
 
