@@ -23,16 +23,11 @@ aliases:
 我们提供的安装器将会自动下载、安装和配置你将用到的所有开发环境，包括Java SE 7、DrJava、教材库和命令行工具
 
 + 在电脑上登陆以后你会用来写代码的那个Windows账户，这个账户必须具有管理员权限（Administrator）且电脑必须连接到网络。『译者注：以我的经验，你最好还有一个全局翻墙工具，VPN或者Shadowsocks，不然很有可能下载失败』
-
 + 下载[algs4.exe](http://algs4.cs.princeton.edu/windows/algs4.exe)并双击进行安装，如果在安装开始前你收到一个用户账户控制的警告，点击「是」或者「允许」，如果在安装结束后你收到一个程序兼容性警告，点击「该程序已正确安装」
-
 + 如果安装成功，你将看到如下两个信息：
-    
     * 一个内容这个[运行日志](http://algs4.cs.princeton.edu/windows/log.txt)的命令行窗口
     * 一个内容为蓝色靶心和教科书的标准绘图窗口
-    
     需要注意的是：如果你的网络连接较慢的话，安装程序需要持续几分钟甚至更长时间
-    
 + 删掉「algs4.exe」
 
 ## 1. 在DrJava中创建程序
@@ -40,9 +35,7 @@ aliases:
 现在你已经为你的第一个Java程序做好了准备，你将在一个叫DrJava的程序中开发你的Java程序。DrJava包含了语法高亮、匹配括号、自动缩进和显示行号等特性。
 
 + 在上一节中的安装包已经在桌面上创建了DrJava的快捷方式『译者注：如果不慎删掉，还可以在如下目录中找到该程序：C:\Users\Username\algs4』。双击以启动DrJava，如果你收到一个Windows安装警告，点击「允许运行」或者「不禁止」
-
 + 在DrJava的主窗体中，请向下面一样准确无误得输入[HelloWorld.java](http://introcs.cs.princeton.edu/java/11hello/HelloWorld.java.html)中的代码，哪怕你只是漏掉了一个分号，这个程序也不会运行,在你输入的时候，DrJava会为你准备缩进
-
 ``` csharp
 public class HelloWorld {
     public static void main(String[] args) { 
@@ -50,7 +43,6 @@ public class HelloWorld {
     }
 }
 ```
-
 +  最后，点击「保存」按钮来保存该文件，使用DrJava创建文件夹C:\Users\username\algs4\hello并将文件命名为「HelloWorld.java」，这个文件名是大小写敏感的而且必须匹配Java程序中的类名，其中username是你的Windows用户名
 
 ## 2. 在DrJava中编译程序
