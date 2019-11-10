@@ -14,6 +14,6 @@ weight: 0
 + 気になります：[Eureka!](https://shuxiao.wang/eureka)
 + 看我珍视之物：[Instagram](https://www.instagram.com/asukayui/)
 + 守护远古遗迹：[Steam](https://steamcommunity.com/id/asukayui/)
-+ 保持一些联系：[a2VhaXNpbmdAZ21haWwuY29t](https://en.wikipedia.org/wiki/Base64)
++ 保持一些联系：[MailTo](mailto:keaising@gmail.com)
 
 **つづく** 
