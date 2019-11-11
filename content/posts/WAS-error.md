@@ -3,7 +3,7 @@ title: "A fatal communication error with WAS"
 date: 2019-07-29
 draft: false
 tags: ["IIS"]
-categories: ["bug on face"]
+categories: ["bugs"]
 ---
 
 

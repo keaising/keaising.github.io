@@ -2,7 +2,7 @@
 title: "处理dotnet core Redis超时异常"
 date: 2019-04-29
 tags: ["redis", "dotnet core"]
-categories: ["bug on face"]
+categories: ["bugs"]
 ---
 
 压力测试过程中遇到的一个问题，框架是asp.net core 2.2，redis组件是[StackExchange.Redis 2.0.601](https://stackexchange.github.io/StackExchange.Redis/)，在高并发场景下会报错，报错信息：
