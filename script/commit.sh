@@ -1,19 +1,10 @@
 #!/bin/bash
 
-# bach to root
-cd `dirname "$0"`
-cd ..
-
 echo -e "\033[0;32mCommit updates to GitHub...\033[0m"
 
-# src/gen 
-
-echo -e "\033[0;32mCommit keaising/gen...\033[0m"
-cd src/gen
-git checkout master
 git add -A
 
-msg="commit gen at `date +%FT%H:%M:%S`"
+msg="commit source at `date +%FT%H:%M:%S`"
 if [ $# -eq 1 ]
   then msg="$1"
 fi
@@ -23,26 +14,13 @@ git pull origin master -r
 git push origin master
 
 # Come Back up to the Project Root
-echo -e "\033[0;32mCommit keaising/hugo-primer...\033[0m"
-cd ../../themes/hugo-primer
+echo -e "\033[0;32mCommit keaising/kitto...\033[0m"
+cd ../../themes/kitto
 
 git add -A
 
-msg="commit blog at `date +%FT%H:%M:%S`"
+msg="commit kitto at `date +%FT%H:%M:%S`"
 git commit -m "$msg"
-
-git pull origin master -r
-git push origin master
-
-# Come Back up to the Project Root
-echo -e "\033[0;32mCommit keaising/blog...\033[0m"
-cd ../..
-
-git add -A
-
-msg="commit blog at `date +%FT%H:%M:%S`"
-git commit -m "$msg"
-
 git pull origin master -r
 git push origin master
 
