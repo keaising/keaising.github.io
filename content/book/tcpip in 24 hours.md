@@ -72,8 +72,9 @@ Segment
 : The data package passed from TCP at the Transport layer to the Internet layer.
 
 Datagram
-: 1. The data package passed from the Internet layer to the Network Access layer, 
-2. or a data package passed from UDP at the Transport layer to the Internet layer.
+: 
+   1. The data package passed from the Internet layer to the Network Access layer
+   2. or a data package passed from UDP at the Transport layer to the Internet layer.
 
 Frame
 : The data package created at the Network Access layer.
@@ -122,8 +123,12 @@ IP 层具有以下能力：
 Internet Protocol (IP) 提供了一个层次化、与硬件无关的寻址系统，以便在复杂且需要路由的网络中传输数据，每个网卡都有一个唯一的 IP 地址
 
 IP地址的组成部分
-: network ID：划分网络
-: host ID：在一个划分好的网络中找到特定主机
+
+network ID
+: 划分网络
+
+host ID
+: 在一个划分好的网络中找到特定主机
 : 长度：4 x 8 bit，每 8bit 为一个 octet，用 0-255 之间的一个数字表示
 
 IP 地址被划分为 5 类：
@@ -139,8 +144,12 @@ IP 地址被划分为 5 类：
 那如果有两三个网络需要合并成一个呢？CIDR
 
 VLSM 和 CIDR 都是在子网掩码的基础上进行操作
-: VLSM 将子网掩码中的 1 右移，在网段中继续划分网段
-: CIDR 将子网掩码中的 0 左移，将多个相邻网段合并成一个
+
+VLSM
+:  将子网掩码中的 1 右移，在网段中继续划分网段
+
+CIDR
+: 将子网掩码中的 0 左移，将多个相邻网段合并成一个
 
 
 ### 4.3 ADDRESS RESOLUTION PROTOCOL
