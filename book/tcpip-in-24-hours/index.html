@@ -147,8 +147,12 @@
 <dt>Segment</dt>
 <dd>The data package passed from TCP at the Transport layer to the Internet layer.</dd>
 <dt>Datagram</dt>
-<dd>1. The data package passed from the Internet layer to the Network Access layer,</dd>
-<dd>or a data package passed from UDP at the Transport layer to the Internet layer.</dd>
+<dd>
+
+<ol>
+<li>The data package passed from the Internet layer to the Network Access layer</li>
+<li>or a data package passed from UDP at the Transport layer to the Internet layer.</li>
+</ol></dd>
 <dt>Frame</dt>
 <dd>The data package created at the Network Access layer.</dd>
 </dl>
@@ -204,10 +208,13 @@
 
 <p>Internet Protocol (IP) 提供了一个层次化、与硬件无关的寻址系统，以便在复杂且需要路由的网络中传输数据，每个网卡都有一个唯一的 IP 地址</p>
 
+<p>IP地址的组成部分</p>
+
 <dl>
-<dt>IP地址的组成部分</dt>
-<dd>network ID：划分网络</dd>
-<dd>host ID：在一个划分好的网络中找到特定主机</dd>
+<dt>network ID</dt>
+<dd>划分网络</dd>
+<dt>host ID</dt>
+<dd>在一个划分好的网络中找到特定主机</dd>
 <dd>长度：4 x 8 bit，每 8bit 为一个 octet，用 0-255 之间的一个数字表示</dd>
 </dl>
 
@@ -225,10 +232,13 @@
 
 <p>那如果有两三个网络需要合并成一个呢？CIDR</p>
 
+<p>VLSM 和 CIDR 都是在子网掩码的基础上进行操作</p>
+
 <dl>
-<dt>VLSM 和 CIDR 都是在子网掩码的基础上进行操作</dt>
-<dd>VLSM 将子网掩码中的 1 右移，在网段中继续划分网段</dd>
-<dd>CIDR 将子网掩码中的 0 左移，将多个相邻网段合并成一个</dd>
+<dt>VLSM</dt>
+<dd>将子网掩码中的 1 右移，在网段中继续划分网段</dd>
+<dt>CIDR</dt>
+<dd>将子网掩码中的 0 左移，将多个相邻网段合并成一个</dd>
 </dl>
 
 <h3 id="4-3-address-resolution-protocol">4.3 ADDRESS RESOLUTION PROTOCOL</h3>
