@@ -79,24 +79,20 @@
 
 <p>Implement a trie with insert, search, and startsWith methods.</p>
 
-<blockquote>
-<p>Example</p>
+<dl>
+<dt>Example</dt>
+<dd><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">Trie</span> <span class="n">trie</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Trie</span><span class="p">();</span>
 
-<p>Trie trie = new Trie();</p>
-
-<p>trie.insert(&ldquo;apple&rdquo;);
-trie.search(&ldquo;apple&rdquo;);   // returns true
-trie.search(&ldquo;app&rdquo;);     // returns false
-trie.startsWith(&ldquo;app&rdquo;); // returns true
-trie.insert(&ldquo;app&rdquo;);<br />
-trie.search(&ldquo;app&rdquo;);     // returns true</p>
-
-<p><strong>Note</strong></p>
-
-<p>You may assume that all inputs are consist of lowercase letters a-z.</p>
-
-<p>All inputs are guaranteed to be non-empty strings.</p>
-</blockquote>
+<span class="n">trie</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s2">&#34;apple&#34;</span><span class="p">);</span>
+<span class="n">trie</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&#34;apple&#34;</span><span class="p">);</span>   <span class="o">//</span> <span class="n">returns</span> <span class="n">true</span>
+<span class="n">trie</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&#34;app&#34;</span><span class="p">);</span>     <span class="o">//</span> <span class="n">returns</span> <span class="n">false</span>
+<span class="n">trie</span><span class="o">.</span><span class="n">startsWith</span><span class="p">(</span><span class="s2">&#34;app&#34;</span><span class="p">);</span> <span class="o">//</span> <span class="n">returns</span> <span class="n">true</span>
+<span class="n">trie</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s2">&#34;app&#34;</span><span class="p">);</span>
+<span class="n">trie</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&#34;app&#34;</span><span class="p">);</span>     <span class="o">//</span> <span class="n">returns</span> <span class="n">true</span></code></pre></div></dd>
+<dt>Note</dt>
+<dd><p>You may assume that all inputs are consist of lowercase letters a-z.
+All inputs are guaranteed to be non-empty strings.</p></dd>
+</dl>
 
 <h2 id="solve">Solve</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
@@ -111,7 +107,7 @@ trie.search(&ldquo;app&rdquo;);     // returns true</p>
 </span><span class="s2">        Initialize your data structure here.
 </span><span class="s2">        &#34;&#34;&#34;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="n">Node</span><span class="p">()</span>
-        
+  
     <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
         <span class="s2">&#34;&#34;&#34;
 </span><span class="s2">        Inserts a word into the trie.
@@ -121,7 +117,7 @@ trie.search(&ldquo;app&rdquo;);     // returns true</p>
             <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
                 <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">Node</span><span class="p">()</span>
             <span class="n">node</span><span class="o">=</span><span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-        <span class="n">node</span><span class="o">.</span><span class="n">is_word</span><span class="o">=</span><span class="bp">True</span>      
+        <span class="n">node</span><span class="o">.</span><span class="n">is_word</span><span class="o">=</span><span class="bp">True</span>
 
     <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="s2">&#34;&#34;&#34;
@@ -133,7 +129,7 @@ trie.search(&ldquo;app&rdquo;);     // returns true</p>
                 <span class="k">return</span> <span class="bp">False</span>
             <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">node</span><span class="o">.</span><span class="n">is_word</span>
-        
+  
     <span class="k">def</span> <span class="nf">startsWith</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="s2">&#34;&#34;&#34;
 </span><span class="s2">        Returns if there is any word in the trie that starts with the given prefix.
@@ -144,7 +140,7 @@ trie.search(&ldquo;app&rdquo;);     // returns true</p>
                 <span class="k">return</span> <span class="bp">False</span>
             <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
         <span class="k">return</span> <span class="bp">True</span>
-			        
+  
 <span class="c1"># Your Trie object will be instantiated and called as such:</span>
 <span class="c1"># obj = Trie()</span>
 <span class="c1"># obj.insert(word)</span>
@@ -170,7 +166,7 @@ trie.search(&ldquo;app&rdquo;);     // returns true</p>
 </span><span class="s2">        Initialize your data structure here.
 </span><span class="s2">        &#34;&#34;&#34;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="p">{}</span>
-        
+  
     <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
         <span class="s2">&#34;&#34;&#34;
 </span><span class="s2">        Inserts a word into the trie.

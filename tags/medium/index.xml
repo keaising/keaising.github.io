@@ -49,7 +49,7 @@ Do not modify the linked list.
       <pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/leetcode/208.-implement-trie/</guid>
-      <description>implement-trie-prefix-tree Explain Implement a trie with insert, search, and startsWith methods. Example Trie trie = new Trie(); trie.insert(&amp;ldquo;apple&amp;rdquo;); trie.search(&amp;ldquo;apple&amp;rdquo;); // returns true trie.search(&amp;ldquo;app&amp;rdquo;); // returns false trie.startsWith(&amp;ldquo;app&amp;rdquo;); // returns true trie.insert(&amp;ldquo;app&amp;rdquo;); trie.search(&amp;ldquo;app&amp;rdquo;); // returns true Note You may assume that all inputs are consist of lowercase letters a-z. All inputs are guaranteed to be non-empty strings. Solve class Node: def __init__(self): self.children = {} self.is_word = False class Trie: def</description>
+      <description>implement-trie-prefix-tree Explain Implement a trie with insert, search, and startsWith methods. Example Trie trie = new Trie(); trie.insert(&amp;#34;apple&amp;#34;); trie.search(&amp;#34;apple&amp;#34;); // returns true trie.search(&amp;#34;app&amp;#34;); // returns false trie.startsWith(&amp;#34;app&amp;#34;); // returns true trie.insert(&amp;#34;app&amp;#34;); trie.search(&amp;#34;app&amp;#34;); // returns true Note You may assume that all inputs are consist of lowercase letters a-z. All inputs are guaranteed to be non-empty strings. Solve class Node: def __init__(self): self.children = {} self.is_word = False class Trie: def</description>
     </item>
     
     <item>
