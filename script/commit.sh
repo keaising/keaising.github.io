@@ -15,7 +15,7 @@ git push origin source
 
 # Come Back up to the Project Root
 echo -e "\033[0;32mCommit keaising/kitto...\033[0m"
-cd ../../themes/kitto
+cd ../themes/kitto
 
 git add -A
 
