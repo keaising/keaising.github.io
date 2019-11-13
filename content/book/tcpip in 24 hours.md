@@ -50,13 +50,13 @@ OSI(Open Systems Interconnection) 有 7 层：
 
 OSI 和 TCP/IP 的关系如下
 
-![osi vs tcpip](/media/images/2019/10/26/2.2 osi vs tcpip.png)
+![osi vs tcpip](/images/2019/10/26/2.2 osi vs tcpip.png)
 
 ### 2.3 Data packages
 
 发送数据时，数据包在协议栈上从上往下传递的过程中，每一层都会给数据包增加一个头部(header)，用来放置本层所需的信息。接收消息时，一个反向过程会将数据包从层层包裹中取出
 
-![data package](/media/images/2019/10/26/2.3 data package.png)
+![data package](/images/2019/10/26/2.3 data package.png)
 
 ### 2.4 QUIZ AND EXERCISES
 

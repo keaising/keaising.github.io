@@ -11,9 +11,7 @@ categories: ["programming"]
 ## 新建项目
 
 1. 在合适的地方使用`dotnet new console -n gen`新建一个名字是gen的控制台项目
-
 2. 通过命令行工具cd到项目目录下
-
 3. 输入`dotnet run`运行该项目，应当能看到`Hello World!`
 
 如下图所示：

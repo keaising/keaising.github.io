@@ -10,7 +10,7 @@ tags:
 
 这是在 telegram 网鱼网咖群里聊天时，Haruhi贴的一个题，题目如下：
 
-![wangyuwangka](/media/images/2019/10/21/wangyuwangka.jpg)
+![wangyuwangka](/images/2019/10/21/wangyuwangka.jpg)
 
 思路很简单
 
