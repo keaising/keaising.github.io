@@ -10,8 +10,8 @@ if [ $# -eq 1 ]
 fi
 
 git commit -m "$msg"
-git pull origin master -r
-git push origin master
+git pull origin source -r
+git push origin source
 
 # Come Back up to the Project Root
 echo -e "\033[0;32mCommit keaising/kitto...\033[0m"
