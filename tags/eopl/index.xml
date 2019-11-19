@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Scheme on 流水沉微</title>
-    <link>http://shuxiao.wang/tags/scheme/</link>
-    <description>Recent content in Scheme on 流水沉微</description>
+    <title>EOPL on 流水沉微</title>
+    <link>http://shuxiao.wang/tags/eopl/</link>
+    <description>Recent content in EOPL on 流水沉微</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
     <lastBuildDate>Tue, 19 Nov 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://shuxiao.wang/tags/scheme/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://shuxiao.wang/tags/eopl/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

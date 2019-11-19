@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Sams Teach Yourself TCP/IP in 24 Hours</title>
+      <link>http://shuxiao.wang/book/tcpip-in-24-hours/</link>
+      <pubDate>Sat, 26 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/book/tcpip-in-24-hours/</guid>
+      <description>在我学习 TCP/IP 协议的道路上遇到过很多书，随便拎一本出来都是振聋发聩的作品： TCP/IP详解 卷1：协议 图解TCP/IP（第5版） TCP/IP详解 卷</description>
+    </item>
+    
+    <item>
       <title>2. Add Two Numbers</title>
       <link>http://shuxiao.wang/leetcode/2.-add-two-numbers/</link>
       <pubDate>Thu, 03 Oct 2019 00:00:00 +0000</pubDate>
@@ -103,6 +112,15 @@ Do not modify the linked list.
     </item>
     
     <item>
+      <title>编程语言精要</title>
+      <link>http://shuxiao.wang/book/eopl/</link>
+      <pubDate>Sun, 27 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/book/eopl/</guid>
+      <description>基于种种原因，决定还是静下心来读一读以前想读但是一直没读的书，首先是这本Essentials of Programming Languages, 3rd Edition 从EOPL开始而不是SICP开始，是感</description>
+    </item>
+    
+    <item>
       <title>208. Implement Trie (Prefix Tree)</title>
       <link>http://shuxiao.wang/leetcode/208.-implement-trie/</link>
       <pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate>
@@ -130,30 +148,21 @@ Do not modify the linked list.
     </item>
     
     <item>
+      <title>第一章 归纳的数据集</title>
+      <link>http://shuxiao.wang/book/eopl1/</link>
+      <pubDate>Tue, 19 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/book/eopl1/</guid>
+      <description>本章介绍了一些基本的编程工具，这些工具将在后续编写解释器(interpreters)、检查器(checkers)和类似组成编程语言核心处理器</description>
+    </item>
+    
+    <item>
       <title>自己的主题</title>
       <link>http://shuxiao.wang/posts/my-own-theme/</link>
       <pubDate>Thu, 07 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/posts/my-own-theme/</guid>
       <description>终于自己做了主题 从2014年末开始，我就尝试写一点什么来记录自己，也就开始寻找做自己的博客的方法。最初使用的是jekyll，在知乎上看到有人</description>
-    </item>
-    
-    <item>
-      <title>Essentials of Programming Languages</title>
-      <link>http://shuxiao.wang/book/essentials-of-programming-languages/</link>
-      <pubDate>Sun, 27 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://shuxiao.wang/book/essentials-of-programming-languages/</guid>
-      <description>基于种种原因，决定还是静下心来读一读以前想读但是一直没读的书，首先是这本Essentials of Programming Languages, 3rd Edition 从EOPL开始而不是SICP开始，是感</description>
-    </item>
-    
-    <item>
-      <title>Sams Teach Yourself TCP/IP in 24 Hours</title>
-      <link>http://shuxiao.wang/book/tcpip-in-24-hours/</link>
-      <pubDate>Sat, 26 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://shuxiao.wang/book/tcpip-in-24-hours/</guid>
-      <description>在我学习 TCP/IP 协议的道路上遇到过很多书，随便拎一本出来都是振聋发聩的作品： TCP/IP详解 卷1：协议 图解TCP/IP（第5版） TCP/IP详解 卷</description>
     </item>
     
     <item>
