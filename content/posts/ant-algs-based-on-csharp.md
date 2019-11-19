@@ -16,8 +16,8 @@ aliases:
 代码主要分为三块：Ant.cs，Tsp.cs和DataAndCal.cs，分别为蚂蚁类，tsp类和静态数据储存计算类。
 
 首先是蚂蚁类：
-{{< highlight CSharp "linenos=table, linenostart=1" >}}
 
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -151,10 +151,11 @@ namespace AntColonyOptimization
         }
     }
 }
-{{< / highlight >}}
+```
 
 注释都写得比较清楚，就不再解释了，毕竟就是用蚁群算法实现了一个最简单的Tsp问题求解。下面是Tsp类：
-{{< highlight CSharp "linenos=table, linenostart=1" >}}
+
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -266,10 +267,11 @@ namespace AntColonyOptimization
         }
     }
 }
-{{< / highlight >}}
+```
 
 接下来是静态数据储存计算类：
-{{< highlight CSharp "linenos=table, linenostart=1" >}}
+
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -352,11 +354,11 @@ namespace AntColonyOptimization
         }
     }
 }
-{{< / highlight >}}
+```
 
 最后是用C#基于WinForm开发了个窗口进行展示，AntCoOp.cs：
-{{< highlight CSharp "linenos=table, linenostart=1" >}}
 
+```csharp
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -516,8 +518,7 @@ namespace AntColonyOptimization
         }
     }
 }
-
-{{< / highlight >}}
+```
 
 运行截图就不再给了，也不是什么很好看的图
 
