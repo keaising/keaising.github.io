@@ -17,8 +17,7 @@
       <pubDate>Sat, 19 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/leetcode/9.-palindrome-number/</guid>
-      <description>palindrome-number
-Explain Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
+      <description>Explain Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
  Example 1
 Input: 121
 Output: true
@@ -30,7 +29,7 @@ Therefore it is not a palindrome.
 Example 3
 Input: 10
 Output: false
-Explanation: Reads 01 from right to left.</description>
+Explanation: Reads 01 from right to left. Therefore it is not a palindrome.</description>
     </item>
     
   </channel>

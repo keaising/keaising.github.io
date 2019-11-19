@@ -17,7 +17,7 @@
       <pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/leetcode/236.-lowest-common-ancestor-of-a-binary-tree/</guid>
-      <description>lowest-common-ancestor-of-a-binary-tree Explain Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree. According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itse</description>
+      <description>Explain Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree. According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itsel</description>
     </item>
     
   </channel>

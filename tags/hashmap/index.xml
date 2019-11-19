@@ -17,7 +17,7 @@
       <pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/leetcode/146.-lru-cache/</guid>
-      <description>lru-cache LRU 来自于 Cache replacement policies，是缓存淘汰策略的一种，很实用也有比较简洁的实现方法，用来面试正好，足够难、又足够简单 Explain Design and implement a data structure for Least Recently Used (LRU)</description>
+      <description>LRU 来自于 Cache replacement policies，是缓存淘汰策略的一种，很实用也有比较简洁的实现方法，用来面试正好，足够难、又足够简单 Explain Design and implement a data structure for Least Recently Used (LRU) cache.</description>
     </item>
     
   </channel>
