@@ -12,6 +12,9 @@
     <script src="/assets/anchor.min.js"></script>
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="/assets/text-autospace.js"></script>
+
+
+
 </head>
 
 <body>
@@ -73,9 +76,19 @@
 <article>
     
     <div class="true-content">
-        <p>本章介绍了一些基本的编程工具，这些工具将在后续编写解释器(interpreters)、检查器(checkers)和类似组成编程语言核心处理器(processor)之类的程序的时候需要用到</p>
+        
+
+<p>本章介绍了一些基本的编程工具，这些工具在后续编写解释器(interpreters)、检查器(checkers)和类似组成编程语言核心处理器(processor)之类的程序的时候需要用到</p>
 
 <p>由于一门语言中的语法(syntax)通常都是嵌套(nested)或者树状结构(treelike structure)，故递归在我们将使用的技术中将占据核心位置。第1.1节和第1.2节介绍了用归纳法来描述(specify)数据结构的方法，并揭示了这种描述方法将如何指导我们编写递归的程序。第1.3节阐述了如何将该方法扩展到更加复杂的问题中。最后，本章将以大量的练习作为结尾，这些练习才是本章的核心内容，他们将为你提供足够的经验，去掌握递归编程的思想(the technique of recursive programming)，而这思想，正是本书其他部分的基石。</p>
+
+<h2 id="1-1-递归得描述-specified-数据">1.1 递归得描述(specified)数据</h2>
+
+<p>为一个过程(procedure)编写代码时，我们必须准确得知道该过程的参数的类型、以及该过程的返回值的类型。通常这些值都是复杂类型。在本节，我们将介绍描述这些值的一般方法。</p>
+
+<h3 id="1-1-1-归纳描述法-inductive-specification">1.1.1 归纳描述法(Inductive Specification)</h3>
+
+<p><em>归纳描述法</em> 是一个描述数据的有力方法。为了展示这一点，我们将用它来描述自然数<span class="Math">\(N={0,1,2,...}\)</span>的一个真子集<span class="Math">\(S\)</span></p>
 
     </div>
 
@@ -144,19 +157,20 @@
     </div>
 
     
-    <script>anchors.add();</script>
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script>
+        anchors.add();
+    </script>
     
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
     </script>
     <script>
+        document.getElementsByClassName("MathJax").style.fontSize = "100%";
         anchors.options = {
             placement: 'left',
         };
         anchors.add();
         anchors.add(".tag-title-left");
-      </script>
+    </script>
 </body>
 
 </html>
