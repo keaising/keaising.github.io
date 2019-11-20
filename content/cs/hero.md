@@ -10,7 +10,8 @@ no: 9
 |SNIPER|iPhone SE|iOS|
 |TECHIES|Kindle Paperwhite 2nd|Android|
 |SLADAR|Kindle Oasis 2nd|Android|
+|MEEPO|Nintendo Switch|Unknown|
 |TINKER|iPad mini 5th|iOS|
-|SPECTURE|ThinkPad X1 Tablet 3rd|Kubuntu|
+|SPECTRE|ThinkPad X1 Tablet 3rd|Kubuntu|
 |VIPER|Home PC|Windows|
 |MORPHLING|Home PC|Fedora|
