@@ -96,6 +96,32 @@
 
 <p>以上讨论可以得到结论：<span class="Math">\(S\)</span>是这样的自然数的集合：<span class="Math">\(3\)</span>的倍数</p>
 
+<p>我们可以用这个定义来写一个判断自然数<span class="Math">\(n\)</span>是否属于集合<span class="Math">\(S\)</span>的过程(procedure)</p>
+<div class="highlight"><pre class="chroma"><code class="language-scheme" data-lang="scheme"><span class="nv">in-S?</span> <span class="nv">:</span> <span class="nv">N</span> <span class="nv">-&gt;</span> <span class="nv">Bool</span>
+<span class="nv">usage:</span> <span class="p">(</span><span class="nf">in-S?</span> <span class="nv">n</span><span class="p">)</span> <span class="nv">=</span> <span class="no">#t</span> <span class="k">if </span><span class="nv">n</span> <span class="nv">is</span> <span class="nv">in</span> <span class="nv">S,</span> <span class="no">#f</span> <span class="nv">otherwise</span>
+
+<span class="p">(</span><span class="k">define </span><span class="nv">in-S?</span>
+    <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">n</span><span class="p">)</span>
+        <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">zero? </span><span class="nv">n</span><span class="p">)</span> <span class="no">#t</span>
+            <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">&gt;= </span><span class="p">(</span><span class="nb">- </span><span class="nv">n</span> <span class="mi">3</span><span class="p">)</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="p">(</span><span class="nf">in-S?</span> <span class="p">(</span><span class="nb">- </span><span class="nv">n</span> <span class="mi">3</span><span class="p">))</span>
+                <span class="no">#f</span><span class="p">))))</span></code></pre></div>
+<p>这里我们根据定义用Scheme写了一个递归过程。其中<code>in-S? : N -&gt; Bool</code>是一个批注(comment)，称为该过程的<em>契约(contract)</em> ，它表示<code>in-S?</code>被设计为这样一个过程：以一个自然数作为入参并产生一个布尔值作为出参。这样的批注对读写代码都是很有帮助的</p>
+
+<p>为了判断<span class="Math">\(n \in S\)</span>是否成立，我们首先判断<span class="Math">\(n=0\)</span>是否成立，如果后者成立，则前者也成立。否则我们需要看<span class="Math">\(n-3 \in S\)</span>是否成立，为了判断<span class="Math">\(n-3 \in S\)</span>是否成立，我们先要检查<span class="Math">\((n-3) \ge 0\)</span>是否成立。如果成立的话，我们就可以使用我们已有的过程逻辑来判断它是否属于集合<span class="Math">\(S\)</span>，如果不成立，那么<span class="Math">\(n\)</span>不可能属于集合<span class="Math">\(S\)</span></p>
+
+<p>下面是另一种集合<span class="Math">\(S\)</span>的定义</p>
+
+<dl>
+<dt><strong>定义1.1.2</strong></dt>
+<dd>定义集合<span class="Math">\(S\)</span>为包含于自然数<span class="Math">\(N\)</span>且满足下列两个性质的最小集合:
+
+<ol>
+<li><span class="Math">\(n \in S\)</span>，且</li>
+<li>如果<span class="Math">\(n \in S\)</span>，那么<span class="Math">\(n&#43;3 \in S\)</span></li>
+</ol></dd>
+</dl>
+
     </div>
 
     <div class="page-info">
