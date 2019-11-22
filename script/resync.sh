@@ -3,7 +3,7 @@
 # bach to root
 git pull origin source
 
-cd theme/kitto
+cd themes/kitto
 git pull origin master
 
 cd ../..
