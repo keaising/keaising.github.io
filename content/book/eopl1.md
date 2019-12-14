@@ -59,6 +59,6 @@ usage: (in-S? n) = #t if n is in S, #f otherwise
 
 另外还有一种定义的写法：
 
-{{< formula "\frac{}{0 \in S}" >}}
+{{< formula "\frac{}{0 \in S}\qquad" >}}
 
-{{< formula "\frac{n \in S}{(n+3) \in S}" >}}
+{{< formula "\frac{n \in S}{(n+3) \in S}\qquad" >}}
