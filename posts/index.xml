@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 流水沉微</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Sun, 24 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://shuxiao.wang/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>如何构建好的软件</title>
+      <link>http://shuxiao.wang/posts/how-to-build-goog-software/</link>
+      <pubDate>Sat, 21 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/posts/how-to-build-goog-software/</guid>
+      <description>序言 软件的特点导致了我们很难用传统的管理方法来构建软件；我们需要用一种不同的、更加有探索性和迭代的方法来提高开发效率 作者 Li Hongyi 发表日期 2019.08.08 分类 创</description>
+    </item>
     
     <item>
       <title>十号线的读书人</title>

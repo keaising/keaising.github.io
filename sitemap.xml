@@ -4,7 +4,7 @@
   
   <url>
     <loc>http://shuxiao.wang/posts/</loc>
-    <lastmod>2019-11-24T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -67,12 +67,27 @@
   </url>
   
   <url>
-    <loc>http://shuxiao.wang/tags/annual/</loc>
-    <lastmod>2019-11-24T00:00:00+00:00</lastmod>
+    <loc>http://shuxiao.wang/tags/software/</loc>
+    <lastmod>2019-12-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://shuxiao.wang/tags/</loc>
+    <lastmod>2019-12-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shuxiao.wang/tags/translation/</loc>
+    <lastmod>2019-12-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shuxiao.wang/posts/how-to-build-goog-software/</loc>
+    <lastmod>2019-12-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shuxiao.wang/tags/annual/</loc>
     <lastmod>2019-11-24T00:00:00+00:00</lastmod>
   </url>
   
@@ -274,11 +289,6 @@
   <url>
     <loc>http://shuxiao.wang/cs/mysql/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shuxiao.wang/tags/translation/</loc>
-    <lastmod>2016-04-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>

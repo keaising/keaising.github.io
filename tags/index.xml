@@ -6,10 +6,28 @@
     <description>Recent content in Tags on 流水沉微</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Sun, 24 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://shuxiao.wang/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Software</title>
+      <link>http://shuxiao.wang/tags/software/</link>
+      <pubDate>Sat, 21 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/tags/software/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>translation</title>
+      <link>http://shuxiao.wang/tags/translation/</link>
+      <pubDate>Sat, 21 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/tags/translation/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Annual</title>
@@ -188,15 +206,6 @@
       <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/tags/dotnet-core/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>translation</title>
-      <link>http://shuxiao.wang/tags/translation/</link>
-      <pubDate>Thu, 21 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://shuxiao.wang/tags/translation/</guid>
       <description></description>
     </item>
     
