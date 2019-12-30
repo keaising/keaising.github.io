@@ -93,58 +93,44 @@
 </ul>
     
     <div class="true-content">
-        
-
-<p>这是我在搜索 <code>trie tree</code> 的时候弹出来到一个题，乍一看觉得挺简单，但是对时间和空间都有要求，我能想到到办法就是以每个数为第一个数开始向后搜索，但是这样肯定不符合要求，于是看了评论区：<a href="https://leetcode.com/problems/increasing-triplet-subsequence/discuss/78995/Python-Easy-O(n)-Solution">Python-Easy-O(n)-Solution</a>，惊为天人</p>
-
+        <p>这是我在搜索 <code>trie tree</code> 的时候弹出来到一个题，乍一看觉得挺简单，但是对时间和空间都有要求，我能想到到办法就是以每个数为第一个数开始向后搜索，但是这样肯定不符合要求，于是看了评论区：<a href="https://leetcode.com/problems/increasing-triplet-subsequence/discuss/78995/Python-Easy-O(n)-Solution">Python-Easy-O(n)-Solution</a>，惊为天人</p>
 <p>思路如下：建立两个非常大的数，然后遍历数组并比较大小，如果遇到更小的就替换，如果能遇到比 <code>first</code> 和 <code>second</code> 都更大的数的话那就数 <code>True</code></p>
-
 <p>对于评论区提到的对数组 <code>[1 5 5 0 0 0 8]</code> 不满足的情况，其实仔细思考一下就知道肯定是满足的，因为当遍历到<code>8</code>的时候，<code>first=0</code> 且 <code>second=5</code>，虽然 <code>[0 5 8]</code> 不是一个满足条件的序列，但是由于 <code>second=5</code>，代表着在这个 <code>5</code> 之前，一定还有一个比 <code>5</code> 更小的数，不管他是多少，反正肯定能成为一个增加的序列</p>
-
 <h2 id="explain">Explain</h2>
-
 <p>Given an unsorted array return whether an increasing subsequence of length 3 exists or not in the array.</p>
-
 <p>Formally the function should:</p>
-
 <p>Return true if there exists i, j, k
 such that arr[i] &lt; arr[j] &lt; arr[k] given 0 ≤ i &lt; j &lt; k ≤ n-1 else return false.</p>
-
 <dl>
 <dt><strong>Note</strong>:</dt>
-<dd><p>Your algorithm should run in O(n) time complexity and O(1) space complexity.</p></dd>
+<dd>
+<p>Your algorithm should run in O(n) time complexity and O(1) space complexity.</p>
+</dd>
 </dl>
-
 <blockquote>
 <p>Example 1</p>
-
 <p>Input: [1,2,3,4,5]</p>
-
 <p>Output: true</p>
-
+</blockquote>
+<blockquote>
 <p>Example 2</p>
-
 <p>Input: [5,4,3,2,1]</p>
-
 <p>Output: false</p>
 </blockquote>
-
 <h2 id="solve">Solve</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">increasingTriplet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="n">first</span> <span class="o">=</span> <span class="n">second</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">increasingTriplet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span><span class="p">)</span> <span class="o">-</span><span class="o">&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">first</span> <span class="o">=</span> <span class="n">second</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">inf</span><span class="s1">&#39;</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="n">first</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span><span class="o">=</span> <span class="n">first</span><span class="p">:</span>
                 <span class="n">first</span> <span class="o">=</span> <span class="n">n</span>
-            <span class="k">elif</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="n">second</span><span class="p">:</span>
+            <span class="k">elif</span> <span class="n">n</span> <span class="o">&lt;</span><span class="o">=</span> <span class="n">second</span><span class="p">:</span>
                 <span class="n">second</span> <span class="o">=</span> <span class="n">n</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">return</span> <span class="bp">True</span>
-        <span class="k">return</span> <span class="bp">False</span>   </code></pre></div>
-<h2 id="performance">Performance</h2>
-
+        <span class="k">return</span> <span class="bp">False</span>   
+</code></pre></div><h2 id="performance">Performance</h2>
 <p>Python 的性能测试没有什么参考价值，以后都分析一下就行</p>
-
 <p>在这个解法里，空间复杂度 O(1)，时间复杂度 O(n)，因为肯定需要遍历一遍数组，但是额外的空间只有 <code>first</code> 和 <code>second</code></p>
 
     </div>

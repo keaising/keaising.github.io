@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>About on 流水沉微</title>
@@ -60,15 +60,15 @@ Input: (2 -&amp;gt; 4 -&amp;gt; 3) + (5 -&amp;gt; 6 -&amp;gt; 4)</description>
  Example 1
 Input: 121
 Output: true
-Example 2
+  Example 2
 Input: -121
 Output: false
 Explanation: From left to right, it reads -121. From right to left, it &amp;gt; becomes 121-.
 Therefore it is not a palindrome.
-Example 3
+  Example 3
 Input: 10
 Output: false
-Explanation: Reads 01 from right to left. Therefore it is not a palindrome.</description>
+Explanation: Reads 01 from right to left.</description>
     </item>
     
     <item>
@@ -306,7 +306,7 @@ Do not modify the linked list.
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/cs/script/</guid>
-      <description>modify latest commit author git commit --amend --author=&amp;#34;keaising &amp;lt;keaising@gmail.com&amp;gt;&amp;#34; batch-modify-git-committer.sh git filter-branch --env-filter &amp;#39; OLD_EMAIL=&amp;#34;old_email&amp;#34; CORRECT_NAME=&amp;#34;keaising&amp;#34; CORRECT_EMAIL=&amp;#34;keaising@gmail.com&amp;#34; if [ &amp;#34;$GIT_COMMITTER_EMAIL&amp;#34; = &amp;#34;$OLD_EMAIL&amp;#34; ] then export GIT_COMMITTER_NAME=&amp;#34;$CORRECT_NAME&amp;#34; export GIT_COMMITTER_EMAIL=&amp;#34;$CORRECT_EMAIL&amp;#34; fi if [ &amp;#34;$GIT_AUTHOR_EMAIL&amp;#34; = &amp;#34;$OLD_EMAIL&amp;#34; ] then export GIT_AUTHOR_NAME=&amp;#34;$CORRECT_NAME&amp;#34; export GIT_AUTHOR_EMAIL=&amp;#34;$CORRECT_EMAIL&amp;#34; fi &amp;#39; --tag-name-filter cat -- --branches --tags add key of keaising@gmail.com echo &amp;#39;ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDEzQ42VEOqjtxbQ4LdArly5dDEz1tBMSaraCGuBfyGQRO5Yk6rivlbx4iIiuM0CsuAWZ/esRZKYl6hwOj3H/PanCrxOTW+mqowUHJIp9+c9FGc7ngneHytB05MaI9S49Iw51xYjRBHWrqvCGxDuggUWYHZNX5j5zy+FJxEUVZ8UQcX0lbKkJWCcMTyjkYHP4VAZygJA65TUW+rLGbA6Slh5dfZXlh7GxdjPG2WJxzJ+vcSPolDoNpoVKslTfLVgW+WFNMxE9AO6zF3K0+9k938PBp7iaDqachfyh6Wb3pz5beuBkAD9nBM0GiJD50d+SAUEpRs5DA79U0+8Jb1vkuH7ylIvXI+rcOwylfnVhUgFuPJS1bPxBrt0bKBqK2EwpFPxeKMylq8/9m+y4GE5/6uMMc0j6SYiN0f0qob1Wb5HgVl11gB9VI75L5NzuRfIiSWP5bJ9yTxjz4TL1lYGASV/WAk4KkmrpkE9HrEqVsJBxCacFZzE3rXAS11lotbEczPIgBNrRf/YN5ZQKDJne9KWBTkhzJ8ej8rlf1hm3EoKGESVByleW0elJDPAN2k+E3Bd10DL395ficJ2TXqlwxtLrp3s1xzj05Coo0tZQpnYfntqs3kPh3Lx9DNRS0JxUP4N8dGF3oSwA8d06VU9e2hG4LzQKZZ+dOief/jLUu9MQ== keaising@gmail.com&amp;#39; &amp;gt;&amp;gt; ~/.</description>
+      <description>modify latest commit author git commit --amend --author=&amp;#34;keaising &amp;lt;keaising@gmail.com&amp;gt;&amp;#34;batch-modify-git-committer.sh git filter-branch --env-filter &amp;#39;OLD_EMAIL=&amp;#34;old_email&amp;#34;CORRECT_NAME=&amp;#34;keaising&amp;#34;CORRECT_EMAIL=&amp;#34;keaising@gmail.com&amp;#34;if [ &amp;#34;$GIT_COMMITTER_EMAIL&amp;#34; = &amp;#34;$OLD_EMAIL&amp;#34; ]thenexport GIT_COMMITTER_NAME=&amp;#34;$CORRECT_NAME&amp;#34;export GIT_COMMITTER_EMAIL=&amp;#34;$CORRECT_EMAIL&amp;#34;fiif [ &amp;#34;$GIT_AUTHOR_EMAIL&amp;#34; = &amp;#34;$OLD_EMAIL&amp;#34; ]thenexport GIT_AUTHOR_NAME=&amp;#34;$CORRECT_NAME&amp;#34;export GIT_AUTHOR_EMAIL=&amp;#34;$CORRECT_EMAIL&amp;#34;fi&amp;#39; --tag-name-filter cat -- --branches --tagsadd key of keaising@gmail.com echo &amp;#39;ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDEzQ42VEOqjtxbQ4LdArly5dDEz1tBMSaraCGuBfyGQRO5Yk6rivlbx4iIiuM0CsuAWZ/esRZKYl6hwOj3H/PanCrxOTW+mqowUHJIp9+c9FGc7ngneHytB05MaI9S49Iw51xYjRBHWrqvCGxDuggUWYHZNX5j5zy+FJxEUVZ8UQcX0lbKkJWCcMTyjkYHP4VAZygJA65TUW+rLGbA6Slh5dfZXlh7GxdjPG2WJxzJ+vcSPolDoNpoVKslTfLVgW+WFNMxE9AO6zF3K0+9k938PBp7iaDqachfyh6Wb3pz5beuBkAD9nBM0GiJD50d+SAUEpRs5DA79U0+8Jb1vkuH7ylIvXI+rcOwylfnVhUgFuPJS1bPxBrt0bKBqK2EwpFPxeKMylq8/9m+y4GE5/6uMMc0j6SYiN0f0qob1Wb5HgVl11gB9VI75L5NzuRfIiSWP5bJ9yTxjz4TL1lYGASV/WAk4KkmrpkE9HrEqVsJBxCacFZzE3rXAS11lotbEczPIgBNrRf/YN5ZQKDJne9KWBTkhzJ8ej8rlf1hm3EoKGESVByleW0elJDPAN2k+E3Bd10DL395ficJ2TXqlwxtLrp3s1xzj05Coo0tZQpnYfntqs3kPh3Lx9DNRS0JxUP4N8dGF3oSwA8d06VU9e2hG4LzQKZZ+dOief/jLUu9MQ== keaising@gmail.com&amp;#39; &amp;gt;&amp;gt; ~/.ssh/authorized_keys</description>
     </item>
     
     <item>

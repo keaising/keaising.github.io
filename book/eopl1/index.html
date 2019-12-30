@@ -66,36 +66,24 @@
 <article>
     
     <div class="true-content">
-        
-
-<p>本章介绍了一些基本的编程工具，这些工具在后续编写解释器(interpreters)、检查器(checkers)和类似组成编程语言核心处理器(processor)之类的程序的时候需要用到</p>
-
+        <p>本章介绍了一些基本的编程工具，这些工具在后续编写解释器(interpreters)、检查器(checkers)和类似组成编程语言核心处理器(processor)之类的程序的时候需要用到</p>
 <p>由于一门语言中的语法(syntax)通常都是嵌套(nested)或者树状结构(treelike structure)，故递归在我们将使用的技术中将占据核心位置。第1.1节和第1.2节介绍了用归纳法来描述(specify)数据结构的方法，并揭示了这种描述方法将如何指导我们编写递归的程序。第1.3节阐述了如何将该方法扩展到更加复杂的问题中。最后，本章将以大量的练习作为结尾，这些练习才是本章的核心内容，他们将为你提供足够的经验，去掌握递归编程的思想(the technique of recursive programming)，而这思想，正是本书其他部分的基石。</p>
-
-<h2 id="1-1-递归得描述-specified-数据">1.1 递归得描述(specified)数据</h2>
-
+<h2 id="11-specified">1.1 递归得描述(specified)数据</h2>
 <p>为一个过程(procedure)编写代码时，我们必须准确得知道该过程的参数的类型、以及该过程的返回值的类型。通常这些值都是复杂类型。在本节，我们将介绍描述这些值的一般方法。</p>
-
-<h3 id="1-1-1-归纳描述法-inductive-specification">1.1.1 归纳描述法(Inductive Specification)</h3>
-
+<h3 id="111-inductive-specification">1.1.1 归纳描述法(Inductive Specification)</h3>
 <p><em>归纳描述法</em> 是一个描述数据的有力方法。为了展示这一点，我们将用它来描述自然数<span class="Math">\(N={0,1,2,...}\)</span>的一个真子集<span class="Math">\(S\)</span></p>
-
 <dl>
 <dt><strong>定义1.1.1</strong></dt>
 <dd>自然数<span class="Math">\(n\)</span>属于集合<span class="Math">\(S\)</span>，当且仅当
-
 <ol>
 <li><span class="Math">\(n=0\)</span>，或者</li>
 <li><span class="Math">\(n-3 \in S\)</span></li>
-</ol></dd>
+</ol>
+</dd>
 </dl>
-
 <p>让我们看看如何使用这个定义来决定哪些自然数属于集合<span class="Math">\(S\)</span>，我们知道<span class="Math">\(0 \in S\)</span>，那么<span class="Math">\(3 \in S\)</span>，因为<span class="Math">\((3-3)=0\)</span>且<span class="Math">\(0 \in S\)</span>。类似可知<span class="Math">\(6 \in S\)</span>，因为<span class="Math">\((6-3)=0\)</span>且<span class="Math">\(3 \in S\)</span>。将该推理过程继续下去，我们可以得到结论：所有的<span class="Math">\(3\)</span>的倍数都属于集合<span class="Math">\(S\)</span>。</p>
-
 <p>那么其他的自然数呢？<span class="Math">\(1 \in S\)</span>是否成立呢？我们知道<span class="Math">\(1 \ne 0\)</span>，因此不满足条件1；此外<span class="Math">\((1-3)=-2\)</span>，这不是一个自然数也就不属于集合<span class="Math">\(S\)</span>，因此不满足条件2。故<span class="Math">\(1\)</span>不满足任何一个条件，<span class="Math">\(1 \not \in S\)</span>，类似的，<span class="Math">\(2 \not \in S\)</span>。那么<span class="Math">\(4\)</span>呢？<span class="Math">\(4 \in S\)</span>只有在<span class="Math">\(1 \in S\)</span>成立的情况下成立，但是<span class="Math">\(1 \not \in S\)</span>，所以<span class="Math">\(4 \not \in S\)</span>。类似地，我们可以得到这样的结论：如果<span class="Math">\(n\)</span>是一个自然数且它不是<span class="Math">\(3\)</span>的倍数，那么<span class="Math">\(n \not \in S\)</span></p>
-
 <p>以上讨论可以得到结论：<span class="Math">\(S\)</span>是这样的自然数的集合：<span class="Math">\(3\)</span>的倍数</p>
-
 <p>我们可以用这个定义来写一个判断自然数<span class="Math">\(n\)</span>是否属于集合<span class="Math">\(S\)</span>的过程(procedure)</p>
 <div class="highlight"><pre class="chroma"><code class="language-scheme" data-lang="scheme"><span class="nv">in-S?</span> <span class="nv">:</span> <span class="nv">N</span> <span class="nv">-&gt;</span> <span class="nv">Bool</span>
 <span class="nv">usage:</span> <span class="p">(</span><span class="nf">in-S?</span> <span class="nv">n</span><span class="p">)</span> <span class="nv">=</span> <span class="no">#t</span> <span class="k">if </span><span class="nv">n</span> <span class="nv">is</span> <span class="nv">in</span> <span class="nv">S,</span> <span class="no">#f</span> <span class="nv">otherwise</span>
@@ -104,36 +92,26 @@
     <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">n</span><span class="p">)</span>
         <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">zero? </span><span class="nv">n</span><span class="p">)</span> <span class="no">#t</span>
             <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">&gt;= </span><span class="p">(</span><span class="nb">- </span><span class="nv">n</span> <span class="mi">3</span><span class="p">)</span> <span class="mi">0</span><span class="p">)</span>
-                <span class="p">(</span><span class="nf">in-S?</span> <span class="p">(</span><span class="nb">- </span><span class="nv">n</span> <span class="mi">3</span><span class="p">))</span>
-                <span class="no">#f</span><span class="p">))))</span></code></pre></div>
-<p>这里我们根据定义用Scheme写了一个递归过程。其中<code>in-S? : N -&gt; Bool</code>是一个批注(comment)，称为该过程的<em>契约(contract)</em> ，它表示<code>in-S?</code>被设计为这样一个过程：以一个自然数作为入参并产生一个布尔值作为出参。这样的批注对读写代码都是很有帮助的</p>
-
+                <span class="p">(</span><span class="nf">in-S?</span> <span class="p">(</span><span class="nb">- </span><span class="nv">n</span> <span class="mi">3</span><span class="p">)</span><span class="p">)</span>
+                <span class="no">#f</span><span class="p">)</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
+</code></pre></div><p>这里我们根据定义用Scheme写了一个递归过程。其中<code>in-S? : N -&gt; Bool</code>是一个批注(comment)，称为该过程的<em>契约(contract)</em> ，它表示<code>in-S?</code>被设计为这样一个过程：以一个自然数作为入参并产生一个布尔值作为出参。这样的批注对读写代码都是很有帮助的</p>
 <p>为了判断<span class="Math">\(n \in S\)</span>是否成立，我们首先判断<span class="Math">\(n=0\)</span>是否成立，如果后者成立，则前者也成立。否则我们需要看<span class="Math">\(n-3 \in S\)</span>是否成立，为了判断<span class="Math">\(n-3 \in S\)</span>是否成立，我们先要检查<span class="Math">\((n-3) \ge 0\)</span>是否成立。如果成立的话，我们就可以使用我们已有的过程逻辑来判断它是否属于集合<span class="Math">\(S\)</span>，如果不成立，那么<span class="Math">\(n\)</span>不可能属于集合<span class="Math">\(S\)</span></p>
-
 <p>下面是另一种集合<span class="Math">\(S\)</span>的定义</p>
-
 <dl>
 <dt><strong>定义1.1.2</strong></dt>
 <dd>定义集合<span class="Math">\(S\)</span>为包含于自然数<span class="Math">\(N\)</span>且满足下列两个性质的最小集合:
-
 <ol>
 <li><span class="Math">\(n \in S\)</span>，且</li>
 <li>如果<span class="Math">\(n \in S\)</span>，那么<span class="Math">\(n&#43;3 \in S\)</span></li>
-</ol></dd>
+</ol>
+</dd>
 </dl>
-
 <p>一个“最小集合”是指满足条件1和条件2且是任何满足条件1和条件2的集合的子集。很容易看出这样的集合只有一个：假设存在<span class="Math">\(S_1\)</span>和<span class="Math">\(S_2\)</span>都满足条件1和条件2且都是最小集合，那么<span class="Math">\(S_1 \subseteq S_2 \)</span>（因为<span class="Math">\(S_1\)</span>是最小集合）且<span class="Math">\(S_2 \subseteq S_1 \)</span>（因为<span class="Math">\(S_2\)</span>也是最小集合），因此<span class="Math">\(S_1=S_2\)</span>。我们需要这个额外条件，否则会有许多集合满足以上两个条件（参见练习1.3）</p>
-
 <p>另外还有一种定义的写法：</p>
-
 <div class="Math Math-Formula">\(\frac{}{0 \in S}\qquad\)</div>
-
 <div class="Math Math-Formula">\(\frac{n \in S}{(n&#43;3) \in S}\qquad\)</div>
-
 <p>这只是前面写法的一种简写形式，每一个条目称为一个“推理规则”，或者简称为一个“规则”，横线读作“如果&hellip;那么&hellip;”，横线上半部分称为“假设/先行词”，横线下半部分称为“结论/推断”。当存在两个以上假设时，他们之间默认用“且”连接（例如<strong>定义1.1.5</strong>）。没有假设的规则称为“公理”，通常，公理的横线会省略不写，比如：</p>
-
 <div class="Math Math-Formula">\(0 \in S\)</div>
-
 <p>该公理的意思是：自然数<span class="Math">\(n\)</span>在集合<span class="Math">\(S\)</span>中，当且仅当语句<span class="Math">\(n \in S\)</span>可以在有限次数内使用推理规则从公理推导出</p>
 
     </div>
