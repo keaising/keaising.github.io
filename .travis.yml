@@ -15,6 +15,7 @@ install:
   - tar -xf hugo_0.62.0_macOS-64bit.tar.gz
 #  - sudo dpkg -i hugo*.deb
 #  - rm hugo*.deb
+  - ls -al
   - rm hugo*.gz
 
 script:
