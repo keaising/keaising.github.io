@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git filter-branch --env-filter '
+git filter-branch -f --env-filter '
 OLD_EMAIL="taiga.wang@curiositychina.com"
 CORRECT_NAME="keaising"
 CORRECT_EMAIL="keaising@gmail.com"
