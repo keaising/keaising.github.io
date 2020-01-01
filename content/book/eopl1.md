@@ -24,7 +24,7 @@ tags:
     1. {{< math "n=0" >}}，或者
     2. {{< math "n-3 \in S" >}}
 
-让我们看看如何使用这个定义来决定哪些自然数属于集合{{< math "S" >}}，我们知道{{< math "0 \in S" >}}，那么{{< math "3 \in S" >}}，因为{{< math "(3-3)=0" >}}且{{< math "0 \in S" >}}。类似可知{{< math "6 \in S" >}}，因为{{< math "(6-3)=0" >}}且{{< math "3 \in S" >}}。将该推理过程继续下去，我们可以得到结论：所有的{{< math "3" >}}的倍数都属于集合{{< math "S" >}}。
+让我们看看如何使用这个定义来决定哪些自然数属于集合{{< math "S" >}}，我们知道{{< math "0 \in S" >}}，那么{{< math "3 \in S" >}}，因为{{< math "(3-3)=0" >}}且{{< math "0 \in S" >}}。类似可知{{< math "6 \in S" >}}，因为{{< math "(6-3)=0" >}}且{{< math "3 \in S" >}}。将该推演过程继续下去，我们可以得到结论：所有的{{< math "3" >}}的倍数都属于集合{{< math "S" >}}。
 
 那么其他的自然数呢？{{< math "1 \in S" >}}是否成立呢？我们知道{{< math "1 \ne 0" >}}，因此不满足条件1；此外{{< math "(1-3)=-2" >}}，这不是一个自然数也就不属于集合{{< math "S" >}}，因此不满足条件2。故{{< math "1" >}}不满足任何一个条件，{{< math "1 \not \in S" >}}，类似的，{{< math "2 \not \in S" >}}。那么{{< math "4" >}}呢？{{< math "4 \in S" >}}只有在{{< math "1 \in S" >}}成立的情况下成立，但是{{< math "1 \not \in S" >}}，所以{{< math "4 \not \in S" >}}。类似地，我们可以得到这样的结论：如果{{< math "n" >}}是一个自然数且它不是{{< math "3" >}}的倍数，那么{{< math "n \not \in S" >}}
 
@@ -59,12 +59,80 @@ usage: (in-S? n) = #t if n is in S, #f otherwise
 
 另外还有一种定义的写法：
 
-{{< formula "\frac{}{0 \in S}\qquad" >}}
+{{< formula "\dfrac{}{0 \in S}\qquad" >}}
 
-{{< formula "\frac{n \in S}{(n+3) \in S}\qquad" >}}
+{{< formula "\dfrac{n \in S}{(n+3) \in S}\qquad" >}}
 
-这只是前面写法的一种简写形式，每一个条目称为一个“推理规则”，或者简称为一个“规则”，横线读作“如果...那么...”，横线上半部分称为“假设/先行词”，横线下半部分称为“结论/推断”。当存在两个以上假设时，他们之间默认用“且”连接（例如**定义1.1.5**）。没有假设的规则称为“公理”，通常，公理的横线会省略不写，比如：
+这只是前面写法的一种简写形式，每一个条目称为一个“推演规则”，或者简称为一个“规则”，横线读作“如果...那么...”，横线上半部分称为“假设/先行词”，横线下半部分称为“结论/推断”。当存在两个以上假设时，他们之间默认用“且”连接（例如**定义1.1.5**）。没有假设的规则称为“公理”，通常，公理的横线会省略不写，比如：
 
 {{< formula "0 \in S" >}}
 
-该公理的意思是：自然数{{< math "n" >}}在集合{{< math "S" >}}中，当且仅当语句{{< math "n \in S" >}}可以在有限次数内使用推理规则从公理推导出
+该公理的意思是：自然数{{< math "n" >}}在集合{{< math "S" >}}中，当且仅当语句{{< math "n \in S" >}}可以在有限次数内使用推演规则从公理推导出。这个解释天然得保证了集合{{< math "S" >}}是在规则范围内闭合的所有集合里的最小集合
+
+这些定义全都描述了同样的事。第一个版本我们称为「自上而下」法，第二个版本称为「自下而上」法，而第三个版本称为「推演规则」法，现在我们来试试将这些规则应用到其他例子
+
+**定义1.1.3 (整数数列，自上而下)**
+: 一个`Scheme list`是一个`List-of-Int`，当且仅当：
+    1. 它是一个空数列，或者
+    2. 它是一个car是整数、cdr是一个整数数列的序对(pair)
+
+
+在这里我们使用`Int`表示全体整数的集合，用`List-of-Int`表示全部`整数数列`的集合
+
+译者注：
+: 关于序对(pair)、car、cdr可以阅读[Pairs and lists - Revised(5) Scheme](https://people.csail.mit.edu/jaffer/r5rs/Pairs-and-lists.html)。以下关于简单的Scheme语法不再提示
+
+接下来再看另一个定义
+
+**定义1.1.4 (整数数列，自下而上)**
+: 集合`List-of-Int`在满足以下两个条件时，就是最小的`Scheme List`集合
+    1. {{< math "() \in List-of-Int" >}}，且
+    2. 如果{{< math "n \in Int" >}}且{{< math "l \in List-of-Int" >}}，那么{{< math "(n . l) \in List-of-Int">}}
+
+这里我们使用占位符`.`来表示Scheme语言中`cons`操作的结果。`(n . l)`表示一个Scheme语言中的一个序对，在这个序对中，`car`是`n`，`cdr`是`l`
+
+**定义1.1.5 (整数数列，推演规则)**
+: {{< formula "() \in List-of-Int" >}}
+    {{< formula "\dfrac{n \in Int \hspace{2em} l \in List-of-Int}{(n \hspace{.5em} . \hspace{.5em} l) \in List-of-Int}\qquad" >}}
+
+这3个定义是相等的。我们接下来演示一下如何用他们来生成`List-of-Int`中的一些元素
+
+1. `()`是一个整数列，因为它满足定义1.1.4的属性1或者是满足定义1.1.5的第一个规则
+2. `(14 . ())`是一个整数列，根据定义1.1.4的属性2可知，因为`14`是一个整数，而`()`是一个整数列，我们可以将这个推论写作是`List-of-Int`的第二条规则的一个实例 
+{{< formula "\dfrac{14 \in Int \hspace{2em} () \in List-of-Int}{(14 \hspace{.5em} . \hspace{.5em} ()) \in List-of-Int}\qquad" >}}
+3. `(3 . (14 . ()))`是一个整数列，根据属性2可知，因为`3`是一个整数，而`(14 . ())`是一个整数列，我们也可以将这个推演过程写作`List-of-Int`的第二条规则的一个实例
+{{< formula "\dfrac{3 \in Int \hspace{2em} (14 \hspace{.5em} . \hspace{.5em} ()) \in List-of-Int}{(3 \hspace{.5em} . \hspace{.5em} (14 \hspace{.5em} . \hspace{.5em} ())) \in List-of-Int}\qquad" >}}
+4. `(-7 . (3 . (14 . ())))`是一个整数列，根据属性2可知，因为`-7`是一个整数，而`(3 . (14 . ()))`是一个整数列，这次我们同样将这个推演过程写作`List-of-Int`的第二条规则的一个实例
+{{< formula "\dfrac{-7 \in Int \hspace{2em} (3 \hspace{.5em} . \hspace{.5em} (14 \hspace{.5em} . \hspace{.5em} ())) \in List-of-Int}{(-7 \hspace{.5em} . \hspace{.5em} (3 \hspace{.5em} . \hspace{.5em} (14 \hspace{.5em} . \hspace{.5em} ()))) \in List-of-Int}\qquad" >}}
+5. 如果一个数列也是这样构建的话，那就是一个整数列
+
+将上面的点表示法转换成列表表示法，可以看到`()`、`(14)`、`(3 14)`、`(-7 3 14)`都包含于`List-of-Int`。我们也可以将规则全部合起来，得到整个{{< math "(-7 \hspace{.5em} . \hspace{.5em} (3 \hspace{.5em} . \hspace{.5em} (14 \hspace{.5em} . \hspace{.5em} ()))) \in List-of-Int" >}}因果链的全景图。下面这个树状图被称为*派生树*或者*演绎树*
+
+{{< formula "\begin{align} 14 \in N \hspace{2em} () &\in List-of-Int \\ \rule{3.5cm}{.6pt} & \rule{3.5cm}{.6pt} \\ 3 \hspace{.5em} . \hspace{.5em} (14 \hspace{.5em} . \hspace{.5em} ())) &\in List-of-Int \\ \rule{6cm}{.6pt} & \rule{3.5cm}{.6pt} \\ -7 \in N \hspace{2em} (3 \hspace{.5em} . \hspace{.5em} (14 \hspace{.5em} . \hspace{.5em} ())) &\in List-of-Int \\ \rule{6cm}{.6pt} & \rule{3.5cm}{.6pt} \\ (-7 \hspace{.5em} . \hspace{.5em} (3 \hspace{.5em} . \hspace{.5em} (14 \hspace{.5em} . \hspace{.5em} ()))) & \in List-of-Int \end{align}" >}}
+
+练习1.1 [*]
+: 写出下列集合的归纳法定义。每个定义都要写3种类型(自上而下，自下而上，推演规则)，并使用你所写的规则，举出每个集合的示例数据
+    1. {{< math "{3n+2 \hspace{.5em} | \hspace{.5em} n \in N}" >}}
+    2. {{< math "{2n+3m+1 \hspace{.5em} | \hspace{.5em} n,m \in N}" >}}
+    3. {{< math "{(n,2n+1) \hspace{.5em} | \hspace{.5em} n \in N}" >}}
+    4. {{< math "{(n,n^2) \hspace{.5em} | \hspace{.5em} n \in N}" >}} 
+    不要在定义的规则中使用平方，一点小提示，想想这个方程 {{< math "(n+1)^2 = n^2+2n+1 ">}}
+
+练习1.2 [**]
+: 根据以下规则分别可以得到什么样的集合？并阐述理由
+    1. {{< math "(0,1) \in S \hspace{3em} \dfrac{(n, k) \in S}{(n+1,k+7) \in S}\qquad" >}}
+    2. {{< math "(0,1) \in S \hspace{3em} \dfrac{(n, k) \in S}{(n+1,2k) \in S}\qquad" >}}
+    3. {{< math "(0,0,1) \in S \hspace{3em} \dfrac{(n, i, j) \in S}{(n+1,j,i+j) \in S}\qquad" >}}
+    4. [***] {{< math "(0,1,0) \in S \hspace{3em} \dfrac{(n, i, j) \in S}{(n+1,i+2,i+j) \in S}\qquad" >}}
+
+练习1.3 [*]
+: 找到满足以下条件的自然数集合`T`：
+    1. {{< math "0 \in T">}}
+    2. 对任何{{< math "n \in T">}}，都有{{< math "n+3 \in T">}}
+    3. {{< math "T \neq S">}}，其中{{< math "S">}}是定义1.1.2中的集合
+
+### 1.1.2 用语法(Grammars)定义集合
+
+之前的例子非常的直观，但是很容易想象到，在处理更复杂的数据类型的时候，描述过程会变得相当的笨重。为了作出改进，我们将展示如何用*语法*来描述集合。语法一般常用于描述字符串集合，但我们同样能用它来定义数值集合。比如我们可以用如下语法来定义{{< math "List-of-Int" >}}
+
+{{< formula "\begin{align} List-of-Int &::= () \\ List-of-Int &::= (Int \hspace{.5em} . \hspace{.5em} List-of-Int)   \end{align}" >}}
