@@ -21,8 +21,8 @@ install:
 script:
   # - ./hugo version
   # - ./hugo
-  hugo version
-  hugo
+  - hugo version
+  - hugo
 
 deploy:
   provider: pages
