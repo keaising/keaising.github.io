@@ -6,10 +6,19 @@
     <description>Recent content in Annual on 流水沉微</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Sat, 28 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://shuxiao.wang/tags/annual/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2020年读书情况</title>
+      <link>http://shuxiao.wang/book/plan-2020/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/book/plan-2020/</guid>
+      <description>读书计划 读书计划中的只是准备认真读完并完成作业的，其他的书一般都在豆瓣我读 书名 类型 介绍 EOPL 编程语言 Essentials of Programming Languages Algs4 算法 数据结构 Algorithms CSAPP 计算机结构 深入理解</description>
+    </item>
     
     <item>
       <title>一年读书记录</title>

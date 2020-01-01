@@ -12,15 +12,6 @@
     
     
     <item>
-      <title>Sams Teach Yourself TCP/IP in 24 Hours</title>
-      <link>http://shuxiao.wang/book/tcpip-in-24-hours/</link>
-      <pubDate>Sat, 26 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://shuxiao.wang/book/tcpip-in-24-hours/</guid>
-      <description>在我学习 TCP/IP 协议的道路上遇到过很多书，随便拎一本出来都是振聋发聩的作品： TCP/IP详解 卷1：协议 图解TCP/IP（第5版） TCP/IP详解 卷</description>
-    </item>
-    
-    <item>
       <title>2. Add Two Numbers</title>
       <link>http://shuxiao.wang/leetcode/2.-add-two-numbers/</link>
       <pubDate>Thu, 03 Oct 2019 00:00:00 +0000</pubDate>
@@ -81,6 +72,24 @@ Explanation: Reads 01 from right to left.</description>
     </item>
     
     <item>
+      <title>2020年读书情况</title>
+      <link>http://shuxiao.wang/book/plan-2020/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/book/plan-2020/</guid>
+      <description>读书计划 读书计划中的只是准备认真读完并完成作业的，其他的书一般都在豆瓣我读 书名 类型 介绍 EOPL 编程语言 Essentials of Programming Languages Algs4 算法 数据结构 Algorithms CSAPP 计算机结构 深入理解</description>
+    </item>
+    
+    <item>
+      <title>Sams Teach Yourself TCP/IP in 24 Hours</title>
+      <link>http://shuxiao.wang/book/tcpip-in-24-hours/</link>
+      <pubDate>Sat, 26 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/book/tcpip-in-24-hours/</guid>
+      <description>在我学习 TCP/IP 协议的道路上遇到过很多书，随便拎一本出来都是振聋发聩的作品： TCP/IP详解 卷1：协议 图解TCP/IP（第5版） TCP/IP详解 卷</description>
+    </item>
+    
+    <item>
       <title>142. Linked List Cycle II</title>
       <link>http://shuxiao.wang/leetcode/142.-linked-list-cycle-ii/</link>
       <pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate>
@@ -109,6 +118,15 @@ Do not modify the linked list.
       
       <guid>http://shuxiao.wang/book/eopl/</guid>
       <description>基于种种原因，决定还是静下心来读一读以前想读但是一直没读的书，首先是这本Essentials of Programming Languages, 3rd Edition 从EOPL开始而不是SICP开始，是感</description>
+    </item>
+    
+    <item>
+      <title>第一章 归纳的数据集</title>
+      <link>http://shuxiao.wang/book/eopl1/</link>
+      <pubDate>Tue, 19 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/book/eopl1/</guid>
+      <description>本章介绍了一些基本的编程工具，这些工具在后续编写解释器(interpreters)、检查器(checkers)和类似组成编程语言核心处理器(</description>
     </item>
     
     <item>
@@ -163,15 +181,6 @@ Do not modify the linked list.
       
       <guid>http://shuxiao.wang/posts/reader-in-line-ten/</guid>
       <description>自2018年8月起，因为换工作和换住地，我就开始了环绕十号线半周的通勤生活，从进站闸机到出站闸机要50分钟，来往就是接近2个小时。无聊且网络</description>
-    </item>
-    
-    <item>
-      <title>第一章 归纳的数据集</title>
-      <link>http://shuxiao.wang/book/eopl1/</link>
-      <pubDate>Tue, 19 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://shuxiao.wang/book/eopl1/</guid>
-      <description>本章介绍了一些基本的编程工具，这些工具在后续编写解释器(interpreters)、检查器(checkers)和类似组成编程语言核心处理器(</description>
     </item>
     
     <item>
