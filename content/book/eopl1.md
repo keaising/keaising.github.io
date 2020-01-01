@@ -1,6 +1,7 @@
 ---
 title: 第一章 归纳的数据集
 date: 2019-11-19
+weight: 201
 tags:
   - Programming Language
   - Scheme
