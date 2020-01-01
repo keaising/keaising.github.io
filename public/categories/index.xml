@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on 流水沉微</title>
+    <link>http://shuxiao.wang/categories/</link>
+    <description>Recent content in Categories on 流水沉微</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn</language>
+    <lastBuildDate>Fri, 13 Sep 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://shuxiao.wang/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>interview question</title>
+      <link>http://shuxiao.wang/categories/interview-question/</link>
+      <pubDate>Fri, 13 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/categories/interview-question/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bugs</title>
+      <link>http://shuxiao.wang/categories/bugs/</link>
+      <pubDate>Mon, 29 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/categories/bugs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>http://shuxiao.wang/categories/programming/</link>
+      <pubDate>Fri, 31 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

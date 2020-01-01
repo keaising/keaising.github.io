@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" class="han-la">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>9. Palindrome Number - 流水沉微</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/css/kitto.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <script src="/js/anchor.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/js/text-autospace.js"></script>
+</head>
+
+<body>
+    <div class="content width">
+        <div class="top-header">
+  <a class="site-title" href="http://shuxiao.wang">
+    流水沉微
+  </a>
+
+  
+  
+  <div class="nav-body">
+    
+    
+    <a class="nav-item " href="/posts/">
+      
+      <span>Posts</span>
+    </a>
+    
+    
+    
+    <a class="nav-item " href="/cloud/">
+      
+      <span>Cloud</span>
+    </a>
+    
+    
+    
+    <a class="nav-item " href="/eureka/">
+      
+      <span>Eureka!</span>
+    </a>
+    
+    
+  </div>
+  
+</div>
+
+        <div>
+            
+
+
+<div class="Subhead">
+    <div class="Subhead-heading">
+        <h1>9. Palindrome Number</h1>
+    </div>
+</div>
+
+
+
+
+<article>
+        <ul class="collection">
+    <div class="post-item lc-info">
+        <div class="lc-left grid-cell">Diffculty</div>
+        <div class="lc-right grid-cell">
+            easy
+        </div>
+    </div>
+    <div class="post-item  lc-info">
+        <div class="lc-left grid-cell">Goto</div>
+        <div class="lc-right grid-cell">
+            <a href="https://leetcode.com/problems/palindrome-number/">
+                <div>palindrome-number</div>
+            </a>
+        </div>
+    </div>
+    <div class="post-item  lc-info">
+        <div class="lc-left grid-cell">Language</div>
+        <div class="lc-right grid-cell">
+            
+            
+            
+            <a href='/tags/python'>
+                <div>Python</div>
+            </a>
+        </div>
+    </div>
+</ul>
+    
+    <div class="true-content">
+        <h2 id="explain">Explain</h2>
+<p>Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.</p>
+<blockquote>
+<p><strong>Example 1</strong></p>
+<p>Input: 121</p>
+<p>Output: true</p>
+</blockquote>
+<blockquote>
+<p><strong>Example 2</strong></p>
+<p>Input: -121</p>
+<p>Output: false</p>
+<p>Explanation: From left to right, it reads -121. From right to left, it &gt; becomes 121-.</p>
+<p>Therefore it is not a palindrome.</p>
+</blockquote>
+<blockquote>
+<p><strong>Example 3</strong></p>
+<p>Input: 10</p>
+<p>Output: false</p>
+<p>Explanation: Reads 01 from right to left. Therefore it is not a palindrome.</p>
+</blockquote>
+<p><strong>Follow up</strong></p>
+<p>Coud you solve it without converting the integer to a string?</p>
+<h2 id="solve">Solve</h2>
+<blockquote>
+<p><a href="https://play.golang.org/p/jAV1vCnLOx3">play.golang.org/p/jAV1vCnLOx3</a></p>
+</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">isPalindrome</span><span class="p">(</span><span class="nx">x</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+	<span class="k">if</span> <span class="nx">x</span> <span class="p">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="p">(</span><span class="nx">x</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">x</span><span class="o">%</span><span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="kc">false</span>
+	<span class="p">}</span>
+	<span class="k">if</span> <span class="nx">x</span> <span class="p">&lt;</span> <span class="mi">10</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="kc">true</span>
+	<span class="p">}</span>
+	<span class="nx">result</span><span class="p">,</span> <span class="nx">num</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">x</span>
+	<span class="k">for</span> <span class="nx">num</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">{</span>
+		<span class="nx">result</span> <span class="o">*=</span> <span class="mi">10</span>
+		<span class="nx">result</span> <span class="o">+=</span> <span class="nx">num</span> <span class="o">%</span> <span class="mi">10</span>
+		<span class="nx">num</span> <span class="o">/=</span> <span class="mi">10</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="nx">result</span> <span class="o">==</span> <span class="nx">x</span>
+<span class="p">}</span>
+</code></pre></div><h2 id="performance">Performance</h2>
+<p>Runtime: 12 ms, faster than 84.12% of Go online submissions for Palindrome Number.</p>
+<p>Memory Usage: 5 MB, less than 75.00% of Go online submissions for Palindrome Number.</p>
+
+    </div>
+
+    <div class="page-info">
+        <div>
+            
+
+<div>
+    
+</div>
+
+
+
+<div>
+    <a href='/tags/palindrome' class="tags-url">
+        <span class="tags">Palindrome</span>
+    </a>
+</div>
+
+<div>
+    <a href='/tags/python' class="tags-url">
+        <span class="tags">Python</span>
+    </a>
+</div>
+
+
+
+        </div>
+        
+            
+                <div class="publish-date">
+                    <span
+                        title="Lastmod: 2019-10-19. Published at: 2019-10-19.">
+                        19 Oct 2019
+                    </span>
+                </div>
+            
+        
+    </div>
+</article>
+
+
+
+
+
+        </div>
+        <div id="footer" class="pt-2 pb-3 bg-white text-center">
+            
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/keaising/kitto" class="link-gray-dark">Kitto</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+        </div>
+    </div>
+
+    
+    <script>
+        anchors.add();
+    </script>
+    <script>
+        anchors.options = {
+            placement: 'left',
+        };
+        anchors.add();
+        anchors.add(".tag-title-left");
+    </script>
+    <script src="/js/mathjax.js"></script>
+</body>
+
+</html>

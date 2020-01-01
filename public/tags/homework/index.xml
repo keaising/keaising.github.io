@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>homework on 流水沉微</title>
+    <link>http://shuxiao.wang/tags/homework/</link>
+    <description>Recent content in homework on 流水沉微</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn</language>
+    <lastBuildDate>Sat, 25 Oct 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://shuxiao.wang/tags/homework/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>基于C#的蚁群算法实现</title>
+      <link>http://shuxiao.wang/posts/ant-algs-based-on-csharp/</link>
+      <pubDate>Sat, 25 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/posts/ant-algs-based-on-csharp/</guid>
+      <description>这学期有门课，最优化与最优控制，任课老师任华玲，虽然在课堂上我什么都没有学到，但是最后任老师让每个人自己选一篇最优化方向的论文，把其中的算法</description>
+    </item>
+    
+  </channel>
+</rss>

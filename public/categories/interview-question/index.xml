@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>interview question on 流水沉微</title>
+    <link>http://shuxiao.wang/categories/interview-question/</link>
+    <description>Recent content in interview question on 流水沉微</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn</language>
+    <lastBuildDate>Fri, 13 Sep 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://shuxiao.wang/categories/interview-question/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Redis 复制时的 fork 的子进程</title>
+      <link>http://shuxiao.wang/posts/redis-rdb-fork/</link>
+      <pubDate>Fri, 13 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/posts/redis-rdb-fork/</guid>
+      <description>背景 问：Redis 主从节点同步知道吗？ 答：知道一点，不太熟 问：从节点申请同步的时候主节点做了什么？ 答：fork 一个子线程做同步 问：是子进程，</description>
+    </item>
+    
+  </channel>
+</rss>

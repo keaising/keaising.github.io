@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>网鱼网咖 on 流水沉微</title>
+    <link>http://shuxiao.wang/tags/%E7%BD%91%E9%B1%BC%E7%BD%91%E5%92%96/</link>
+    <description>Recent content in 网鱼网咖 on 流水沉微</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn</language>
+    <lastBuildDate>Mon, 21 Oct 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://shuxiao.wang/tags/%E7%BD%91%E9%B1%BC%E7%BD%91%E5%92%96/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>楼梯有多少种走法</title>
+      <link>http://shuxiao.wang/posts/ladder/</link>
+      <pubDate>Mon, 21 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/posts/ladder/</guid>
+      <description>这是在 telegram 网鱼网咖群里聊天时，Haruhi贴的一个题，题目如下： 思路很简单 可以从14、13、12级跨到第15级 f(15)=f(14)+f(13)+f(12) 递推公式出来鸟~ 当然要得到一个</description>
+    </item>
+    
+  </channel>
+</rss>

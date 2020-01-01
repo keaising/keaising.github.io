@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IIS on 流水沉微</title>
+    <link>http://shuxiao.wang/tags/iis/</link>
+    <description>Recent content in IIS on 流水沉微</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn</language>
+    <lastBuildDate>Mon, 29 Jul 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://shuxiao.wang/tags/iis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A fatal communication error with WAS</title>
+      <link>http://shuxiao.wang/posts/was-error/</link>
+      <pubDate>Mon, 29 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/posts/was-error/</guid>
+      <description>背景情况 也是工作里遇到的一个问题，一个 host 在 IIS 上的古老项目（最早可以追溯到 16 年前），时不时会报下面这个错误： 应用程序池 “.NET” 提供服务的进</description>
+    </item>
+    
+  </channel>
+</rss>

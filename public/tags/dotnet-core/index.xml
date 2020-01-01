@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dotnet core on 流水沉微</title>
+    <link>http://shuxiao.wang/tags/dotnet-core/</link>
+    <description>Recent content in dotnet core on 流水沉微</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn</language>
+    <lastBuildDate>Tue, 14 May 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://shuxiao.wang/tags/dotnet-core/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CLI App in C# 其三</title>
+      <link>http://shuxiao.wang/posts/cli-app-in-csharp3/</link>
+      <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/posts/cli-app-in-csharp3/</guid>
+      <description>这是 CLI App in C# 系列的第三篇，本篇主要介绍gen的打包和发布。 .Net Core控制台应用的打包方法主要是两类： 可执行文件，对应直接运行，Windows</description>
+    </item>
+    
+    <item>
+      <title>CLI App in C# 其二</title>
+      <link>http://shuxiao.wang/posts/cli-app-in-csharp2/</link>
+      <pubDate>Sun, 12 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/posts/cli-app-in-csharp2/</guid>
+      <description>这是 CLI App in C# 系列的第二篇，本篇主要介绍gen的开发过程。教程里的所有代码参见keaising/gen 新建项目 在合适的地方使用dotnet new console</description>
+    </item>
+    
+    <item>
+      <title>CLI App in C# 其一</title>
+      <link>http://shuxiao.wang/posts/cli-app-in-csharp1/</link>
+      <pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/posts/cli-app-in-csharp1/</guid>
+      <description>这是 CLI App in C# 系列的 第一篇 (Wa Da Keng) 写这个系列的目的是介绍用C#写一个命令行工具的所有内容，从规划、选型、编码、到打包和自动化编译的系列工作都会介</description>
+    </item>
+    
+    <item>
+      <title>处理dotnet core Redis超时异常</title>
+      <link>http://shuxiao.wang/posts/stackexchange-redis-timeout/</link>
+      <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/posts/stackexchange-redis-timeout/</guid>
+      <description>压力测试过程中遇到的一个问题，框架是asp.net core 2.2，redis组件是StackExchange.Redis 2.0.601，在高并发场</description>
+    </item>
+    
+  </channel>
+</rss>

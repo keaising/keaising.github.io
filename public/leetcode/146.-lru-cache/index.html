@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" class="han-la">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>146. LRU Cache - 流水沉微</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/css/kitto.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <script src="/js/anchor.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/js/text-autospace.js"></script>
+</head>
+
+<body>
+    <div class="content width">
+        <div class="top-header">
+  <a class="site-title" href="http://shuxiao.wang">
+    流水沉微
+  </a>
+
+  
+  
+  <div class="nav-body">
+    
+    
+    <a class="nav-item " href="/posts/">
+      
+      <span>Posts</span>
+    </a>
+    
+    
+    
+    <a class="nav-item " href="/cloud/">
+      
+      <span>Cloud</span>
+    </a>
+    
+    
+    
+    <a class="nav-item " href="/eureka/">
+      
+      <span>Eureka!</span>
+    </a>
+    
+    
+  </div>
+  
+</div>
+
+        <div>
+            
+
+
+<div class="Subhead">
+    <div class="Subhead-heading">
+        <h1>146. LRU Cache</h1>
+    </div>
+</div>
+
+
+
+
+<article>
+        <ul class="collection">
+    <div class="post-item lc-info">
+        <div class="lc-left grid-cell">Diffculty</div>
+        <div class="lc-right grid-cell">
+            medium
+        </div>
+    </div>
+    <div class="post-item  lc-info">
+        <div class="lc-left grid-cell">Goto</div>
+        <div class="lc-right grid-cell">
+            <a href="https://leetcode.com/problems/lru-cache/">
+                <div>lru-cache</div>
+            </a>
+        </div>
+    </div>
+    <div class="post-item  lc-info">
+        <div class="lc-left grid-cell">Language</div>
+        <div class="lc-right grid-cell">
+            
+            
+            
+            <a href='/tags/python'>
+                <div>Python</div>
+            </a>
+        </div>
+    </div>
+</ul>
+    
+    <div class="true-content">
+        <p>LRU 来自于 <a href="https://en.wikipedia.org/wiki/Cache_replacement_policies">Cache replacement policies</a>，是缓存淘汰策略的一种，很实用也有比较简洁的实现方法，用来面试正好，足够难、又足够简单</p>
+<h2 id="explain">Explain</h2>
+<p>Design and implement a data structure for Least Recently Used (LRU) cache. It should support the following operations: get and put.</p>
+<p>get(key) - Get the value (will always be positive) of the key if the key exists in the cache, otherwise return -1.</p>
+<p>put(key, value) - Set or insert the value if the key is not already present. When the cache reached its capacity, it should invalidate the least recently used item before inserting a new item.</p>
+<p>The cache is initialized with a positive capacity.</p>
+<blockquote>
+<p><strong>Follow up</strong></p>
+<p>Could you do both operations in O(1) time complexity?</p>
+</blockquote>
+<blockquote>
+<p>Example</p>
+<p>LRUCache cache = new LRUCache( 2 /* capacity */ );</p>
+<p>cache.put(1, 1);
+cache.put(2, 2);
+cache.get(1);       // returns 1
+cache.put(3, 3);    // evicts key 2
+cache.get(2);       // returns -1 (not found)
+cache.put(4, 4);    // evicts key 1
+cache.get(1);       // returns -1 (not found)
+cache.get(3);       // returns 3
+cache.get(4);       // returns 4</p>
+</blockquote>
+<h2 id="solve">Solve</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">LRUCache</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">capacity</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">capacity</span> <span class="o">=</span> <span class="n">capacity</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dic</span> <span class="o">=</span> <span class="p">{</span><span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dummy_head</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dummy_tail</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dummy_head</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dummy_tail</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dummy_tail</span><span class="o">.</span><span class="n">prev</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dummy_head</span>
+
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-</span><span class="o">&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dic</span><span class="p">:</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dic</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">node</span><span class="o">.</span><span class="n">val</span>
+
+    <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-</span><span class="o">&gt;</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dic</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dic</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="p">)</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dic</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">node</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dic</span><span class="p">)</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">capacity</span><span class="p">:</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dummy_head</span><span class="o">.</span><span class="n">next</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">head</span><span class="p">)</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">dic</span><span class="p">[</span><span class="n">head</span><span class="o">.</span><span class="n">key</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">)</span><span class="p">:</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">prev</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">next</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">n</span>
+        <span class="n">n</span><span class="o">.</span><span class="n">prev</span> <span class="o">=</span> <span class="n">p</span>
+
+    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">)</span><span class="p">:</span>
+        <span class="n">tail</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dummy_tail</span><span class="o">.</span><span class="n">prev</span>
+        <span class="n">tail</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">node</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dummy_tail</span><span class="o">.</span><span class="n">prev</span> <span class="o">=</span> <span class="n">node</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">prev</span> <span class="o">=</span> <span class="n">tail</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dummy_tail</span>
+
+<span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">k</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">v</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">prev</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="bp">None</span>
+
+<span class="c1"># Your LRUCache object will be instantiated and called as such:</span>
+<span class="c1"># obj = LRUCache(capacity)</span>
+<span class="c1"># param_1 = obj.get(key)</span>
+<span class="c1"># obj.put(key,value)</span>
+</code></pre></div><p>主要是参考了<a href="https://leetcode.com/problems/lru-cache/discuss/202067/Python-or-O(1)-tm-146">这篇解答</a>，他的思路跟其他解法的思路是一样的，都是一个双链表解决增删节点时的O(1)，然后HashMap解决获取节点时的O(1)，但是这篇解答的优秀之处在于他用了<code>dummy_tail</code>和<code>dummy_head</code>两个变量名，我一下就理解到了head和tail其实是不放任何真实数据的，他们永远都是head和tail</p>
+<h2 id="performance">Performance</h2>
+<p>Runtime: 244 ms, faster than 48.31% of Python3 online submissions for LRU Cache.</p>
+<p>Memory Usage: 23.2 MB, less than 6.06% of Python3 online submissions for LRU Cache.</p>
+<p>性能数据不够好主要是对 Python 来说还可以用 <a href="https://docs.python.org/3.7/library/collections.html">collections</a> 里的 OrderedDict，用了 OrderedDict 的解答如下：</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+
+<span class="k">class</span> <span class="nc">LRUCache</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">capacity</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">capacity</span> <span class="o">=</span> <span class="n">capacity</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ordered_dict</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">(</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-</span><span class="o">&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ordered_dict</span><span class="p">:</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ordered_dict</span><span class="o">.</span><span class="n">move_to_end</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ordered_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-</span><span class="o">&gt;</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ordered_dict</span><span class="p">:</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">ordered_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ordered_dict</span><span class="p">)</span> <span class="o">&gt;</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">capacity</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ordered_dict</span><span class="o">.</span><span class="n">popitem</span><span class="p">(</span><span class="n">last</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ordered_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+</code></pre></div><p>甚至还更加简洁了，不过在面试过程中，面试官多半想要的还是 Double Linked List + HashMap.</p>
+
+    </div>
+
+    <div class="page-info">
+        <div>
+            
+
+<div>
+    
+</div>
+
+
+
+<div>
+    <a href='/tags/medium' class="tags-url">
+        <span class="tags">medium</span>
+    </a>
+</div>
+
+<div>
+    <a href='/tags/linked-list' class="tags-url">
+        <span class="tags">Linked List</span>
+    </a>
+</div>
+
+<div>
+    <a href='/tags/hashmap' class="tags-url">
+        <span class="tags">HashMap</span>
+    </a>
+</div>
+
+<div>
+    <a href='/tags/python' class="tags-url">
+        <span class="tags">Python</span>
+    </a>
+</div>
+
+
+
+        </div>
+        
+            
+                <div class="publish-date">
+                    <span
+                        title="Lastmod: 2019-10-02. Published at: 2019-10-02.">
+                        2 Oct 2019
+                    </span>
+                </div>
+            
+        
+    </div>
+</article>
+
+
+
+
+
+        </div>
+        <div id="footer" class="pt-2 pb-3 bg-white text-center">
+            
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/keaising/kitto" class="link-gray-dark">Kitto</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+        </div>
+    </div>
+
+    
+    <script>
+        anchors.add();
+    </script>
+    <script>
+        anchors.options = {
+            placement: 'left',
+        };
+        anchors.add();
+        anchors.add(".tag-title-left");
+    </script>
+    <script src="/js/mathjax.js"></script>
+</body>
+
+</html>

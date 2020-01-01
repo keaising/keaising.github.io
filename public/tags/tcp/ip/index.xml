@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TCP/IP on 流水沉微</title>
+    <link>http://shuxiao.wang/tags/tcp/ip/</link>
+    <description>Recent content in TCP/IP on 流水沉微</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn</language>
+    <lastBuildDate>Sat, 26 Oct 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://shuxiao.wang/tags/tcp/ip/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sams Teach Yourself TCP/IP in 24 Hours</title>
+      <link>http://shuxiao.wang/book/tcpip-in-24-hours/</link>
+      <pubDate>Sat, 26 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/book/tcpip-in-24-hours/</guid>
+      <description>在我学习 TCP/IP 协议的道路上遇到过很多书，随便拎一本出来都是振聋发聩的作品： TCP/IP详解 卷1：协议 图解TCP/IP（第5版） TCP/IP详解 卷</description>
+    </item>
+    
+  </channel>
+</rss>
