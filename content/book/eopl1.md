@@ -135,4 +135,4 @@ usage: (in-S? n) = #t if n is in S, #f otherwise
 
 之前的例子非常的直观，但是很容易想象到，在处理更复杂的数据类型的时候，描述过程会变得相当的笨重。为了作出改进，我们将展示如何用*语法*来描述集合。语法一般常用于描述字符串集合，但我们同样能用它来定义数值集合。比如我们可以用如下语法来定义{{< math "List-of-Int" >}}
 
-{{< formula "\begin{align} List-of-Int &::= () \\ List-of-Int &::= (Int \hspace{.5em} . \hspace{.5em} List-of-Int)   \end{align}" >}}
+{{< formula "\begin{align} List-of-Int &::= () \\ List-of-Int &::= (Int \hspace{.5em} . \hspace{.5em} List-of-Int) \end{align}" >}}
