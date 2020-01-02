@@ -20,7 +20,7 @@ install:
 
 script:
   - ./hugo version
-  - ./hugo
+  - ./hugo --buildFuture 
 
 
 
