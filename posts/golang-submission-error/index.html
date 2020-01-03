@@ -66,31 +66,34 @@
 <article>
     
     <div class="true-content">
-        <h2 id="review">Review</h2>
+        
+
+<h2 id="review">Review</h2>
+
 <p>过了一段时间自己看都觉得这代码写得好蠢，于是改了一版，如下：</p>
 <div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
 
 <span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
 
-<span class="kd">func</span> <span class="nf">main</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nf">permute</span><span class="p">(</span><span class="p">[</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span><span class="p">)</span><span class="p">)</span>
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nf">permute</span><span class="p">([]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">}))</span>
 <span class="p">}</span>
 
-<span class="kd">func</span> <span class="nf">permute</span><span class="p">(</span><span class="nx">nums</span> <span class="p">[</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span> <span class="p">[</span><span class="p">]</span><span class="p">[</span><span class="p">]</span><span class="kt">int</span> <span class="p">{</span>
+<span class="kd">func</span> <span class="nf">permute</span><span class="p">(</span><span class="nx">nums</span> <span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="p">[][]</span><span class="kt">int</span> <span class="p">{</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">nums</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="p">[</span><span class="p">]</span><span class="p">[</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span>
+        <span class="k">return</span> <span class="p">[][]</span><span class="kt">int</span><span class="p">{</span>
             <span class="nx">nums</span><span class="p">,</span>
         <span class="p">}</span>
     <span class="p">}</span>
     <span class="nx">array</span> <span class="o">:=</span> <span class="nx">nums</span>
-    <span class="kd">var</span> <span class="nx">result</span> <span class="p">[</span><span class="p">]</span><span class="p">[</span><span class="p">]</span><span class="kt">int</span>
-    <span class="nf">generate</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nx">nums</span><span class="p">)</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">array</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">result</span><span class="p">)</span>
+    <span class="kd">var</span> <span class="nx">result</span> <span class="p">[][]</span><span class="kt">int</span>
+    <span class="nf">generate</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nx">nums</span><span class="p">),</span> <span class="o">&amp;</span><span class="nx">array</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">result</span><span class="p">)</span>
     <span class="k">return</span> <span class="nx">result</span>
 <span class="p">}</span>
 
-<span class="kd">func</span> <span class="nf">generate</span><span class="p">(</span><span class="nx">k</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">array</span> <span class="o">*</span><span class="p">[</span><span class="p">]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">result</span> <span class="o">*</span><span class="p">[</span><span class="p">]</span><span class="p">[</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+<span class="kd">func</span> <span class="nf">generate</span><span class="p">(</span><span class="nx">k</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">array</span> <span class="o">*</span><span class="p">[]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">result</span> <span class="o">*</span><span class="p">[][]</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="nx">k</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">{</span>
-        <span class="o">*</span><span class="nx">result</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="o">*</span><span class="nx">result</span><span class="p">,</span> <span class="nb">append</span><span class="p">(</span><span class="p">[</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="p">}</span><span class="p">,</span> <span class="p">(</span><span class="o">*</span><span class="nx">array</span><span class="p">)</span><span class="o">...</span><span class="p">)</span><span class="p">)</span>
+        <span class="o">*</span><span class="nx">result</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="o">*</span><span class="nx">result</span><span class="p">,</span> <span class="nb">append</span><span class="p">([]</span><span class="kt">int</span><span class="p">{},</span> <span class="p">(</span><span class="o">*</span><span class="nx">array</span><span class="p">)</span><span class="o">...</span><span class="p">))</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
         <span class="nf">generate</span><span class="p">(</span><span class="nx">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">array</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span>
         <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nx">k</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
@@ -104,38 +107,38 @@
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kd">func</span> <span class="nf">swap</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">array</span> <span class="o">*</span><span class="p">[</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
-    <span class="p">(</span><span class="o">*</span><span class="nx">array</span><span class="p">)</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="p">,</span> <span class="p">(</span><span class="o">*</span><span class="nx">array</span><span class="p">)</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="p">=</span> <span class="p">(</span><span class="o">*</span><span class="nx">array</span><span class="p">)</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span><span class="p">,</span> <span class="p">(</span><span class="o">*</span><span class="nx">array</span><span class="p">)</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
-<span class="p">}</span>
+<span class="kd">func</span> <span class="nf">swap</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">array</span> <span class="o">*</span><span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">(</span><span class="o">*</span><span class="nx">array</span><span class="p">)[</span><span class="nx">i</span><span class="p">],</span> <span class="p">(</span><span class="o">*</span><span class="nx">array</span><span class="p">)[</span><span class="nx">j</span><span class="p">]</span> <span class="p">=</span> <span class="p">(</span><span class="o">*</span><span class="nx">array</span><span class="p">)[</span><span class="nx">j</span><span class="p">],</span> <span class="p">(</span><span class="o">*</span><span class="nx">array</span><span class="p">)[</span><span class="nx">i</span><span class="p">]</span>
+<span class="p">}</span></code></pre></div>
+<h2 id="original">Original</h2>
 
-</code></pre></div><h2 id="original">Original</h2>
-<p>刷<a href="https://leetcode.com/problems/permutations">LeetCode全排列时</a>，我用了一个很简单的Heap's Algorithm，自己本地跑单元测试和在LeetCode Console跑单个case的时候轻轻松松过，于是就提交了，还以为能一把过，结果连续Wrong Answer，就有点懵，代码如下</p>
+<p>刷<a href="https://leetcode.com/problems/permutations">LeetCode全排列时</a>，我用了一个很简单的Heap&rsquo;s Algorithm，自己本地跑单元测试和在LeetCode Console跑单个case的时候轻轻松松过，于是就提交了，还以为能一把过，结果连续Wrong Answer，就有点懵，代码如下</p>
 <div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
 
 <span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
 
-<span class="kd">func</span> <span class="nf">main</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nf">permute</span><span class="p">(</span><span class="p">[</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">}</span><span class="p">)</span><span class="p">)</span>
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nf">permute</span><span class="p">([]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">}))</span>
 <span class="p">}</span>
 
-<span class="kd">func</span> <span class="nf">permute</span><span class="p">(</span><span class="nx">nums</span> <span class="p">[</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span> <span class="p">[</span><span class="p">]</span><span class="p">[</span><span class="p">]</span><span class="kt">int</span> <span class="p">{</span>
+<span class="kd">func</span> <span class="nf">permute</span><span class="p">(</span><span class="nx">nums</span> <span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="p">[][]</span><span class="kt">int</span> <span class="p">{</span>
 	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">nums</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="p">[</span><span class="p">]</span><span class="p">[</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span>
+		<span class="k">return</span> <span class="p">[][]</span><span class="kt">int</span><span class="p">{</span>
 			<span class="nx">nums</span><span class="p">,</span>
 		<span class="p">}</span>
 	<span class="p">}</span>
 	<span class="nx">array</span> <span class="p">=</span> <span class="o">&amp;</span><span class="nx">nums</span>
-	<span class="nf">generate</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nx">nums</span><span class="p">)</span><span class="p">)</span>
+	<span class="nf">generate</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nx">nums</span><span class="p">))</span>
 	<span class="k">return</span> <span class="nx">result</span>
 <span class="p">}</span>
 
-<span class="kd">var</span> <span class="nx">result</span> <span class="p">[</span><span class="p">]</span><span class="p">[</span><span class="p">]</span><span class="kt">int</span>
+<span class="kd">var</span> <span class="nx">result</span> <span class="p">[][]</span><span class="kt">int</span>
 
-<span class="kd">var</span> <span class="nx">array</span> <span class="o">*</span><span class="p">[</span><span class="p">]</span><span class="kt">int</span>
+<span class="kd">var</span> <span class="nx">array</span> <span class="o">*</span><span class="p">[]</span><span class="kt">int</span>
 
 <span class="kd">func</span> <span class="nf">generate</span><span class="p">(</span><span class="nx">k</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
 	<span class="k">if</span> <span class="nx">k</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">{</span>
-		<span class="nx">ret</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="p">[</span><span class="p">]</span><span class="kt">int</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="o">*</span><span class="nx">array</span><span class="p">)</span><span class="p">)</span>
+		<span class="nx">ret</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="o">*</span><span class="nx">array</span><span class="p">))</span>
 		<span class="nb">copy</span><span class="p">(</span><span class="nx">ret</span><span class="p">,</span> <span class="o">*</span><span class="nx">array</span><span class="p">)</span>
 		<span class="nx">result</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">result</span><span class="p">,</span> <span class="nx">ret</span><span class="p">)</span>
 	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -152,21 +155,29 @@
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="nf">swap</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
-	<span class="nx">tem</span> <span class="o">:=</span> <span class="p">(</span><span class="o">*</span><span class="nx">array</span><span class="p">)</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
-	<span class="p">(</span><span class="o">*</span><span class="nx">array</span><span class="p">)</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="p">(</span><span class="o">*</span><span class="nx">array</span><span class="p">)</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span>
-	<span class="p">(</span><span class="o">*</span><span class="nx">array</span><span class="p">)</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="p">=</span> <span class="nx">tem</span>
-<span class="p">}</span>
-</code></pre></div><p>还可以去<a href="https://play.golang.org/p/3-Faj8nt74g">play.golang.org</a>直接运行</p>
+	<span class="nx">tem</span> <span class="o">:=</span> <span class="p">(</span><span class="o">*</span><span class="nx">array</span><span class="p">)[</span><span class="nx">i</span><span class="p">]</span>
+	<span class="p">(</span><span class="o">*</span><span class="nx">array</span><span class="p">)[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="p">(</span><span class="o">*</span><span class="nx">array</span><span class="p">)[</span><span class="nx">j</span><span class="p">]</span>
+	<span class="p">(</span><span class="o">*</span><span class="nx">array</span><span class="p">)[</span><span class="nx">j</span><span class="p">]</span> <span class="p">=</span> <span class="nx">tem</span>
+<span class="p">}</span></code></pre></div>
+<p>还可以去<a href="https://play.golang.org/p/3-Faj8nt74g">play.golang.org</a>直接运行</p>
+
 <p>在LeetCode的报错信息也非常有意思，如下图</p>
-<p><img src="/images/go-submission-error/submission-detail.png" alt="submission-error"></p>
+
+<p><img src="/images/go-submission-error/submission-detail.png" alt="submission-error" /></p>
+
 <p>明明跑的case是<code>[]int{0, 1}</code>，为什么结果里会出现1、2、3呢，百思不得其解，于是发到twitter上，有好事者用Scala试了下发现没问题，我自己换Python试了下也没问题，可以认为不是LeetCode的问题了，那么换个其他人的答案呢，于是我找了一个也是go的解答，放上去一次就过了，那么肯定是我自己的问题了</p>
+
 <p>那么问题在哪儿呢？</p>
+
 <p>再仔细审视一下报错信息，为什么会加上1、2、3呢？于是我就扔了个错误的submission上去，让第一个case就报错，第一个case就是<code>[]int{1, 2, 3}</code>，也就是说，我的第二个case的解答里出现了第一个case的答案！</p>
+
 <p>原因已经很明显了，因为我在程序里用了全局变量<code>result [][]int</code></p>
+
 <p>虽然不知道LeetCode是如何循环的，但是可以猜想是在循环过程中，<code>result</code>作为全局变量在第2个case没有被初始化，里面还存着前一个case的答案，于是在第10行插入一行初始化的代码：</p>
+
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">9
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">9
 </span><span class="hl"><span class="lnt">10
 </span></span><span class="lnt">11
 </span><span class="lnt">12
@@ -177,19 +188,22 @@
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">permute</span><span class="p">(</span><span class="nx">nums</span> <span class="p">[</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span> <span class="p">[</span><span class="p">]</span><span class="p">[</span><span class="p">]</span><span class="kt">int</span> <span class="p">{</span>
-<span class="hl">    <span class="nx">result</span> <span class="p">=</span> <span class="p">[</span><span class="p">]</span><span class="p">[</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="p">}</span>
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">permute</span><span class="p">(</span><span class="nx">nums</span> <span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="p">[][]</span><span class="kt">int</span> <span class="p">{</span>
+<span class="hl">    <span class="nx">result</span> <span class="p">=</span> <span class="p">[][]</span><span class="kt">int</span><span class="p">{}</span>
 </span>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">nums</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">{</span>
-    	<span class="k">return</span> <span class="p">[</span><span class="p">]</span><span class="p">[</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span>
+    	<span class="k">return</span> <span class="p">[][]</span><span class="kt">int</span><span class="p">{</span>
     		<span class="nx">nums</span><span class="p">,</span>
     	<span class="p">}</span>
     <span class="p">}</span>
     <span class="nx">array</span> <span class="p">=</span> <span class="o">&amp;</span><span class="nx">nums</span>
-    <span class="nf">generate</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nx">nums</span><span class="p">)</span><span class="p">)</span></code></pre></td></tr></table>
+    <span class="nf">generate</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nx">nums</span><span class="p">))</span></code></pre></td></tr></table>
 </div>
 </div>
+
 <p>于是顺利通过</p>
+
 <p>非常尴尬，所以说啊，全局变量害死人，还是应该老老实实传入传出数组，稍有不慎，线上就P0了</p>
+
 <p>不过，这里如果用全局指针的话时间上可以打败100%的go submission，老老实实传数组只能48%，很显然，我选择100%</p>
 
     </div>

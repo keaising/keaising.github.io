@@ -66,48 +66,49 @@
 <article>
     
     <div class="true-content">
-        <h2 id="staticmethod-vs-classmethod">@staticmethod vs. @classmethod</h2>
+        
+
+<h2 id="staticmethod-vs-classmethod">@staticmethod vs. @classmethod</h2>
+
 <p><code>2019-10-02</code></p>
+
 <p>主要来源：<a href="https://stackoverflow.com/questions/136097/what-is-the-difference-between-staticmethod-and-classmethod">Stack Overflow</a></p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span><span class="p">:</span>
-        <span class="k">print</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">executing foo(</span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">)</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="k">print</span> <span class="s2">&#34;executing foo(</span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">)&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">class_foo</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span><span class="p">:</span>
-        <span class="k">print</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">executing class_foo(</span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">)</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">class_foo</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="k">print</span> <span class="s2">&#34;executing class_foo(</span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">)&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">static_foo</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="p">:</span>
-        <span class="k">print</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">executing static_foo(</span><span class="si">%s</span><span class="s2">)</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">x</span>    
+    <span class="k">def</span> <span class="nf">static_foo</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">print</span> <span class="s2">&#34;executing static_foo(</span><span class="si">%s</span><span class="s2">)&#34;</span> <span class="o">%</span> <span class="n">x</span>    
 
-<span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">(</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
 
 <span class="n">a</span><span class="o">.</span><span class="n">foo</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="c1"># executing foo(&lt;__main__.A object at 0xb7dbef0c&gt;,1)</span>
+<span class="c1"># executing foo(&lt;__main__.A object at 0xb7dbef0c&gt;,1)</span>
 
 <span class="n">a</span><span class="o">.</span><span class="n">class_foo</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="c1"># executing class_foo(&lt;class &#39;__main__.A&#39;&gt;,1)</span>
+<span class="c1"># executing class_foo(&lt;class &#39;__main__.A&#39;&gt;,1)</span>
 
 <span class="n">A</span><span class="o">.</span><span class="n">class_foo</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="c1"># executing class_foo(&lt;class &#39;__main__.A&#39;&gt;,1)</span>
+<span class="c1"># executing class_foo(&lt;class &#39;__main__.A&#39;&gt;,1)</span>
 
 <span class="n">a</span><span class="o">.</span><span class="n">static_foo</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="c1"># executing static_foo(1)</span>
+<span class="c1"># executing static_foo(1)</span>
 
-<span class="n">A</span><span class="o">.</span><span class="n">static_foo</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">hi</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="c1"># executing static_foo(hi)</span>
-</code></pre></div><p>可以认为<code>foo</code>是实例方法，<code>class_foo</code>是类方法，而<code>static_foo</code>是静态方法</p>
+<span class="n">A</span><span class="o">.</span><span class="n">static_foo</span><span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">)</span>
+<span class="c1"># executing static_foo(hi)</span></code></pre></div>
+<p>可以认为<code>foo</code>是实例方法，<code>class_foo</code>是类方法，而<code>static_foo</code>是静态方法</p>
+
 <ul>
-<li>
-<p><code>foo</code> 会隐式传递参数<code>self</code>，<code>self</code>是当前调用这个方法的实例: <code>a</code></p>
-</li>
-<li>
-<p><code>class_foo</code> 会隐式传递参数<code>cls</code>，<code>cls</code>是当前调用这个方法的类: <code>A</code></p>
-</li>
-<li>
-<p><code>static_foo</code> 什么都没有，显示传递给它什么参数它就有什么，可以看成普通的 module function</p>
-</li>
+<li><p><code>foo</code> 会隐式传递参数<code>self</code>，<code>self</code>是当前调用这个方法的实例: <code>a</code></p></li>
+
+<li><p><code>class_foo</code> 会隐式传递参数<code>cls</code>，<code>cls</code>是当前调用这个方法的类: <code>A</code></p></li>
+
+<li><p><code>static_foo</code> 什么都没有，显示传递给它什么参数它就有什么，可以看成普通的 module function</p></li>
 </ul>
 
     </div>

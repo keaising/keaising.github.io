@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Palindrome on 流水沉微</title>
@@ -21,15 +21,15 @@
  Example 1
 Input: 121
 Output: true
-  Example 2
+Example 2
 Input: -121
 Output: false
 Explanation: From left to right, it reads -121. From right to left, it &amp;gt; becomes 121-.
 Therefore it is not a palindrome.
-  Example 3
+Example 3
 Input: 10
 Output: false
-Explanation: Reads 01 from right to left.</description>
+Explanation: Reads 01 from right to left. Therefore it is not a palindrome.</description>
     </item>
     
   </channel>
