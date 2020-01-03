@@ -66,46 +66,32 @@
 <article>
     
     <div class="true-content">
-        
-
-<p>在我学习 TCP/IP 协议的道路上遇到过很多书，随便拎一本出来都是振聋发聩的作品：</p>
-
+        <p>在我学习 TCP/IP 协议的道路上遇到过很多书，随便拎一本出来都是振聋发聩的作品：</p>
 <ul>
 <li><a href="https://book.douban.com/subject/1088054/">TCP/IP详解 卷1：协议</a></li>
 <li><a href="https://book.douban.com/subject/24737674/">图解TCP/IP（第5版）</a></li>
 <li><a href="https://book.douban.com/subject/26790659/">TCP/IP详解 卷1 协议（英文版）</a></li>
 </ul>
-
 <p>但是我似乎并没有能从他们之中入到门，可能是我比较愚钝，难以理解到大师著作的精髓，直到我在 OReilly Online 遇到了 <a href="https://learning.oreilly.com/library/view/sams-teach-yourself/9780132810814/">Sams Teach Yourself TCP/IP in 24 Hours</a></p>
-
 <p>这本书跟我之前很喜欢的 <a href="https://book.douban.com/subject/24250054/">SQL必知必会</a>、<a href="https://book.douban.com/subject/26285406/">正则表达式必知必会</a> 出自同一个系列，我是先在 OReilly 上读了才发现有中文版 <a href="https://book.douban.com/subject/10556677/">TCP/IP入门经典</a></p>
-
 <p>这本书最好的地方在于详略得当，足够新也足够详细，但又没有详细到啰嗦的地步，读起来还是比较舒服的，我终于在这本书里弄明白了为何要划分子网、如何划分子网、子网掩码的用途用法、路由的基本方法等之前一直没有弄明白的内容，此书恰如其分得成为了我的入门之书</p>
-
-<h2 id="hour2-how-tcp-ip-works">Hour2. How TCP/IP Works</h2>
-
+<h2 id="hour2-how-tcpip-works">Hour2. How TCP/IP Works</h2>
 <p>简单介绍了以下 4 个内容：</p>
-
 <ul>
 <li>TCP/IP protocol system</li>
 <li>The OSI model</li>
 <li>Data packages</li>
 <li>How TCP/IP protocols interact</li>
 </ul>
-
-<h3 id="2-1-tcp-ip-protocol-system">2.1 TCP/IP protocol system</h3>
-
+<h3 id="21-tcpip-protocol-system">2.1 TCP/IP protocol system</h3>
 <ul>
 <li>Network Access layer</li>
 <li>Internet layer</li>
 <li>Transport layer</li>
 <li>Application layer</li>
 </ul>
-
-<h3 id="2-2-the-seven-layer-osi-model">2.2 The seven-layer OSI model</h3>
-
+<h3 id="22-the-seven-layer-osi-model">2.2 The seven-layer OSI model</h3>
 <p>OSI(Open Systems Interconnection) 有 7 层：</p>
-
 <ul>
 <li>Physical layer</li>
 <li>Data Link layer</li>
@@ -115,96 +101,65 @@
 <li>Presentation layer</li>
 <li>Application layer</li>
 </ul>
-
 <p>OSI 和 TCP/IP 的关系如下</p>
-
-<p><img src="/images/2019/10/26/2.2 osi vs tcpip.png" alt="osi vs tcpip" /></p>
-
-<h3 id="2-3-data-packages">2.3 Data packages</h3>
-
+<p>![osi vs tcpip](/images/2019/10/26/2.2 osi vs tcpip.png)</p>
+<h3 id="23-data-packages">2.3 Data packages</h3>
 <p>发送数据时，数据包在协议栈上从上往下传递的过程中，每一层都会给数据包增加一个头部(header)，用来放置本层所需的信息。接收消息时，一个反向过程会将数据包从层层包裹中取出</p>
-
-<p><img src="/images/2019/10/26/2.3 data package.png" alt="data package" /></p>
-
-<h3 id="2-4-quiz-and-exercises">2.4 QUIZ AND EXERCISES</h3>
-
+<p>![data package](/images/2019/10/26/2.3 data package.png)</p>
+<h3 id="24-quiz-and-exercises">2.4 QUIZ AND EXERCISES</h3>
 <ol>
 <li>[Q3] What are the advantages and disadvantages of UDP as compared to TCP?</li>
 <li>[E1] List the functions performed by each layer in the TCP/IP stack.</li>
 <li>[E4] Explain what it means to say that TCP is a reliable protocol.</li>
 </ol>
-
 <p>快速答案参见：<a href="https://learning.oreilly.com/library/view/sams-teach-yourself/9780132810814/app01.html#app01">Appendix A. Answers to Quizzes and Exercises</a></p>
-
-<h3 id="2-5-key-terms">2.5 KEY TERMS</h3>
-
+<h3 id="25-key-terms">2.5 KEY TERMS</h3>
 <dl>
 <dt>Segment</dt>
 <dd>The data package passed from TCP at the Transport layer to the Internet layer.</dd>
 <dt>Datagram</dt>
-<dd>
-
-<ol>
+<dd><ol>
 <li>The data package passed from the Internet layer to the Network Access layer</li>
 <li>or a data package passed from UDP at the Transport layer to the Internet layer.</li>
-</ol></dd>
+</ol>
+</dd>
 <dt>Frame</dt>
 <dd>The data package created at the Network Access layer.</dd>
 </dl>
-
 <p><strong>Segment</strong> -&gt; <strong>Datagram</strong> -&gt; <strong>Frame</strong></p>
-
 <h2 id="hour-4-the-internet-layer">Hour 4. The Internet Layer</h2>
-
 <p>介绍了以下内容：</p>
-
 <ul>
 <li>IP addresses</li>
 <li>The IP header</li>
 <li>ARP</li>
 <li>ICMP</li>
 </ul>
-
-<h3 id="4-1-addressing-and-delivering">4.1 ADDRESSING AND DELIVERING</h3>
-
-<h4 id="4-1-1-ip-层存在的意义">4.1.1 IP 层存在的意义</h4>
-
+<h3 id="41-addressing-and-delivering">4.1 ADDRESSING AND DELIVERING</h3>
+<h4 id="411-ip-">4.1.1 IP 层存在的意义</h4>
 <p>在独立的LAN(Local Area Network)里，网卡间通信只需要物理地址即可传输数据，此时只需要Network Access layer即可</p>
-
 <p>当在一个需要路由的网络环境中传输数据时，物理地址就不够用了，原因有2：</p>
-
 <ol>
 <li>物理地址很难越过路由接口进行寻址工作</li>
 <li>即便是可以，物理地址缺少逻辑结果进行分层的能力，导致寻址过程速度缓慢</li>
 </ol>
-
 <p>IP 层应运而生：TCP/IP therefore makes the physical address invisible and instead organizes the network around a logical, hierarchical addressing scheme.</p>
-
 <p>IP 层具有以下能力：</p>
-
 <ol>
 <li>This logical addressing scheme is maintained by the <strong>IP protocol</strong> at the Internet layer</li>
 <li>The logical address is called the <strong>IP address</strong></li>
 <li>Another <strong>Internet layer protocol</strong> called <strong>Address Resolution Protocol (ARP)</strong> assembles a table that maps IP addresses to physical addresses</li>
 </ol>
-
-<h4 id="4-1-2-ip-层传输策略">4.1.2 IP 层传输策略</h4>
-
+<h4 id="412-ip-">4.1.2 IP 层传输策略</h4>
 <p>如果在同一网络中，就直接使用ARP得到物理地址，然后传输.</p>
-
 <p>如果在不同网络中，</p>
-
 <ol>
 <li>数据首先被传输到 gateway，通过 gateway 传输到其他网络，gateway 也是路由器</li>
 <li>数据通过 gateway 进入到其他网络中，如果物理地址就在当前网络，那么传输给目标地址；如果不在，那么继续通过 gateway 向后传播，继续这一过程</li>
 </ol>
-
-<h3 id="4-2-internet-protocol">4.2 INTERNET PROTOCOL</h3>
-
+<h3 id="42-internet-protocol">4.2 INTERNET PROTOCOL</h3>
 <p>Internet Protocol (IP) 提供了一个层次化、与硬件无关的寻址系统，以便在复杂且需要路由的网络中传输数据，每个网卡都有一个唯一的 IP 地址</p>
-
 <p>IP地址的组成部分</p>
-
 <dl>
 <dt>network ID</dt>
 <dd>划分网络</dd>
@@ -212,63 +167,40 @@
 <dd>在一个划分好的网络中找到特定主机</dd>
 <dd>长度：4 x 8 bit，每 8bit 为一个 octet，用 0-255 之间的一个数字表示</dd>
 </dl>
-
 <p>IP 地址被划分为 5 类：</p>
-
 <ul>
 <li>A：used the first 8 bits of the address for the network ID</li>
 <li>B: used the first 16 bits</li>
 <li>C: used the first 24 bits</li>
 </ul>
-
 <p>5类地址的每一个地址就是一个网络，A类地址只使用了前8位作为network ID，每个A类地址的网络可以还可以有<code>2**8 x 2**8 x 2**8 = 16,777,216</code>个地址可以分配，B/C 类地址的计算同理</p>
-
 <p>如果一个网络里还要划分子网该怎么办呢？VLSM</p>
-
 <p>那如果有两三个网络需要合并成一个呢？CIDR</p>
-
 <p>VLSM 和 CIDR 都是在子网掩码的基础上进行操作</p>
-
 <dl>
 <dt>VLSM</dt>
 <dd>将子网掩码中的 1 右移，在网段中继续划分网段</dd>
 <dt>CIDR</dt>
 <dd>将子网掩码中的 0 左移，将多个相邻网段合并成一个</dd>
 </dl>
-
-<h3 id="4-3-address-resolution-protocol">4.3 ADDRESS RESOLUTION PROTOCOL</h3>
-
+<h3 id="43-address-resolution-protocol">4.3 ADDRESS RESOLUTION PROTOCOL</h3>
 <p>Internet layer protocol</p>
-
 <p>Map IP addresses to physical addresses</p>
-
-<h3 id="4-4-reverse-arp">4.4 REVERSE ARP</h3>
-
+<h3 id="44-reverse-arp">4.4 REVERSE ARP</h3>
 <p>RARP is the opposite of ARP.</p>
-
 <p>ARP is used when the IP address is known but the physical address is not known.</p>
-
 <p>RARP is used when the physical address is known but the IP address is not known.</p>
-
-<h3 id="4-5-internet-control-message-protocol">4.5 INTERNET CONTROL MESSAGE PROTOCOL</h3>
-
+<h3 id="45-internet-control-message-protocol">4.5 INTERNET CONTROL MESSAGE PROTOCOL</h3>
 <p>两个作用：</p>
-
 <ol>
 <li>Routers ICMP messages to notify the source IP of these problems.</li>
 <li>ICMP is also used for other diagnosis and troubleshooting functions.</li>
 </ol>
-
-<h3 id="4-6-other-internet-layer-protocols">4.6 OTHER INTERNET LAYER PROTOCOLS</h3>
-
+<h3 id="46-other-internet-layer-protocols">4.6 OTHER INTERNET LAYER PROTOCOLS</h3>
 <p>IP 层协议还有Border Gateway Protocol (BGP) 和 Routing Information Protocol (RIP) 都是路由协议，主要是用来加快路由的</p>
-
-<h3 id="4-7-quiz-and-exercises">4.7 QUIZ AND EXERCISES</h3>
-
+<h3 id="47-quiz-and-exercises">4.7 QUIZ AND EXERCISES</h3>
 <p><a href="https://learning.oreilly.com/library/view/sams-teach-yourself/9780132810814/app01.html#app01qa6a2">Q1</a>: What is the purpose of the TTL field in the IP header?</p>
-
-<h3 id="4-8-key-terms">4.8 KEY TERMS</h3>
-
+<h3 id="48-key-terms">4.8 KEY TERMS</h3>
 <dl>
 <dt><a href="https://learning.oreilly.com/library/view/sams-teach-yourself/9780132810814/ch04.html#ch04term01a">Address Class</a></dt>
 <dd>A classification system for IP addresses. The network class determines how the address is subdivided into a network ID and host ID.</dd>
@@ -281,38 +213,23 @@
 <dt><a href="https://learning.oreilly.com/library/view/sams-teach-yourself/9780132810814/ch04.html#ch04term12a">Subnet</a></dt>
 <dd>A logical division of a TCP/IP address space.</dd>
 </dl>
-
 <h2 id="hour-5-subnetting-and-cidr">Hour 5. Subnetting and CIDR</h2>
-
 <p>主要是讲子网划分，知道子网掩码怎么算、VLSM、CIDR 即可</p>
-
 <p>虽然这章是我花时间最多、看得最认真的，但是读懂之后就没什么可做摘抄的了</p>
-
 <ul>
 <li><a href="https://www.routerfreak.com/cidr-vs-vlsm/">CIDR vs VLSM: understanding how they works</a></li>
 <li><a href="https://www.zhihu.com/question/52628019/answer/220436824">vlsm与cidr的原理，还有它们的不同之处</a></li>
 </ul>
-
-<h3 id="5-1-q-a">5.1 Q&amp;A</h3>
-
+<h3 id="51-qa">5.1 Q&amp;A</h3>
 <p>Q. A network admin calculates that he needs 21 mask bits for his network. What subnet mask should he use?</p>
-
 <p>A. 21 mask bits: 11111111111111111111100000000000 is equivalent to two full octets plus an additional 5 bits. Each full octet is expressed in the mask as 255. The five bits in the third octet are equivalent to 128 + 64 + 32 + 16 + 8 = 248. The mask is 255.255.248.0.</p>
-
 <p>Q. What IP addresses are assigned in the CIDR range 212.100.192.0/20?</p>
-
 <p>A. The /20 supernet parameter specifies that 20 bits of the IP address will be constant and the rest will vary. The binary version of the initial address is</p>
-
 <p>11010100.01100100.11000000.00000000</p>
-
 <p>The first 20 bits of the highest address must be the same as the initial address, and the rest of the address bits can vary. Show the varying bits as the opposite end of the range (all 1s instead of all 0s):</p>
-
 <p>11010100.01100100.11001111.11111111</p>
-
 <p>The address range is 212.100.192.0 to 212.100.207.255.</p>
-
 <p>Q. Calculate the CIDR network address you get if you combine the network addresses 180.4.0.0 through 180.7.255.255 into a single network?</p>
-
 <p>A. You get the CIDR address 180.4.0.0/14.</p>
 
     </div>
