@@ -189,6 +189,22 @@
 <h3 id="112-grammars">1.1.2 用语法(Grammars)定义集合</h3>
 <p>之前的例子非常的直观，但是很容易想象到，在处理更复杂的数据类型的时候，描述过程会变得相当的笨重。为了作出改进，我们将展示如何用<em>语法</em>来描述集合。语法一般常用于描述字符串集合，但我们同样能用它来定义数值集合。比如我们可以用如下语法来定义<span class="Math">\(List-of-Int\)</span></p>
 <div class="Math Math-Formula">\(\begin{align} List-of-Int &amp;::= () \\ List-of-Int &amp;::= (Int \hspace{.5em} . \hspace{.5em} List-of-Int) \end{align}\)</div>
+<p>由于定义1.1.4有两个属性，对应得这里有两条规则。第一条规则意味着空数组包含于<code>List-ofInt</code>，第二条规则说明了如果<code>n</code>在集合<code>Int</code>中、<code>l</code>在集合<code>List-of-Int</code>中，那么<code>(n . l)</code>在集合<code>List-of-Int</code>中，这两条规则的组合被称为一个<em>语法</em></p>
+<p>现在我们来仔细看看语法的定义，在定义中有如下元素：</p>
+<ul>
+<li>
+<p><strong>非终结性符号</strong>：非终结性符号是指那些被定义的集合的名字。在上面的例子中只有一个这样的集合，但通常来说，一般都会有好几个被定义的集合，这些集合有时候也被称为<strong>句法范畴</strong>。方便起见，我们约定对集合和非终结性符号的名字使用大写名字，在引用他们中的元素时使用小写名字。听起来很复杂但是一看例子就明白了，比如：<span class="Math">\(Expression\)</span>是 非终结的，所以我们写作<span class="Math">\(e \in Expression\)</span>或者<code>e is an expression.</code> 另一种惯用约定是巴科斯范式(Backus-Naur Form)，或者简称BNF，写法是在单词两端写箭头，比如：<span class="Math">\(&lt;expression&gt;\)</span></p>
+</li>
+<li>
+<p><strong>终结性符合</strong>：比如以下符合：<code>. ( )</code>，一般会用等宽字体来写，比如<code>lambda</code></p>
+</li>
+<li>
+<p><strong>Production</strong>：一条规则就是一个production(产品)。每个production分为左右两侧，左侧是一个非终结性符合，右侧是终结性符号和非终结性符号。左右两侧由符号<code>::=</code>分隔，读作<em>是</em>。右侧内容阐明了根据其他句法范畴和终结性符号(比如左括号、右括号和句号)来构造句法范畴成员的方法</p>
+</li>
+</ul>
+<p>有时候，如果从上下文中已经可以得到足够清晰的意义，production中的部分句法范畴也会不进行定义，比如<code>Int</code></p>
+<p>语法经常会用使用符号缩写进行编写。如果一个production的左侧内容跟上一个production的左侧内容一致，推荐直接把左侧内容省略，比如：</p>
+<div class="Math Math-Formula">\(\begin{align} List-of-Int &amp;::= () \\ &amp;::= (Int \hspace{.5em} . \hspace{.5em} List-of-Int) \end{align}\)</div>
 
     </div>
 
