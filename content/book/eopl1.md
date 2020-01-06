@@ -153,3 +153,9 @@ usage: (in-S? n) = #t if n is in S, #f otherwise
 语法经常会用使用符号缩写进行编写。如果一个production的左侧内容跟上一个production的左侧内容一致，推荐直接把左侧内容省略，比如：
 
 {{< formula "\begin{align} List-of-Int &::= () \\ &::= (Int \hspace{.5em} . \hspace{.5em} List-of-Int) \end{align}" >}}
+
+也可以只写一次`::=`，用一个特殊的`|`符号将右侧的两行内容分隔，比如：
+
+{{< formula "\begin{align} List-of-Int ::= () \hspace{.5em} | \hspace{.5em} (Int \hspace{.5em} . \hspace{.5em} List-of-Int) \end{align}" >}}
+
+还有一种缩写形式叫*Kleene star*(克林星)，用{{< math "\{...\}^*">}}符号来表示
