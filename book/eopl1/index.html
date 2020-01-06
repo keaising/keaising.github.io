@@ -205,6 +205,9 @@
 <p>有时候，如果从上下文中已经可以得到足够清晰的意义，production中的部分句法范畴也会不进行定义，比如<code>Int</code></p>
 <p>语法经常会用使用符号缩写进行编写。如果一个production的左侧内容跟上一个production的左侧内容一致，推荐直接把左侧内容省略，比如：</p>
 <div class="Math Math-Formula">\(\begin{align} List-of-Int &amp;::= () \\ &amp;::= (Int \hspace{.5em} . \hspace{.5em} List-of-Int) \end{align}\)</div>
+<p>也可以只写一次<code>::=</code>，用一个特殊的<code>|</code>符号将右侧的两行内容分隔，比如：</p>
+<div class="Math Math-Formula">\(\begin{align} List-of-Int ::= () \hspace{.5em} | \hspace{.5em} (Int \hspace{.5em} . \hspace{.5em} List-of-Int) \end{align}\)</div>
+<p>还有一种缩写形式叫<em>Kleene star</em>(克林星)，用<span class="Math">\(\{...\}^*\)</span>符号来表示</p>
 
     </div>
 
