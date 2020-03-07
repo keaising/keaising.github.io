@@ -4,7 +4,7 @@
   
   <url>
     <loc>http://shuxiao.wang/posts/</loc>
-    <lastmod>2019-12-28T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -74,6 +74,21 @@
   <url>
     <loc>http://shuxiao.wang/leetcode/334.-increasing-triplet-subsequence/</loc>
     <lastmod>2019-10-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shuxiao.wang/categories/</loc>
+    <lastmod>2020-03-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shuxiao.wang/categories/introduction/</loc>
+    <lastmod>2020-03-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shuxiao.wang/posts/introduction-to-lastpass/</loc>
+    <lastmod>2020-03-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -199,11 +214,6 @@
   <url>
     <loc>http://shuxiao.wang/tags/trie-tree/</loc>
     <lastmod>2019-10-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shuxiao.wang/categories/</loc>
-    <lastmod>2019-09-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
