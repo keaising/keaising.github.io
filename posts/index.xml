@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 流水沉微</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Sat, 07 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 01 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://shuxiao.wang/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>宅家工作的三个月</title>
+      <link>http://shuxiao.wang/posts/work-from-home/</link>
+      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/posts/work-from-home/</guid>
+      <description>从2月初到北京开始，我就一直呆在宅在家里，工作也是在家远程，每天就出门取个快递、外卖和顺路扔个垃圾，3个月来只出过3次小区 算是幸福的居家生活</description>
+    </item>
     
     <item>
       <title>LastPass 基本用法</title>
