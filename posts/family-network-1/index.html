@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" class="han-la">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>2000块搭建家庭网络——前言 - 流水沉微</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/css/kitto.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <script src="/js/anchor.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/js/text-autospace.js"></script>
+</head>
+
+<body>
+    <div class="content width">
+        <div class="top-header">
+  <a class="site-title" href="http://shuxiao.wang">
+    流水沉微
+  </a>
+
+  
+  
+  <div class="nav-body">
+    
+    
+    <a class="nav-item " href="/posts/">
+      
+      <span>Posts</span>
+    </a>
+    
+    
+    
+    <a class="nav-item " href="/cloud/">
+      
+      <span>Cloud</span>
+    </a>
+    
+    
+    
+    <a class="nav-item " href="/eureka/">
+      
+      <span>Eureka!</span>
+    </a>
+    
+    
+  </div>
+  
+</div>
+
+        <div>
+            
+
+
+<div class="Subhead">
+    <div class="Subhead-heading">
+        <h1>2000块搭建家庭网络——前言</h1>
+    </div>
+</div>
+
+
+
+
+<article>
+    
+    <div class="true-content">
+        <p>最近几个月都在远程工作，饱受移动国际出口的虐待，不管是自己的代理还是公司提供的代理都悉数挂掉，连正常查点Stack Overflow和Google都难以如愿，又加上一直在玩Switch的健身环大冒险，想要把每天的锻炼成果直接发到Twitter，每次都需要开着台式机上的Shadowsocks给Switch提供代理，不甚其烦; 此外还在给自己装Arch Linux的时候发现还是需要一个额外代理比较方便。痛定思痛之后翻出来自己吃灰已久的x220，装上Ubuntu，跑起来Clash给全家提供一个额外代理，这样就解决了家里的统一代理问题</p>
+<p>但是，流量出国困境依然，于是在推友的建议下买了一个阿里云国内的机器专门做流量转发，才终于获得了一个高速可靠的上网环境。由于阿里云的机器还顺带提供一个公网IPv4地址，在其上安装了发布不久的wireguard组建了自己的局域网，这样不管我身在何处，都可以访问到家里的资源，非常方便。后来我司SRE大佬还送我一个x86软路由，于是我顺带把家里的路由器也换掉了，用上了软路由，把代理和一些小服务都直接做到了软路由上，美滋滋</p>
+<p>以上的一整套解决方案在2000块钱以内，主要花费如下：</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th align="center">Cast(RMB)</th>
+<th align="right">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x86软路由</td>
+<td align="center">900</td>
+<td align="right">淘宝买的，关键词J1900 软路由</td>
+</tr>
+<tr>
+<td>阿里云t5突发实例</td>
+<td align="center">500</td>
+<td align="right">一次性买4年，算下来每天才3角</td>
+</tr>
+<tr>
+<td>阿里云t5突发实例流量</td>
+<td align="center">0.8元/GB</td>
+<td align="right">目前每天不到2块钱，年均不到600</td>
+</tr>
+<tr>
+<td>推友的梯子</td>
+<td align="center">15元/月</td>
+<td align="right">这个钱一般是朋友出，不算到我头上</td>
+</tr>
+</tbody>
+</table>
+<p>只需要花这点钱，加上一点点折腾，你就可以获得一个互联网码农理应拥有的远程工作环境</p>
+<p>接下来我将用几篇文章记录整个构建过程，我会尽量写详细一点，因为这里面的东西对知道的人来说根本不用看，对不知道的人来说根本没有听说过，我希望最后的内容对读者的知识储备要求能低到有基本的Linux知识和会简单使用vim(在文件内导航+修改)即可</p>
+<p>整个折腾过程参考了很多博客和StackOverflow上的提问，我会在相应的博客结尾附上参考得最多的几篇博客，以及关键的StackOverflow提问</p>
+<p>撒！一狗！</p>
+
+    </div>
+
+    <div class="page-info">
+        <div>
+            
+
+<div>
+    
+</div>
+
+
+
+<div>
+    <a href='/tags/family-network' class="tags-url">
+        <span class="tags">family network</span>
+    </a>
+</div>
+
+
+
+        </div>
+        
+            
+                <div class="publish-date">
+                    <span
+                        title="Lastmod: 2020-05-15. Published at: 2020-05-15.">
+                        15 May 2020
+                    </span>
+                </div>
+            
+        
+    </div>
+</article>
+
+
+
+
+
+        </div>
+        <div id="footer" class="pt-2 pb-3 bg-white text-center">
+            
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/keaising/kitto" class="link-gray-dark">Kitto</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+        </div>
+    </div>
+
+    
+    <script>
+        anchors.add();
+    </script>
+    <script>
+        anchors.options = {
+            placement: 'left',
+        };
+        anchors.add();
+        anchors.add(".tag-title-left");
+    </script>
+    <script src="/js/mathjax.js"></script>
+</body>
+
+</html>

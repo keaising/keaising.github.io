@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>family network on 流水沉微</title>
+    <link>http://shuxiao.wang/tags/family-network/</link>
+    <description>Recent content in family network on 流水沉微</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn</language>
+    <lastBuildDate>Sat, 16 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://shuxiao.wang/tags/family-network/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2000块搭建家庭网络——国际流量转发</title>
+      <link>http://shuxiao.wang/posts/family-network-2/</link>
+      <pubDate>Sat, 16 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/posts/family-network-2/</guid>
+      <description>目前用得最多的科学上网方法都是在国外找一个服务器搭建特定隧道服务，国内的机器连接到该服务器，所有或者部分流量通过该隧道传输，达到科学上网的目</description>
+    </item>
+    
+    <item>
+      <title>2000块搭建家庭网络——前言</title>
+      <link>http://shuxiao.wang/posts/family-network-1/</link>
+      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/posts/family-network-1/</guid>
+      <description>最近几个月都在远程工作，饱受移动国际出口的虐待，不管是自己的代理还是公司提供的代理都悉数挂掉，连正常查点Stack Overflow和Goog</description>
+    </item>
+    
+  </channel>
+</rss>
