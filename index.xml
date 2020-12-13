@@ -157,6 +157,15 @@ Do not modify the linked list.
     </item>
     
     <item>
+      <title>Auto mouse keyboard</title>
+      <link>http://shuxiao.wang/posts/auto-mouse-keyboard/</link>
+      <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/posts/auto-mouse-keyboard/</guid>
+      <description>给兔子写了一个半自动化工具，让她可以自己编写流程的情况下，操作鼠标和键盘完成一系列任务。项目代码在 https://github.com/keaising/auto-mouse-keyboard/ 使用 在 Release 页面下载得到 exe 文件，将下载文件随</description>
+    </item>
+    
+    <item>
       <title>攒钱过程中的思考</title>
       <link>http://shuxiao.wang/posts/save-money/</link>
       <pubDate>Sat, 05 Dec 2020 00:00:00 +0000</pubDate>
