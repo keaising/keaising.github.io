@@ -6,11 +6,7 @@
     <description>Recent content in CS on 流水沉微</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://shuxiao.wang/cs/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://shuxiao.wang/cs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hero</title>
       <link>http://shuxiao.wang/cs/hero/</link>
@@ -44,7 +40,7 @@
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/cs/script/</guid>
-      <description>modify latest commit author git commit --amend --author=&amp;#34;keaising &amp;lt;keaising@gmail.com&amp;gt;&amp;#34;batch-modify-git-committer.sh git filter-branch --env-filter &amp;#39;OLD_EMAIL=&amp;#34;old_email&amp;#34;CORRECT_NAME=&amp;#34;keaising&amp;#34;CORRECT_EMAIL=&amp;#34;keaising@gmail.com&amp;#34;if [ &amp;#34;$GIT_COMMITTER_EMAIL&amp;#34; = &amp;#34;$OLD_EMAIL&amp;#34; ]thenexport GIT_COMMITTER_NAME=&amp;#34;$CORRECT_NAME&amp;#34;export GIT_COMMITTER_EMAIL=&amp;#34;$CORRECT_EMAIL&amp;#34;fiif [ &amp;#34;$GIT_AUTHOR_EMAIL&amp;#34; = &amp;#34;$OLD_EMAIL&amp;#34; ]thenexport GIT_AUTHOR_NAME=&amp;#34;$CORRECT_NAME&amp;#34;export GIT_AUTHOR_EMAIL=&amp;#34;$CORRECT_EMAIL&amp;#34;fi&amp;#39; --tag-name-filter cat -- --branches --tagsadd key of keaising@gmail.com echo &amp;#39;ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDEzQ42VEOqjtxbQ4LdArly5dDEz1tBMSaraCGuBfyGQRO5Yk6rivlbx4iIiuM0CsuAWZ/esRZKYl6hwOj3H/PanCrxOTW+mqowUHJIp9+c9FGc7ngneHytB05MaI9S49Iw51xYjRBHWrqvCGxDuggUWYHZNX5j5zy+FJxEUVZ8UQcX0lbKkJWCcMTyjkYHP4VAZygJA65TUW+rLGbA6Slh5dfZXlh7GxdjPG2WJxzJ+vcSPolDoNpoVKslTfLVgW+WFNMxE9AO6zF3K0+9k938PBp7iaDqachfyh6Wb3pz5beuBkAD9nBM0GiJD50d+SAUEpRs5DA79U0+8Jb1vkuH7ylIvXI+rcOwylfnVhUgFuPJS1bPxBrt0bKBqK2EwpFPxeKMylq8/9m+y4GE5/6uMMc0j6SYiN0f0qob1Wb5HgVl11gB9VI75L5NzuRfIiSWP5bJ9yTxjz4TL1lYGASV/WAk4KkmrpkE9HrEqVsJBxCacFZzE3rXAS11lotbEczPIgBNrRf/YN5ZQKDJne9KWBTkhzJ8ej8rlf1hm3EoKGESVByleW0elJDPAN2k+E3Bd10DL395ficJ2TXqlwxtLrp3s1xzj05Coo0tZQpnYfntqs3kPh3Lx9DNRS0JxUP4N8dGF3oSwA8d06VU9e2hG4LzQKZZ+dOief/jLUu9MQ== keaising@gmail.com&amp;#39; &amp;gt;&amp;gt; ~/.ssh/authorized_keys</description>
+      <description>modify latest commit author git commit --amend --author=&amp;#34;keaising &amp;lt;keaising@gmail.com&amp;gt;&amp;#34; batch-modify-git-committer.sh git filter-branch --env-filter &amp;#39; OLD_EMAIL=&amp;#34;old_email&amp;#34; CORRECT_NAME=&amp;#34;keaising&amp;#34; CORRECT_EMAIL=&amp;#34;keaising@gmail.com&amp;#34; if [ &amp;#34;$GIT_COMMITTER_EMAIL&amp;#34; = &amp;#34;$OLD_EMAIL&amp;#34; ] then export GIT_COMMITTER_NAME=&amp;#34;$CORRECT_NAME&amp;#34; export GIT_COMMITTER_EMAIL=&amp;#34;$CORRECT_EMAIL&amp;#34; fi if [ &amp;#34;$GIT_AUTHOR_EMAIL&amp;#34; = &amp;#34;$OLD_EMAIL&amp;#34; ] then export GIT_AUTHOR_NAME=&amp;#34;$CORRECT_NAME&amp;#34; export GIT_AUTHOR_EMAIL=&amp;#34;$CORRECT_EMAIL&amp;#34; fi &amp;#39; --tag-name-filter cat -- --branches --tags add key of keaising@gmail.com echo &amp;#39;ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDEzQ42VEOqjtxbQ4LdArly5dDEz1tBMSaraCGuBfyGQRO5Yk6rivlbx4iIiuM0CsuAWZ/esRZKYl6hwOj3H/PanCrxOTW+mqowUHJIp9+c9FGc7ngneHytB05MaI9S49Iw51xYjRBHWrqvCGxDuggUWYHZNX5j5zy+FJxEUVZ8UQcX0lbKkJWCcMTyjkYHP4VAZygJA65TUW+rLGbA6Slh5dfZXlh7GxdjPG2WJxzJ+vcSPolDoNpoVKslTfLVgW+WFNMxE9AO6zF3K0+9k938PBp7iaDqachfyh6Wb3pz5beuBkAD9nBM0GiJD50d+SAUEpRs5DA79U0+8Jb1vkuH7ylIvXI+rcOwylfnVhUgFuPJS1bPxBrt0bKBqK2EwpFPxeKMylq8/9m+y4GE5/6uMMc0j6SYiN0f0qob1Wb5HgVl11gB9VI75L5NzuRfIiSWP5bJ9yTxjz4TL1lYGASV/WAk4KkmrpkE9HrEqVsJBxCacFZzE3rXAS11lotbEczPIgBNrRf/YN5ZQKDJne9KWBTkhzJ8ej8rlf1hm3EoKGESVByleW0elJDPAN2k+E3Bd10DL395ficJ2TXqlwxtLrp3s1xzj05Coo0tZQpnYfntqs3kPh3Lx9DNRS0JxUP4N8dGF3oSwA8d06VU9e2hG4LzQKZZ+dOief/jLUu9MQ== keaising@gmail.com&amp;#39; &amp;gt;&amp;gt; ~/.ssh/authorized_keys </description>
     </item>
     
     <item>

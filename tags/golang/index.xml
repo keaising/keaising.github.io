@@ -6,11 +6,7 @@
     <description>Recent content in golang on 流水沉微</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Fri, 31 May 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://shuxiao.wang/tags/golang/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 31 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://shuxiao.wang/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>P0: Golang Submission Error</title>
       <link>http://shuxiao.wang/posts/golang-submission-error/</link>

@@ -237,11 +237,6 @@
   </url>
   
   <url>
-    <loc>http://shuxiao.wang/tags/tcp/ip/</loc>
-    <lastmod>2019-10-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://shuxiao.wang/tags/python/</loc>
     <lastmod>2019-10-21T00:00:00+00:00</lastmod>
   </url>
@@ -424,6 +419,10 @@
   <url>
     <loc>http://shuxiao.wang/cs/config/</loc>
     <lastmod>2014-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shuxiao.wang/tags/tcp/ip/</loc>
   </url>
   
 </urlset>

@@ -67,9 +67,9 @@
     <div class="true-content">
         <p>本章介绍了一些基本的编程工具，这些工具在后续编写解释器(interpreters)、检查器(checkers)和类似组成编程语言核心处理器(processor)之类的程序的时候需要用到</p>
 <p>由于一门语言中的语法(syntax)通常都是嵌套(nested)或者树状结构(treelike structure)，故递归在我们将使用的技术中将占据核心位置。第1.1节和第1.2节介绍了用归纳法来描述(specify)数据结构的方法，并揭示了这种描述方法将如何指导我们编写递归的程序。第1.3节阐述了如何将该方法扩展到更加复杂的问题中。最后，本章将以大量的练习作为结尾，这些练习才是本章的核心内容，他们将为你提供足够的经验，去掌握递归编程的思想(the technique of recursive programming)，而这思想，正是本书其他部分的基石。</p>
-<h2 id="11-specified">1.1 递归得描述(specified)数据</h2>
+<h2 id="11-递归得描述specified数据">1.1 递归得描述(specified)数据</h2>
 <p>为一个过程(procedure)编写代码时，我们必须准确得知道该过程的参数的类型、以及该过程的返回值的类型。通常这些值都是复杂类型。在本节，我们将介绍描述这些值的一般方法。</p>
-<h3 id="111-inductive-specification">1.1.1 归纳描述法(Inductive Specification)</h3>
+<h3 id="111-归纳描述法inductive-specification">1.1.1 归纳描述法(Inductive Specification)</h3>
 <p><em>归纳描述法</em> 是一个描述数据的有力方法。为了展示这一点，我们将用它来描述自然数<span class="Math">\(N={0,1,2,...}\)</span>的一个真子集<span class="Math">\(S\)</span></p>
 <dl>
 <dt><strong>定义1.1.1</strong></dt>
@@ -91,8 +91,8 @@
     <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">n</span><span class="p">)</span>
         <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">zero? </span><span class="nv">n</span><span class="p">)</span> <span class="no">#t</span>
             <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">&gt;= </span><span class="p">(</span><span class="nb">- </span><span class="nv">n</span> <span class="mi">3</span><span class="p">)</span> <span class="mi">0</span><span class="p">)</span>
-                <span class="p">(</span><span class="nf">in-S?</span> <span class="p">(</span><span class="nb">- </span><span class="nv">n</span> <span class="mi">3</span><span class="p">)</span><span class="p">)</span>
-                <span class="no">#f</span><span class="p">)</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
+                <span class="p">(</span><span class="nf">in-S?</span> <span class="p">(</span><span class="nb">- </span><span class="nv">n</span> <span class="mi">3</span><span class="p">))</span>
+                <span class="no">#f</span><span class="p">))))</span>
 </code></pre></div><p>这里我们根据定义用Scheme写了一个递归过程。其中<code>in-S? : N -&gt; Bool</code>是一个批注(comment)，称为该过程的<em>契约(contract)</em> ，它表示<code>in-S?</code>被设计为这样一个过程：以一个自然数作为入参并产生一个布尔值作为出参。这样的批注对读写代码都是很有帮助的</p>
 <p>为了判断<span class="Math">\(n \in S\)</span>是否成立，我们首先判断<span class="Math">\(n=0\)</span>是否成立，如果后者成立，则前者也成立。否则我们需要看<span class="Math">\(n-3 \in S\)</span>是否成立，为了判断<span class="Math">\(n-3 \in S\)</span>是否成立，我们先要检查<span class="Math">\((n-3) \ge 0\)</span>是否成立。如果成立的话，我们就可以使用我们已有的过程逻辑来判断它是否属于集合<span class="Math">\(S\)</span>，如果不成立，那么<span class="Math">\(n\)</span>不可能属于集合<span class="Math">\(S\)</span></p>
 <p>下面是另一种集合<span class="Math">\(S\)</span>的定义</p>
@@ -185,7 +185,7 @@
 </ol>
 </dd>
 </dl>
-<h3 id="112-grammars">1.1.2 用语法(Grammars)定义集合</h3>
+<h3 id="112-用语法grammars定义集合">1.1.2 用语法(Grammars)定义集合</h3>
 <p>之前的例子非常的直观，但是很容易想象到，在处理更复杂的数据类型的时候，描述过程会变得相当的笨重。为了作出改进，我们将展示如何用<em>语法</em>来描述集合。语法一般常用于描述字符串集合，但我们同样能用它来定义数值集合。比如我们可以用如下语法来定义<span class="Math">\(List-of-Int\)</span></p>
 <div class="Math Math-Formula">\(\begin{align} List-of-Int &amp;::= () \\ List-of-Int &amp;::= (Int \hspace{.5em} . \hspace{.5em} List-of-Int) \end{align}\)</div>
 <p>由于定义1.1.4有两个属性，对应得这里有两条规则。第一条规则意味着空数组包含于<code>List-ofInt</code>，第二条规则说明了如果<code>n</code>在集合<code>Int</code>中、<code>l</code>在集合<code>List-of-Int</code>中，那么<code>(n . l)</code>在集合<code>List-of-Int</code>中，这两条规则的组合被称为一个<em>语法</em></p>

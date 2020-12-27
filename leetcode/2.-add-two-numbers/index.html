@@ -102,26 +102,26 @@
 <p>Explanation: 342 + 465 = 807.</p>
 </blockquote>
 <h2 id="solve">Solve</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Definition for singly-linked list.</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Definition for singly-linked list.</span>
 <span class="k">class</span> <span class="nc">ListNode</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="bp">None</span>
 
 <span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">addTwoNumbers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">l1</span><span class="p">:</span> <span class="n">ListNode</span><span class="p">,</span> <span class="n">l2</span><span class="p">:</span> <span class="n">ListNode</span><span class="p">)</span> <span class="o">-</span><span class="o">&gt;</span> <span class="n">ListNode</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">addTwoNumbers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">l1</span><span class="p">:</span> <span class="n">ListNode</span><span class="p">,</span> <span class="n">l2</span><span class="p">:</span> <span class="n">ListNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ListNode</span><span class="p">:</span>
         <span class="n">head</span><span class="p">,</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
         <span class="n">carry</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">while</span> <span class="n">l1</span> <span class="ow">or</span> <span class="n">l2</span> <span class="ow">or</span> <span class="n">carry</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">l1</span><span class="p">:</span>
-                <span class="n">carry</span> <span class="o">+</span><span class="o">=</span> <span class="n">l1</span><span class="o">.</span><span class="n">val</span>
+                <span class="n">carry</span> <span class="o">+=</span> <span class="n">l1</span><span class="o">.</span><span class="n">val</span>
                 <span class="n">l1</span> <span class="o">=</span> <span class="n">l1</span><span class="o">.</span><span class="n">next</span>
             <span class="k">if</span> <span class="n">l2</span><span class="p">:</span>
-                <span class="n">carry</span> <span class="o">+</span><span class="o">=</span> <span class="n">l2</span><span class="o">.</span><span class="n">val</span>
+                <span class="n">carry</span> <span class="o">+=</span> <span class="n">l2</span><span class="o">.</span><span class="n">val</span>
                 <span class="n">l2</span> <span class="o">=</span> <span class="n">l2</span><span class="o">.</span><span class="n">next</span>
             <span class="n">curr</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="n">carry</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span>
             <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">.</span><span class="n">next</span>
-            <span class="n">carry</span> <span class="o">/</span><span class="o">/</span><span class="o">=</span> <span class="mi">10</span>
+            <span class="n">carry</span> <span class="o">//=</span> <span class="mi">10</span>
         <span class="k">return</span> <span class="n">head</span><span class="o">.</span><span class="n">next</span>
 </code></pre></div><h2 id="performance">Performance</h2>
 <p>Runtime: 88 ms, faster than 16.90% of Python3 online submissions for Add Two Numbers.</p>

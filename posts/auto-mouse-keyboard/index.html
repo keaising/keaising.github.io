@@ -66,26 +66,26 @@
     
     <div class="true-content">
         <p>给兔子写了一个半自动化工具，让她可以自己编写流程的情况下，操作鼠标和键盘完成一系列任务。项目代码在 <a href="https://github.com/keaising/auto-mouse-keyboard/">https://github.com/keaising/auto-mouse-keyboard/</a></p>
-<h2 id="heading">使用</h2>
+<h2 id="使用">使用</h2>
 <ol>
 <li>在 Release 页面下载得到 exe 文件，将下载文件随意放到一个目录下</li>
 <li>在同目录添加一个文本文件，名字是 amk.conf</li>
 <li>在资源管理器地址栏输入 powershell</li>
 <li>在弹出的新窗口中输入 .\auto-mouse-keyboard.exe 即可开始运行</li>
 </ol>
-<h2 id="-amkconf-">配置文件 amk.conf 格式说明</h2>
+<h2 id="配置文件-amkconf-格式说明">配置文件 amk.conf 格式说明</h2>
 <p>配置文件中每行是一条指令，指令分为 3 类：注释、设置和流程</p>
-<h3 id="heading-1">注释指令</h3>
+<h3 id="注释指令">注释指令</h3>
 <p>开头第一个字符是 <code>#</code> 的都是注释，比如</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># This is a comment</span>
 </code></pre></div><p>如果一行什么都不写，或者全都写空格，那就是空指令，什么都不会影响也不会有任何作用</p>
-<h3 id="heading-2">设置指令</h3>
+<h3 id="设置指令">设置指令</h3>
 <p>目前只有两个设置，设置每条命令执行的时间间隔(SHIM，单位毫秒)和设置当前显示器的分辨率缩放(SCALE)</p>
 <p>下面设置中，第一行设置两条命令之间间隔 500 毫秒执行，第二行标示当前显示器的分辨率缩放了 150%</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">SHIM</span><span class="o">=</span><span class="m">500</span>
 <span class="nv">SCALE</span><span class="o">=</span>1.5
 </code></pre></div><p>分辨率缩放主要是影响鼠标移动位置，在高分屏中会需要用到，当你发现鼠标移动的实际位置跟设定的位置不一致的时候需要检查，不设置的话默认是 1，没有缩放</p>
-<h3 id="heading-3">流程指令</h3>
+<h3 id="流程指令">流程指令</h3>
 <p>流程分为 5 类</p>
 <ul>
 <li>鼠标移动</li>
@@ -109,7 +109,7 @@
 <p>在当前位置输入文本</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">I</span><span class="o">=</span><span class="m">23333</span>
 <span class="nv">I</span><span class="o">=</span>可以是中文，也可以是 I love Grace
-<span class="nv">I</span><span class="o">=</span>%^*<span class="o">(</span><span class="p">&amp;</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">(</span>
+<span class="nv">I</span><span class="o">=</span>%^*<span class="o">(</span><span class="p">&amp;</span><span class="o">())(</span>
 <span class="nv">I</span><span class="o">=</span>可以包含各种特殊符号，也可以   有空格
 </code></pre></div><p><strong>键盘按键</strong></p>
 <p>可以是单个按键，也可以是组合键</p>

@@ -98,14 +98,14 @@
 <dt>Example</dt>
 <dd></dd>
 </dl>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">Trie</span> <span class="n">trie</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Trie</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">Trie</span> <span class="n">trie</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Trie</span><span class="p">();</span>
 
-<span class="n">trie</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">apple</span><span class="s2">&#34;</span><span class="p">)</span><span class="p">;</span>
-<span class="n">trie</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">apple</span><span class="s2">&#34;</span><span class="p">)</span><span class="p">;</span>   <span class="o">/</span><span class="o">/</span> <span class="n">returns</span> <span class="n">true</span>
-<span class="n">trie</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">app</span><span class="s2">&#34;</span><span class="p">)</span><span class="p">;</span>     <span class="o">/</span><span class="o">/</span> <span class="n">returns</span> <span class="n">false</span>
-<span class="n">trie</span><span class="o">.</span><span class="n">startsWith</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">app</span><span class="s2">&#34;</span><span class="p">)</span><span class="p">;</span> <span class="o">/</span><span class="o">/</span> <span class="n">returns</span> <span class="n">true</span>
-<span class="n">trie</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">app</span><span class="s2">&#34;</span><span class="p">)</span><span class="p">;</span>
-<span class="n">trie</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">app</span><span class="s2">&#34;</span><span class="p">)</span><span class="p">;</span>     <span class="o">/</span><span class="o">/</span> <span class="n">returns</span> <span class="n">true</span>
+<span class="n">trie</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s2">&#34;apple&#34;</span><span class="p">);</span>
+<span class="n">trie</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&#34;apple&#34;</span><span class="p">);</span>   <span class="o">//</span> <span class="n">returns</span> <span class="n">true</span>
+<span class="n">trie</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&#34;app&#34;</span><span class="p">);</span>     <span class="o">//</span> <span class="n">returns</span> <span class="n">false</span>
+<span class="n">trie</span><span class="o">.</span><span class="n">startsWith</span><span class="p">(</span><span class="s2">&#34;app&#34;</span><span class="p">);</span> <span class="o">//</span> <span class="n">returns</span> <span class="n">true</span>
+<span class="n">trie</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s2">&#34;app&#34;</span><span class="p">);</span>
+<span class="n">trie</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&#34;app&#34;</span><span class="p">);</span>     <span class="o">//</span> <span class="n">returns</span> <span class="n">true</span>
 </code></pre></div><dl>
 <dt>Note</dt>
 <dd></dd>
@@ -114,33 +114,33 @@
 All inputs are guaranteed to be non-empty strings.</p>
 <h2 id="solve">Solve</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">children</span> <span class="o">=</span> <span class="p">{</span><span class="p">}</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">children</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">is_word</span> <span class="o">=</span> <span class="bp">False</span>
 
 <span class="k">class</span> <span class="nc">Trie</span><span class="p">:</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="p">:</span>
-        <span class="sa"></span><span class="s2">&#34;&#34;&#34;</span><span class="s2"></span><span class="s2">
-</span><span class="s2"></span><span class="s2">        Initialize your data structure here.</span><span class="s2">
-</span><span class="s2"></span><span class="s2">        </span><span class="s2">&#34;&#34;&#34;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">        Initialize your data structure here.
+</span><span class="s2">        &#34;&#34;&#34;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="n">Node</span><span class="p">()</span>
   
-    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-</span><span class="o">&gt;</span> <span class="bp">None</span><span class="p">:</span>
-        <span class="sa"></span><span class="s2">&#34;&#34;&#34;</span><span class="s2"></span><span class="s2">
-</span><span class="s2"></span><span class="s2">        Inserts a word into the trie.</span><span class="s2">
-</span><span class="s2"></span><span class="s2">        </span><span class="s2">&#34;&#34;&#34;</span>
+    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">        Inserts a word into the trie.
+</span><span class="s2">        &#34;&#34;&#34;</span>
         <span class="n">node</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
-                <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">Node</span><span class="p">(</span><span class="p">)</span>
+                <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">Node</span><span class="p">()</span>
             <span class="n">node</span><span class="o">=</span><span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
         <span class="n">node</span><span class="o">.</span><span class="n">is_word</span><span class="o">=</span><span class="bp">True</span>
 
-    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-</span><span class="o">&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="sa"></span><span class="s2">&#34;&#34;&#34;</span><span class="s2"></span><span class="s2">
-</span><span class="s2"></span><span class="s2">        Returns if the word is in the trie.</span><span class="s2">
-</span><span class="s2"></span><span class="s2">        </span><span class="s2">&#34;&#34;&#34;</span>
+    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">        Returns if the word is in the trie.
+</span><span class="s2">        &#34;&#34;&#34;</span>
         <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
@@ -148,10 +148,10 @@ All inputs are guaranteed to be non-empty strings.</p>
             <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">node</span><span class="o">.</span><span class="n">is_word</span>
   
-    <span class="k">def</span> <span class="nf">startsWith</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-</span><span class="o">&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="sa"></span><span class="s2">&#34;&#34;&#34;</span><span class="s2"></span><span class="s2">
-</span><span class="s2"></span><span class="s2">        Returns if there is any word in the trie that starts with the given prefix.</span><span class="s2">
-</span><span class="s2"></span><span class="s2">        </span><span class="s2">&#34;&#34;&#34;</span>
+    <span class="k">def</span> <span class="nf">startsWith</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">        Returns if there is any word in the trie that starts with the given prefix.
+</span><span class="s2">        &#34;&#34;&#34;</span>
         <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">prefix</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
@@ -159,11 +159,11 @@ All inputs are guaranteed to be non-empty strings.</p>
             <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
         <span class="k">return</span> <span class="bp">True</span>
   
-<span class="c1"># Your Trie object will be instantiated and called as such:</span>
-<span class="c1"># obj = Trie()</span>
-<span class="c1"># obj.insert(word)</span>
-<span class="c1"># param_2 = obj.search(word)</span>
-<span class="c1"># param_3 = obj.startsWith(prefix)</span>
+<span class="c1"># Your Trie object will be instantiated and called as such:</span>
+<span class="c1"># obj = Trie()</span>
+<span class="c1"># obj.insert(word)</span>
+<span class="c1"># param_2 = obj.search(word)</span>
+<span class="c1"># param_3 = obj.startsWith(prefix)</span>
 </code></pre></div><p>主要思路是每个节点都用一个dict来包含所有的子节点，同时节点上的<code>is_word</code>字段表示到节点为止是否是一个完整的单词</p>
 <h2 id="performance">Performance</h2>
 <p>Runtime: 244 ms, faster than 48.31% of Python3 online submissions for LRU Cache.</p>
@@ -173,38 +173,38 @@ All inputs are guaranteed to be non-empty strings.</p>
 <h3 id="improvemed-solution">Improvemed solution</h3>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Trie</span><span class="p">:</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="p">:</span>
-        <span class="sa"></span><span class="s2">&#34;&#34;&#34;</span><span class="s2"></span><span class="s2">
-</span><span class="s2"></span><span class="s2">        Initialize your data structure here.</span><span class="s2">
-</span><span class="s2"></span><span class="s2">        </span><span class="s2">&#34;&#34;&#34;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="p">{</span><span class="p">}</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">        Initialize your data structure here.
+</span><span class="s2">        &#34;&#34;&#34;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="p">{}</span>
   
-    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-</span><span class="o">&gt;</span> <span class="bp">None</span><span class="p">:</span>
-        <span class="sa"></span><span class="s2">&#34;&#34;&#34;</span><span class="s2"></span><span class="s2">
-</span><span class="s2"></span><span class="s2">        Inserts a word into the trie.</span><span class="s2">
-</span><span class="s2"></span><span class="s2">        </span><span class="s2">&#34;&#34;&#34;</span>
+    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">        Inserts a word into the trie.
+</span><span class="s2">        &#34;&#34;&#34;</span>
         <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">node</span><span class="p">:</span>
-                <span class="n">node</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="p">}</span>
+                <span class="n">node</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
             <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-        <span class="n">node</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">#</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="n">node</span><span class="p">[</span><span class="s1">&#39;#&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
         
-    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-</span><span class="o">&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="sa"></span><span class="s2">&#34;&#34;&#34;</span><span class="s2"></span><span class="s2">
-</span><span class="s2"></span><span class="s2">        Returns if the word is in the trie.</span><span class="s2">
-</span><span class="s2"></span><span class="s2">        </span><span class="s2">&#34;&#34;&#34;</span>
+    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">        Returns if the word is in the trie.
+</span><span class="s2">        &#34;&#34;&#34;</span>
         <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">node</span><span class="p">:</span>
                 <span class="k">return</span> <span class="bp">False</span>
             <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-        <span class="k">return</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">#</span><span class="s1">&#39;</span> <span class="ow">in</span> <span class="n">node</span>
+        <span class="k">return</span> <span class="s1">&#39;#&#39;</span> <span class="ow">in</span> <span class="n">node</span>
         
-    <span class="k">def</span> <span class="nf">startsWith</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-</span><span class="o">&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="sa"></span><span class="s2">&#34;&#34;&#34;</span><span class="s2"></span><span class="s2">
-</span><span class="s2"></span><span class="s2">        Returns if there is any word in the trie that starts with the given prefix.</span><span class="s2">
-</span><span class="s2"></span><span class="s2">        </span><span class="s2">&#34;&#34;&#34;</span>
+    <span class="k">def</span> <span class="nf">startsWith</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">        Returns if there is any word in the trie that starts with the given prefix.
+</span><span class="s2">        &#34;&#34;&#34;</span>
         <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">prefix</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">node</span><span class="p">:</span>
@@ -218,33 +218,33 @@ All inputs are guaranteed to be non-empty strings.</p>
 <p>去看了下别人的解答，还有一种更加极端的优化运行时间的做法，做两个set：element_set/prefix_set，插入时把word直接插入到element_set，然后遍历word，把word的所有prefix都放到prefix_set，这样不管是<code>search</code>还是<code>startsWith</code>都是<code>O(1)</code>，但是空间非常大</p>
 <h3 id="improvemed-solution-1">Improvemed solution</h3>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Trie</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="p">:</span>
-        <span class="sa"></span><span class="s2">&#34;&#34;&#34;</span><span class="s2"></span><span class="s2">
-</span><span class="s2"></span><span class="s2">        Initialize your data structure here.</span><span class="s2">
-</span><span class="s2"></span><span class="s2">        </span><span class="s2">&#34;&#34;&#34;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">prefix_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">element_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">        Initialize your data structure here.
+</span><span class="s2">        &#34;&#34;&#34;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">prefix_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">element_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
         
-    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-</span><span class="o">&gt;</span> <span class="bp">None</span><span class="p">:</span>
-        <span class="sa"></span><span class="s2">&#34;&#34;&#34;</span><span class="s2"></span><span class="s2">
-</span><span class="s2"></span><span class="s2">        Inserts a word into the trie.</span><span class="s2">
-</span><span class="s2"></span><span class="s2">        </span><span class="s2">&#34;&#34;&#34;</span>
+    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">        Inserts a word into the trie.
+</span><span class="s2">        &#34;&#34;&#34;</span>
         <span class="k">if</span> <span class="n">word</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">element_set</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">element_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">prefix_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">i</span><span class="p">]</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">prefix_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">i</span><span class="p">])</span>
 
-    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-</span><span class="o">&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="sa"></span><span class="s2">&#34;&#34;&#34;</span><span class="s2"></span><span class="s2">
-</span><span class="s2"></span><span class="s2">        Returns if the word is in the trie.</span><span class="s2">
-</span><span class="s2"></span><span class="s2">        </span><span class="s2">&#34;&#34;&#34;</span>
+    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">        Returns if the word is in the trie.
+</span><span class="s2">        &#34;&#34;&#34;</span>
         <span class="k">return</span> <span class="n">word</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">element_set</span>
         
-    <span class="k">def</span> <span class="nf">startsWith</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-</span><span class="o">&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="sa"></span><span class="s2">&#34;&#34;&#34;</span><span class="s2"></span><span class="s2">
-</span><span class="s2"></span><span class="s2">        Returns if there is any word in the trie that starts with the given prefix.</span><span class="s2">
-</span><span class="s2"></span><span class="s2">        </span><span class="s2">&#34;&#34;&#34;</span>
+    <span class="k">def</span> <span class="nf">startsWith</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">        Returns if there is any word in the trie that starts with the given prefix.
+</span><span class="s2">        &#34;&#34;&#34;</span>
         <span class="k">return</span> <span class="n">prefix</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">prefix_set</span>
 </code></pre></div><h3 id="improved-performance-1">Improved Performance</h3>
 <p>Runtime: 172 ms, faster than 79.67% of Python3 online submissions for Implement Trie (Prefix Tree).</p>
@@ -254,34 +254,34 @@ All inputs are guaranteed to be non-empty strings.</p>
 <p>试了下把 set 改为 dict，居然速度和内存都有一点点提升，有点意思</p>
 <h3 id="improvemed-solution-2">Improvemed solution</h3>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Trie</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="p">:</span>
-        <span class="sa"></span><span class="s2">&#34;&#34;&#34;</span><span class="s2"></span><span class="s2">
-</span><span class="s2"></span><span class="s2">        Initialize your data structure here.</span><span class="s2">
-</span><span class="s2"></span><span class="s2">        </span><span class="s2">&#34;&#34;&#34;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">prefix_set</span> <span class="o">=</span> <span class="p">{</span><span class="p">}</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">element_set</span> <span class="o">=</span> <span class="p">{</span><span class="p">}</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">        Initialize your data structure here.
+</span><span class="s2">        &#34;&#34;&#34;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">prefix_set</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">element_set</span> <span class="o">=</span> <span class="p">{}</span>
         
-    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-</span><span class="o">&gt;</span> <span class="bp">None</span><span class="p">:</span>
-        <span class="sa"></span><span class="s2">&#34;&#34;&#34;</span><span class="s2"></span><span class="s2">
-</span><span class="s2"></span><span class="s2">        Inserts a word into the trie.</span><span class="s2">
-</span><span class="s2"></span><span class="s2">        </span><span class="s2">&#34;&#34;&#34;</span>
+    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">        Inserts a word into the trie.
+</span><span class="s2">        &#34;&#34;&#34;</span>
         <span class="k">if</span> <span class="n">word</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">element_set</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">element_set</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">prefix_set</span><span class="p">[</span><span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">i</span><span class="p">]</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">prefix_set</span><span class="p">[</span><span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">1</span>
 
-    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-</span><span class="o">&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="sa"></span><span class="s2">&#34;&#34;&#34;</span><span class="s2"></span><span class="s2">
-</span><span class="s2"></span><span class="s2">        Returns if the word is in the trie.</span><span class="s2">
-</span><span class="s2"></span><span class="s2">        </span><span class="s2">&#34;&#34;&#34;</span>
+    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">        Returns if the word is in the trie.
+</span><span class="s2">        &#34;&#34;&#34;</span>
         <span class="k">return</span> <span class="n">word</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">element_set</span>
         
 
-    <span class="k">def</span> <span class="nf">startsWith</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-</span><span class="o">&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="sa"></span><span class="s2">&#34;&#34;&#34;</span><span class="s2"></span><span class="s2">
-</span><span class="s2"></span><span class="s2">        Returns if there is any word in the trie that starts with the given prefix.</span><span class="s2">
-</span><span class="s2"></span><span class="s2">        </span><span class="s2">&#34;&#34;&#34;</span>
+    <span class="k">def</span> <span class="nf">startsWith</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">        Returns if there is any word in the trie that starts with the given prefix.
+</span><span class="s2">        &#34;&#34;&#34;</span>
         <span class="k">return</span> <span class="n">prefix</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">prefix_set</span>
 </code></pre></div><h3 id="improved-performance-2">Improved Performance</h3>
 <p>Runtime: 168 ms, faster than 80.12% of Python3 online submissions for Implement Trie (Prefix Tree).</p>

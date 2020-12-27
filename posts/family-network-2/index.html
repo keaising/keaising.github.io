@@ -77,26 +77,26 @@
 <li>之前是直接将本地的Shadowsocks客户端配置为指向 a.ss.server:8989</li>
 <li>搭建好从A到B的中转服务之后，本地的Shadowsocks客户端配置为指向 b.forward.server:5000</li>
 </ol>
-<h2 id="heading">准备工作</h2>
-<h3 id="heading-1">购买和安装系统</h3>
+<h2 id="准备工作">准备工作</h2>
+<h3 id="购买和安装系统">购买和安装系统</h3>
 <p>服务器你爱买哪家买哪家，本文没有恰饭于任何供应商，也没有任何利益相关</p>
 <p>操作系统推荐安装Ubuntu 18.04或者CentOS 7，有多好用谈不上，重点在于遇到奇奇怪怪问题的时候多半能搜到其他人的解决方案</p>
 <p>后续操作系统限定的命令都以 Ubuntu 为准</p>
-<h3 id="heading-2">登录服务器</h3>
+<h3 id="登录服务器">登录服务器</h3>
 <p>购买好服务器之后我们通过ssh key登录上去，ssh key登录相对与通过服务器供应商网页上登录更加方便，相对于ssh密码登录更加安全且不需要记住密码，如果没有相关知识可以去<a href="https://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html">《SSH原理与运用（一）：远程登录》</a>和<a href="https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh">&lt;Connecting to GitHub with SSH&gt;</a>学习，此处认为你已经配置好自己本机的 ssh 和 <code>~/.ssh/config</code> 里的配置信息并能顺利登录到服务器了</p>
-<h3 id="heading-3">编辑配置文件</h3>
+<h3 id="编辑配置文件">编辑配置文件</h3>
 <p>登录到服务器之后是个纯文本的终端环境，编辑配置只能使用vim或者nano等文本编辑器，需要读者掌握基本用法，vim掌握<a href="https://coolshell.cn/articles/5426.html">《简明 Vim 练级攻略》</a>这些内容即可</p>
-<h3 id="heading-4">更换国内软件源</h3>
+<h3 id="更换国内软件源">更换国内软件源</h3>
 <p>搜索：{你的操作系统版本}+更换国内源，有更换方法，可以大幅提升安装软件和更新的速度</p>
 <p>比如清华源甚至主动提供了更换方法：<a href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/">Ubuntu 镜像使用帮助</a>，不过清华源默认注释了源码镜像以提高 apt update 速度，遇到问题可以删掉 <code>deb-src</code> 前面的 <code>#</code></p>
-<h2 id="heading-5">安装和配置</h2>
-<h3 id="heading-6">安装软件</h3>
+<h2 id="安装和配置">安装和配置</h2>
+<h3 id="安装软件">安装软件</h3>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># install vim</span>
 $ sudo apt install vim -y
 
 <span class="c1"># install haproxy</span>
 $ sudo apt install haproxy -y
-</code></pre></div><h3 id="heading-7">配置</h3>
+</code></pre></div><h3 id="配置">配置</h3>
 <p>haproxy 配置非常简单，如果没有用过的话可以参考haproxy教程：<a href="https://www.jianshu.com/p/c9f6d55288c0">《HAProxy从零开始到掌握》</a></p>
 <p>对这里的使用场景来说就是配置一个前端和一个后端，前端绑定特定端口接收流量，后端对应国外服务器转发出去，编辑haproxy配置：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo vim /etc/haproxy/haproxy.cfg
@@ -133,13 +133,13 @@ $ sudo apt install haproxy -y
 <p>启动后如果一切非常顺利，那么你把你的科学上网的服务器地址和端口改为国内服务器的地址和端口，你就可以正常上网了</p>
 <h2 id="debug">debug</h2>
 <p>事情往往都是不顺利的，尤其是当你刚开始探索的时候，似乎一切都在和你作对，所以我们讲一下可能遇到的问题</p>
-<h3 id="1-haproxy-">1. haproxy 相关</h3>
+<h3 id="1-haproxy-相关">1. haproxy 相关</h3>
 <p>当你使用 <code>sudo systemctl start haproxy</code> 启动haproxy的时候可能会遇到报错，这时候根据启动提示你可以使用下面这个命令去查看 <code>systemctl</code> 的日志，日志里一般都有原因</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo journalctl -xe
 </code></pre></div><p>我经常遇到的问题是配置文件格式不对(写错内容、前后端名字不匹配之类的)、haproxy已经启动(请使用 <code>sudo systemctl restart haproxy</code>进行重启)之类的，稍微处理一下就好，一般错误都很明显</p>
 <h3 id="2-iptables">2. iptables</h3>
 <p><code>iptables</code>功能复杂而强大，新手上路一般都不太搞得懂自己在干嘛，所以你完全可以暂时先把iptables卸载掉，反正一个破机器都还没有用起来，根本不怕被人搞，等之后熟悉了再慢慢把防火墙和过滤等功能加回来即可。当前卸载的主要目的是不要让iptables把自己的流量过滤掉了，卸载方法自行搜索</p>
-<h3 id="3-">3. 供应商网关</h3>
+<h3 id="3-供应商网关">3. 供应商网关</h3>
 <p>比如福报云的机器前是有一个网络过滤的，在弹性网卡对应的网络安全组规则里，这里规定了开放哪些端口的访问，一定要在这里放开自己使用的端口和协议，比较极端是的全部放开，一般在排查问题的时候我会这么干，查完了一般还是用哪些开哪些。我把安全组规则当一个比较简单的防火墙在使用</p>
 <p>经过简单的配置和测试，应该就可以享受到正常高速的网络服务了</p>
 

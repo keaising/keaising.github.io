@@ -65,7 +65,7 @@
 <article>
     
     <div class="true-content">
-        <h2 id="heading">背景</h2>
+        <h2 id="背景">背景</h2>
 <ul>
 <li>问：Redis 主从节点同步知道吗？</li>
 <li>答：知道一点，不太熟</li>
@@ -74,7 +74,7 @@
 <li>问：是子进程，为什么 fork 出来的子进程能读到父进程的数据？</li>
 <li>（胡乱答了一堆容器里的同一个 namespace 下资源共享的内容。。。因为没看过操作系统的内容）</li>
 </ul>
-<h2 id="heading-1">学习的结果</h2>
+<h2 id="学习的结果">学习的结果</h2>
 <p>回来之后在多抓鱼上买了3本操作系统的书，粗略得过了一遍，至少现在不会把进程（process）和线程（thread）搞混了。</p>
 <p>至于 Redis 主从同步，完整的过程可以在 <a href="http://redisguide.com/replication.html#id8">Redis 使用手册</a> 的数据同步一节读到，分为完整同步、在线更新和部分同步 3 类，完整同步就是面试时被问到的主从同步主节点做了什么。主节点做了如下这些事（摘自《Redis 使用手册》）：</p>
 <ol>
@@ -89,7 +89,7 @@
 <p>书里没有更细地讲内存，接着查资料，对内存，早期 UNIX 是直接完整复制一份父进程的内存给子进程，但是明显效率太低而且造成浪费，所以 Linux 采用了 <a href="https://en.wikipedia.org/wiki/Copy-on-write">Copy-on-write</a> 技术来处理这个问题，简单得讲就是刚 fork 出来，父子进程各自持有自己的虚拟空间，但是对应的物理空间是同一个，此时把内存页的权限设置为 read-only，当两个进程中的某一个尝试写操作时，触发 page-fault，触发 kernel 中断，kernel 把触发异常的页复制一份，父子进程各自持有独立的一份页，各自读写</p>
 <p>至此，答案找到，其实就是 fork 出来的子进程能完整读到父进程的内存，如果父进程后续有修改的话，修改前 kernel 会复制一份给子进程，这样子进程能读到 fork 时的内存页，继续进行生成 RDB 的过程</p>
 <p>至于生成 RDB 过程中如果又有新的操作导致父进程内存中数据变化，那就是数据同步第 4 步中主服务器把缓存的变化数据传给从服务器来解决了</p>
-<h3 id="heading-2">参考文献</h3>
+<h3 id="参考文献">参考文献</h3>
 <ul>
 <li><a href="http://redisguide.com/replication.html#id8">Redis 使用手册 - 复制 - 数据同步</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Copy-on-write">Wikipedia: Copy-on-write</a></li>

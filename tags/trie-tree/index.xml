@@ -6,11 +6,7 @@
     <description>Recent content in Trie Tree on 流水沉微</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Wed, 02 Oct 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://shuxiao.wang/tags/trie-tree/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 02 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://shuxiao.wang/tags/trie-tree/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>208. Implement Trie (Prefix Tree)</title>
       <link>http://shuxiao.wang/leetcode/208.-implement-trie/</link>

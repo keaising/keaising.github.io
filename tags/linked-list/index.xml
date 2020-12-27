@@ -6,11 +6,7 @@
     <description>Recent content in Linked List on 流水沉微</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Thu, 03 Oct 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://shuxiao.wang/tags/linked-list/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 03 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://shuxiao.wang/tags/linked-list/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2. Add Two Numbers</title>
       <link>http://shuxiao.wang/leetcode/2.-add-two-numbers/</link>

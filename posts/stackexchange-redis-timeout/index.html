@@ -67,10 +67,10 @@
     <div class="true-content">
         <p>压力测试过程中遇到的一个问题，框架是asp.net core 2.2，redis组件是<a href="https://stackexchange.github.io/StackExchange.Redis/">StackExchange.Redis 2.0.601</a>，在高并发场景下会报错，报错信息：</p>
 <p><img src="/images/redis-timeout/log.png" alt="log"></p>
-<h2 id="--">搜索 &amp; 分析</h2>
-<h4 id="heading">排查服务端</h4>
+<h2 id="搜索--分析">搜索 &amp; 分析</h2>
+<h4 id="排查服务端">排查服务端</h4>
 <p>一开始没仔细看log，以为是Redis服务器报错，经过单独压测服务器发现完全没有问题</p>
-<h4 id="heading-1">排查客户端</h4>
+<h4 id="排查客户端">排查客户端</h4>
 <p>再回来仔细分析log，StackExchange.Redis提示了一个链接 <a href="https://stackexchange.github.io/StackExchange.Redis/Timeouts">StackExchange.Redis/Timeouts</a>，该页面列举了常见的超时错误的几种情况：</p>
 <ul>
 <li>网络 / CPU 带宽瓶颈</li>
@@ -78,7 +78,7 @@
 <li>大请求挡在多个小请求之前，大请求超时导致后续请求全部被阻塞，所有请求都超时了</li>
 <li>线程中busyIO和busyworker导致的超时（.Net平台线程实现机制相关）</li>
 </ul>
-<h4 id="log">log提供的信息</h4>
+<h4 id="log提供的信息">log提供的信息</h4>
 <p>粗略一看也很难看出问题在哪儿，可能出问题的点很多，搜索过GitHub、Stackoverflow类似的问题之后有了两点总结：</p>
 <ol>
 <li>使用StackExchange.Redis出现超时的问题挺多，为此StackExchange.Redis重构了一版推出了2.0版本，此次我们使用的已经是2.0版本，所以很多以前针对1.0版本的处理方法不再有效，只有报错信息可供参考。</li>
@@ -92,14 +92,14 @@
 </ul>
 </li>
 </ol>
-<h2 id="heading-2">整理资料</h2>
+<h2 id="整理资料">整理资料</h2>
 <h4 id="iocp--worker">IOCP &amp; WORKER</h4>
 <p>简单来说，IOCP（I/O Completion Port）线程是dotnet框架为了协调超快的CPU处理速度和相对来说非常慢的网络、硬盘IO而搞出来的线程使用方式，广泛用于各种网络IO、磁盘IO和文件IO。</p>
 <p>推荐阅读：</p>
 <ol>
 <li><a href="https://docs.microsoft.com/en-us/windows/desktop/fileio/i-o-completion-ports">MSDN: I/O Completion Ports IOCP基本定义和基本用法</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Input/output_completion_port">wiki: Input/output completion port IOCP概述</a></li>
-<li><a href="https://stackoverflow.com/questions/5283032/i-o-completion-ports-advantages-and-disadvantages">I/O completion port's advantages and disadvantages IOCP的优缺点</a></li>
+<li><a href="https://stackoverflow.com/questions/5283032/i-o-completion-ports-advantages-and-disadvantages">I/O completion port&rsquo;s advantages and disadvantages IOCP的优缺点</a></li>
 </ol>
 <p>相对应的，WORKER线程是在你使用了<code>Task.Run(…)</code>或者<code>ThreadPool.QueueUserWorkItem(…)</code>之后用于处理并发线程而产生的，他们也大量被用于CLR中其他有多线程和后台运行需求的地方。</p>
 <p>推荐阅读：</p>
@@ -107,7 +107,7 @@
 <li><a href="https://gist.github.com/JonCole/e65411214030f0d823cb">ThreadPool Growth: Some Important Details</a> <strong>这篇必读！！！</strong></li>
 <li><a href="https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/cache-how-to-troubleshoot#burst-of-traffic">How to troubleshoot Azure Cache for Redis</a> <strong>这篇有案例分析</strong></li>
 </ol>
-<h4 id="log-1">结合log分析</h4>
+<h4 id="结合log分析">结合log分析</h4>
 <p>对我们的应用来说，总共有3个线程池，</p>
 <ol>
 <li>StackExchange.Redis自带的线程池mgr：(10 / 10)</li>
@@ -118,7 +118,7 @@
 <p>dotnet生成新线程的规则是，当有新任务需要线程时，先在线程池中找空闲线程，如果没有空闲的，等待500ms看是否有线程空闲出来，如果还是没有，产生一个新线程</p>
 <p>我们的Redis超时设置为5000ms，只需要有10个任务没有及时处理，就超时报错了</p>
 <p>由于应用中大量使用了<code>async/await</code>导致应用对worker线程的需求非常大，并发数较低时线程池自己的调度可以及时处理，所以不会出问题，压测时并发数突然升高，线程池来不及调度，导致Redis的request/response来不及处理，触发5000ms超时报错抛异常</p>
-<h2 id="heading-3">处理方法</h2>
+<h2 id="处理方法">处理方法</h2>
 <p>根据<a href="https://gist.github.com/JonCole/e65411214030f0d823cb#recommendation">Recommendation</a> 的建议，调整配置文件中最小线程数到100，然后测试、调整、再测试、再调整循环，找到一个适合应用的大小。</p>
 <p>注意：</p>
 <ol>
@@ -126,7 +126,7 @@
 <li>线程数也不能调整得特别大，线程切换是有代价的，过大会得不偿失</li>
 </ol>
 <p>实际测试显示，调整到50就能顺利通过300并发的压力测试，日常应用在100-200之间</p>
-<h2 id="heading-4">猜想</h2>
+<h2 id="猜想">猜想</h2>
 <p>StackExchange.Redis也维护了一个线程池用于处理并发读写Redis的问题，但是可以看到完全是空闲状态，猜想是因为应用程序的线程池太忙了所以根本没机会用上，我猜想或许我们可以把应用程序完全改成同步的，让StackExchange.Redis的线程池去做redis的调度，可能能够解决一些莫名其妙的并发问题，线程太多之后切换线程上下文的消耗也可能会高到不可忽视。但是项目代码已经好几万行，基本上全是异步<code>async/await</code>代码，修改起来代价太大，只能以后有空了自己用一个小项目测试了</p>
 
     </div>

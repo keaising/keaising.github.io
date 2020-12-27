@@ -6,11 +6,7 @@
     <description>Recent content in dotnet core on 流水沉微</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Tue, 14 May 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://shuxiao.wang/tags/dotnet-core/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 14 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://shuxiao.wang/tags/dotnet-core/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CLI App in C# 其三</title>
       <link>http://shuxiao.wang/posts/cli-app-in-csharp3/</link>

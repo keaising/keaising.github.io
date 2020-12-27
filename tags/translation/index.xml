@@ -6,11 +6,7 @@
     <description>Recent content in translation on 流水沉微</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Sat, 21 Dec 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://shuxiao.wang/tags/translation/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 21 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://shuxiao.wang/tags/translation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>如何构建好软件</title>
       <link>http://shuxiao.wang/posts/how-to-build-good-software/</link>
