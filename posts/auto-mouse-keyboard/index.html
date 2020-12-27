@@ -159,9 +159,32 @@
 	<span class="s2">&#34;f11&#34;</span>
 	<span class="s2">&#34;f12&#34;</span>
 </code></pre></div><p><strong>暂停</strong></p>
-<p>手动增加两条指令之间的间隔时间，单位为秒，只能写整数</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">S</span><span class="o">=</span><span class="m">10</span>
-</code></pre></div>
+<p>手动控制两个操作之间的间隔，真正的间隔会变成 (SHIM+S)毫秒，暂停的单位是毫秒</p>
+<p>比如配置里 <code>SHIM=400</code>，脚本如下</p>
+<pre><code class="language-conf" data-lang="conf">T=enter
+S=300
+I=wow
+</code></pre><p>那么，摁下回车和输入 <code>wow</code>之间的真实间隔是 <code>SHIM+S+SHIM=400+300+400=1100 ms</code></p>
+<p>需要注意，使用组合键的时候，数字和字母需要放前面，功能键（比如 cmd/ctrl/shift）需要放后面，用逗号分隔开</p>
+<p><strong>循环</strong></p>
+<p>使一个片段反复执行 N 次，比如下列的语句</p>
+<pre><code class="language-conf" data-lang="conf">S=2000
+C=left
+I= begin
+
+L=3
+C=left
+I=wow
+T=enter*3
+L
+
+I= done
+</code></pre><p>首先暂停 2000ms，左键点击一次，输入 <code>begin</code>，然后开始循环</p>
+<p>在每次循环里，首先左键点击一次，输入 <code>wow</code>，然后摁 3 次回车</p>
+<p>3 次循环结束后，输入 <code>done</code></p>
+<p>两个 L 必须成对出现，否则最后一个单个 L 到结尾的内容会全部循环</p>
+<p>成对出现的 L 以第一个 L 的次数为执行次数，不写就是 0 次</p>
+
     </div>
 
     <div class="page-info">
