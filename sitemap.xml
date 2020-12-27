@@ -4,7 +4,7 @@
   
   <url>
     <loc>http://shuxiao.wang/posts/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+    <lastmod>2020-12-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -77,12 +77,22 @@
   </url>
   
   <url>
-    <loc>http://shuxiao.wang/posts/auto-mouse-keyboard/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+    <loc>http://shuxiao.wang/posts/annual-2020/</loc>
+    <lastmod>2020-12-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shuxiao.wang/tags/annual/</loc>
+    <lastmod>2020-12-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://shuxiao.wang/tags/</loc>
+    <lastmod>2020-12-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shuxiao.wang/posts/auto-mouse-keyboard/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
   </url>
   
@@ -164,11 +174,6 @@
   <url>
     <loc>http://shuxiao.wang/posts/introduction-to-lastpass/</loc>
     <lastmod>2020-03-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shuxiao.wang/tags/annual/</loc>
-    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>

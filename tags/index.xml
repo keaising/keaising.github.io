@@ -6,10 +6,19 @@
     <description>Recent content in Tags on 流水沉微</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Sun, 13 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 27 Dec 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://shuxiao.wang/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Annual</title>
+      <link>http://shuxiao.wang/tags/annual/</link>
+      <pubDate>Sun, 27 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/tags/annual/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>to grace</title>
@@ -62,15 +71,6 @@
       <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/tags/work/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Annual</title>
-      <link>http://shuxiao.wang/tags/annual/</link>
-      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://shuxiao.wang/tags/annual/</guid>
       <description></description>
     </item>
     
