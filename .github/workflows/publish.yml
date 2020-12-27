@@ -3,7 +3,7 @@ name: github pages
 on:
   push:
     branches:
-      - test # Set a branch name to trigger deployment
+      - source # Set a branch name to trigger deployment
 
 jobs:
   deploy:
@@ -33,4 +33,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          publish_branch: publish
+          publish_branch: master
