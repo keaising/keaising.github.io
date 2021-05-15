@@ -115,7 +115,7 @@
 <p>在没有其他配置的情况下，最后生成的exe的名字跟程序集名字一样，输出类型决定了是打包成exe还是nuget包</p>
 <h3 id="发布应用">发布应用</h3>
 <p>使用以下脚本发布应用</p>
-<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">dotnet</span> <span class="n">publish</span> <span class="n">-r</span> <span class="n">win10-x64</span> <span class="p">-</span><span class="n">-self-contained</span> <span class="n">true</span> <span class="n">-c</span> <span class="n">Release</span>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">dotnet</span> <span class="n">publish</span> <span class="n">-r</span> <span class="nb">win10-x64</span> <span class="p">-</span><span class="n">-self-contained</span> <span class="n">true</span> <span class="n">-c</span> <span class="n">Release</span>
 </code></pre></div><p>执行以上命令后，可以在<code>./bin/Release/netcoreapp2.1/win10-64/publish</code>目录下找到生成的所有exe和dll文件，此时可以直接运行exe文件使用演示应用</p>
 <h3 id="打包成单文件">打包成单文件</h3>
 <p>以上编译结果中有好几百个文件，传输、部署和使用都不太方便，经常会有打包成一个单文件exe的需求，这个需求可以借助<a href="https://github.com/dgiagio/warp">warp-packer</a>解决</p>
@@ -264,10 +264,10 @@
 <span class="n">dotnet</span> <span class="n">restore</span> <span class="nv">$genExe</span>
 
 <span class="nb">write </span><span class="s1">&#39;&gt;&gt;&gt; 1. dotnet publish &lt;&lt;&lt;&#39;</span>
-<span class="n">dotnet</span> <span class="n">publish</span> <span class="n">-r</span> <span class="n">win10-x64</span> <span class="p">-</span><span class="n">-self-contained</span> <span class="n">true</span> <span class="n">-c</span> <span class="n">Release</span> <span class="n">-o</span> <span class="nv">$exePath</span> <span class="nv">$genExe</span>
+<span class="n">dotnet</span> <span class="n">publish</span> <span class="n">-r</span> <span class="nb">win10-x64</span> <span class="p">-</span><span class="n">-self-contained</span> <span class="n">true</span> <span class="n">-c</span> <span class="n">Release</span> <span class="n">-o</span> <span class="nv">$exePath</span> <span class="nv">$genExe</span>
 
 <span class="nb">write </span><span class="s1">&#39;&gt;&gt;&gt; 2. warp-packer package &lt;&lt;&lt;&#39;</span>
-<span class="n">warp-packer</span> <span class="p">-</span><span class="n">-arch</span> <span class="n">windows-x64</span> <span class="p">-</span><span class="n">-input_dir</span> <span class="nv">$exePath</span> <span class="p">-</span><span class="n">-exec</span> <span class="n">gen</span><span class="p">.</span><span class="n">exe</span> <span class="p">-</span><span class="n">-output</span> <span class="p">(</span><span class="nv">$nugetPath</span> <span class="p">+</span> <span class="s1">&#39;/&#39;</span> <span class="p">+</span> <span class="nv">$genExeName</span><span class="p">)</span>
+<span class="nb">warp-packer</span> <span class="p">-</span><span class="n">-arch</span> <span class="nb">windows-x64</span> <span class="p">-</span><span class="n">-input_dir</span> <span class="nv">$exePath</span> <span class="p">-</span><span class="n">-exec</span> <span class="n">gen</span><span class="p">.</span><span class="n">exe</span> <span class="p">-</span><span class="n">-output</span> <span class="p">(</span><span class="nv">$nugetPath</span> <span class="p">+</span> <span class="s1">&#39;/&#39;</span> <span class="p">+</span> <span class="nv">$genExeName</span><span class="p">)</span>
 
 
 <span class="nb">write </span><span class="s1">&#39;&gt;&gt;&gt; 3. dotnet pack &lt;&lt;&lt;&#39;</span>

@@ -6,7 +6,16 @@
     <description>Recent content in Posts on 流水沉微</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Thu, 29 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://shuxiao.wang/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://shuxiao.wang/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>不优化，zsh 也超快</title>
+      <link>http://shuxiao.wang/posts/zsh-refresh/</link>
+      <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/posts/zsh-refresh/</guid>
+      <description>如果你折腾过 shell，那你肯定遇到过 oh-my-zsh，这个巨大的框架什么都好，就是有点慢。在用了一年多 oh-my-zsh 之后，我有点烦了那种卡卡的感觉，</description>
+    </item>
+    
     <item>
       <title>怀念祖祖</title>
       <link>http://shuxiao.wang/posts/memories/</link>

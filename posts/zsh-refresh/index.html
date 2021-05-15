@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" class="han-la">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>不优化，zsh 也超快 - 流水沉微</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/css/kitto.css">
+    <script src="/js/anchor.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/js/text-autospace.js"></script>
+</head>
+
+<body>
+    <div class="content width">
+        <div class="top-header">
+  <a class="site-title" href="http://shuxiao.wang">
+    流水沉微
+  </a>
+
+  
+  
+  <div class="nav-body">
+    
+    
+    <a class="nav-item " href="/posts/">
+      
+      <span>Posts</span>
+    </a>
+    
+    
+    
+    <a class="nav-item " href="/cloud/">
+      
+      <span>Cloud</span>
+    </a>
+    
+    
+    
+    <a class="nav-item " href="/eureka/">
+      
+      <span>Eureka!</span>
+    </a>
+    
+    
+  </div>
+  
+</div>
+
+        <div>
+            
+
+
+<div class="Subhead">
+    <div class="Subhead-heading">
+        <h1>不优化，zsh 也超快</h1>
+    </div>
+</div>
+
+
+
+
+<article>
+    
+    <div class="true-content">
+        <p>如果你折腾过 shell，那你肯定遇到过 <a href="https://ohmyz.sh/">oh-my-zsh</a>，这个巨大的框架什么都好，就是有点慢。在用了一年多 oh-my-zsh 之后，我有点烦了那种卡卡的感觉，想换一个 shell 试试。在尝试 fish 之后我放弃了这种所谓的现代 shell，我还是更喜欢完全文本化的配置，fish 的语法跟 bash 差别太大我也不是很喜欢，毕竟 bash 的语法是日常绕不过的坎，我希望尽量贴合 bash。这个思路下可选的其实并不多，要么是 bash，要么是曾经要兼容 bash 但是后来放弃了不过也勉强能兼容的 zsh</p>
+<p>所以问题就变成了，怎么把 zsh 搞快一点？</p>
+<p>稍微搜索一下，我找到了这么几个文档</p>
+<ol>
+<li><a href="https://www.zhihu.com/question/21418449">为什么说 zsh 是 shell 中的极品？</a></li>
+<li><a href="https://htr3n.github.io/2018/07/faster-zsh/">Faster and enjoyable ZSH (maybe)</a></li>
+<li><a href="https://blog.skk.moe/post/make-oh-my-zsh-fly/#">我就感觉到快 —— zsh 和 oh my zsh 冷启动速度优化</a></li>
+</ol>
+<p>1 可以看作是安利，zsh 是个好 shell，除了配置有点麻烦以外其他都很赞</p>
+<p>2 是朋友发给我的一个优化文，主要是讲述了 zsh 启动过程中每个配置文件的作用和他们之间的先后加载顺序，还提到了一个几乎所有 oh my zsh 的优化文章都会提的一个东西：lazy load</p>
+<p>3 是一个实际优化案例，思路跟 2 里的几乎一样，也是减少子进程和懒加载，不过更加实战，很多脚本都只可以直接照着跑</p>
+<p>我在自己尝试了一番之后发现，其实不用这些优化策略，配置好的 zsh 也可以很快，只要控制好加载的内容就足够了，接下来我叙述一下我的折腾过程</p>
+<h2 id="1-明确需求">1. 明确需求</h2>
+<p>没错，哪怕只是做自己的事也需要明确一下需求，为什么我需要 oh my zsh 呢？</p>
+<p>因为我不会装插件和主题，以前用的都是 oh my zsh 自带的插件和主题，只需要跑一下 oh my zsh 的一键安装脚本就可以用了</p>
+<p>那我到底需要 oh my zsh 的什么功能？或者叫现在我对 shell 的需求是什么？</p>
+<ol>
+<li>配色好看一点</li>
+<li>能展示当前路径，git 分支信息和状态</li>
+<li>最好是带补全和提示</li>
+<li>命令有颜色提示，输错了能提示一下</li>
+<li>能搜索历史记录和目录下的文件</li>
+</ol>
+<p>最后我做出来的效果如下：</p>
+<p><img src="/images/zsh-refresh/final-1.png" alt="final1"></p>
+<p>可以看到这几种情况</p>
+<ol>
+<li>command 在 $PATH 中存在，是浅绿色的，如果不存在，是红色</li>
+<li>正常情况下提示符是浅绿色delta，如果上一条执行错误，是红色的×，如果是 vi mode，是蓝色的 V</li>
+<li>如果目录是个 git repo，显示当前所在的分支名，如果有更改或者远端有更改，将状态展示在分支名后面</li>
+</ol>
+<p>下图是搜索历史记录，在 shell 里摁 CTRL+R 触发搜索，CTRL+N/P 选择上一项/下一项</p>
+<p><img src="/images/zsh-refresh/final-2.png" alt="final2"></p>
+<p>下图是搜索当前路径下文件，格式是 command + 空格 ++ ll + TAB，CTRL+N/P 选择上一项/下一项，选择到合适的文件之后摁回车，出现在 shell 里的内容是 command + 内容（ll 只是用来做触发关键字的，可以自定义）</p>
+<p><img src="/images/zsh-refresh/final-3.png" alt="final3"></p>
+<h2 id="2-找到工具">2. 找到工具</h2>
+<h3 id="插件管理工具">插件管理工具</h3>
+<p>需求和目的明确之后只需要找对应的工具了，首先是把框架搭起来，oh my zsh 肯定是不能用了，那就找一个插件管理工具来帮我们管插件。</p>
+<p>我找到的是 <a href="https://github.com/zdharma/zinit">zinit</a>，从跑分上看，它的速度比钦定的 antigen 快，看了下用法也算简单，那就它了</p>
+<h3 id="高亮补全提示">高亮/补全/提示</h3>
+<p>其次是找插件，我的需求就是语法高亮、补全和提示，正好 zsh-users 的仓库里有这 3 个</p>
+<ul>
+<li><a href="https://github.com/zsh-users/zsh-completions">zsh-users/zsh-completions</a></li>
+<li><a href="https://github.com/zsh-users/zsh-autosuggestions">zsh-users/zsh-autosuggestions</a></li>
+<li><a href="https://github.com/zsh-users/zsh-syntax-highlighting">zsh-users/zsh-syntax-highlighting</a></li>
+</ul>
+<p>正好可以满足需求，用 zinit 装上即可</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-syntax-highlighting
+</code></pre></div><p>只要把这 3个插件一装上，在 zsh 里输入 command 就已经有高亮和提示效果了</p>
+<h3 id="主题">主题</h3>
+<p>在 oh my zsh 时期，我用的主题是 pure，但是那个主题稍微想自定义一下都很困难，需要学习的概念有点多，我这次正好就放弃了，重新换一个</p>
+<p>我选择了比较现代的、用Rust写的 <a href="https://starship.rs/">Starship</a>，它的优点是速度很快、配置简单、文档齐全、默认配色就足够好看，自己做微调也相对容易，最后我的配置文件长这样</p>
+<pre><code class="language-config" data-lang="config">add_newline = true
+
+[directory]
+truncation_length = 0
+truncate_to_repo = false
+
+[git_branch]
+format = &quot;[$branch]($style) &quot;
+# format = &quot;[$symbol$branch]($style) &quot;
+
+[golang]
+format = &quot;[$symbol()]($style)&quot;
+
+[cmd_duration]
+format = &quot;[$duration]($style) &quot;
+min_time = 3_000
+
+[character]
+success_symbol = &quot;[Δ](bold green)&quot;
+error_symbol = &quot;[✗](bold red)&quot;
+vicmd_symbol = &quot;[V](bold blue) &quot;
+
+[username]
+style_user = &quot;yellow bold&quot;
+style_root = &quot;black bold&quot;
+format = &quot;[$user@]($style)&quot;
+disabled = false
+
+[hostname]
+ssh_only = true
+format =  &quot;[$hostname](bold yellow) &quot;
+disabled = false
+
+[package]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[aws]
+disabled = true
+</code></pre><h3 id="搜索">搜索</h3>
+<p>搜索分为搜索历史和搜索当前目录下的文件，搜索当然是用超好用的 <a href="https://github.com/junegunn/fzf">fzf</a>，fzf 的配置超简单，运行速度很快，照着官方文档弄就行，我唯一改了的是反转了一下上下，我不是很喜欢搜索结果在最下面的默认展示风格，于是调整了一下</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 反转展示结果</span>
+<span class="nb">export</span> <span class="nv">FZF_DEFAULT_OPTS</span><span class="o">=</span><span class="s1">&#39;--height 40% --layout=reverse --border&#39;</span>
+<span class="c1"># 搜索文件时的触发因子</span>
+<span class="nb">export</span> <span class="nv">FZF_COMPLETION_TRIGGER</span><span class="o">=</span><span class="s1">&#39;ll&#39;</span>
+<span class="c1"># 搜索文件时改成 fd 搜索且允许搜索隐藏文件</span>
+<span class="nb">export</span> <span class="nv">FZF_DEFAULT_COMMAND</span><span class="o">=</span><span class="s1">&#39;fd --type f --hidden --follow --exclude .git&#39;</span>
+<span class="c1"># 下面这个文件是 fzf 安装期间自动生成的，不用改</span>
+<span class="o">[</span> -f ~/.fzf.zsh <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.fzf.zsh
+</code></pre></div><p>我在官方文档的提示下安装了 ripgrep/fd/bat 等工具，这些工具都是用 Rust 写的 grep/find/cat 的替代品，速度很赞，推荐使用</p>
+<h2 id="3-跑个分">3. 跑个分</h2>
+<p>配置好之后直接跑个分</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 不加载配置</span>
+<span class="k">for</span> i in <span class="k">$(</span>seq <span class="m">1</span> 5<span class="k">)</span><span class="p">;</span> <span class="k">do</span> /usr/bin/time /bin/zsh --no-rcs -i -c exit<span class="p">;</span> <span class="k">done</span>
+
+<span class="c1"># 正常加载配置</span>
+<span class="k">for</span> i in <span class="k">$(</span>seq <span class="m">1</span> 5<span class="k">)</span><span class="p">;</span> <span class="k">do</span> /usr/bin/time /bin/zsh -i -c exit<span class="p">;</span> <span class="k">done</span>
+</code></pre></div><p><img src="/images/zsh-refresh/v.png" alt="v"></p>
+<p>在完全没有用任何 lazy load 和减少子进程之类的优化的情况下，启动速度也不过是 0.2s 左右，而且这里面还夹杂了我所有的其他初始化脚本（当然这里面也没有什么很重的初始化内容），对于我来说已经很满意了。</p>
+<p>由于我的 ssh key 也放在 dotfiles 里的，现在不能公开完整的配置文件，过几天我换个仓库重新来过之后，会把我的 dotfiles 仓库放出来</p>
+
+    </div>
+
+    <div class="page-info">
+        <div>
+            
+
+<div>
+    
+</div>
+
+
+
+<div>
+    <a href='/tags/dotfiles' class="tags-url">
+        <span class="tags">dotfiles</span>
+    </a>
+</div>
+
+
+
+        </div>
+        
+            
+                <div class="publish-date">
+                    <span
+                        title="Lastmod: 2021-05-15. Published at: 2021-05-15.">
+                        15 May 2021
+                    </span>
+                </div>
+            
+        
+    </div>
+</article>
+
+
+
+
+
+        </div>
+        <div id="footer" class="pt-2 pb-3 bg-white text-center">
+            
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/keaising/kitto" class="link-gray-dark">Kitto</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+        </div>
+    </div>
+
+    
+    <script>
+        anchors.add();
+    </script>
+    <script>
+        anchors.options = {
+            placement: 'left',
+        };
+        anchors.add();
+        anchors.add(".tag-title-left");
+    </script>
+    <script src="/js/mathjax.js"></script>
+</body>
+
+</html>
