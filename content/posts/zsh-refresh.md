@@ -149,6 +149,12 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
 我在官方文档的提示下安装了 ripgrep/fd/bat 等工具，这些工具都是用 Rust 写的 grep/find/cat 的替代品，速度很赞，推荐使用
 
+### 目录跳转
+
+除了fzf，韦易笑的[z.lua](https://github.com/skywind3000/z.lua)也是一个非常好用的[目录跳转工具](https://zhuanlan.zhihu.com/p/56077546)，在使用过一段时间之后它能提供非常流畅的目录跳转体验
+
+由于 z.lua 文件本身不大，我直接把源文件塞到我的 zsh 配置里了，其实也可以用 zinit 来安装，这个就看你喜欢了
+
 ## 3. 跑个分
 
 配置好之后直接跑个分
@@ -163,6 +169,6 @@ for i in $(seq 1 5); do /usr/bin/time /bin/zsh -i -c exit; done
 
 ![v](/images/zsh-refresh/v.png)
 
-在完全没有用任何 lazy load 和减少子进程之类的优化的情况下，启动速度也不过是 0.2s 左右，而且这里面还夹杂了我所有的其他初始化脚本（当然这里面也没有什么很重的初始化内容），对于我来说已经很满意了。
+在完全没有用任何 lazy load 和减少子进程之类的优化的情况下，启动速度也不过是 0.2s 左右，而且这里面还夹杂了我所有的其他初始化脚本（当然这里面也没有什么很重的初始化内容），对于我来说已经很满意了
 
-由于我的 ssh key 也放在 dotfiles 里的，现在不能公开完整的配置文件，过几天我换个仓库重新来过之后，会把我的 dotfiles 仓库放出来
+全部配置在[我的 Github 仓库里](https://github.com/keaising/dotfile/tree/master/zsh)，使用 [stow](https://www.gnu.org/software/stow/) 管理，可以酌情使用

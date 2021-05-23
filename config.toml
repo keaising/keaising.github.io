@@ -10,3 +10,6 @@ pygmentsUseClasses = true
 
 # You can use favicon by addin them manually.
 useIcon = true
+
+# ignore build error in local machine
+ignoreErrors = ["error-remote-getjson"]
