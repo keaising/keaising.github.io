@@ -171,6 +171,9 @@ disabled = true
 <span class="c1"># 下面这个文件是 fzf 安装期间自动生成的，不用改</span>
 <span class="o">[</span> -f ~/.fzf.zsh <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.fzf.zsh
 </code></pre></div><p>我在官方文档的提示下安装了 ripgrep/fd/bat 等工具，这些工具都是用 Rust 写的 grep/find/cat 的替代品，速度很赞，推荐使用</p>
+<h3 id="目录跳转">目录跳转</h3>
+<p>除了fzf，韦易笑的<a href="https://github.com/skywind3000/z.lua">z.lua</a>也是一个非常好用的<a href="https://zhuanlan.zhihu.com/p/56077546">目录跳转工具</a>，在使用过一段时间之后它能提供非常流畅的目录跳转体验</p>
+<p>由于 z.lua 文件本身不大，我直接把源文件塞到我的 zsh 配置里了，其实也可以用 zinit 来安装，这个就看你喜欢了</p>
 <h2 id="3-跑个分">3. 跑个分</h2>
 <p>配置好之后直接跑个分</p>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 不加载配置</span>
@@ -179,8 +182,8 @@ disabled = true
 <span class="c1"># 正常加载配置</span>
 <span class="k">for</span> i in <span class="k">$(</span>seq <span class="m">1</span> 5<span class="k">)</span><span class="p">;</span> <span class="k">do</span> /usr/bin/time /bin/zsh -i -c exit<span class="p">;</span> <span class="k">done</span>
 </code></pre></div><p><img src="/images/zsh-refresh/v.png" alt="v"></p>
-<p>在完全没有用任何 lazy load 和减少子进程之类的优化的情况下，启动速度也不过是 0.2s 左右，而且这里面还夹杂了我所有的其他初始化脚本（当然这里面也没有什么很重的初始化内容），对于我来说已经很满意了。</p>
-<p>由于我的 ssh key 也放在 dotfiles 里的，现在不能公开完整的配置文件，过几天我换个仓库重新来过之后，会把我的 dotfiles 仓库放出来</p>
+<p>在完全没有用任何 lazy load 和减少子进程之类的优化的情况下，启动速度也不过是 0.2s 左右，而且这里面还夹杂了我所有的其他初始化脚本（当然这里面也没有什么很重的初始化内容），对于我来说已经很满意了</p>
+<p>全部配置在<a href="https://github.com/keaising/dotfile/tree/master/zsh">我的 Github 仓库里</a>，使用 <a href="https://www.gnu.org/software/stow/">stow</a> 管理，可以酌情使用</p>
 
     </div>
 
