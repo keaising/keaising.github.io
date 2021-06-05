@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GitHub Pages on 流水沉微</title>
+    <link>http://shuxiao.wang/tags/github-pages/</link>
+    <description>Recent content in GitHub Pages on 流水沉微</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn</language>
+    <lastBuildDate>Sat, 05 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://shuxiao.wang/tags/github-pages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>为非个人项目的 GitHub repo 设置子域名</title>
+      <link>http://shuxiao.wang/posts/set-subdomain-for-github-project/</link>
+      <pubDate>Sat, 05 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/posts/set-subdomain-for-github-project/</guid>
+      <description>最近在把以前的博客找回来 我从第一版博客开始，就一直在用基于 GitHub Pages和markdown的方案，最初用的静态生成器是Jekyll，但是Rub</description>
+    </item>
+    
+  </channel>
+</rss>

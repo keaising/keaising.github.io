@@ -153,6 +153,15 @@ Do not modify the linked list.
     </item>
     
     <item>
+      <title>为非个人项目的 GitHub repo 设置子域名</title>
+      <link>http://shuxiao.wang/posts/set-subdomain-for-github-project/</link>
+      <pubDate>Sat, 05 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/posts/set-subdomain-for-github-project/</guid>
+      <description>最近在把以前的博客找回来 我从第一版博客开始，就一直在用基于 GitHub Pages和markdown的方案，最初用的静态生成器是Jekyll，但是Rub</description>
+    </item>
+    
+    <item>
       <title>不优化，zsh 也超快</title>
       <link>http://shuxiao.wang/posts/zsh-refresh/</link>
       <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>

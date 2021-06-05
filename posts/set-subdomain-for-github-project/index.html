@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" class="han-la">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>为非个人项目的 GitHub repo 设置子域名 - 流水沉微</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/css/kitto.css">
+    <script src="/js/anchor.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/js/text-autospace.js"></script>
+</head>
+
+<body>
+    <div class="content width">
+        <div class="top-header">
+  <a class="site-title" href="http://shuxiao.wang">
+    流水沉微
+  </a>
+
+  
+  
+  <div class="nav-body">
+    
+    
+    <a class="nav-item " href="/posts/">
+      
+      <span>Posts</span>
+    </a>
+    
+    
+    
+    <a class="nav-item " href="/cloud/">
+      
+      <span>Cloud</span>
+    </a>
+    
+    
+    
+    <a class="nav-item " href="/eureka/">
+      
+      <span>Eureka!</span>
+    </a>
+    
+    
+  </div>
+  
+</div>
+
+        <div>
+            
+
+
+<div class="Subhead">
+    <div class="Subhead-heading">
+        <h1>为非个人项目的 GitHub repo 设置子域名</h1>
+    </div>
+</div>
+
+
+
+
+<article>
+    
+    <div class="true-content">
+        <p>最近在把以前的博客找回来</p>
+<p>我从第一版博客开始，就一直在用基于 GitHub Pages和markdown的方案，最初用的静态生成器是Jekyll，但是Ruby在Windows的上体验一直都难以言表，在Ubuntu上想把我的那个Jekyll主题跑起来也常常遇到问题，后来我转移到了Hugo，很符合我作为一个文学创作者的身份</p>
+<p>不过这也导致在多次迁移过程中我的博客被拆分成了几块，每块都是一个 GitHub repo，每个 repo 都有自己的一个二级域名，比如我现在放在表世界的博客是 <a href="https://shuxiao.wang">shuxiao.wang</a>，它对应的 repo 是 <a href="https://github.com/keaising/keaising.github.io">keaising.github.io</a>。实际上我还有几个博客，暂时把他们成为 A/B/C，他们各自在不同的 repo 里，也有各自的域名，各自的域名分别是 A.shuxiao.wang、B.shuixao.wang和C.shuxiao.wang</p>
+<p>之前都相安无事，因为除了主域名 <a href="https://shuxiao.wang">shuxiao.wang</a> 以外，其他域名都是 http 的，最近重拾了要把他们找回来的想法，第一步当然是给他们加上 https</p>
+<p>但是在 GitHub Pages 里设置的时候遇到了不小的麻烦</p>
+<p>按照 GitHub Pages 的官方教程，每个人或者每个组织（每个Github UserName）拥有一个 github.io 结尾的二级域名当作GitHub Pages的默认域名，比如我的 GitHub UserName 是 <code>keaising</code>，那么我的二级域名是 <code>keaising.github.io</code>，只要你设置了 GitHub Pages，且不做其他设置，那么你就可以通过 <code>{username}.github.io</code> 访问到这个网站</p>
+<p>在最早的GitHub Pages要求里，<code>keaising.github.io</code>这个主域名对应的 repo 的名字必须也叫<code>keaising.github.io</code>，且 gh-pages 分支必须是网站所有的html/js/css等静态文件。不过现在这一切都不要求了，repo 名字随便改，分支名字也随便改（但是需要在GitHub Pages设置里面选一下你的静态文件在哪个分支）</p>
+<p>在了解以上知识的情况下我们来说实际情况，以我自己为例</p>
+<p>我买了一个域名 <code>shuxiao.wang</code>，解析的时候，我给主机记录 <code>@</code>和<code>www</code>都设置了一条值为 <code>github.io</code>的CNAME记录，然后在<code>keaising.github.io</code>这个 repo 里将域名写成我的自定义域名<code>shuxiao.wang</code>，这样我的 <code>keaising.github.io</code> 域名就会被GitHub 301重定向到 <code>shuxiao.wang</code>。这是主域名和主项目的情况，一切非常完美</p>
+<p>再来说说我的 A/B/C 3个项目，他们的repo名字就是 A/B/C，如果我设置了 GitHub Pages，但是没有给他们设置域名，那么他们会自动获得两个域名 <code>keaising.github.io/A</code> 和<code>shuxiao.wang/A</code>，只不过前者会被 Github 自动重定向到后者。如果给<code>A.shuxiao.wang</code>也同样设置一个一条值为 <code>github.io</code>的CNAME记录，那么最后生效的还是 <code>shuixiao.wang/A</code></p>
+<p>但是对我来说我不是很喜欢 <code>shuxiao.wang/A</code> 这种风格，我更喜欢 <code>A.shuxiao.wang</code>，此时我需要的是能自己设置自定义域名的二级域名。就是要告诉 Github：将 <code>keaising.github.io/A</code>重定向到 <code>A.shuxiao.wang</code> 而不是 <code>keaising.github.io/A</code></p>
+<p>这在 GitHub Pages 的文档里貌似没有写，我在 <a href="https://stackoverflow.com/a/46461290">StackOverflow</a> 上找到了一个方法，虽然看起来是试出来的，但是可以用，就是在解析 A/B/C 的域名时，将 A/B/C 的 CNAME 记录都设置为 <code>{username}.github.io</code>，对我来说就是 <code>keaising.github.io</code>，这样解析之后就是 <code>A|B|C.shuxiao.wang</code>，非常完美</p>
+<p>大约过一个小时，HTTPS也可以启用起来，这样设置工作就完成了</p>
+
+    </div>
+
+    <div class="page-info">
+        <div>
+            
+
+<div>
+    
+</div>
+
+
+
+<div>
+    <a href='/tags/github-pages' class="tags-url">
+        <span class="tags">GitHub Pages</span>
+    </a>
+</div>
+
+
+
+        </div>
+        
+            
+                <div class="publish-date">
+                    <span
+                        title="Lastmod: 2021-06-05. Published at: 2021-06-05.">
+                        5 Jun 2021
+                    </span>
+                </div>
+            
+        
+    </div>
+</article>
+
+
+
+
+
+        </div>
+        <div id="footer" class="pt-2 pb-3 bg-white text-center">
+            
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/keaising/kitto" class="link-gray-dark">Kitto</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+        </div>
+    </div>
+
+    
+    <script>
+        anchors.add();
+    </script>
+    <script>
+        anchors.options = {
+            placement: 'left',
+        };
+        anchors.add();
+        anchors.add(".tag-title-left");
+    </script>
+    <script src="/js/mathjax.js"></script>
+</body>
+
+</html>
