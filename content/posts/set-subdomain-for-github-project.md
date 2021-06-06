@@ -31,3 +31,16 @@ tags:
 这在 GitHub Pages 的文档里貌似没有写，我在 [StackOverflow](https://stackoverflow.com/a/46461290) 上找到了一个方法，虽然看起来是试出来的，但是可以用，就是在解析 A/B/C 的域名时，将 A/B/C 的 CNAME 记录都设置为 `{username}.github.io`，对我来说就是 `keaising.github.io`，这样解析之后就是 `A|B|C.shuxiao.wang`，非常完美
 
 大约过一个小时，HTTPS也可以启用起来，这样设置工作就完成了
+
+## 另一种方法
+
+这篇文章发出来之后，有朋友跟我提到说自己的博客没有这样设置也能正常使用自定义域名的二级域名，原因是他在设置域名解析的时候，使用的不是CNAME类型，而是A类型，A类型的设置方法参见GitHub 文档[configuring an apex domain的第5步](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain)，简单来说就是将A类型的值设置为下列 GitHub 静态IP之一即可
+
+```
+185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+```
+
+我个人更喜欢用CNAME，这样不会被可能的GitHub更换IP地址所影响，不过实际上这4个IP被使用的广泛程度已经让GitHub不可能更换掉这4个IP地址了，所以都无所谓，爱用什么用什么
