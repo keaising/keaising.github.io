@@ -27,6 +27,14 @@ jobs:
       - name: Build
         run: hugo --buildFuture
 
+      - name: Build shares
+        run: |
+          cd share/git
+          node --version
+          npm --version
+          yarn install
+          yarn build
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

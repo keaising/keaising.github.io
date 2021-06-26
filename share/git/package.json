@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "npx slidev --open --remote",
+    "build": "npx slidev build",
+    "export": "npx slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "^0.21.3",
+    "@slidev/theme-default": "^0.19.1"
+  },
+  "name": "git"
+}
