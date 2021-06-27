@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "npx slidev --open --remote",
-    "build": "npx slidev build",
+    "build": "npx slidev build --base=/share/git/",
     "export": "npx slidev export"
   },
   "dependencies": {
