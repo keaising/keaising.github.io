@@ -116,7 +116,7 @@ All inputs are guaranteed to be non-empty strings.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">children</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">is_word</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_word</span> <span class="o">=</span> <span class="kc">False</span>
 
 <span class="k">class</span> <span class="nc">Trie</span><span class="p">:</span>
 
@@ -126,7 +126,7 @@ All inputs are guaranteed to be non-empty strings.</p>
 </span><span class="s2">        &#34;&#34;&#34;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="n">Node</span><span class="p">()</span>
   
-    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="s2">&#34;&#34;&#34;
 </span><span class="s2">        Inserts a word into the trie.
 </span><span class="s2">        &#34;&#34;&#34;</span>
@@ -135,7 +135,7 @@ All inputs are guaranteed to be non-empty strings.</p>
             <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
                 <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">Node</span><span class="p">()</span>
             <span class="n">node</span><span class="o">=</span><span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-        <span class="n">node</span><span class="o">.</span><span class="n">is_word</span><span class="o">=</span><span class="bp">True</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">is_word</span><span class="o">=</span><span class="kc">True</span>
 
     <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="s2">&#34;&#34;&#34;
@@ -144,7 +144,7 @@ All inputs are guaranteed to be non-empty strings.</p>
         <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
-                <span class="k">return</span> <span class="bp">False</span>
+                <span class="k">return</span> <span class="kc">False</span>
             <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">node</span><span class="o">.</span><span class="n">is_word</span>
   
@@ -155,9 +155,9 @@ All inputs are guaranteed to be non-empty strings.</p>
         <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">prefix</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
-                <span class="k">return</span> <span class="bp">False</span>
+                <span class="k">return</span> <span class="kc">False</span>
             <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-        <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">return</span> <span class="kc">True</span>
   
 <span class="c1"># Your Trie object will be instantiated and called as such:</span>
 <span class="c1"># obj = Trie()</span>
@@ -179,7 +179,7 @@ All inputs are guaranteed to be non-empty strings.</p>
 </span><span class="s2">        &#34;&#34;&#34;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="p">{}</span>
   
-    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="s2">&#34;&#34;&#34;
 </span><span class="s2">        Inserts a word into the trie.
 </span><span class="s2">        &#34;&#34;&#34;</span>
@@ -188,7 +188,7 @@ All inputs are guaranteed to be non-empty strings.</p>
             <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">node</span><span class="p">:</span>
                 <span class="n">node</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
             <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-        <span class="n">node</span><span class="p">[</span><span class="s1">&#39;#&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="n">node</span><span class="p">[</span><span class="s1">&#39;#&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
         
     <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="s2">&#34;&#34;&#34;
@@ -197,7 +197,7 @@ All inputs are guaranteed to be non-empty strings.</p>
         <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">node</span><span class="p">:</span>
-                <span class="k">return</span> <span class="bp">False</span>
+                <span class="k">return</span> <span class="kc">False</span>
             <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
         <span class="k">return</span> <span class="s1">&#39;#&#39;</span> <span class="ow">in</span> <span class="n">node</span>
         
@@ -208,9 +208,9 @@ All inputs are guaranteed to be non-empty strings.</p>
         <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">prefix</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">node</span><span class="p">:</span>
-                <span class="k">return</span> <span class="bp">False</span>
+                <span class="k">return</span> <span class="kc">False</span>
             <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-        <span class="k">return</span> <span class="bp">True</span>   
+        <span class="k">return</span> <span class="kc">True</span>   
 </code></pre></div><h3 id="improved-performance">Improved Performance</h3>
 <p>Runtime: 124 ms, faster than 99.62% of Python3 online submissions for Implement Trie (Prefix Tree).</p>
 <p>Memory Usage: 27.4 MB, less than 66.67% of Python3 online submissions for Implement Trie (Prefix Tree).</p>
@@ -225,7 +225,7 @@ All inputs are guaranteed to be non-empty strings.</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">prefix_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">element_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
         
-    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="s2">&#34;&#34;&#34;
 </span><span class="s2">        Inserts a word into the trie.
 </span><span class="s2">        &#34;&#34;&#34;</span>
@@ -261,7 +261,7 @@ All inputs are guaranteed to be non-empty strings.</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">prefix_set</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">element_set</span> <span class="o">=</span> <span class="p">{}</span>
         
-    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="s2">&#34;&#34;&#34;
 </span><span class="s2">        Inserts a word into the trie.
 </span><span class="s2">        &#34;&#34;&#34;</span>

@@ -80,7 +80,7 @@
     <span class="n">h</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
         <span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="n">N</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="n">N</span><span class="p">])</span>
 
 <span class="n">ladder</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
 </code></pre></div><p>狗叔：时间复杂度和空间复杂度？</p>
@@ -120,7 +120,7 @@
         <span class="n">h</span><span class="p">[</span><span class="n">step</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span>
     
     <span class="c1"># 兼容 total &lt; step 的情况</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="n">step</span><span class="p">]</span> <span class="k">if</span> <span class="n">total</span> <span class="o">&gt;</span> <span class="n">step</span> <span class="k">else</span> <span class="n">h</span><span class="p">[</span><span class="n">total</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="n">step</span><span class="p">]</span> <span class="k">if</span> <span class="n">total</span> <span class="o">&gt;</span> <span class="n">step</span> <span class="k">else</span> <span class="n">h</span><span class="p">[</span><span class="n">total</span><span class="p">])</span>
 
 <span class="n">ladder</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
