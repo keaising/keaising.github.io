@@ -7,12 +7,12 @@ theme: ./theme
 class: 'text-center'
 # https://sli.dev/custom/highlighters.html
 highlighter: shiki
+download: true
 # some information about the slides, markdown enabled
 info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
+  Git Notes
 
-  Learn more at [Sli.dev](https://sli.dev)
+  Learn more at [my blog](https://shuxiao.wang)
 
 
 
@@ -33,7 +33,7 @@ I will teach you some knowledge of life.
   <mdi-alert-circle />
 </a>
 
-by Taiga
+by Shuxiao
 
 
 ---
@@ -159,7 +159,7 @@ Current status
 github.com/keaising/auto-mouse-keyboard 
 
 ```shell {all|1-5|6|7-18}
-* 7907930 - (HEAD -> test, tag: v1.3.2, origin/main, main) change windows's release (6 months ago) <keaising>
+* 7907930 - (HEAD -> test, tag: v1.3.2, origin/main, main) change windows release (6 months ago) <keaising>
 * 2e05e48 - (tag: v1.3.1) bugfix and run specific file (6 months ago) <keaising>
 * 9aadc52 - update README (6 months ago) <keaising>
 * 5aa8708 - (tag: v1.3.0) read all .conf in current working directory (6 months ago) <keaising>
@@ -258,7 +258,7 @@ pick 92fb077 bugfix
 squash 5aa8708 read all .conf in current working directory
 squash 9aadc52 update README
 squash 2e05e48 bugfix and run specific file
-squash 7907930 change windows's release name amk-windows.exe=> amk.exe
+squash 7907930 change windows release name amk-windows.exe=> amk.exe
 
 # Rebase b2616ce..7907930 onto 2e05e48 (5 commands)
 # p, pick <commit> = use commit
@@ -292,14 +292,14 @@ oldest ->     pick 92fb077 bugfix
        ->     squash 5aa8708 read all .conf in current working directory
        ->     squash 9aadc52 update README
        ->     squash 2e05e48 bugfix and run specific file
-latest ->     squash 7907930 change windows's release name amk-windows.exe=> amk.exe
+latest ->     squash 7907930 change windows release name amk-windows.exe=> amk.exe
 ```
 
 
 2. Git log
 
 ```shell {all|1-4|5|6-17}
-latest ->     * 7907930 - (HEAD -> test, tag: v1.3.2, main) change windows's release (6 months ago) <keaising>
+latest ->     * 7907930 - (HEAD -> test, tag: v1.3.2, main) change windows release (6 months ago) <keaising>
        ->     * 2e05e48 - (tag: v1.3.1) bugfix and run specific file (6 months ago) <keaising>
        ->     * 9aadc52 - update README (6 months ago) <keaising>
        ->     * 5aa8708 - (tag: v1.3.0) read all .conf in current working directory (6 months ago) <keaising>
@@ -774,7 +774,7 @@ Edit your `~/.gitconfig`
 ```
 
 
-3. global hook (main for JIRA ID)
+3. global hook
 
 ```shell
 [core]
@@ -852,7 +852,7 @@ shell enhancements
 shell enhancements
 
 <div class="text-center mb-2">
-	<a href="https://github.com/zsh-users/zsh-autosuggestions">zsh highlight</a>: Fish-like fast/unobtrusive autosuggestions for zsh
+	<a href="https://github.com/zsh-users/zsh-autosuggestions">zsh autosuggestions</a>: Fish-like fast/unobtrusive autosuggestions for zsh
 </div>
 
 <div>
@@ -893,6 +893,22 @@ shell enhancements
 
 
 
+--- 
+layout: quote
+---
+
+# Appendix: Tools in this slide
+
+Glory to the Creators!
+
+| Name          | URL                                                                                     |
+| ---           | ---                                                                                     |
+| Powered by    | [Slidev](https://sli.dev/)                                                              |
+| Theme         | Self updated [@slidev/theme-seriph](https://www.npmjs.com/package/@slidev/theme-seriph) |
+| GIF recording | [ScreenToGif](https://github.com/NickeManarin/ScreenToGif/)                             |
+| Host on       | [GitHub Pages](https://pages.github.com/)                                               |
+
+
 ---
 layout: center
 class: text-center
@@ -900,4 +916,9 @@ class: text-center
 
 # Learn More
 
-[Share this git notes](https://shuxiao.wang/shares/git) / [Configure zsh from 0 to 1](https://shuxiao.wang/posts/zsh-refresh/)
++ [Share this git notes](https://shuxiao.wang/share/git) 
+
++ [Download this slide](https://shuxiao.wang/share/git/git-share.pdf)
+
++ [Configure zsh from 0 to 1](https://shuxiao.wang/posts/zsh-refresh/)
+

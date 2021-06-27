@@ -3,11 +3,12 @@
   "scripts": {
     "dev": "npx slidev --open --remote",
     "build": "npx slidev build --base=/share/git/",
-    "export": "npx slidev export"
+    "export": "npx slidev export --output=./public/git-share.pdf"
   },
   "dependencies": {
     "@slidev/cli": "^0.21.3",
-    "@slidev/theme-default": "^0.19.1"
+    "@slidev/theme-default": "^0.19.1",
+    "playwright-chromium": "^1.12.3"
   },
   "name": "git"
 }
