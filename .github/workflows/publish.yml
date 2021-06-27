@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
@@ -27,7 +27,14 @@ jobs:
       - name: Build
         run: hugo --buildFuture
 
-      - name: Build shares
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: master
+
+      - name: Build Shares
         run: |
           cd share/git
           node --version
@@ -35,9 +42,11 @@ jobs:
           yarn install
           yarn build
 
-      - name: Deploy
+      - name: Deploy Shares
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./share/git/dist
           publish_branch: master
+          destination_dir: share/git
+

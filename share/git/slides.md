@@ -401,7 +401,7 @@ Demo in [learngitbranching.js.org](https://learngitbranching.js.org/?NODEMO)
 </div>
 
 
-<img class="absolute bottom-0 right-0 h-17/20" src="merge.gif">
+<img class="absolute bottom-0 right-0 h-17/20" src="/merge.gif">
 
 
 
@@ -422,7 +422,7 @@ Demo in [learngitbranching.js.org](https://learngitbranching.js.org/?NODEMO)
 </div>
 
 
-<img class="absolute bottom-0 right-0 h-17/20" src="rebase.gif">
+<img class="absolute bottom-0 right-0 h-17/20" src="/rebase.gif">
 
 
 
@@ -432,13 +432,9 @@ Demo in [learngitbranching.js.org](https://learngitbranching.js.org/?NODEMO)
 
 ## Result: Merge v.s. Rebase
 
-<img
-class="absolute bottom-0 left-0 h-7/10"
-src='merge_result.png'>
+<img class="absolute bottom-0 left-0 h-7/10" src="/merge_result.png">
 
-<img
-class="absolute bottom-0 right-0 h-7/10"
-src='rebase_result.png'>
+<img class="absolute bottom-0 right-0 h-7/10" src="/rebase_result.png">
 
 
 ---
@@ -458,9 +454,7 @@ src='rebase_result.png'>
 	</div>
 </div>
 
-<img
-class="absolute bottom-0 left-0 w-1/2"
-src='merge_result.png'>
+<img class="absolute bottom-0 left-0 w-1/2" src="/merge_result.png">
 
 
 
@@ -481,9 +475,7 @@ src='merge_result.png'>
 	<div class="col-span-1"/>
 </div>
 
-<img
-class="absolute bottom-0 right-0 w-1/2"
-src='rebase_result.png'>
+<img class="absolute bottom-0 right-0 w-1/2" src="/rebase_result.png">
 
 
 ---
@@ -689,7 +681,7 @@ layout: quote
 </div>
 
 <div>
-	<img class="mx-auto max-w-4/5" src="fork.jpg">
+	<img class="mx-auto max-w-4/5" src="/fork.jpg">
 </div>
 
 
@@ -703,7 +695,7 @@ layout: quote
 </div>
 
 <div>
-	<img class="mx-auto max-w-4/5" src="gitui.gif">
+	<img class="mx-auto max-w-4/5" src="/gitui.gif">
 </div>
 
 
@@ -717,7 +709,7 @@ layout: quote
 </div>
 
 <div>
-	<img class="mx-auto max-w-4/5" src="diff-so-fancy.png">
+	<img class="mx-auto max-w-4/5" src="/diff-so-fancy.png">
 </div>
 
 
@@ -731,7 +723,7 @@ layout: quote
 </div>
 
 <div>
-	<img class="mx-auto max-w-4/5" src="delta.png">
+	<img class="mx-auto max-w-4/5" src="/delta.png">
 </div>
 
 
@@ -848,7 +840,7 @@ shell enhancements
 </div>
 
 <div>
-	<img class="mx-auto my-auto max-w-1/2" src="zsh-highlight.png">
+	<img class="mx-auto my-auto max-w-1/2" src="/zsh-highlight.png">
 </div>
 
 
@@ -864,7 +856,7 @@ shell enhancements
 </div>
 
 <div>
-	<img class="mx-auto my-auto max-w-3/4" src="zsh-autosuggestion.gif">
+	<img class="mx-auto my-auto max-w-3/4" src="/zsh-autosuggestion.gif">
 </div>
 
 
@@ -880,7 +872,7 @@ shell enhancements
 </div>
 
 <div>
-	<img class="mx-auto my-auto max-w-3/4" src="fzf.gif">
+	<img class="mx-auto my-auto max-w-3/4" src="/fzf.gif">
 </div>
 
 
@@ -896,7 +888,7 @@ shell enhancements
 </div>
 
 <div>
-	<img class="mx-auto my-auto max-w-3/4" src="z.lua.gif">
+	<img class="mx-auto my-auto max-w-3/4" src="/z.lua.gif">
 </div>
 
 
