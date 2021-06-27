@@ -918,7 +918,5 @@ class: text-center
 
 + [Share this git notes](https://shuxiao.wang/share/git) 
 
-+ [Download this slide](https://shuxiao.wang/share/git/git-share.pdf)
-
 + [Configure zsh from 0 to 1](https://shuxiao.wang/posts/zsh-refresh/)
 

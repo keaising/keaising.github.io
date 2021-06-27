@@ -33,6 +33,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: master
+          full_commit_message: ${{ github.event.head_commit.message }}
 
       - name: Build Shares
         run: |
@@ -49,4 +50,5 @@ jobs:
           publish_dir: ./share/git/dist
           publish_branch: master
           destination_dir: share/git
+          full_commit_message: ${{ github.event.head_commit.message }}
 
