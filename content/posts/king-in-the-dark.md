@@ -72,3 +72,19 @@ tags:
 在此之前
 
 我不愿意把这种有天赋的人不同于常人的想法成为胡思乱想，我虽然不能完全理解他们的想法，但是我相信他们自有他们的一套思路和逻辑。
+
+http://www.huzheng.org/HuZheng-Resume.php
+http://www.huzheng.org/huzheng_life.php
+http://dict.stardict.net/guest/guest.php
+http://www.huzheng.org/geniusreligion/TheSourceCodeOfMyWorld.pdf
+
+https://byvoid.com/zhs/blog/huzheng-vanish/
+https://www.52nlp.cn/stardict-heroe
+https://www.52nlp.cn/huzheng-stardict-thesourcecodeofmyworld
+https://matters.news/@rein/%E8%AE%A4%E8%AF%86%E8%83%A1%E6%AD%A3-%E7%96%AF%E4%BA%BA%E7%A8%8B%E5%BA%8F%E5%91%98%E4%BC%9A%E6%A2%A6%E8%A7%81%E7%94%B5%E5%AD%90%E4%BD%9B%E5%90%97-bafyreigelsoxjw6ietibbrzsi3lv26llewkdidufxf32zqb6dhbdibtgie
+https://www.zhihu.com/question/21433985
+
+http://stardict-4.sourceforge.net/index_cn.php
+https://github.com/huzheng001/stardict-3
+
+https://www.v2ex.com/t/222200
