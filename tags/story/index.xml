@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Story on 流水沉微</title>
+    <link>http://shuxiao.wang/tags/story/</link>
+    <description>Recent content in Story on 流水沉微</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn</language>
+    <lastBuildDate>Sat, 10 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://shuxiao.wang/tags/story/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>中文编程届四大暗黑天王</title>
+      <link>http://shuxiao.wang/posts/king-in-the-dark/</link>
+      <pubDate>Sat, 10 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/posts/king-in-the-dark/</guid>
+      <description>序言 中文编程届四大暗黑天王是指：胡正、李杀、王垠和田春冰河 这四大天王成名时期基本都在 2000 年-2005 年之间，还都特别能写博客和写书，每个人的网</description>
+    </item>
+    
+  </channel>
+</rss>
