@@ -46,7 +46,7 @@ tags:
 
 胡正，1983 年生，2006 年四川大学信息管理与信息系统毕业，毕业后在红帽中国、北京轩辕互动 ExoWeb、浙大科技园同软软件、湖南湘乡宝龙科技、湖南株洲中国动力谷、北京比特币区块链研究、北京多学点 Linux 培训等公司工作过，做过星际译王（成名于 2003 年前后，至今仍然[在 GitHub 上有更新](https://github.com/huzheng001/stardict-3)）和[黑客背单词](http://reciteword.sourceforge.net)等项目，过了大学英语六级，把 GTK2 Tutorial 翻译成了[中文](http://www.huzheng.org/ebook/gtk2-tut/)
 
-他至今仍为人津津乐道的应该还是在本科期间做出了[星际译王](http://stardict-4.sourceforge.net/)，下载量超千万，站在 20 年前的时代背景下，是相当耀眼的成就、
+他至今仍为人津津乐道的应该还是在本科期间做出了[星际译王](http://stardict-4.sourceforge.net/)，下载量超千万，站在 20 年前的时代背景下，是相当耀眼的成就
 
 ### 由道入魔
 
