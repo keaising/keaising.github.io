@@ -98,7 +98,7 @@
 <dt>Example</dt>
 <dd></dd>
 </dl>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">Trie</span> <span class="n">trie</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Trie</span><span class="p">();</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">Trie</span> <span class="n">trie</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Trie</span><span class="p">();</span>
 
 <span class="n">trie</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s2">&#34;apple&#34;</span><span class="p">);</span>
 <span class="n">trie</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&#34;apple&#34;</span><span class="p">);</span>   <span class="o">//</span> <span class="n">returns</span> <span class="n">true</span>
@@ -113,7 +113,7 @@
 <p>You may assume that all inputs are consist of lowercase letters a-z.
 All inputs are guaranteed to be non-empty strings.</p>
 <h2 id="solve">Solve</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">children</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">is_word</span> <span class="o">=</span> <span class="kc">False</span>
@@ -171,7 +171,7 @@ All inputs are guaranteed to be non-empty strings.</p>
 <h2 id="improvement-i">Improvement I</h2>
 <p>运行速度还行，但是内存明显还有可以优化的地方，主要是每个节点都生成了一个新的<code>Node</code>来存数据，实际上我们并不需要一个新的<code>Node</code>，需要的是一个dict，那如何判断当前节点是否是一个完整的word呢？多加一个标志节点即可，这里使用了<code>#</code></p>
 <h3 id="improvemed-solution">Improvemed solution</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Trie</span><span class="p">:</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Trie</span><span class="p">:</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="s2">&#34;&#34;&#34;
@@ -217,7 +217,7 @@ All inputs are guaranteed to be non-empty strings.</p>
 <h2 id="improvement-ii">Improvement II</h2>
 <p>去看了下别人的解答，还有一种更加极端的优化运行时间的做法，做两个set：element_set/prefix_set，插入时把word直接插入到element_set，然后遍历word，把word的所有prefix都放到prefix_set，这样不管是<code>search</code>还是<code>startsWith</code>都是<code>O(1)</code>，但是空间非常大</p>
 <h3 id="improvemed-solution-1">Improvemed solution</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Trie</span><span class="p">:</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Trie</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="s2">&#34;&#34;&#34;
 </span><span class="s2">        Initialize your data structure here.
@@ -253,7 +253,7 @@ All inputs are guaranteed to be non-empty strings.</p>
 <h2 id="improvement-iii">Improvement III</h2>
 <p>试了下把 set 改为 dict，居然速度和内存都有一点点提升，有点意思</p>
 <h3 id="improvemed-solution-2">Improvemed solution</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Trie</span><span class="p">:</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Trie</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="s2">&#34;&#34;&#34;
 </span><span class="s2">        Initialize your data structure here.

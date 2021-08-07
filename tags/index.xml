@@ -6,7 +6,16 @@
     <description>Recent content in Tags on 流水沉微</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Sat, 10 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://shuxiao.wang/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://shuxiao.wang/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>reality</title>
+      <link>http://shuxiao.wang/tags/reality/</link>
+      <pubDate>Sat, 07 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/tags/reality/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Story</title>
       <link>http://shuxiao.wang/tags/story/</link>
@@ -31,15 +40,6 @@
       <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/tags/dotfiles/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>reality</title>
-      <link>http://shuxiao.wang/tags/reality/</link>
-      <pubDate>Thu, 29 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>http://shuxiao.wang/tags/reality/</guid>
       <description></description>
     </item>
     

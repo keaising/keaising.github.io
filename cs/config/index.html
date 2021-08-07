@@ -67,10 +67,10 @@
     <div class="true-content">
         <h2 id="shell">Shell</h2>
 <h3 id="export">export</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">export</span> <span class="nv">GO111MODULE</span><span class="o">=</span>on
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">export</span> <span class="nv">GO111MODULE</span><span class="o">=</span>on
 <span class="nb">export</span> <span class="nv">GOPROXY</span><span class="o">=</span><span class="s1">&#39;https://goproxy.io&#39;</span>
 </code></pre></div><h3 id="alias">alias</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">alias</span> <span class="nv">ll</span><span class="o">=</span><span class="s1">&#39;ls -al&#39;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">alias</span> <span class="nv">ll</span><span class="o">=</span><span class="s1">&#39;ls -al&#39;</span>
 
 <span class="nb">alias</span> <span class="nv">goproxy</span><span class="o">=</span><span class="s1">&#39;export http_proxy=http://127.0.0.1:7777 https_proxy=http://127.0.0.1:7777&#39;</span>
 <span class="nb">alias</span> <span class="nv">disproxy</span><span class="o">=</span><span class="s1">&#39;unset http_proxy https_proxy&#39;</span>
@@ -104,7 +104,7 @@
 	rebase = true
 </code></pre><h2 id="ssh-key">ssh key</h2>
 <h3 id="create-ssh-key">create ssh key</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># generating key</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># generating key</span>
 ssh-keygen -t rsa -b <span class="m">4096</span> -C <span class="s2">&#34;email@yours.com&#34;</span>
 
 <span class="c1"># start the ssh-agent in the background</span>
@@ -114,7 +114,7 @@ ssh-keygen -t rsa -b <span class="m">4096</span> -C <span class="s2">&#34;email@
 ssh-add ~/.ssh/id_rsa
 </code></pre></div><h3 id="permanently-add-ssh-key">permanently add ssh key</h3>
 <p>来源：<a href="https://segmentfault.com/q/1010000000835302">是否必须每次添加ssh-add</a></p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">vi ~/.ssh/config
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vi ~/.ssh/config
 
 <span class="c1"># 1. 永久添加 public key 到本地 ssh agent</span>
 IdentityFile ~/.ssh/id_rsa
@@ -132,7 +132,7 @@ ssh-add ~/.ssh/id_rsa <span class="p">&amp;</span>&gt;/dev/null
 chmod <span class="m">600</span> ~/.ssh/config
 </code></pre></div><h2 id="systemd-service">Systemd Service</h2>
 <h3 id="cowservice">cow.service</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># sudo vi /usr/lib/systemd/system/cow.service</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># sudo vi /usr/lib/systemd/system/cow.service</span>
 <span class="c1"># sudo systemctl daemon-reload</span>
 <span class="c1"># sudo systemctl start cow</span>
 <span class="c1"># sudo systemctl enable cow</span>

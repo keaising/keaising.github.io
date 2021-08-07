@@ -116,7 +116,7 @@ cache.get(3);       // returns 3
 cache.get(4);       // returns 4</p>
 </blockquote>
 <h2 id="solve">Solve</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">LRUCache</span><span class="p">:</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">LRUCache</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">capacity</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">capacity</span> <span class="o">=</span> <span class="n">capacity</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dic</span> <span class="o">=</span> <span class="p">{}</span>
@@ -174,7 +174,7 @@ cache.get(4);       // returns 4</p>
 <p>Runtime: 244 ms, faster than 48.31% of Python3 online submissions for LRU Cache.</p>
 <p>Memory Usage: 23.2 MB, less than 6.06% of Python3 online submissions for LRU Cache.</p>
 <p>性能数据不够好主要是对 Python 来说还可以用 <a href="https://docs.python.org/3.7/library/collections.html">collections</a> 里的 OrderedDict，用了 OrderedDict 的解答如下：</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
 
 <span class="k">class</span> <span class="nc">LRUCache</span><span class="p">:</span>
 

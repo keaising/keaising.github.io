@@ -66,9 +66,9 @@
     
     <div class="true-content">
         <h2 id="modify-latest-commit-author">modify latest commit author</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git commit --amend --author<span class="o">=</span><span class="s2">&#34;keaising &lt;keaising@gmail.com&gt;&#34;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git commit --amend --author<span class="o">=</span><span class="s2">&#34;keaising &lt;keaising@gmail.com&gt;&#34;</span>
 </code></pre></div><h2 id="batch-modify-git-committersh">batch-modify-git-committer.sh</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git filter-branch --env-filter <span class="s1">&#39;
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git filter-branch --env-filter <span class="s1">&#39;
 </span><span class="s1">OLD_EMAIL=&#34;old_email&#34;
 </span><span class="s1">CORRECT_NAME=&#34;keaising&#34;
 </span><span class="s1">CORRECT_EMAIL=&#34;keaising@gmail.com&#34;
@@ -84,7 +84,7 @@
 </span><span class="s1">fi
 </span><span class="s1">&#39;</span> --tag-name-filter cat -- --branches --tags
 </code></pre></div><h2 id="add-key-of-keaisinggmailcom">add key of <a href="mailto:keaising@gmail.com">keaising@gmail.com</a></h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s1">&#39;ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDEzQ42VEOqjtxbQ4LdArly5dDEz1tBMSaraCGuBfyGQRO5Yk6rivlbx4iIiuM0CsuAWZ/esRZKYl6hwOj3H/PanCrxOTW+mqowUHJIp9+c9FGc7ngneHytB05MaI9S49Iw51xYjRBHWrqvCGxDuggUWYHZNX5j5zy+FJxEUVZ8UQcX0lbKkJWCcMTyjkYHP4VAZygJA65TUW+rLGbA6Slh5dfZXlh7GxdjPG2WJxzJ+vcSPolDoNpoVKslTfLVgW+WFNMxE9AO6zF3K0+9k938PBp7iaDqachfyh6Wb3pz5beuBkAD9nBM0GiJD50d+SAUEpRs5DA79U0+8Jb1vkuH7ylIvXI+rcOwylfnVhUgFuPJS1bPxBrt0bKBqK2EwpFPxeKMylq8/9m+y4GE5/6uMMc0j6SYiN0f0qob1Wb5HgVl11gB9VI75L5NzuRfIiSWP5bJ9yTxjz4TL1lYGASV/WAk4KkmrpkE9HrEqVsJBxCacFZzE3rXAS11lotbEczPIgBNrRf/YN5ZQKDJne9KWBTkhzJ8ej8rlf1hm3EoKGESVByleW0elJDPAN2k+E3Bd10DL395ficJ2TXqlwxtLrp3s1xzj05Coo0tZQpnYfntqs3kPh3Lx9DNRS0JxUP4N8dGF3oSwA8d06VU9e2hG4LzQKZZ+dOief/jLUu9MQ== keaising@gmail.com&#39;</span> &gt;&gt; ~/.ssh/authorized_keys
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s1">&#39;ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDEzQ42VEOqjtxbQ4LdArly5dDEz1tBMSaraCGuBfyGQRO5Yk6rivlbx4iIiuM0CsuAWZ/esRZKYl6hwOj3H/PanCrxOTW+mqowUHJIp9+c9FGc7ngneHytB05MaI9S49Iw51xYjRBHWrqvCGxDuggUWYHZNX5j5zy+FJxEUVZ8UQcX0lbKkJWCcMTyjkYHP4VAZygJA65TUW+rLGbA6Slh5dfZXlh7GxdjPG2WJxzJ+vcSPolDoNpoVKslTfLVgW+WFNMxE9AO6zF3K0+9k938PBp7iaDqachfyh6Wb3pz5beuBkAD9nBM0GiJD50d+SAUEpRs5DA79U0+8Jb1vkuH7ylIvXI+rcOwylfnVhUgFuPJS1bPxBrt0bKBqK2EwpFPxeKMylq8/9m+y4GE5/6uMMc0j6SYiN0f0qob1Wb5HgVl11gB9VI75L5NzuRfIiSWP5bJ9yTxjz4TL1lYGASV/WAk4KkmrpkE9HrEqVsJBxCacFZzE3rXAS11lotbEczPIgBNrRf/YN5ZQKDJne9KWBTkhzJ8ej8rlf1hm3EoKGESVByleW0elJDPAN2k+E3Bd10DL395ficJ2TXqlwxtLrp3s1xzj05Coo0tZQpnYfntqs3kPh3Lx9DNRS0JxUP4N8dGF3oSwA8d06VU9e2hG4LzQKZZ+dOief/jLUu9MQ== keaising@gmail.com&#39;</span> &gt;&gt; ~/.ssh/authorized_keys
 </code></pre></div>
     </div>
 

@@ -73,7 +73,7 @@
 <p>递推公式出来鸟~</p>
 </blockquote>
 <p>当然要得到一个答案是非常简单的</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">ladder</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">3</span><span class="p">):</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">ladder</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">3</span><span class="p">):</span>
     <span class="n">h</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">h</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">h</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
@@ -99,7 +99,7 @@
 </blockquote>
 <p>此外，Haruhi还发散了一下，如果总共 total 级阶梯，一次最多跨越 step 级，那有多少种方法？</p>
 <p>于是我又给写了一下</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">ladder</span><span class="p">(</span><span class="n">total</span><span class="p">,</span> <span class="n">step</span><span class="p">):</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">ladder</span><span class="p">(</span><span class="n">total</span><span class="p">,</span> <span class="n">step</span><span class="p">):</span>
     <span class="k">assert</span> <span class="n">total</span> <span class="o">&gt;</span> <span class="mi">0</span>
     <span class="k">assert</span> <span class="n">step</span> <span class="o">&gt;</span> <span class="mi">0</span>
     <span class="n">h</span> <span class="o">=</span> <span class="p">{}</span>

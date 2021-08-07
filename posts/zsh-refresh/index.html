@@ -112,7 +112,7 @@
 <li><a href="https://github.com/zsh-users/zsh-syntax-highlighting">zsh-users/zsh-syntax-highlighting</a></li>
 </ul>
 <p>正好可以满足需求，用 zinit 装上即可</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">zinit light zsh-users/zsh-completions
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
 </code></pre></div><p>只要把这 3个插件一装上，在 zsh 里输入 command 就已经有高亮和提示效果了</p>
@@ -162,7 +162,7 @@ disabled = true
 disabled = true
 </code></pre><h3 id="搜索">搜索</h3>
 <p>搜索分为搜索历史和搜索当前目录下的文件，搜索当然是用超好用的 <a href="https://github.com/junegunn/fzf">fzf</a>，fzf 的配置超简单，运行速度很快，照着官方文档弄就行，我唯一改了的是反转了一下上下，我不是很喜欢搜索结果在最下面的默认展示风格，于是调整了一下</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 反转展示结果</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 反转展示结果</span>
 <span class="nb">export</span> <span class="nv">FZF_DEFAULT_OPTS</span><span class="o">=</span><span class="s1">&#39;--height 40% --layout=reverse --border&#39;</span>
 <span class="c1"># 搜索文件时的触发因子</span>
 <span class="nb">export</span> <span class="nv">FZF_COMPLETION_TRIGGER</span><span class="o">=</span><span class="s1">&#39;ll&#39;</span>
@@ -176,7 +176,7 @@ disabled = true
 <p>由于 z.lua 文件本身不大，我直接把源文件塞到我的 zsh 配置里了，其实也可以用 zinit 来安装，这个就看你喜欢了</p>
 <h2 id="3-跑个分">3. 跑个分</h2>
 <p>配置好之后直接跑个分</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 不加载配置</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 不加载配置</span>
 <span class="k">for</span> i in <span class="k">$(</span>seq <span class="m">1</span> 5<span class="k">)</span><span class="p">;</span> <span class="k">do</span> /usr/bin/time /bin/zsh --no-rcs -i -c exit<span class="p">;</span> <span class="k">done</span>
 
 <span class="c1"># 正常加载配置</span>

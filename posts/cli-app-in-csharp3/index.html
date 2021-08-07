@@ -80,7 +80,7 @@
 <p>打包之前，需要调整项目配置</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="hl"><span class="lnt"> 4
@@ -96,7 +96,7 @@
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;Project</span> <span class="na">Sdk=</span><span class="s">&#34;Microsoft.NET.Sdk&#34;</span><span class="nt">&gt;</span>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;Project</span> <span class="na">Sdk=</span><span class="s">&#34;Microsoft.NET.Sdk&#34;</span><span class="nt">&gt;</span>
 
   <span class="nt">&lt;PropertyGroup&gt;</span>
 <span class="hl">        <span class="nt">&lt;AssemblyName&gt;</span>gen<span class="nt">&lt;/AssemblyName&gt;</span>
@@ -115,7 +115,7 @@
 <p>在没有其他配置的情况下，最后生成的exe的名字跟程序集名字一样，输出类型决定了是打包成exe还是nuget包</p>
 <h3 id="发布应用">发布应用</h3>
 <p>使用以下脚本发布应用</p>
-<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">dotnet</span> <span class="n">publish</span> <span class="n">-r</span> <span class="nb">win10-x64</span> <span class="p">-</span><span class="n">-self-contained</span> <span class="n">true</span> <span class="n">-c</span> <span class="n">Release</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">dotnet</span> <span class="n">publish</span> <span class="n">-r</span> <span class="nb">win10-x64</span> <span class="p">-</span><span class="n">-self-contained</span> <span class="n">true</span> <span class="n">-c</span> <span class="n">Release</span>
 </code></pre></div><p>执行以上命令后，可以在<code>./bin/Release/netcoreapp2.1/win10-64/publish</code>目录下找到生成的所有exe和dll文件，此时可以直接运行exe文件使用演示应用</p>
 <h3 id="打包成单文件">打包成单文件</h3>
 <p>以上编译结果中有好几百个文件，传输、部署和使用都不太方便，经常会有打包成一个单文件exe的需求，这个需求可以借助<a href="https://github.com/dgiagio/warp">warp-packer</a>解决</p>
@@ -125,7 +125,7 @@
 </code></pre><p>完成后，可以在当前目录下找到名为<code>gen-packed.exe</code>的最终文件，至此，单文件的可执行文件的打包介绍结束</p>
 <h2 id="dotnet-core-global-tool全局工具">dotnet core global tool（全局工具）</h2>
 <p>dotnet core global tool 的打包和部署都依赖于nuget包，nuget包的打包子命令是pack，本地打包和调试常用的是以下几条命令</p>
-<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="p">//</span><span class="n">打包</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="p">//</span><span class="n">打包</span>
 <span class="n">dotnet</span> <span class="n">pack</span> <span class="p">-</span><span class="n">-output</span> <span class="p">./.</span><span class="n">nupkg</span>
 
 <span class="p">//</span><span class="n">从本地源安装到本地全局工具</span>
@@ -140,7 +140,7 @@
 <p>为了能打包成dotnet core global tool可用的nuget包，需要对项目文件进行一些修改，为了跟上一节中的exe项目文件区分，这里新建一个项目文件<code>gen-nuget.csproj</code>，内容如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -160,7 +160,7 @@
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;Project</span> <span class="na">Sdk=</span><span class="s">&#34;Microsoft.NET.Sdk&#34;</span><span class="nt">&gt;</span>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;Project</span> <span class="na">Sdk=</span><span class="s">&#34;Microsoft.NET.Sdk&#34;</span><span class="nt">&gt;</span>
 
 	<span class="nt">&lt;PropertyGroup&gt;</span>
 		<span class="nt">&lt;AssemblyName&gt;</span>gen<span class="nt">&lt;/AssemblyName&gt;</span>
@@ -186,7 +186,7 @@
 <p>调整完配置之后使用指令<code>dotnet pack --output ./.nupkg</code>就可以开始打包nuget了</p>
 <p>命令比较简单，且在dotnet core官网都有文档说明，此处不再赘述。</p>
 <p>需要说明的是，生成的nuget包可以通过上传到<a href="https://www.nuget.org/">nuget.org</a>的方式让其他人安装该全局工具，<a href="https://www.nuget.org/">nuget.org</a>生成的默认安装指令为</p>
-<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">dotnet</span> <span class="n">tool</span> <span class="n">install</span> <span class="p">-</span><span class="n">-global</span> <span class="n">gen</span> <span class="p">-</span><span class="n">-version</span> <span class="n">1</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">dotnet</span> <span class="n">tool</span> <span class="n">install</span> <span class="p">-</span><span class="n">-global</span> <span class="n">gen</span> <span class="p">-</span><span class="n">-version</span> <span class="n">1</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span>
 </code></pre></div><p>可以看出，nuget包安装dotnet core global tool的工具相对来说比较简单，而且在打包的时候也比较简单，不用考虑跨平台的问题，dotnet core SDK会自动处理好。</p>
 <h2 id="打包脚本">打包脚本</h2>
 <p>每次打包过程都需要输入一系列命令，其实可以将这一系列命令都包装成一个脚本文件，好处有两点</p>
@@ -207,7 +207,7 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -246,7 +246,7 @@
 </span><span class="lnt">37
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="nv">$ResultPath</span> <span class="p">=</span> <span class="s1">&#39;pakcages&#39;</span>
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="nv">$ResultPath</span> <span class="p">=</span> <span class="s1">&#39;pakcages&#39;</span>
 <span class="nv">$exePath</span> <span class="p">=</span> <span class="s1">&#39;bin/Release/gen&#39;</span> 
 <span class="nv">$nugetPath</span> <span class="p">=</span> <span class="s1">&#39;bin/Release&#39;</span>
 <span class="nv">$genExe</span> <span class="p">=</span> <span class="s1">&#39;gen.csproj&#39;</span>

@@ -77,12 +77,12 @@
 <p>配置文件中每行是一条指令，指令分为 3 类：注释、设置和流程</p>
 <h3 id="注释指令">注释指令</h3>
 <p>开头第一个字符是 <code>#</code> 的都是注释，比如</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># This is a comment</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># This is a comment</span>
 </code></pre></div><p>如果一行什么都不写，或者全都写空格，那就是空指令，什么都不会影响也不会有任何作用</p>
 <h3 id="设置指令">设置指令</h3>
 <p>目前只有两个设置，设置每条命令执行的时间间隔(SHIM，单位毫秒)和设置当前显示器的分辨率缩放(SCALE)</p>
 <p>下面设置中，第一行设置两条命令之间间隔 500 毫秒执行，第二行标示当前显示器的分辨率缩放了 150%</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">SHIM</span><span class="o">=</span><span class="m">500</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">SHIM</span><span class="o">=</span><span class="m">500</span>
 <span class="nv">SCALE</span><span class="o">=</span>1.5
 </code></pre></div><p>分辨率缩放主要是影响鼠标移动位置，在高分屏中会需要用到，当你发现鼠标移动的实际位置跟设定的位置不一致的时候需要检查，不设置的话默认是 1，没有缩放</p>
 <h3 id="流程指令">流程指令</h3>
@@ -97,17 +97,17 @@
 <p><strong>鼠标移动</strong></p>
 <p>以一个分辨率为 1920*1080 的屏幕为例，左上角坐标为(0,0)，右下角坐标为(1920,1080)</p>
 <p>将鼠标移动到屏幕坐标 (300,200) 的位置</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">M</span><span class="o">=</span>300,200
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">M</span><span class="o">=</span>300,200
 </code></pre></div><p><strong>鼠标点击</strong></p>
 <p>在当前位置点击鼠标</p>
 <p>第一行：左键单击，第二行：左键双击，第三行：右键单击，第四行：右键双击</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">C</span><span class="o">=</span>left
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">C</span><span class="o">=</span>left
 <span class="nv">C</span><span class="o">=</span>left,double
 <span class="nv">C</span><span class="o">=</span>right
 <span class="nv">C</span><span class="o">=</span>right,double
 </code></pre></div><p><strong>键盘输入</strong></p>
 <p>在当前位置输入文本</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">I</span><span class="o">=</span><span class="m">23333</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">I</span><span class="o">=</span><span class="m">23333</span>
 <span class="nv">I</span><span class="o">=</span>可以是中文，也可以是 I love Grace
 <span class="nv">I</span><span class="o">=</span>%^*<span class="o">(</span><span class="p">&amp;</span><span class="o">())(</span>
 <span class="nv">I</span><span class="o">=</span>可以包含各种特殊符号，也可以   有空格
@@ -116,7 +116,7 @@
 <p>单个按键包括 <code>a-z</code>、 <code>0-9</code>和以及普通的功能键</p>
 <p>同时也可以使用组合键，比如耳熟能详的 <code>Ctrl+C</code>/ <code>Ctrl+V</code></p>
 <p>所有支持的按键列表见 <a href="https://github.com/go-vgo/robotgo/blob/master/docs/keys.md">https://github.com/go-vgo/robotgo/blob/master/docs/keys.md</a></p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">T</span><span class="o">=</span><span class="m">1</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">T</span><span class="o">=</span><span class="m">1</span>
 <span class="nv">T</span><span class="o">=</span>cmd
 <span class="nv">T</span><span class="o">=</span>esc
 <span class="nv">T</span><span class="o">=</span>c,ctrl
@@ -125,7 +125,7 @@
 <span class="nv">T</span><span class="o">=</span>e,cmd
 </code></pre></div><p>需要注意，使用组合键的时候，数字和字母需要放前面，功能键（比如 cmd/ctrl/shift）需要放后面，用逗号分隔开</p>
 <p>下面只是列举常用的功能键</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">	<span class="s2">&#34;cmd&#34;</span>		is the <span class="s2">&#34;win&#34;</span> key <span class="k">for</span> windows
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">	<span class="s2">&#34;cmd&#34;</span>		is the <span class="s2">&#34;win&#34;</span> key <span class="k">for</span> windows
 	<span class="s2">&#34;alt&#34;</span>
 	<span class="s2">&#34;ctrl&#34;</span>
 	<span class="s2">&#34;shift&#34;</span>
