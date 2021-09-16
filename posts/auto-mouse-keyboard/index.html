@@ -161,14 +161,14 @@
 </code></pre></div><p><strong>暂停</strong></p>
 <p>手动控制两个操作之间的间隔，真正的间隔会变成 (SHIM+S)毫秒，暂停的单位是毫秒</p>
 <p>比如配置里 <code>SHIM=400</code>，脚本如下</p>
-<pre><code class="language-conf" data-lang="conf">T=enter
+<pre tabindex="0"><code class="language-conf" data-lang="conf">T=enter
 S=300
 I=wow
 </code></pre><p>那么，摁下回车和输入 <code>wow</code>之间的真实间隔是 <code>SHIM+S+SHIM=400+300+400=1100 ms</code></p>
 <p>需要注意，使用组合键的时候，数字和字母需要放前面，功能键（比如 cmd/ctrl/shift）需要放后面，用逗号分隔开</p>
 <p><strong>循环</strong></p>
 <p>使一个片段反复执行 N 次，比如下列的语句</p>
-<pre><code class="language-conf" data-lang="conf">S=2000
+<pre tabindex="0"><code class="language-conf" data-lang="conf">S=2000
 C=left
 I= begin
 
