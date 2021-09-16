@@ -22,7 +22,7 @@ weight: 0
 
 | date    | slide                                        | description                                   |
 | ---     | ---                                          | ---                                           |
-| 2021.06 | [Git Notes](https://shuxiao.wang/share/git) | 关于Git的分享，用gif阐述了merge和rebase的异同 |
+| 2021.06 | [Git Notes](https://shuxiao.wang/share/git/) | 关于Git的分享，用gif阐述了merge和rebase的异同 |
 
 ### Elsewhere
 
