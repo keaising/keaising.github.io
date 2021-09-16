@@ -1,0 +1,33 @@
+name: github pages
+
+on:
+  push:
+    branches:
+      - source # Set a branch name to trigger deployment
+    paths:
+      - share/**
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+
+      - name: Build Shares
+        run: |
+          cd share/git
+          node --version
+          npm --version
+          yarn install
+          yarn build
+
+      - name: Deploy Shares
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./share/git/dist
+          publish_branch: master
+          destination_dir: share/git
+          full_commit_message: ${{ github.event.head_commit.message }}
