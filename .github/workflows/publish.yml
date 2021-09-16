@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - source # Set a branch name to trigger deployment
+    paths-ignore:
+      - 'share/**'
 
 jobs:
   deploy:
