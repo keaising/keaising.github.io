@@ -90,82 +90,82 @@
 <li>在上一节中的安装包已经在桌面上创建了DrJava的快捷方式『译者注：如果不慎删掉，还可以在如下目录中找到该程序：C:\Users\Username\algs4』。双击以启动DrJava，如果你收到一个Windows安装警告，点击「允许运行」或者「不禁止」</li>
 <li>在DrJava的主窗体中，请向下面一样准确无误得输入<a href="http://introcs.cs.princeton.edu/java/11hello/HelloWorld.java.html">HelloWorld.java</a>中的代码，哪怕你只是漏掉了一个分号，这个程序也不会运行,在你输入的时候，DrJava会为你准备缩进</li>
 </ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">HelloWorld</span> <span class="p">{</span>
-    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span> 
-        <span class="n">System</span><span class="p">.</span><span class="k">out</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&#34;Hello, World&#34;</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">HelloWorld</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="p">.</span><span class="k">out</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&#34;Hello, World&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><ul>
 <li>最后，点击「保存」按钮来保存该文件，使用DrJava创建文件夹C:\Users\username\algs4\hello并将文件命名为「HelloWorld.java」，这个文件名是大小写敏感的而且必须匹配Java程序中的类名，其中username是你的Windows用户名</li>
 </ul>
 <h2 id="2-在drjava中编译程序">2. 在DrJava中编译程序</h2>
 <p>现在我们来将你的Java代码转化为可以在你的电脑上运行的东西，点击「编译」按钮（Compile），如果一切顺利的话，你会在DrJava底部的编译器输出窗格（Compiler Output Pane）看到这样一条信息</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">Compilation completed.
-</code></pre></div><p>如果DrJava没有编译成功，你应该是输入错了一些东西，重新仔细检查你的代码，你可以用编译器输出窗格中的信息作为参考</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Compilation completed.
+</span></span></code></pre></div><p>如果DrJava没有编译成功，你应该是输入错了一些东西，重新仔细检查你的代码，你可以用编译器输出窗格中的信息作为参考</p>
 <h2 id="3-在drjava中运行程序">3. 在DrJava中运行程序</h2>
 <p>现在来运行你的程序，这是很有趣的部分</p>
 <p>在底部的交互窗格（Interactions pane）中输入下列信息，按照习惯，我们高亮了你用粗体输入的部分『译者注：由于博客模板限制我没办法在我这里加粗相应内容，需要看加粗的去看原文吧』</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">&gt; java HelloWorld
-</code></pre></div><p>如果一切顺利，你会看到如下信息：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">Welcome to DrJava.  Working directory is C:<span class="se">\U</span>sers<span class="se">\u</span>sername<span class="se">\a</span>lgs4<span class="se">\h</span>ello
-&gt; java HelloWorld 
-Hello, World
-</code></pre></div><p>你或许会在成功运行前重复很多遍「编辑 - 编译 - 运行」的循环</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">&gt; java HelloWorld
+</span></span></code></pre></div><p>如果一切顺利，你会看到如下信息：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Welcome to DrJava.  Working directory is C:<span class="se">\U</span>sers<span class="se">\u</span>sername<span class="se">\a</span>lgs4<span class="se">\h</span>ello
+</span></span><span class="line"><span class="cl">&gt; java HelloWorld 
+</span></span><span class="line"><span class="cl">Hello, World
+</span></span></code></pre></div><p>你或许会在成功运行前重复很多遍「编辑 - 编译 - 运行」的循环</p>
 <h2 id="4-命令行界面">4. 命令行界面</h2>
 <p>命令行工具提供了DrJava中也有的功能，包括重定向和管道。你将在「命令行工具」中输入你的指令</p>
 <p>安装器在桌面上创建了一个命令行工具（Command Prompt），双击以启动命令行，你将会看到类似于这样的消息：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd">Microsoft Windows [Version 6.3.9600]
-<span class="p">(</span>c<span class="p">)</span> 2013 Microsoft Corporation. All rights reserved.
-
-C<span class="p">:</span><span class="nl">\Users\username</span><span class="c1">&gt;</span>
-</code></pre></div><p>首先确认一下Java编译器已经被正确安装，在命令行中输入<code>javac -version</code>并确保输出内容跟下面一样</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd">C<span class="p">:</span><span class="nl">\Users\username</span><span class="c1">&gt;javac -version</span>
-javac 1.7.0_67
-</code></pre></div><p>其次确认一下Java解释器被正确安装，在命令行中输入<code>java -version</code>并确保输出内容跟下面一样</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd">C<span class="p">:</span><span class="nl">\Users\username</span><span class="c1">&gt;java -version</span>
-java version <span class="s2">&#34;1.7.0_67&#34;</span>
-Java(TM) SE Runtime Environment (build 1.7.0_67-b01)
-Java HotSpot(TM) 64-Bit Server VM (build 24.65-b04, mixed mode)
-</code></pre></div><p>如果你的机器是32位的，那么最后一行的内容应该是</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd">Java HotSpot(TM) Client VM (build 24.65-b04, mixed mode, sharing)
-</code></pre></div><h2 id="5-在命令行中编译程序">5. 在命令行中编译程序</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">Microsoft Windows [Version 6.3.9600]
+</span></span><span class="line"><span class="cl"><span class="p">(</span>c<span class="p">)</span> 2013 Microsoft Corporation. All rights reserved.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">C<span class="p">:</span><span class="nl">\Users\username</span><span class="c1">&gt;</span>
+</span></span></code></pre></div><p>首先确认一下Java编译器已经被正确安装，在命令行中输入<code>javac -version</code>并确保输出内容跟下面一样</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">C<span class="p">:</span><span class="nl">\Users\username</span><span class="c1">&gt;javac -version</span>
+</span></span><span class="line"><span class="cl">javac 1.7.0_67
+</span></span></code></pre></div><p>其次确认一下Java解释器被正确安装，在命令行中输入<code>java -version</code>并确保输出内容跟下面一样</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">C<span class="p">:</span><span class="nl">\Users\username</span><span class="c1">&gt;java -version</span>
+</span></span><span class="line"><span class="cl">java version <span class="s2">&#34;1.7.0_67&#34;</span>
+</span></span><span class="line"><span class="cl">Java(TM) SE Runtime Environment (build 1.7.0_67-b01)
+</span></span><span class="line"><span class="cl">Java HotSpot(TM) 64-Bit Server VM (build 24.65-b04, mixed mode)
+</span></span></code></pre></div><p>如果你的机器是32位的，那么最后一行的内容应该是</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">Java HotSpot(TM) Client VM (build 24.65-b04, mixed mode, sharing)
+</span></span></code></pre></div><h2 id="5-在命令行中编译程序">5. 在命令行中编译程序</h2>
 <p>你可以使用<code>javac</code>命令来将你的Java代码转化为可以在你的电脑上运行的东西</p>
 <p>在命令行中，通过<code>cd</code>命令导航到包含<code>HelloWorld.java</code>的目录下，一般是<code>C:\Users\username\algs4\hello</code>，例如：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd">C<span class="p">:</span><span class="nl">\Users\username</span><span class="c1">&gt;cd C:\Users\username\algs4\hello</span>
-C<span class="p">:</span><span class="nl">\Users\username\algs4\hello</span><span class="c1">&gt;</span>
-</code></pre></div><p>用<code>javac</code>命令进行编译</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd">C<span class="p">:</span><span class="nl">\Users\username\algs4\hello</span><span class="c1">&gt;javac HelloWorld.java</span>
-C<span class="p">:</span><span class="nl">\Users\username\algs4\hello</span><span class="c1">&gt;</span>
-</code></pre></div><p>如果<code>HelloWorld.java</code>在当前目录下的话，你应该没有看到任何报错信息</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">C<span class="p">:</span><span class="nl">\Users\username</span><span class="c1">&gt;cd C:\Users\username\algs4\hello</span>
+</span></span><span class="line"><span class="cl">C<span class="p">:</span><span class="nl">\Users\username\algs4\hello</span><span class="c1">&gt;</span>
+</span></span></code></pre></div><p>用<code>javac</code>命令进行编译</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">C<span class="p">:</span><span class="nl">\Users\username\algs4\hello</span><span class="c1">&gt;javac HelloWorld.java</span>
+</span></span><span class="line"><span class="cl">C<span class="p">:</span><span class="nl">\Users\username\algs4\hello</span><span class="c1">&gt;</span>
+</span></span></code></pre></div><p>如果<code>HelloWorld.java</code>在当前目录下的话，你应该没有看到任何报错信息</p>
 <p>如果用到了我们的标准库，你应该用<code>javac-algs4</code>来代替<code>javac</code>，例如：如果需要编译<a href="http://algs4.cs.princeton.edu/windows/TestAlgs4.java.html">TestAlgs4.java</a>，这个程序引用了我们的标准绘图库，你应该这样写命令：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd">C<span class="p">:</span><span class="nl">\Users\username\algs4</span><span class="c1">&gt;javac-algs4 TestAlgs4.java</span>
-</code></pre></div><p>『译者注 - start』</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">C<span class="p">:</span><span class="nl">\Users\username\algs4</span><span class="c1">&gt;javac-algs4 TestAlgs4.java</span>
+</span></span></code></pre></div><p>『译者注 - start』</p>
 <p>同理，如果你需要运行<code>javac-algs4</code>编译出来的<code>.class</code>文件的话，你也需要使用<code>java-algs4</code> 来运行，而不是使用<code>java</code>来运行</p>
 <p>『译者注 - end』</p>
 <h2 id="6-在命令行中运行程序">6. 在命令行中运行程序</h2>
 <p>你需要使用<code>java</code>命令来运行你的程序：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd">C<span class="p">:</span><span class="nl">\Users\username\algs4\hello</span><span class="c1">&gt;java HelloWorld</span>
-Hello, World
-</code></pre></div><p>你会在输出中看到<code>Hello, World</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">C<span class="p">:</span><span class="nl">\Users\username\algs4\hello</span><span class="c1">&gt;java HelloWorld</span>
+</span></span><span class="line"><span class="cl">Hello, World
+</span></span></code></pre></div><p>你会在输出中看到<code>Hello, World</code></p>
 <p>如果你想使用教科书提供的库的话，需要用<code>java-algs4</code> 来替代<code>java</code>，例如，在测试标准绘图和标准音频时你可以使用下面两条命令：</p>
 <p>『译者注：使用之前需要注意！！！第一条命令是标准绘图，随便使用；第二条命令是标准音频，使用之后麦克风会开始播放奇怪的声音，请先调小音量，运行之后如果需要停止运行，除了直接关闭命令行窗口外，你还可以使用Ctrl+C的组合键来关闭这个运行』</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd">C<span class="p">:</span><span class="nl">\Users\username\algs4\hello</span><span class="c1">&gt;java-algs4 edu.princeton.cs.algs4.StdDraw</span>
-[ displays a graphics window with some geometric shapes and text ]
-
-C<span class="p">:</span><span class="nl">\Users\username\algs4\hello</span><span class="c1">&gt;java-algs4 edu.princeton.cs.algs4.StdAudio</span>
-[ plays an A major scale ]
-</code></pre></div><h2 id="7-检查风格和查找bug">7. 检查风格和查找bug</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">C<span class="p">:</span><span class="nl">\Users\username\algs4\hello</span><span class="c1">&gt;java-algs4 edu.princeton.cs.algs4.StdDraw</span>
+</span></span><span class="line"><span class="cl">[ displays a graphics window with some geometric shapes and text ]
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">C<span class="p">:</span><span class="nl">\Users\username\algs4\hello</span><span class="c1">&gt;java-algs4 edu.princeton.cs.algs4.StdAudio</span>
+</span></span><span class="line"><span class="cl">[ plays an A major scale ]
+</span></span></code></pre></div><h2 id="7-检查风格和查找bug">7. 检查风格和查找bug</h2>
 <p>你可以使用检查缝合查找bug两个工具来核查你的代码风格并检查一些简单的bug</p>
 <p>在命令行中可以这样使用检查风格功能：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd">C<span class="p">:</span><span class="nl">\Users\username\algs4\hello</span><span class="c1">&gt;checkstyle-algs4 HelloWorld.java</span>
-Running checkstyle on HelloWorld.java:
-Starting audit...
-Audit done.
-</code></pre></div><p>下面是一张可以检查的清单，你可以自定义这个风格检查，自定义的方法是编辑这个文件：<code>C:\Users\username\algs4\checkstyle-6.9\checkstyle.xml</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">C<span class="p">:</span><span class="nl">\Users\username\algs4\hello</span><span class="c1">&gt;checkstyle-algs4 HelloWorld.java</span>
+</span></span><span class="line"><span class="cl">Running checkstyle on HelloWorld.java:
+</span></span><span class="line"><span class="cl">Starting audit...
+</span></span><span class="line"><span class="cl">Audit done.
+</span></span></code></pre></div><p>下面是一张可以检查的清单，你可以自定义这个风格检查，自定义的方法是编辑这个文件：<code>C:\Users\username\algs4\checkstyle-6.9\checkstyle.xml</code></p>
 <p>在命令行中可以这样使用查找bug功能</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd">C<span class="p">:</span><span class="nl">\Users\username\algs4\hello</span><span class="c1">&gt;findbugs-algs4 HelloWorld.class</span>
-Running findbugs on HelloWorld.class:
-</code></pre></div><p>下面是一张可以检查的清单，你可以自定义这个bug检查，自定义的方法是编辑这个文件：<code>C:\Users\username\algs4\findbugs-3.0.1\findbugs.xml</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">C<span class="p">:</span><span class="nl">\Users\username\algs4\hello</span><span class="c1">&gt;findbugs-algs4 HelloWorld.class</span>
+</span></span><span class="line"><span class="cl">Running findbugs on HelloWorld.class:
+</span></span></code></pre></div><p>下面是一张可以检查的清单，你可以自定义这个bug检查，自定义的方法是编辑这个文件：<code>C:\Users\username\algs4\findbugs-3.0.1\findbugs.xml</code></p>
 <h2 id="常见问题">常见问题</h2>
 <p><strong>Q：我之前使用过另一本教材「Introduction to Programming in Java」的「introcs.app」安装器，我还应该使用「algs4.exe」安装器吗？</strong></p>
 <p>A: 是的，我们推荐「algs4.exe」安装器是因为「introcs.app」安装器不包含「algs4.jar」库和相应的命令<code>javac-algs4</code>和<code>java-algs4</code></p>
@@ -224,8 +224,8 @@ Running findbugs on HelloWorld.class:
 C:\Users\username\algs4\java\bin\java.exe
 </code></pre>
 <p>如果存在的话，应该是环境变量中PATH的值不对，在命令行中输入下面一句：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd">C<span class="p">:</span><span class="nl">\Users\username</span><span class="c1">&gt; echo %PATH%</span>
-</code></pre></div><p>PATH环境变量应该包含<code>C:\Users\username\algs4\java\bin</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">C<span class="p">:</span><span class="nl">\Users\username</span><span class="c1">&gt; echo %PATH%</span>
+</span></span></code></pre></div><p>PATH环境变量应该包含<code>C:\Users\username\algs4\java\bin</code></p>
 <p><strong>Q: 当我在命令行中编译或者运行一个引用了教材库的程序时报错了，为什么？</strong></p>
 <p>A: 注意要使用<code>javac-algs4</code>和<code>java-algs4</code>而不是<code>javac</code>或者<code>java</code></p>
 <p><strong>Q: 在命令行中我应该如何导航到另一个驱动器？</strong></p>

@@ -67,14 +67,14 @@
     <div class="true-content">
         <h2 id="shell">Shell</h2>
 <h3 id="export">export</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">export</span> <span class="nv">GO111MODULE</span><span class="o">=</span>on
-<span class="nb">export</span> <span class="nv">GOPROXY</span><span class="o">=</span><span class="s1">&#39;https://goproxy.io&#39;</span>
-</code></pre></div><h3 id="alias">alias</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">alias</span> <span class="nv">ll</span><span class="o">=</span><span class="s1">&#39;ls -al&#39;</span>
-
-<span class="nb">alias</span> <span class="nv">goproxy</span><span class="o">=</span><span class="s1">&#39;export http_proxy=http://127.0.0.1:7777 https_proxy=http://127.0.0.1:7777&#39;</span>
-<span class="nb">alias</span> <span class="nv">disproxy</span><span class="o">=</span><span class="s1">&#39;unset http_proxy https_proxy&#39;</span>
-</code></pre></div><h2 id="gitconfig">.gitconfig</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">GO111MODULE</span><span class="o">=</span>on
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">GOPROXY</span><span class="o">=</span><span class="s1">&#39;https://goproxy.io&#39;</span>
+</span></span></code></pre></div><h3 id="alias">alias</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">ll</span><span class="o">=</span><span class="s1">&#39;ls -al&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">goproxy</span><span class="o">=</span><span class="s1">&#39;export http_proxy=http://127.0.0.1:7777 https_proxy=http://127.0.0.1:7777&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">disproxy</span><span class="o">=</span><span class="s1">&#39;unset http_proxy https_proxy&#39;</span>
+</span></span></code></pre></div><h2 id="gitconfig">.gitconfig</h2>
 <pre tabindex="0"><code class="language-conf" data-lang="conf">[user]
 	name = keaising
 	email = keaising@gmail.com
@@ -98,57 +98,57 @@
 	pushr = push origin release
 	unstage = reset HEAD--
 	last = log-1 HEAD
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit
+    lg = log --color --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit
 
 [pull]
 	rebase = true
 </code></pre><h2 id="ssh-key">ssh key</h2>
 <h3 id="create-ssh-key">create ssh key</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># generating key</span>
-ssh-keygen -t rsa -b <span class="m">4096</span> -C <span class="s2">&#34;email@yours.com&#34;</span>
-
-<span class="c1"># start the ssh-agent in the background</span>
-<span class="nb">eval</span> <span class="k">$(</span>ssh-agent -s<span class="k">)</span>
-
-<span class="c1"># add to agent</span>
-ssh-add ~/.ssh/id_rsa
-</code></pre></div><h3 id="permanently-add-ssh-key">permanently add ssh key</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># generating key</span>
+</span></span><span class="line"><span class="cl">ssh-keygen -t rsa -b <span class="m">4096</span> -C <span class="s2">&#34;email@yours.com&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># start the ssh-agent in the background</span>
+</span></span><span class="line"><span class="cl"><span class="nb">eval</span> <span class="k">$(</span>ssh-agent -s<span class="k">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># add to agent</span>
+</span></span><span class="line"><span class="cl">ssh-add ~/.ssh/id_rsa
+</span></span></code></pre></div><h3 id="permanently-add-ssh-key">permanently add ssh key</h3>
 <p>来源：<a href="https://segmentfault.com/q/1010000000835302">是否必须每次添加ssh-add</a></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vi ~/.ssh/config
-
-<span class="c1"># 1. 永久添加 public key 到本地 ssh agent</span>
-IdentityFile ~/.ssh/id_rsa
-
-<span class="c1"># 2. 根据不同 host 进行配置</span>
-Host github.com
-    User keaising
-    IdentityFile ~/.ssh/githubKey
-    PreferredAuthentications publickey
-
-<span class="c1"># 3. 每次登录 shell 时自动添加 (Not recommend)</span>
-ssh-add ~/.ssh/id_rsa <span class="p">&amp;</span>&gt;/dev/null
-
-<span class="c1"># 如果没有权限</span>
-chmod <span class="m">600</span> ~/.ssh/config
-</code></pre></div><h2 id="systemd-service">Systemd Service</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vi ~/.ssh/config
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 1. 永久添加 public key 到本地 ssh agent</span>
+</span></span><span class="line"><span class="cl">IdentityFile ~/.ssh/id_rsa
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. 根据不同 host 进行配置</span>
+</span></span><span class="line"><span class="cl">Host github.com
+</span></span><span class="line"><span class="cl">    User keaising
+</span></span><span class="line"><span class="cl">    IdentityFile ~/.ssh/githubKey
+</span></span><span class="line"><span class="cl">    PreferredAuthentications publickey
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 3. 每次登录 shell 时自动添加 (Not recommend)</span>
+</span></span><span class="line"><span class="cl">ssh-add ~/.ssh/id_rsa <span class="p">&amp;</span>&gt;/dev/null
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 如果没有权限</span>
+</span></span><span class="line"><span class="cl">chmod <span class="m">600</span> ~/.ssh/config
+</span></span></code></pre></div><h2 id="systemd-service">Systemd Service</h2>
 <h3 id="cowservice">cow.service</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># sudo vi /usr/lib/systemd/system/cow.service</span>
-<span class="c1"># sudo systemctl daemon-reload</span>
-<span class="c1"># sudo systemctl start cow</span>
-<span class="c1"># sudo systemctl enable cow</span>
-
-<span class="o">[</span>Unit<span class="o">]</span>
-<span class="nv">Description</span><span class="o">=</span>cow
-<span class="nv">After</span><span class="o">=</span>network.target
-
-<span class="o">[</span>Service<span class="o">]</span>
-<span class="nv">Type</span><span class="o">=</span>simple
-<span class="c1"># Warning: cow文件不可以在/home/account目录下，会导致没有权限运行的问题</span>
-<span class="nv">ExecStart</span><span class="o">=</span>/usr/local/bin/cow -rc<span class="o">=</span>/home/user/.cow/rc
-
-<span class="o">[</span>Install<span class="o">]</span>
-<span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># sudo vi /usr/lib/systemd/system/cow.service</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># sudo systemctl daemon-reload</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># sudo systemctl start cow</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># sudo systemctl enable cow</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Unit<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Description</span><span class="o">=</span>cow
+</span></span><span class="line"><span class="cl"><span class="nv">After</span><span class="o">=</span>network.target
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Service<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Type</span><span class="o">=</span>simple
+</span></span><span class="line"><span class="cl"><span class="c1"># Warning: cow文件不可以在/home/account目录下，会导致没有权限运行的问题</span>
+</span></span><span class="line"><span class="cl"><span class="nv">ExecStart</span><span class="o">=</span>/usr/local/bin/cow -rc<span class="o">=</span>/home/user/.cow/rc
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Install<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
+</span></span></code></pre></div>
     </div>
 
     <div class="page-info">

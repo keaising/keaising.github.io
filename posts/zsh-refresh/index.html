@@ -112,10 +112,10 @@
 <li><a href="https://github.com/zsh-users/zsh-syntax-highlighting">zsh-users/zsh-syntax-highlighting</a></li>
 </ul>
 <p>正好可以满足需求，用 zinit 装上即可</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
-zinit light zsh-users/zsh-syntax-highlighting
-</code></pre></div><p>只要把这 3个插件一装上，在 zsh 里输入 command 就已经有高亮和提示效果了</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">zinit light zsh-users/zsh-completions
+</span></span><span class="line"><span class="cl">zinit light zsh-users/zsh-autosuggestions
+</span></span><span class="line"><span class="cl">zinit light zsh-users/zsh-syntax-highlighting
+</span></span></code></pre></div><p>只要把这 3个插件一装上，在 zsh 里输入 command 就已经有高亮和提示效果了</p>
 <h3 id="主题">主题</h3>
 <p>在 oh my zsh 时期，我用的主题是 pure，但是那个主题稍微想自定义一下都很困难，需要学习的概念有点多，我这次正好就放弃了，重新换一个</p>
 <p>我选择了比较现代的、用Rust写的 <a href="https://starship.rs/">Starship</a>，它的优点是速度很快、配置简单、文档齐全、默认配色就足够好看，自己做微调也相对容易，最后我的配置文件长这样</p>
@@ -126,30 +126,30 @@ truncation_length = 0
 truncate_to_repo = false
 
 [git_branch]
-format = &quot;[$branch]($style) &quot;
-# format = &quot;[$symbol$branch]($style) &quot;
+format = &#34;[$branch]($style) &#34;
+# format = &#34;[$symbol$branch]($style) &#34;
 
 [golang]
-format = &quot;[$symbol()]($style)&quot;
+format = &#34;[$symbol()]($style)&#34;
 
 [cmd_duration]
-format = &quot;[$duration]($style) &quot;
+format = &#34;[$duration]($style) &#34;
 min_time = 3_000
 
 [character]
-success_symbol = &quot;[Δ](bold green)&quot;
-error_symbol = &quot;[✗](bold red)&quot;
-vicmd_symbol = &quot;[V](bold blue) &quot;
+success_symbol = &#34;[Δ](bold green)&#34;
+error_symbol = &#34;[✗](bold red)&#34;
+vicmd_symbol = &#34;[V](bold blue) &#34;
 
 [username]
-style_user = &quot;yellow bold&quot;
-style_root = &quot;black bold&quot;
-format = &quot;[$user@]($style)&quot;
+style_user = &#34;yellow bold&#34;
+style_root = &#34;black bold&#34;
+format = &#34;[$user@]($style)&#34;
 disabled = false
 
 [hostname]
 ssh_only = true
-format =  &quot;[$hostname](bold yellow) &quot;
+format =  &#34;[$hostname](bold yellow) &#34;
 disabled = false
 
 [package]
@@ -162,26 +162,26 @@ disabled = true
 disabled = true
 </code></pre><h3 id="搜索">搜索</h3>
 <p>搜索分为搜索历史和搜索当前目录下的文件，搜索当然是用超好用的 <a href="https://github.com/junegunn/fzf">fzf</a>，fzf 的配置超简单，运行速度很快，照着官方文档弄就行，我唯一改了的是反转了一下上下，我不是很喜欢搜索结果在最下面的默认展示风格，于是调整了一下</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 反转展示结果</span>
-<span class="nb">export</span> <span class="nv">FZF_DEFAULT_OPTS</span><span class="o">=</span><span class="s1">&#39;--height 40% --layout=reverse --border&#39;</span>
-<span class="c1"># 搜索文件时的触发因子</span>
-<span class="nb">export</span> <span class="nv">FZF_COMPLETION_TRIGGER</span><span class="o">=</span><span class="s1">&#39;ll&#39;</span>
-<span class="c1"># 搜索文件时改成 fd 搜索且允许搜索隐藏文件</span>
-<span class="nb">export</span> <span class="nv">FZF_DEFAULT_COMMAND</span><span class="o">=</span><span class="s1">&#39;fd --type f --hidden --follow --exclude .git&#39;</span>
-<span class="c1"># 下面这个文件是 fzf 安装期间自动生成的，不用改</span>
-<span class="o">[</span> -f ~/.fzf.zsh <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.fzf.zsh
-</code></pre></div><p>我在官方文档的提示下安装了 ripgrep/fd/bat 等工具，这些工具都是用 Rust 写的 grep/find/cat 的替代品，速度很赞，推荐使用</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 反转展示结果</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">FZF_DEFAULT_OPTS</span><span class="o">=</span><span class="s1">&#39;--height 40% --layout=reverse --border&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 搜索文件时的触发因子</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">FZF_COMPLETION_TRIGGER</span><span class="o">=</span><span class="s1">&#39;ll&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 搜索文件时改成 fd 搜索且允许搜索隐藏文件</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">FZF_DEFAULT_COMMAND</span><span class="o">=</span><span class="s1">&#39;fd --type f --hidden --follow --exclude .git&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 下面这个文件是 fzf 安装期间自动生成的，不用改</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span> -f ~/.fzf.zsh <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.fzf.zsh
+</span></span></code></pre></div><p>我在官方文档的提示下安装了 ripgrep/fd/bat 等工具，这些工具都是用 Rust 写的 grep/find/cat 的替代品，速度很赞，推荐使用</p>
 <h3 id="目录跳转">目录跳转</h3>
 <p>除了fzf，韦易笑的<a href="https://github.com/skywind3000/z.lua">z.lua</a>也是一个非常好用的<a href="https://zhuanlan.zhihu.com/p/56077546">目录跳转工具</a>，在使用过一段时间之后它能提供非常流畅的目录跳转体验</p>
 <p>由于 z.lua 文件本身不大，我直接把源文件塞到我的 zsh 配置里了，其实也可以用 zinit 来安装，这个就看你喜欢了</p>
 <h2 id="3-跑个分">3. 跑个分</h2>
 <p>配置好之后直接跑个分</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 不加载配置</span>
-<span class="k">for</span> i in <span class="k">$(</span>seq <span class="m">1</span> 5<span class="k">)</span><span class="p">;</span> <span class="k">do</span> /usr/bin/time /bin/zsh --no-rcs -i -c exit<span class="p">;</span> <span class="k">done</span>
-
-<span class="c1"># 正常加载配置</span>
-<span class="k">for</span> i in <span class="k">$(</span>seq <span class="m">1</span> 5<span class="k">)</span><span class="p">;</span> <span class="k">do</span> /usr/bin/time /bin/zsh -i -c exit<span class="p">;</span> <span class="k">done</span>
-</code></pre></div><p><img src="/images/zsh-refresh/v.png" alt="v"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 不加载配置</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> i in <span class="k">$(</span>seq <span class="m">1</span> 5<span class="k">)</span><span class="p">;</span> <span class="k">do</span> /usr/bin/time /bin/zsh --no-rcs -i -c exit<span class="p">;</span> <span class="k">done</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 正常加载配置</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> i in <span class="k">$(</span>seq <span class="m">1</span> 5<span class="k">)</span><span class="p">;</span> <span class="k">do</span> /usr/bin/time /bin/zsh -i -c exit<span class="p">;</span> <span class="k">done</span>
+</span></span></code></pre></div><p><img src="/images/zsh-refresh/v.png" alt="v"></p>
 <p>在完全没有用任何 lazy load 和减少子进程之类的优化的情况下，启动速度也不过是 0.2s 左右，而且这里面还夹杂了我所有的其他初始化脚本（当然这里面也没有什么很重的初始化内容），对于我来说已经很满意了</p>
 <p>全部配置在<a href="https://github.com/keaising/dotfile/tree/master/zsh">我的 Github 仓库里</a>，使用 <a href="https://www.gnu.org/software/stow/">stow</a> 管理，可以酌情使用</p>
 

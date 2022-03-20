@@ -74,36 +74,36 @@ Eclipse IDE for Java Developers</a>64位版本，下载下来之后解压缩到�
 </a></p>
 <p><img src="/images/algs4-translation/algs2.png" alt="algs2"></p>
 <p>代码如下：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="n">import</span> <span class="n">edu</span><span class="p">.</span><span class="n">princeton</span><span class="p">.</span><span class="n">cs</span><span class="p">.</span><span class="n">algs4</span><span class="p">.</span><span class="n">StdDraw</span><span class="p">;</span>
-
-<span class="k">public</span> <span class="k">class</span> <span class="nc">TestAlgs4</span> <span class="p">{</span>
-    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">main</span> <span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">StdDraw</span><span class="p">.</span><span class="n">setScale</span><span class="p">(-</span><span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
-        <span class="n">StdDraw</span><span class="p">.</span><span class="n">clear</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="n">BLACK</span><span class="p">);</span>
-        
-        <span class="n">StdDraw</span><span class="p">.</span><span class="n">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="n">WHITE</span><span class="p">);</span>
-        <span class="n">StdDraw</span><span class="p">.</span><span class="n">square</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
-        
-        <span class="c1">// write some text
-</span><span class="c1"></span>        <span class="n">StdDraw</span><span class="p">.</span><span class="n">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="n">WHITE</span><span class="p">);</span>
-        <span class="n">StdDraw</span><span class="p">.</span><span class="n">text</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="p">+</span><span class="m">0.95</span><span class="p">,</span> <span class="s">&#34;Hello, world! This is a test Java program.&#34;</span><span class="p">);</span>
-        <span class="n">StdDraw</span><span class="p">.</span><span class="n">text</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="p">-</span><span class="m">0.95</span><span class="p">,</span> <span class="s">&#34;Close this window to finish the installation.&#34;</span><span class="p">);</span>
-        
-        <span class="c1">// draw the bullseye
-</span><span class="c1"></span>        <span class="n">StdDraw</span><span class="p">.</span><span class="n">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="n">BOOK_BLUE</span><span class="p">);</span>
-        <span class="n">StdDraw</span><span class="p">.</span><span class="n">filledCircle</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.9</span><span class="p">);</span>
-        <span class="n">StdDraw</span><span class="p">.</span><span class="n">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="n">BLACK</span><span class="p">);</span>
-        <span class="n">StdDraw</span><span class="p">.</span><span class="n">filledCircle</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.8</span><span class="p">);</span>
-        <span class="n">StdDraw</span><span class="p">.</span><span class="n">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="n">BOOK_BLUE</span><span class="p">);</span>
-        <span class="n">StdDraw</span><span class="p">.</span><span class="n">filledCircle</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.7</span><span class="p">);</span>
-        <span class="n">StdDraw</span><span class="p">.</span><span class="n">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="n">BLACK</span><span class="p">);</span>
-        <span class="n">StdDraw</span><span class="p">.</span><span class="n">filledCircle</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.6</span><span class="p">);</span>
-
-        <span class="c1">// draw a picture of the textbook        
-</span><span class="c1"></span>        <span class="n">StdDraw</span><span class="p">.</span><span class="n">picture</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="s">&#34;cover.jpg&#34;</span><span class="p">,</span> <span class="m">0.65</span><span class="p">,</span> <span class="m">0.80</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div><p>这时候Eclipse应该会报错无数，不要急，添加对教材库Algs4.jar的引用：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="n">import</span> <span class="n">edu</span><span class="p">.</span><span class="n">princeton</span><span class="p">.</span><span class="n">cs</span><span class="p">.</span><span class="n">algs4</span><span class="p">.</span><span class="n">StdDraw</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">TestAlgs4</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">main</span> <span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">StdDraw</span><span class="p">.</span><span class="n">setScale</span><span class="p">(-</span><span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">StdDraw</span><span class="p">.</span><span class="n">clear</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="n">BLACK</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="n">StdDraw</span><span class="p">.</span><span class="n">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="n">WHITE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">StdDraw</span><span class="p">.</span><span class="n">square</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1">// write some text</span>
+</span></span><span class="line"><span class="cl">        <span class="n">StdDraw</span><span class="p">.</span><span class="n">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="n">WHITE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">StdDraw</span><span class="p">.</span><span class="n">text</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="p">+</span><span class="m">0.95</span><span class="p">,</span> <span class="s">&#34;Hello, world! This is a test Java program.&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">StdDraw</span><span class="p">.</span><span class="n">text</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="p">-</span><span class="m">0.95</span><span class="p">,</span> <span class="s">&#34;Close this window to finish the installation.&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1">// draw the bullseye</span>
+</span></span><span class="line"><span class="cl">        <span class="n">StdDraw</span><span class="p">.</span><span class="n">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="n">BOOK_BLUE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">StdDraw</span><span class="p">.</span><span class="n">filledCircle</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.9</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">StdDraw</span><span class="p">.</span><span class="n">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="n">BLACK</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">StdDraw</span><span class="p">.</span><span class="n">filledCircle</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.8</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">StdDraw</span><span class="p">.</span><span class="n">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="n">BOOK_BLUE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">StdDraw</span><span class="p">.</span><span class="n">filledCircle</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.7</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">StdDraw</span><span class="p">.</span><span class="n">setPenColor</span><span class="p">(</span><span class="n">StdDraw</span><span class="p">.</span><span class="n">BLACK</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">StdDraw</span><span class="p">.</span><span class="n">filledCircle</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.6</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// draw a picture of the textbook        </span>
+</span></span><span class="line"><span class="cl">        <span class="n">StdDraw</span><span class="p">.</span><span class="n">picture</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="s">&#34;cover.jpg&#34;</span><span class="p">,</span> <span class="m">0.65</span><span class="p">,</span> <span class="m">0.80</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>这时候Eclipse应该会报错无数，不要急，添加对教材库Algs4.jar的引用：</p>
 <p>右键工程名（我这里是HelloWorld）-&gt; Properties -&gt; Java Build Path -&gt; Libraries -&gt; Add Extenernal JARs，选中C:\Users\username\algs4\algs4.jar 即可，如图：</p>
 <p><img src="/images/algs4-translation/algs3.png" alt="algs3"></p>
 <p>点击OK退出，报错信息消失，编译运行可以看到跟安装Algs4.exe一样的结果：</p>

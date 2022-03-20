@@ -91,36 +91,36 @@
 <p>比如清华源甚至主动提供了更换方法：<a href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/">Ubuntu 镜像使用帮助</a>，不过清华源默认注释了源码镜像以提高 apt update 速度，遇到问题可以删掉 <code>deb-src</code> 前面的 <code>#</code></p>
 <h2 id="安装和配置">安装和配置</h2>
 <h3 id="安装软件">安装软件</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># install vim</span>
-$ sudo apt install vim -y
-
-<span class="c1"># install haproxy</span>
-$ sudo apt install haproxy -y
-</code></pre></div><h3 id="配置">配置</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># install vim</span>
+</span></span><span class="line"><span class="cl">$ sudo apt install vim -y
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># install haproxy</span>
+</span></span><span class="line"><span class="cl">$ sudo apt install haproxy -y
+</span></span></code></pre></div><h3 id="配置">配置</h3>
 <p>haproxy 配置非常简单，如果没有用过的话可以参考haproxy教程：<a href="https://www.jianshu.com/p/c9f6d55288c0">《HAProxy从零开始到掌握》</a></p>
 <p>对这里的使用场景来说就是配置一个前端和一个后端，前端绑定特定端口接收流量，后端对应国外服务器转发出去，编辑haproxy配置：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo vim /etc/haproxy/haproxy.cfg
-</code></pre></div><p>我使用的配置示例如下：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cfg" data-lang="cfg"><span class="c1"># /etc/haproxy/haproxy.cfg</span>
-
-<span class="na">global</span>
-    <span class="na">ulimit-n  51200</span>
-
-<span class="na">defaults</span>
-    <span class="na">log     global</span>
-    <span class="na">mode    tcp</span>
-    <span class="na">option  dontlognull</span>
-    <span class="na">timeout connect 5000</span>
-    <span class="na">timeout client  50000</span>
-    <span class="na">timeout server  50000</span>
-  
-<span class="na">frontend ft-ss</span>
-    <span class="na">bind *:50000</span>
-    <span class="na">default_backend bd-ss</span>
-
-<span class="na">backend bd-ss</span>
-    <span class="na">server ${bd_name} ${ss.server.domain_or_ip}:${ss.server.port} maxconn 20480</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo vim /etc/haproxy/haproxy.cfg
+</span></span></code></pre></div><p>我使用的配置示例如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cfg" data-lang="cfg"><span class="line"><span class="cl"><span class="c1"># /etc/haproxy/haproxy.cfg</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="na">global</span>
+</span></span><span class="line"><span class="cl">    <span class="na">ulimit-n  51200</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="na">defaults</span>
+</span></span><span class="line"><span class="cl">    <span class="na">log     global</span>
+</span></span><span class="line"><span class="cl">    <span class="na">mode    tcp</span>
+</span></span><span class="line"><span class="cl">    <span class="na">option  dontlognull</span>
+</span></span><span class="line"><span class="cl">    <span class="na">timeout connect 5000</span>
+</span></span><span class="line"><span class="cl">    <span class="na">timeout client  50000</span>
+</span></span><span class="line"><span class="cl">    <span class="na">timeout server  50000</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="na">frontend ft-ss</span>
+</span></span><span class="line"><span class="cl">    <span class="na">bind *:50000</span>
+</span></span><span class="line"><span class="cl">    <span class="na">default_backend bd-ss</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="na">backend bd-ss</span>
+</span></span><span class="line"><span class="cl">    <span class="na">server ${bd_name} ${ss.server.domain_or_ip}:${ss.server.port} maxconn 20480</span>
+</span></span></code></pre></div><ul>
 <li><code>bind *:50000</code> 是绑定的中转服务器的端口，可以随便写你需要的端口</li>
 <li><code>${bd_name}</code> 是服务器名字，随便写个字符串就行</li>
 <li><code>${ss.server.name_or_ip}</code> 是提供代理的目的服务器，可以写ip，也可以写域名</li>
@@ -128,15 +128,15 @@ $ sudo apt install haproxy -y
 </ul>
 <p>这里的前端和后端都可以定义多组，也可以自由对应，也就是说可以多个前端对应一个后端，玩法很多</p>
 <p>如果你也用Ubuntu18.04以上的系统的话，在安装haproxy时haproxy的systemctl配置已经生成好了，可以直接运行：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo systemctl start haproxy
-</code></pre></div><p><code>systemctl</code>归属于<code>systemd</code>，是一个用于管理启动项和服务的服务，如果不了解的话可以阅读<a href="http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html">《Systemd 入门教程：命令篇》</a>和官方文档入门，后面我们还会用到</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo systemctl start haproxy
+</span></span></code></pre></div><p><code>systemctl</code>归属于<code>systemd</code>，是一个用于管理启动项和服务的服务，如果不了解的话可以阅读<a href="http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html">《Systemd 入门教程：命令篇》</a>和官方文档入门，后面我们还会用到</p>
 <p>启动后如果一切非常顺利，那么你把你的科学上网的服务器地址和端口改为国内服务器的地址和端口，你就可以正常上网了</p>
 <h2 id="debug">debug</h2>
 <p>事情往往都是不顺利的，尤其是当你刚开始探索的时候，似乎一切都在和你作对，所以我们讲一下可能遇到的问题</p>
 <h3 id="1-haproxy-相关">1. haproxy 相关</h3>
 <p>当你使用 <code>sudo systemctl start haproxy</code> 启动haproxy的时候可能会遇到报错，这时候根据启动提示你可以使用下面这个命令去查看 <code>systemctl</code> 的日志，日志里一般都有原因</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo journalctl -xe
-</code></pre></div><p>我经常遇到的问题是配置文件格式不对(写错内容、前后端名字不匹配之类的)、haproxy已经启动(请使用 <code>sudo systemctl restart haproxy</code>进行重启)之类的，稍微处理一下就好，一般错误都很明显</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo journalctl -xe
+</span></span></code></pre></div><p>我经常遇到的问题是配置文件格式不对(写错内容、前后端名字不匹配之类的)、haproxy已经启动(请使用 <code>sudo systemctl restart haproxy</code>进行重启)之类的，稍微处理一下就好，一般错误都很明显</p>
 <h3 id="2-iptables">2. iptables</h3>
 <p><code>iptables</code>功能复杂而强大，新手上路一般都不太搞得懂自己在干嘛，所以你完全可以暂时先把iptables卸载掉，反正一个破机器都还没有用起来，根本不怕被人搞，等之后熟悉了再慢慢把防火墙和过滤等功能加回来即可。当前卸载的主要目的是不要让iptables把自己的流量过滤掉了，卸载方法自行搜索</p>
 <h3 id="3-供应商网关">3. 供应商网关</h3>

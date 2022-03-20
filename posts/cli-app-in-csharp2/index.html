@@ -76,132 +76,130 @@
 <p><img src="/images/cli-in-csharp/new-console-app.png" alt="new console app"></p>
 <h2 id="添加引用">添加引用</h2>
 <p>在项目目录下输入如下命令，添加对CommandLineUtils项目的引用</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">dotnet</span> <span class="n">add</span> <span class="n">package</span> <span class="n">McMaster</span><span class="p">.</span><span class="n">Extensions</span><span class="p">.</span><span class="n">CommandLineUtils</span>
-</code></pre></div><p>这一步是通过命令行的方式引入nuget包，也可以在Visual Studio里进行nuget包管理，效果完全一样</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">dotnet</span> <span class="n">add</span> <span class="n">package</span> <span class="n">McMaster</span><span class="p">.</span><span class="n">Extensions</span><span class="p">.</span><span class="n">CommandLineUtils</span>
+</span></span></code></pre></div><p>这一步是通过命令行的方式引入nuget包，也可以在Visual Studio里进行nuget包管理，效果完全一样</p>
 <p>添加完成之后，项目文件<code>gen.csproj</code>可见<code>ItemGroup</code>中已经有了对<a href="https://github.com/natemcmaster/CommandLineUtils"><code>CommandLineUtils</code></a>的引用</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;Project</span> <span class="na">Sdk=</span><span class="s">&#34;Microsoft.NET.Sdk&#34;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;PropertyGroup&gt;</span>
-    <span class="nt">&lt;OutputType&gt;</span>Exe<span class="nt">&lt;/OutputType&gt;</span>
-    <span class="nt">&lt;TargetFramework&gt;</span>netcoreapp2.2<span class="nt">&lt;/TargetFramework&gt;</span>
-  <span class="nt">&lt;/PropertyGroup&gt;</span>
-
-  <span class="nt">&lt;ItemGroup&gt;</span>
-    <span class="nt">&lt;PackageReference</span> <span class="na">Include=</span><span class="s">&#34;McMaster.Extensions.CommandLineUtils&#34;</span> <span class="na">Version=</span><span class="s">&#34;2.3.4&#34;</span> <span class="nt">/&gt;</span>
-  <span class="nt">&lt;/ItemGroup&gt;</span>
-
-<span class="nt">&lt;/Project&gt;</span>
-</code></pre></div><h2 id="改造programs文件">改造Programs文件</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;Project</span> <span class="na">Sdk=</span><span class="s">&#34;Microsoft.NET.Sdk&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;PropertyGroup&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;OutputType&gt;</span>Exe<span class="nt">&lt;/OutputType&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;TargetFramework&gt;</span>netcoreapp2.2<span class="nt">&lt;/TargetFramework&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/PropertyGroup&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;ItemGroup&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;PackageReference</span> <span class="na">Include=</span><span class="s">&#34;McMaster.Extensions.CommandLineUtils&#34;</span> <span class="na">Version=</span><span class="s">&#34;2.3.4&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/ItemGroup&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/Project&gt;</span>
+</span></span></code></pre></div><h2 id="改造programs文件">改造Programs文件</h2>
 <p>此时应用还只能输出<code>Hello World!</code>，根据<a href="https://github.com/natemcmaster/CommandLineUtils/blob/master/docs/samples/subcommands/nested-types/Program.cs"><code>CommandLineUtils</code>文档</a>稍做改造，实现输出应用信息的功能。修改代码如下：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">McMaster.Extensions.CommandLineUtils</span><span class="p">;</span>
-
-<span class="k">namespace</span> <span class="nn">gen</span>
-<span class="p">{</span>
-<span class="na">    [Command(Name = &#34;gen&#34;, Description = &#34;A simple console app.&#34;)]</span>
-    <span class="k">class</span> <span class="nc">Program</span>
-    <span class="p">{</span>
-        <span class="k">public</span> <span class="k">static</span> <span class="kt">int</span> <span class="n">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
-            <span class="p">=&gt;</span> <span class="n">CommandLineApplication</span><span class="p">.</span><span class="n">Execute</span><span class="p">&lt;</span><span class="n">Program</span><span class="p">&gt;(</span><span class="n">args</span><span class="p">);</span>
-
-        <span class="k">private</span> <span class="kt">int</span> <span class="n">OnExecute</span><span class="p">(</span><span class="n">CommandLineApplication</span> <span class="n">app</span><span class="p">,</span> <span class="n">IConsole</span> <span class="n">console</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">app</span><span class="p">.</span><span class="n">ShowHelp</span><span class="p">();</span>
-            <span class="k">return</span> <span class="m">0</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div><p>可以通过<code>dotnet run</code>和<code>dotnet run -- -h</code>直接运行应用和查看帮助信息，如下图：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">McMaster.Extensions.CommandLineUtils</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nn">gen</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [Command(Name = &#34;gen&#34;, Description = &#34;A simple console app.&#34;)]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">class</span> <span class="nc">Program</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">public</span> <span class="k">static</span> <span class="kt">int</span> <span class="n">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">=&gt;</span> <span class="n">CommandLineApplication</span><span class="p">.</span><span class="n">Execute</span><span class="p">&lt;</span><span class="n">Program</span><span class="p">&gt;(</span><span class="n">args</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="kt">int</span> <span class="n">OnExecute</span><span class="p">(</span><span class="n">CommandLineApplication</span> <span class="n">app</span><span class="p">,</span> <span class="n">IConsole</span> <span class="n">console</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">app</span><span class="p">.</span><span class="n">ShowHelp</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>可以通过<code>dotnet run</code>和<code>dotnet run -- -h</code>直接运行应用和查看帮助信息，如下图：</p>
 <p><img src="/images/cli-in-csharp/help-info.png" alt="help info"></p>
 <h2 id="生成手机号">生成手机号</h2>
 <p>添加一个<code>Mobile.cs</code>文件，实现生成一个随机手机号的功能</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="k">using</span> <span class="nn">McMaster.Extensions.CommandLineUtils</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
-<span class="na">
-</span><span class="na">[Command(&#34;mobile&#34;, Description = &#34;generate mobile numbers.&#34;)]</span>
-<span class="k">public</span> <span class="k">class</span> <span class="nc">Mobile</span>
-<span class="p">{</span>
-    <span class="k">private</span> <span class="k">static</span> <span class="k">readonly</span> <span class="n">Random</span> <span class="n">rand</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">();</span>
-    <span class="k">public</span> <span class="k">void</span> <span class="n">OnExecute</span><span class="p">(</span><span class="n">IConsole</span> <span class="n">console</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">GenMobile</span><span class="p">());</span>
-    <span class="p">}</span>
-
-    <span class="kt">string</span> <span class="n">GenMobile</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="kt">var</span> <span class="n">second</span> <span class="p">=</span> <span class="n">rand</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">9</span><span class="p">);</span>
-        <span class="kt">var</span> <span class="n">tail</span> <span class="p">=</span> <span class="n">Enumerable</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">9</span><span class="p">).</span><span class="n">Select</span><span class="p">(</span><span class="n">r</span> <span class="p">=&gt;</span> <span class="n">rand</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">9</span><span class="p">));</span>
-        <span class="k">return</span> <span class="s">$&#34;1{second}{string.Join(&#34;&#34;, tail)}&#34;</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div><p>此外还需要在<code>Programs.cs</code>的<code>Program</code>类的标签上加上<code>Mobile</code>的作为SubCommand：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="na">[Command(Name = &#34;gen&#34;, Description = &#34;A simple console app.&#34;), Subcommand(typeof(Mobile))]</span>
-</code></pre></div><p>现在就可以使用mobile作为子命令产生随机手机号了</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ dotnet run -- mobile
-$ <span class="m">13137575348</span>
-</code></pre></div><h2 id="生成身份证号">生成身份证号</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">McMaster.Extensions.CommandLineUtils</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="na">
+</span></span></span><span class="line"><span class="cl"><span class="na">[Command(&#34;mobile&#34;, Description = &#34;generate mobile numbers.&#34;)]</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">Mobile</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">static</span> <span class="k">readonly</span> <span class="n">Random</span> <span class="n">rand</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">void</span> <span class="n">OnExecute</span><span class="p">(</span><span class="n">IConsole</span> <span class="n">console</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">GenMobile</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">string</span> <span class="n">GenMobile</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">second</span> <span class="p">=</span> <span class="n">rand</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">9</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">tail</span> <span class="p">=</span> <span class="n">Enumerable</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">9</span><span class="p">).</span><span class="n">Select</span><span class="p">(</span><span class="n">r</span> <span class="p">=&gt;</span> <span class="n">rand</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">9</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s">$&#34;1{second}{string.Join(&#34;&#34;, tail)}&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>此外还需要在<code>Programs.cs</code>的<code>Program</code>类的标签上加上<code>Mobile</code>的作为SubCommand：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="na">[Command(Name = &#34;gen&#34;, Description = &#34;A simple console app.&#34;), Subcommand(typeof(Mobile))]</span>
+</span></span></code></pre></div><p>现在就可以使用mobile作为子命令产生随机手机号了</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ dotnet run -- mobile
+</span></span><span class="line"><span class="cl">$ <span class="m">13137575348</span>
+</span></span></code></pre></div><h2 id="生成身份证号">生成身份证号</h2>
 <p>同理，添加一个<code>Id.cs</code>文件用于生成身份证号，实现逻辑与<code>Mobile.cs</code>类似，不再赘述。</p>
 <p>不同的是，为了支持身份证号类型和身份证号开头，需要使用<code>Argument</code>和<code>Option</code>两个Attribute</p>
 <h4 id="身份证号码类型">身份证号码类型</h4>
 <p>此处通过引入<code>Option</code>，来实现在命令后增加<code> -l</code>或者<code> -s</code>来区分18位和15位的身份证号，</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="na">[Option(ShortName = &#34;l&#34;, LongName = &#34;eighteen&#34;, ShowInHelpText = true, Description = &#34;18位身份证号&#34;)]</span>
-<span class="k">public</span> <span class="kt">bool</span> <span class="n">Long</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
-<span class="na">
-</span><span class="na">[Option(&#34;-s|--fifteen&#34;, Description = &#34;15位身份证号&#34;)]</span>
-<span class="k">public</span> <span class="kt">bool</span> <span class="n">Short</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
-</code></pre></div><p>当用户输入<code>gen id -l</code>时，bool类型的<code>Long</code>字段的值为<code>true</code>，<code>Short</code>字段没有处理，值是默认值<code>false</code>，以此为据进行分支选择，代码如下：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="k">public</span> <span class="k">void</span> <span class="n">OnExecute</span><span class="p">(</span><span class="n">IConsole</span> <span class="n">console</span><span class="p">)</span>
-<span class="p">{</span>
-	<span class="k">if</span> <span class="p">(</span><span class="n">Long</span><span class="p">)</span>
-	<span class="p">{</span>
-		<span class="n">console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">genLong</span><span class="p">());</span>
-	<span class="p">}</span>
-	<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">Short</span><span class="p">)</span>
-	<span class="p">{</span>
-		<span class="n">console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">genShort</span><span class="p">());</span>
-	<span class="p">}</span>
-<span class="p">}</span>
-
-</code></pre></div><p>此外，<code>Option</code>还有多种写法和多个选项可供配置，详情参阅文档</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="na">[Option(ShortName = &#34;l&#34;, LongName = &#34;eighteen&#34;, ShowInHelpText = true, Description = &#34;18位身份证号&#34;)]</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="kt">bool</span> <span class="n">Long</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="na">
+</span></span></span><span class="line"><span class="cl"><span class="na">[Option(&#34;-s|--fifteen&#34;, Description = &#34;15位身份证号&#34;)]</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="kt">bool</span> <span class="n">Short</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span></code></pre></div><p>当用户输入<code>gen id -l</code>时，bool类型的<code>Long</code>字段的值为<code>true</code>，<code>Short</code>字段没有处理，值是默认值<code>false</code>，以此为据进行分支选择，代码如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">void</span> <span class="n">OnExecute</span><span class="p">(</span><span class="n">IConsole</span> <span class="n">console</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">Long</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">genLong</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">Short</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">genShort</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>此外，<code>Option</code>还有多种写法和多个选项可供配置，详情参阅文档</p>
 <h4 id="身份证号码开头">身份证号码开头</h4>
 <p>为了支持用户输入的内容作为身份证号码的开头，需要引入一个参数<code>StartWith</code>：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="na">[Argument(0, Description = &#34;The start of ID card number.&#34;, Name = &#34;Start&#34;)]</span>
-<span class="k">public</span> <span class="kt">string</span> <span class="n">StartWith</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
-</code></pre></div><p><code>Start</code>参数为<code>Id</code>子命令的第一个参数（0），名字是<code>Start</code>，代码里对应的是<code>StartWith</code>字段，代码如下：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="k">private</span> <span class="kt">string</span> <span class="n">genLong</span><span class="p">()</span>
-<span class="p">{</span>
-	<span class="kt">var</span> <span class="n">r</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">();</span>
-	<span class="kt">var</span> <span class="n">myValues</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[]</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="m">8</span><span class="p">,</span> <span class="m">9</span><span class="p">,</span> <span class="m">0</span> <span class="p">};</span> 
-	<span class="kt">var</span> <span class="n">head</span> <span class="p">=</span> <span class="n">Enumerable</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">6</span> <span class="p">-</span> <span class="n">StartWith</span><span class="p">.</span><span class="n">Length</span><span class="p">).</span><span class="n">Select</span><span class="p">(</span><span class="n">e</span> <span class="p">=&gt;</span> <span class="n">myValue</span><span class="p">[</span><span class="n">r</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="n">myValues</span><span class="p">.</span><span class="n">Length</span><span class="p">)]);</span>
-	<span class="kt">var</span> <span class="n">year</span> <span class="p">=</span> <span class="n">r</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="m">1970</span><span class="p">,</span> <span class="m">2018</span><span class="p">);</span>
-	<span class="kt">var</span> <span class="n">month</span> <span class="p">=</span> <span class="s">$&#34;{r.Next(1, 12)}&#34;</span><span class="p">.</span><span class="n">PadLeft</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="sc">&#39;0&#39;</span><span class="p">);</span>
-	<span class="kt">var</span> <span class="n">day</span> <span class="p">=</span> <span class="s">$&#34;{r.Next(1, 28)}&#34;</span><span class="p">.</span><span class="n">PadLeft</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="sc">&#39;0&#39;</span><span class="p">);</span>
-	<span class="kt">var</span> <span class="n">tail</span> <span class="p">=</span> <span class="n">Enumerable</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">4</span><span class="p">).</span><span class="n">Select</span><span class="p">(</span><span class="n">e</span> <span class="p">=&gt;</span> <span class="n">myValues</span><span class="p">[</span><span class="n">r</span><span class="p">.</span><span class="n">Nex</span><span class="p">(</span><span class="n">myValues</span><span class="p">.</span><span class="n">Length</span><span class="p">)]);</span>
-	<span class="k">return</span> <span class="n">StartWith</span> <span class="p">+</span> <span class="kt">string</span><span class="p">.</span><span class="n">Join</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">,</span> <span class="n">head</span><span class="p">)</span> <span class="p">+</span> <span class="n">year</span> <span class="p">+</span> <span class="n">month</span> <span class="p">+</span> <span class="n">day</span> <span class="p">+</span> <span class="kt">string</span><span class="p">.</span><span class="n">Join</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">,</span> <span class="n">tail</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div><h2 id="调试--运行">调试 &amp; 运行</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="na">[Argument(0, Description = &#34;The start of ID card number.&#34;, Name = &#34;Start&#34;)]</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="kt">string</span> <span class="n">StartWith</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</span></span></code></pre></div><p><code>Start</code>参数为<code>Id</code>子命令的第一个参数（0），名字是<code>Start</code>，代码里对应的是<code>StartWith</code>字段，代码如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">private</span> <span class="kt">string</span> <span class="n">genLong</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">var</span> <span class="n">r</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">var</span> <span class="n">myValues</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[]</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="m">8</span><span class="p">,</span> <span class="m">9</span><span class="p">,</span> <span class="m">0</span> <span class="p">};</span> 
+</span></span><span class="line"><span class="cl">	<span class="kt">var</span> <span class="n">head</span> <span class="p">=</span> <span class="n">Enumerable</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">6</span> <span class="p">-</span> <span class="n">StartWith</span><span class="p">.</span><span class="n">Length</span><span class="p">).</span><span class="n">Select</span><span class="p">(</span><span class="n">e</span> <span class="p">=&gt;</span> <span class="n">myValue</span><span class="p">[</span><span class="n">r</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="n">myValues</span><span class="p">.</span><span class="n">Length</span><span class="p">)]);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">var</span> <span class="n">year</span> <span class="p">=</span> <span class="n">r</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="m">1970</span><span class="p">,</span> <span class="m">2018</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">var</span> <span class="n">month</span> <span class="p">=</span> <span class="s">$&#34;{r.Next(1, 12)}&#34;</span><span class="p">.</span><span class="n">PadLeft</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="sc">&#39;0&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">var</span> <span class="n">day</span> <span class="p">=</span> <span class="s">$&#34;{r.Next(1, 28)}&#34;</span><span class="p">.</span><span class="n">PadLeft</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="sc">&#39;0&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">var</span> <span class="n">tail</span> <span class="p">=</span> <span class="n">Enumerable</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">4</span><span class="p">).</span><span class="n">Select</span><span class="p">(</span><span class="n">e</span> <span class="p">=&gt;</span> <span class="n">myValues</span><span class="p">[</span><span class="n">r</span><span class="p">.</span><span class="n">Nex</span><span class="p">(</span><span class="n">myValues</span><span class="p">.</span><span class="n">Length</span><span class="p">)]);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">StartWith</span> <span class="p">+</span> <span class="kt">string</span><span class="p">.</span><span class="n">Join</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">,</span> <span class="n">head</span><span class="p">)</span> <span class="p">+</span> <span class="n">year</span> <span class="p">+</span> <span class="n">month</span> <span class="p">+</span> <span class="n">day</span> <span class="p">+</span> <span class="kt">string</span><span class="p">.</span><span class="n">Join</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">,</span> <span class="n">tail</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="调试--运行">调试 &amp; 运行</h2>
 <p>至此，命令行工具<code>gen</code>的所有功能都已经实现，可以通过以下几个命令来调用功能和调试</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell">
-<span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="p">//</span><span class="n">查看gen的帮助和版本信息</span>
-<span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="n">dotnet</span> <span class="n">run</span> <span class="p">--</span> <span class="n">-h</span>
-
-<span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="p">//</span><span class="n">查看gen</span> <span class="n">mobile的帮助信息</span>
-<span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="n">dotnet</span> <span class="n">run</span> <span class="p">--</span> <span class="n">mobile</span> <span class="n">-h</span>
-
-<span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="p">//</span><span class="n">运用gen</span> <span class="n">mobile</span><span class="p">,</span> <span class="n">生成一个随机手机号</span>
-<span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="n">dotnet</span> <span class="n">run</span> <span class="p">--</span> <span class="n">mobile</span> 
-<span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="n">15810458877</span>
-
-<span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="p">//</span><span class="n">查看gen</span> <span class="n">id的帮助信息</span>
-<span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="n">dotnet</span> <span class="n">run</span> <span class="p">--</span> <span class="n">id</span> <span class="n">-h</span>
-
-<span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="p">//</span><span class="n">运行gen</span> <span class="n">id</span><span class="p">,</span> <span class="n">生成一个随机的18位身份证号</span>
-<span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="n">dotnet</span> <span class="n">run</span> <span class="p">--</span> <span class="n">id</span> <span class="n">-l</span>
-
-<span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="p">//</span><span class="n">运行gen</span> <span class="n">id</span><span class="p">,</span> <span class="n">以110为开头</span><span class="p">,</span> <span class="n">生成一个随机的15位身份证号</span>
-<span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="n">dotnet</span> <span class="n">run</span> <span class="p">--</span> <span class="n">id</span> <span class="n">-s</span> <span class="n">110</span>
-
-</code></pre></div><p>此外，也可以通过配置Visual Studio的Debug参数实现在VS里运行和实时调试，例如要运行<code>gen id -s 100</code>，只需要在 Project Property -&gt; Debug -&gt; Application arguments里填写<code>id -s 100</code>即可，如下图</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="p">//</span><span class="n">查看gen的帮助和版本信息</span>
+</span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="n">dotnet</span> <span class="n">run</span> <span class="p">--</span> <span class="n">-h</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="p">//</span><span class="n">查看gen</span> <span class="n">mobile的帮助信息</span>
+</span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="n">dotnet</span> <span class="n">run</span> <span class="p">--</span> <span class="n">mobile</span> <span class="n">-h</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="p">//</span><span class="n">运用gen</span> <span class="n">mobile</span><span class="p">,</span> <span class="n">生成一个随机手机号</span>
+</span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="n">dotnet</span> <span class="n">run</span> <span class="p">--</span> <span class="n">mobile</span> 
+</span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="n">15810458877</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="p">//</span><span class="n">查看gen</span> <span class="n">id的帮助信息</span>
+</span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="n">dotnet</span> <span class="n">run</span> <span class="p">--</span> <span class="n">id</span> <span class="n">-h</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="p">//</span><span class="n">运行gen</span> <span class="n">id</span><span class="p">,</span> <span class="n">生成一个随机的18位身份证号</span>
+</span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="n">dotnet</span> <span class="n">run</span> <span class="p">--</span> <span class="n">id</span> <span class="n">-l</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="p">//</span><span class="n">运行gen</span> <span class="n">id</span><span class="p">,</span> <span class="n">以110为开头</span><span class="p">,</span> <span class="n">生成一个随机的15位身份证号</span>
+</span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="n">dotnet</span> <span class="n">run</span> <span class="p">--</span> <span class="n">id</span> <span class="n">-s</span> <span class="n">110</span>
+</span></span></code></pre></div><p>此外，也可以通过配置Visual Studio的Debug参数实现在VS里运行和实时调试，例如要运行<code>gen id -s 100</code>，只需要在 Project Property -&gt; Debug -&gt; Application arguments里填写<code>id -s 100</code>即可，如下图</p>
 <p><img src="/images/cli-in-csharp/project-property.png" alt="project property"></p>
 <p><strong>つづく</strong></p>
 
