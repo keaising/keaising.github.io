@@ -6,9 +6,12 @@
     "export": "npx slidev export --output=./public/git-share.pdf"
   },
   "dependencies": {
-    "@slidev/cli": "^0.21.3",
-    "@slidev/theme-default": "^0.19.1",
-    "playwright-chromium": "^1.12.3"
+    "@slidev/cli": "^0.33.0",
+    "@slidev/theme-default": "^0.21.2",
+    "playwright-chromium": "^1.22.2"
   },
-  "name": "git"
+  "name": "git",
+  "devDependencies": {
+    "@iconify-json/mdi": "^1.1.21"
+  }
 }
