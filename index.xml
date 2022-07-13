@@ -15,8 +15,9 @@
       <guid>http://shuxiao.wang/leetcode/2.-add-two-numbers/</guid>
       <description>Explain You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
 You may assume the two numbers do not contain any leading zero, except the number 0 itself.
- Example
-Input: (2 -&amp;gt; 4 -&amp;gt; 3) + (5 -&amp;gt; 6 -&amp;gt; 4)</description>
+Example
+Input: (2 -&amp;gt; 4 -&amp;gt; 3) + (5 -&amp;gt; 6 -&amp;gt; 4)
+Output: 7 -&amp;gt; 0 -&amp;gt; 8</description>
     </item>
     
     <item>
@@ -44,18 +45,18 @@ Input: (2 -&amp;gt; 4 -&amp;gt; 3) + (5 -&amp;gt; 6 -&amp;gt; 4)</description>
       
       <guid>http://shuxiao.wang/leetcode/9.-palindrome-number/</guid>
       <description>Explain Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
- Example 1
+Example 1
 Input: 121
 Output: true
-  Example 2
+Example 2
 Input: -121
 Output: false
 Explanation: From left to right, it reads -121. From right to left, it &amp;gt; becomes 121-.
 Therefore it is not a palindrome.
-  Example 3
+Example 3
 Input: 10
 Output: false
-Explanation: Reads 01 from right to left.</description>
+Explanation: Reads 01 from right to left. Therefore it is not a palindrome.</description>
     </item>
     
     <item>
@@ -93,9 +94,9 @@ Explanation: Reads 01 from right to left.</description>
       <guid>http://shuxiao.wang/leetcode/142.-linked-list-cycle-ii/</guid>
       <description>Explain Given a linked list, return the node where the cycle begins. If there is no cycle, return null.
 To represent a cycle in the given linked list, we use an integer pos which represents the position (0-indexed) in the linked list where tail connects to. If pos is -1, then there is no cycle in the linked list.
- Note:
+Note:
 Do not modify the linked list.
- Solve # Definition for singly-linked list.</description>
+Solve # Definition for singly-linked list.</description>
     </item>
     
     <item>
@@ -150,6 +151,15 @@ Do not modify the linked list.
       
       <guid>http://shuxiao.wang/leetcode/334.-increasing-triplet-subsequence/</guid>
       <description>这是我在搜索 trie tree 的时候弹出来到一个题，乍一看觉得挺简单，但是对时间和空间都有要求，我能想到到办法就是以每个数为第一个数开始向后搜索，但是这样</description>
+    </item>
+    
+    <item>
+      <title>房贷是对普通人的欺负</title>
+      <link>http://shuxiao.wang/posts/housing-load-is-a-bully/</link>
+      <pubDate>Wed, 13 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuxiao.wang/posts/housing-load-is-a-bully/</guid>
+      <description>首先需要谈一个我观察到的现象：普通人对超过自己日常生活的数字是没有概念的。比如一个居住在三线小县城的人，日常生活只是买菜做饭，最大额的收入是</description>
     </item>
     
     <item>
@@ -437,7 +447,7 @@ Do not modify the linked list.
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>http://shuxiao.wang/cs/hero/</guid>
-      <description>   Name Hardware OS     SNIPER iPhone 7 iOS   TECHIES Kindle Paperwhite 2nd Android   SLADAR Kindle Oasis 2nd Android   MEEPO Nintendo Switch Unknown   TINKER iPad mini 5th iOS   SPECTRE ThinkPad X1 Tablet 3rd Windows   VIPER Home PC Windows   INVOKER Macbook Pro 2018 15 macOS Catalina   RUBICK Home PC Arch Linux   IO ThinkPad X220 Ubuntu   ARC Aliyun ECS t5 Ubuntu    </description>
+      <description> Name Hardware OS SNIPER iPhone 7 iOS TECHIES Kindle Paperwhite 2nd Android SLADAR Kindle Oasis 2nd Android MEEPO Nintendo Switch Unknown TINKER iPad mini 5th iOS SPECTRE ThinkPad X1 Tablet 3rd Windows VIPER Home PC Windows INVOKER Macbook Pro 2018 15 macOS Catalina RUBICK Home PC Arch Linux IO ThinkPad X220 Ubuntu ARC Aliyun ECS t5 Ubuntu </description>
     </item>
     
     <item>

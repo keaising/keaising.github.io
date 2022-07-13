@@ -15,8 +15,9 @@
       <guid>http://shuxiao.wang/leetcode/2.-add-two-numbers/</guid>
       <description>Explain You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
 You may assume the two numbers do not contain any leading zero, except the number 0 itself.
- Example
-Input: (2 -&amp;gt; 4 -&amp;gt; 3) + (5 -&amp;gt; 6 -&amp;gt; 4)</description>
+Example
+Input: (2 -&amp;gt; 4 -&amp;gt; 3) + (5 -&amp;gt; 6 -&amp;gt; 4)
+Output: 7 -&amp;gt; 0 -&amp;gt; 8</description>
     </item>
     
     <item>
@@ -36,9 +37,9 @@ Input: (2 -&amp;gt; 4 -&amp;gt; 3) + (5 -&amp;gt; 6 -&amp;gt; 4)</description>
       <guid>http://shuxiao.wang/leetcode/142.-linked-list-cycle-ii/</guid>
       <description>Explain Given a linked list, return the node where the cycle begins. If there is no cycle, return null.
 To represent a cycle in the given linked list, we use an integer pos which represents the position (0-indexed) in the linked list where tail connects to. If pos is -1, then there is no cycle in the linked list.
- Note:
+Note:
 Do not modify the linked list.
- Solve # Definition for singly-linked list.</description>
+Solve # Definition for singly-linked list.</description>
     </item>
     
     <item>
