@@ -13,16 +13,16 @@ weight: 0
 | project                                                                | description                                                                 |
 | --------                                                               | -----------                                                                 |
 | [auto-mouse-keyboard](https://github.com/keaising/auto-mouse-keyboard) | 用简单的配置自动化得操作鼠标键盘                                            |
-| [rit](https://github.com/keaising/rit)                                 | Git 增强工具                                                                |
-| [gen](https://github.com/keaising/gen)                                 | 基于.Net Core Global Tool的命令行工具[教程](/tags/cli-in-csharp/)的示例代码 |
+| [im-select.nvim](https://github.com/keaising/im-select.nvim)           | Switch Input Method automatically in Neovim                                 |
 | [dotfile](https://github.com/keaising/dotfile)                         | 我的 dotfiles                                                               |
 | [kitto](https://github.com/keaising/kitto)                             | 本站的 Hugo 主题                                                            |
 
 ### Presentations
 
-| date    | slide                                        | description                                   |
-| ---     | ---                                          | ---                                           |
-| 2021.06 | [Git Notes](https://shuxiao.wang/share/git/) | 关于Git的分享，用gif阐述了merge和rebase的异同 |
+| date    | slide                                                 | description                                   |
+| ---     | ---                                                   | ---                                           |
+| 2019.05 | [CLI in C#](https://shuxiao.wang/tags/cli-in-csharp/) | 用 dotnet 开发一个 CLI 工具的教程             |
+| 2021.06 | [Git Notes](https://shuxiao.wang/share/git/)          | 关于Git的分享，用gif阐述了merge和rebase的异同 |
 
 ### Elsewhere
 
