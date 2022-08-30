@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>introduction on 流水沉微</title>
-    <link>http://shuxiao.wang/categories/introduction/</link>
+    <link>https://shuxiao.wang/categories/introduction/</link>
     <description>Recent content in introduction on 流水沉微</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Sat, 07 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://shuxiao.wang/categories/introduction/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://shuxiao.wang/categories/introduction/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LastPass 基本用法</title>
-      <link>http://shuxiao.wang/posts/introduction-to-lastpass/</link>
+      <link>https://shuxiao.wang/posts/introduction-to-lastpass/</link>
       <pubDate>Sat, 07 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/introduction-to-lastpass/</guid>
+      <guid>https://shuxiao.wang/posts/introduction-to-lastpass/</guid>
       <description>简介 本文目标读者是刚接触密码管理软件的用户，同时也坐在了我开的家庭计划的车上的乘客 本文目标是让你们能上手用起来这款软件，尽量平滑得从以前的密</description>
     </item>
     

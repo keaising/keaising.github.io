@@ -2,323 +2,323 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 流水沉微</title>
-    <link>http://shuxiao.wang/posts/</link>
+    <link>https://shuxiao.wang/posts/</link>
     <description>Recent content in Posts on 流水沉微</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Wed, 13 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://shuxiao.wang/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://shuxiao.wang/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>房贷是对普通人的欺负</title>
-      <link>http://shuxiao.wang/posts/housing-load-is-a-bully/</link>
+      <link>https://shuxiao.wang/posts/housing-load-is-a-bully/</link>
       <pubDate>Wed, 13 Jul 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/housing-load-is-a-bully/</guid>
+      <guid>https://shuxiao.wang/posts/housing-load-is-a-bully/</guid>
       <description>首先需要谈一个我观察到的现象：普通人对超过自己日常生活的数字是没有概念的。比如一个居住在三线小县城的人，日常生活只是买菜做饭，最大额的收入是</description>
     </item>
     
     <item>
       <title>为什么我们不生小孩</title>
-      <link>http://shuxiao.wang/posts/why-no-new-baby/</link>
+      <link>https://shuxiao.wang/posts/why-no-new-baby/</link>
       <pubDate>Sun, 16 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/why-no-new-baby/</guid>
+      <guid>https://shuxiao.wang/posts/why-no-new-baby/</guid>
       <description>在当前的时刻看来，年轻人不想生小孩的意愿是越来越强烈了，整个国家的生育率也是逐步走低，这让我们的父母和祖父母们觉得难以接受：生活跟以前比明明</description>
     </item>
     
     <item>
       <title>CuriosityChina 招人</title>
-      <link>http://shuxiao.wang/posts/work-with-curiosity-china/</link>
+      <link>https://shuxiao.wang/posts/work-with-curiosity-china/</link>
       <pubDate>Sat, 21 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/work-with-curiosity-china/</guid>
+      <guid>https://shuxiao.wang/posts/work-with-curiosity-china/</guid>
       <description>目前我在一家小公司（CuriosityChina）工作，能挣一些钱，可以做的事也很多，但我们开发团队目前人比较少，所以需要招前后端开发、SR</description>
     </item>
     
     <item>
       <title>推着生活前进</title>
-      <link>http://shuxiao.wang/posts/push/</link>
+      <link>https://shuxiao.wang/posts/push/</link>
       <pubDate>Sat, 07 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/push/</guid>
+      <guid>https://shuxiao.wang/posts/push/</guid>
       <description>4年前我毕业时很不顺利，入职时一个月的工资很低，交完房租剩下的基本上只够糊口，那年还跟我爸要了两万块钱才回家过了春节。再加上入职就遇上部门调</description>
     </item>
     
     <item>
       <title>中文编程届四大暗黑天王</title>
-      <link>http://shuxiao.wang/posts/king-in-the-dark/</link>
+      <link>https://shuxiao.wang/posts/king-in-the-dark/</link>
       <pubDate>Sat, 10 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/king-in-the-dark/</guid>
+      <guid>https://shuxiao.wang/posts/king-in-the-dark/</guid>
       <description>序言 中文编程届四大暗黑天王是指：胡正、李杀、王垠和田春冰河 这四大天王成名时期基本都在 2000 年-2005 年之间，还都特别能写博客和写书，每个人的网</description>
     </item>
     
     <item>
       <title>为非个人项目的 GitHub repo 设置子域名</title>
-      <link>http://shuxiao.wang/posts/set-subdomain-for-github-project/</link>
+      <link>https://shuxiao.wang/posts/set-subdomain-for-github-project/</link>
       <pubDate>Sat, 05 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/set-subdomain-for-github-project/</guid>
+      <guid>https://shuxiao.wang/posts/set-subdomain-for-github-project/</guid>
       <description>最近在把以前的博客找回来 我从第一版博客开始，就一直在用基于 GitHub Pages和markdown的方案，最初用的静态生成器是Jekyll，但是Rub</description>
     </item>
     
     <item>
       <title>不优化，zsh 也超快</title>
-      <link>http://shuxiao.wang/posts/zsh-refresh/</link>
+      <link>https://shuxiao.wang/posts/zsh-refresh/</link>
       <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/zsh-refresh/</guid>
+      <guid>https://shuxiao.wang/posts/zsh-refresh/</guid>
       <description>如果你折腾过 shell，那你肯定遇到过 oh-my-zsh，这个巨大的框架什么都好，就是有点慢。在用了一年多 oh-my-zsh 之后，我有点烦了那种卡卡的感觉，</description>
     </item>
     
     <item>
       <title>怀念祖祖</title>
-      <link>http://shuxiao.wang/posts/memories/</link>
+      <link>https://shuxiao.wang/posts/memories/</link>
       <pubDate>Thu, 29 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/memories/</guid>
+      <guid>https://shuxiao.wang/posts/memories/</guid>
       <description>今年的冬天特别冷，家里老人们过得都很艰难，让我想起来在我还很小的时候就已经去世的祖祖。（祖祖是我们方言里对曾祖父母和外曾祖父母的称呼，此处特</description>
     </item>
     
     <item>
       <title>为工作而死是求仁得仁</title>
-      <link>http://shuxiao.wang/posts/pay-as-you-request/</link>
+      <link>https://shuxiao.wang/posts/pay-as-you-request/</link>
       <pubDate>Sun, 24 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/pay-as-you-request/</guid>
+      <guid>https://shuxiao.wang/posts/pay-as-you-request/</guid>
       <description>这个文章的讨论目标是那些在事后声音无限大的996、福报大厂程序员们，吃饱穿暖还能考虑在北上广深买学区的人根本不是什么被吃了上顿没下顿的生活挤</description>
     </item>
     
     <item>
       <title>学区房是永动机</title>
-      <link>http://shuxiao.wang/posts/school-related-house/</link>
+      <link>https://shuxiao.wang/posts/school-related-house/</link>
       <pubDate>Sun, 10 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/school-related-house/</guid>
+      <guid>https://shuxiao.wang/posts/school-related-house/</guid>
       <description>本文是一位朋友爬了北京上海近几年的住宅历史成交价格之后，得到“北京房价已经三年没有涨了、上海房价近两年涨了 20%”的结论之后，我们的一些讨论</description>
     </item>
     
     <item>
       <title>2020 就要过去</title>
-      <link>http://shuxiao.wang/posts/annual-2020/</link>
+      <link>https://shuxiao.wang/posts/annual-2020/</link>
       <pubDate>Sun, 27 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/annual-2020/</guid>
+      <guid>https://shuxiao.wang/posts/annual-2020/</guid>
       <description>焦虑 这是毕业以来最不焦虑的一年，准确的说应该是在战术上或者策略上最不焦虑的一年，自认为找到了一个好团队，在好团队里呆着的一个好处是当你实力不</description>
     </item>
     
     <item>
       <title>Auto mouse keyboard</title>
-      <link>http://shuxiao.wang/posts/auto-mouse-keyboard/</link>
+      <link>https://shuxiao.wang/posts/auto-mouse-keyboard/</link>
       <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/auto-mouse-keyboard/</guid>
+      <guid>https://shuxiao.wang/posts/auto-mouse-keyboard/</guid>
       <description>给兔子写了一个半自动化工具，让她可以自己编写流程的情况下，操作鼠标和键盘完成一系列任务。项目代码在 https://github.com/keaising/auto-mouse-keyboard/ 使用 在 Release 页面下载得到 exe 文件，将下载文件随</description>
     </item>
     
     <item>
       <title>攒钱过程中的思考</title>
-      <link>http://shuxiao.wang/posts/save-money/</link>
+      <link>https://shuxiao.wang/posts/save-money/</link>
       <pubDate>Sat, 05 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/save-money/</guid>
+      <guid>https://shuxiao.wang/posts/save-money/</guid>
       <description>最近跟同学吃饭，因为经常在朋友圈发一些诸如“利好茅台！”、“收入增加全靠公司股票努力”之类阴阳怪气的话，所以被问到买基金的战绩如何以及该买什</description>
     </item>
     
     <item>
       <title>选自己想要的</title>
-      <link>http://shuxiao.wang/posts/make-america-greate-again/</link>
+      <link>https://shuxiao.wang/posts/make-america-greate-again/</link>
       <pubDate>Sun, 01 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/make-america-greate-again/</guid>
+      <guid>https://shuxiao.wang/posts/make-america-greate-again/</guid>
       <description>在跟同学一起打 dota 的时候学习到一个说法。当时的语境是我打中单，他玩个辅助，阵容选出来之后我觉得我们的阵容不太好，比较悲观，他安慰我说： 赢比赛有</description>
     </item>
     
     <item>
       <title>买二手房首付款计算</title>
-      <link>http://shuxiao.wang/posts/first-payment-in-house/</link>
+      <link>https://shuxiao.wang/posts/first-payment-in-house/</link>
       <pubDate>Fri, 26 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/first-payment-in-house/</guid>
+      <guid>https://shuxiao.wang/posts/first-payment-in-house/</guid>
       <description>本文的目标读者是想在北上深靠满五唯一的二手老破小落户上车的苦逼年轻人 买房是个大事，但也是个麻烦事。对于没有买过房的年轻人来说，上车的房子很可</description>
     </item>
     
     <item>
       <title>2000块搭建家庭网络——国际流量转发</title>
-      <link>http://shuxiao.wang/posts/family-network-2/</link>
+      <link>https://shuxiao.wang/posts/family-network-2/</link>
       <pubDate>Sat, 16 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/family-network-2/</guid>
+      <guid>https://shuxiao.wang/posts/family-network-2/</guid>
       <description>目前用得最多的科学上网方法都是在国外找一个服务器搭建特定隧道服务，国内的机器连接到该服务器，所有或者部分流量通过该隧道传输，达到科学上网的目</description>
     </item>
     
     <item>
       <title>2000块搭建家庭网络——前言</title>
-      <link>http://shuxiao.wang/posts/family-network-1/</link>
+      <link>https://shuxiao.wang/posts/family-network-1/</link>
       <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/family-network-1/</guid>
+      <guid>https://shuxiao.wang/posts/family-network-1/</guid>
       <description>最近几个月都在远程工作，饱受移动国际出口的虐待，不管是自己的代理还是公司提供的代理都悉数挂掉，连正常查点Stack Overflow和Goog</description>
     </item>
     
     <item>
       <title>回形针到底屁股歪了几米</title>
-      <link>http://shuxiao.wang/posts/nmslese/</link>
+      <link>https://shuxiao.wang/posts/nmslese/</link>
       <pubDate>Sat, 02 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/nmslese/</guid>
+      <guid>https://shuxiao.wang/posts/nmslese/</guid>
       <description>最近比较在Bilibili有一件比较热门的事情是回形针因为做了一期关于热带雨林的视频，被指责是「说中国人吃了太多肉导致热带雨林的消失」、「屁</description>
     </item>
     
     <item>
       <title>宅家工作的三个月</title>
-      <link>http://shuxiao.wang/posts/work-from-home/</link>
+      <link>https://shuxiao.wang/posts/work-from-home/</link>
       <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/work-from-home/</guid>
+      <guid>https://shuxiao.wang/posts/work-from-home/</guid>
       <description>从二月初到北京开始，我就一直宅在家里，工作也是在家远程，每天就出门取个快递、外卖和顺路扔个垃圾，三个月来只出过三次小区 算是幸福的居家生活了，</description>
     </item>
     
     <item>
       <title>LastPass 基本用法</title>
-      <link>http://shuxiao.wang/posts/introduction-to-lastpass/</link>
+      <link>https://shuxiao.wang/posts/introduction-to-lastpass/</link>
       <pubDate>Sat, 07 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/introduction-to-lastpass/</guid>
+      <guid>https://shuxiao.wang/posts/introduction-to-lastpass/</guid>
       <description>简介 本文目标读者是刚接触密码管理软件的用户，同时也坐在了我开的家庭计划的车上的乘客 本文目标是让你们能上手用起来这款软件，尽量平滑得从以前的密</description>
     </item>
     
     <item>
       <title>一年读书记录</title>
-      <link>http://shuxiao.wang/posts/annual-2019/</link>
+      <link>https://shuxiao.wang/posts/annual-2019/</link>
       <pubDate>Sat, 28 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/annual-2019/</guid>
+      <guid>https://shuxiao.wang/posts/annual-2019/</guid>
       <description>一觉醒来发现这周末没什么事，但是仔细一想一年都已经过去了 今年翻过的书大概在200本左右，认真cover to cover读过的大概在30 - 50本，</description>
     </item>
     
     <item>
       <title>如何构建好软件</title>
-      <link>http://shuxiao.wang/posts/how-to-build-good-software/</link>
+      <link>https://shuxiao.wang/posts/how-to-build-good-software/</link>
       <pubDate>Sat, 21 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/how-to-build-good-software/</guid>
+      <guid>https://shuxiao.wang/posts/how-to-build-good-software/</guid>
       <description>译者序 在读到此文时感觉非常不同于其他类似文章，本文的立意很高，从战略角度阐述了跟人月神话类似的观点：软件开发最重要的是保持专注和精简、控制复</description>
     </item>
     
     <item>
       <title>十号线的读书人</title>
-      <link>http://shuxiao.wang/posts/reader-in-line-ten/</link>
+      <link>https://shuxiao.wang/posts/reader-in-line-ten/</link>
       <pubDate>Sun, 24 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/reader-in-line-ten/</guid>
+      <guid>https://shuxiao.wang/posts/reader-in-line-ten/</guid>
       <description>自2018年8月起，因为换工作和换住地，我就开始了环绕十号线半周的通勤生活，从进站闸机到出站闸机要50分钟，来往就是接近2个小时。无聊且网络</description>
     </item>
     
     <item>
       <title>自己的主题</title>
-      <link>http://shuxiao.wang/posts/my-own-theme/</link>
+      <link>https://shuxiao.wang/posts/my-own-theme/</link>
       <pubDate>Thu, 07 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/my-own-theme/</guid>
+      <guid>https://shuxiao.wang/posts/my-own-theme/</guid>
       <description>终于自己做了主题 从2014年末开始，我就尝试写一点什么来记录自己，也就开始寻找做自己的博客的方法。最初使用的是jekyll，在知乎上看到有人</description>
     </item>
     
     <item>
       <title>楼梯有多少种走法</title>
-      <link>http://shuxiao.wang/posts/ladder/</link>
+      <link>https://shuxiao.wang/posts/ladder/</link>
       <pubDate>Mon, 21 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/ladder/</guid>
+      <guid>https://shuxiao.wang/posts/ladder/</guid>
       <description>这是在 telegram 网鱼网咖群里聊天时，Haruhi贴的一个题，题目如下： 思路很简单 可以从14、13、12级跨到第15级 f(15)=f(14)+f(13)+f(12) 递推公式出来鸟~ 当然要得到一个</description>
     </item>
     
     <item>
       <title>Redis 复制时的 fork 的子进程</title>
-      <link>http://shuxiao.wang/posts/redis-rdb-fork/</link>
+      <link>https://shuxiao.wang/posts/redis-rdb-fork/</link>
       <pubDate>Fri, 13 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/redis-rdb-fork/</guid>
+      <guid>https://shuxiao.wang/posts/redis-rdb-fork/</guid>
       <description>背景 问：Redis 主从节点同步知道吗？ 答：知道一点，不太熟 问：从节点申请同步的时候主节点做了什么？ 答：fork 一个子线程做同步 问：是子进程，</description>
     </item>
     
     <item>
       <title>A fatal communication error with WAS</title>
-      <link>http://shuxiao.wang/posts/was-error/</link>
+      <link>https://shuxiao.wang/posts/was-error/</link>
       <pubDate>Mon, 29 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/was-error/</guid>
+      <guid>https://shuxiao.wang/posts/was-error/</guid>
       <description>背景情况 也是工作里遇到的一个问题，一个 host 在 IIS 上的古老项目（最早可以追溯到 16 年前），时不时会报下面这个错误： 应用程序池 “.NET” 提供服务的进</description>
     </item>
     
     <item>
       <title>P0: Golang Submission Error</title>
-      <link>http://shuxiao.wang/posts/golang-submission-error/</link>
+      <link>https://shuxiao.wang/posts/golang-submission-error/</link>
       <pubDate>Fri, 31 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/golang-submission-error/</guid>
+      <guid>https://shuxiao.wang/posts/golang-submission-error/</guid>
       <description>Review 过了一段时间自己看都觉得这代码写得好蠢，于是改了一版，如下： package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(permute([]int{1,0,3})) } func permute(nums []int) [][]int { if len(nums) == 1 { return [][]int{ nums, } } array := nums var result [][]int generate(len(nums), &amp;amp;array, &amp;amp;result) return result } func generate(k int,</description>
     </item>
     
     <item>
       <title>CLI App in C# 其三</title>
-      <link>http://shuxiao.wang/posts/cli-app-in-csharp3/</link>
+      <link>https://shuxiao.wang/posts/cli-app-in-csharp3/</link>
       <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/cli-app-in-csharp3/</guid>
+      <guid>https://shuxiao.wang/posts/cli-app-in-csharp3/</guid>
       <description>这是 CLI App in C# 系列的第三篇，本篇主要介绍gen的打包和发布。 .Net Core控制台应用的打包方法主要是两类： 可执行文件，对应直接运行，Windows</description>
     </item>
     
     <item>
       <title>CLI App in C# 其二</title>
-      <link>http://shuxiao.wang/posts/cli-app-in-csharp2/</link>
+      <link>https://shuxiao.wang/posts/cli-app-in-csharp2/</link>
       <pubDate>Sun, 12 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/cli-app-in-csharp2/</guid>
+      <guid>https://shuxiao.wang/posts/cli-app-in-csharp2/</guid>
       <description>这是 CLI App in C# 系列的第二篇，本篇主要介绍gen的开发过程。教程里的所有代码参见keaising/gen 新建项目 在合适的地方使用dotnet new console</description>
     </item>
     
     <item>
       <title>CLI App in C# 其一</title>
-      <link>http://shuxiao.wang/posts/cli-app-in-csharp1/</link>
+      <link>https://shuxiao.wang/posts/cli-app-in-csharp1/</link>
       <pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/cli-app-in-csharp1/</guid>
+      <guid>https://shuxiao.wang/posts/cli-app-in-csharp1/</guid>
       <description>这是 CLI App in C# 系列的 第一篇 (Wa Da Keng) 写这个系列的目的是介绍用C#写一个命令行工具的所有内容，从规划、选型、编码、到打包和自动化编译的系列工作都会介</description>
     </item>
     
     <item>
       <title>处理dotnet core Redis超时异常</title>
-      <link>http://shuxiao.wang/posts/stackexchange-redis-timeout/</link>
+      <link>https://shuxiao.wang/posts/stackexchange-redis-timeout/</link>
       <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/stackexchange-redis-timeout/</guid>
+      <guid>https://shuxiao.wang/posts/stackexchange-redis-timeout/</guid>
       <description>压力测试过程中遇到的一个问题，框架是asp.net core 2.2，redis组件是StackExchange.Redis 2.0.601，在高并发场</description>
     </item>
     
     <item>
       <title>在Eclipse中调用Algs4库</title>
-      <link>http://shuxiao.wang/posts/algs4-eclipse/</link>
+      <link>https://shuxiao.wang/posts/algs4-eclipse/</link>
       <pubDate>Thu, 21 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/algs4-eclipse/</guid>
+      <guid>https://shuxiao.wang/posts/algs4-eclipse/</guid>
       <description>这篇是接上一篇继续讲的，上一篇讲了如何在DrJava和命令行中使用javac-algs4和java-algs4，这一篇将讲述如何在Eclip</description>
     </item>
     
     <item>
       <title>在Windows上安装「算法 第四版」组件</title>
-      <link>http://shuxiao.wang/posts/algs4-windows/</link>
+      <link>https://shuxiao.wang/posts/algs4-windows/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/algs4-windows/</guid>
+      <guid>https://shuxiao.wang/posts/algs4-windows/</guid>
       <description>这篇日志翻译自Hello, World in Java on Windows，翻译的原因是知乎的一个回答，回答完这个问题之后，得到了广泛的。。嗯。。。私信，私信我如何处</description>
     </item>
     
     <item>
       <title>基于C#的蚁群算法实现</title>
-      <link>http://shuxiao.wang/posts/ant-algs-based-on-csharp/</link>
+      <link>https://shuxiao.wang/posts/ant-algs-based-on-csharp/</link>
       <pubDate>Sat, 25 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/ant-algs-based-on-csharp/</guid>
+      <guid>https://shuxiao.wang/posts/ant-algs-based-on-csharp/</guid>
       <description>这学期有门课，最优化与最优控制，任课老师任华玲，虽然在课堂上我什么都没有学到，但是最后任老师让每个人自己选一篇最优化方向的论文，把其中的算法</description>
     </item>
     

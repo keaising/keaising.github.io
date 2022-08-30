@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Trie Tree on 流水沉微</title>
-    <link>http://shuxiao.wang/tags/trie-tree/</link>
+    <link>https://shuxiao.wang/tags/trie-tree/</link>
     <description>Recent content in Trie Tree on 流水沉微</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Wed, 02 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://shuxiao.wang/tags/trie-tree/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://shuxiao.wang/tags/trie-tree/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>208. Implement Trie (Prefix Tree)</title>
-      <link>http://shuxiao.wang/leetcode/208.-implement-trie/</link>
+      <link>https://shuxiao.wang/leetcode/208.-implement-trie/</link>
       <pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/leetcode/208.-implement-trie/</guid>
+      <guid>https://shuxiao.wang/leetcode/208.-implement-trie/</guid>
       <description>Explain Implement a trie with insert, search, and startsWith methods. Example Trie trie = new Trie(); trie.insert(&amp;#34;apple&amp;#34;); trie.search(&amp;#34;apple&amp;#34;); // returns true trie.search(&amp;#34;app&amp;#34;); // returns false trie.startsWith(&amp;#34;app&amp;#34;); // returns true trie.insert(&amp;#34;app&amp;#34;); trie.search(&amp;#34;app&amp;#34;); // returns true Note You may assume that all inputs are consist of lowercase letters a-z. All inputs are guaranteed to be non-empty strings. Solve class Node: def __init__(self): self.children = {} self.is_word = False class Trie: def __init__(self):</description>
     </item>
     

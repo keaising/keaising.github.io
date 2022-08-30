@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tutorial on 流水沉微</title>
-    <link>http://shuxiao.wang/tags/tutorial/</link>
+    <link>https://shuxiao.wang/tags/tutorial/</link>
     <description>Recent content in tutorial on 流水沉微</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Thu, 21 Apr 2016 00:00:00 +0000</lastBuildDate><atom:link href="http://shuxiao.wang/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Apr 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://shuxiao.wang/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在Eclipse中调用Algs4库</title>
-      <link>http://shuxiao.wang/posts/algs4-eclipse/</link>
+      <link>https://shuxiao.wang/posts/algs4-eclipse/</link>
       <pubDate>Thu, 21 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/algs4-eclipse/</guid>
+      <guid>https://shuxiao.wang/posts/algs4-eclipse/</guid>
       <description>这篇是接上一篇继续讲的，上一篇讲了如何在DrJava和命令行中使用javac-algs4和java-algs4，这一篇将讲述如何在Eclip</description>
     </item>
     
     <item>
       <title>在Windows上安装「算法 第四版」组件</title>
-      <link>http://shuxiao.wang/posts/algs4-windows/</link>
+      <link>https://shuxiao.wang/posts/algs4-windows/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/algs4-windows/</guid>
+      <guid>https://shuxiao.wang/posts/algs4-windows/</guid>
       <description>这篇日志翻译自Hello, World in Java on Windows，翻译的原因是知乎的一个回答，回答完这个问题之后，得到了广泛的。。嗯。。。私信，私信我如何处</description>
     </item>
     

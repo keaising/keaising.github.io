@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linked List on 流水沉微</title>
-    <link>http://shuxiao.wang/tags/linked-list/</link>
+    <link>https://shuxiao.wang/tags/linked-list/</link>
     <description>Recent content in Linked List on 流水沉微</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Thu, 03 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://shuxiao.wang/tags/linked-list/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://shuxiao.wang/tags/linked-list/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2. Add Two Numbers</title>
-      <link>http://shuxiao.wang/leetcode/2.-add-two-numbers/</link>
+      <link>https://shuxiao.wang/leetcode/2.-add-two-numbers/</link>
       <pubDate>Thu, 03 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/leetcode/2.-add-two-numbers/</guid>
+      <guid>https://shuxiao.wang/leetcode/2.-add-two-numbers/</guid>
       <description>Explain You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
 You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 Example
@@ -22,19 +22,19 @@ Output: 7 -&amp;gt; 0 -&amp;gt; 8</description>
     
     <item>
       <title>21. Merge Two Sorted Lists</title>
-      <link>http://shuxiao.wang/leetcode/21.-merge-two-sorted-lists/</link>
+      <link>https://shuxiao.wang/leetcode/21.-merge-two-sorted-lists/</link>
       <pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/leetcode/21.-merge-two-sorted-lists/</guid>
+      <guid>https://shuxiao.wang/leetcode/21.-merge-two-sorted-lists/</guid>
       <description>Explain Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists. Example Input: 1-&amp;gt;2-&amp;gt;4, 1-&amp;gt;3-&amp;gt;4 Output: 1-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;4 Solve # Definition for singly-linked list. # class ListNode: # def __init__(self, x): # self.val = x # self.next = None class Solution: def mergeTwoLists(self, l1: ListNode, l2: ListNode) -&amp;gt; ListNode: if not l1: return</description>
     </item>
     
     <item>
       <title>142. Linked List Cycle II</title>
-      <link>http://shuxiao.wang/leetcode/142.-linked-list-cycle-ii/</link>
+      <link>https://shuxiao.wang/leetcode/142.-linked-list-cycle-ii/</link>
       <pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/leetcode/142.-linked-list-cycle-ii/</guid>
+      <guid>https://shuxiao.wang/leetcode/142.-linked-list-cycle-ii/</guid>
       <description>Explain Given a linked list, return the node where the cycle begins. If there is no cycle, return null.
 To represent a cycle in the given linked list, we use an integer pos which represents the position (0-indexed) in the linked list where tail connects to. If pos is -1, then there is no cycle in the linked list.
 Note:
@@ -44,10 +44,10 @@ Solve # Definition for singly-linked list.</description>
     
     <item>
       <title>146. LRU Cache</title>
-      <link>http://shuxiao.wang/leetcode/146.-lru-cache/</link>
+      <link>https://shuxiao.wang/leetcode/146.-lru-cache/</link>
       <pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/leetcode/146.-lru-cache/</guid>
+      <guid>https://shuxiao.wang/leetcode/146.-lru-cache/</guid>
       <description>LRU 来自于 Cache replacement policies，是缓存淘汰策略的一种，很实用也有比较简洁的实现方法，用来面试正好，足够难、又足够简单 Explain Design and implement a data structure for Least Recently Used (LRU) cache.</description>
     </item>
     

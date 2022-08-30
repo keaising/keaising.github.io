@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>golang on 流水沉微</title>
-    <link>http://shuxiao.wang/tags/golang/</link>
+    <link>https://shuxiao.wang/tags/golang/</link>
     <description>Recent content in golang on 流水沉微</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Fri, 31 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://shuxiao.wang/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 31 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://shuxiao.wang/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>P0: Golang Submission Error</title>
-      <link>http://shuxiao.wang/posts/golang-submission-error/</link>
+      <link>https://shuxiao.wang/posts/golang-submission-error/</link>
       <pubDate>Fri, 31 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/posts/golang-submission-error/</guid>
+      <guid>https://shuxiao.wang/posts/golang-submission-error/</guid>
       <description>Review 过了一段时间自己看都觉得这代码写得好蠢，于是改了一版，如下： package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(permute([]int{1,0,3})) } func permute(nums []int) [][]int { if len(nums) == 1 { return [][]int{ nums, } } array := nums var result [][]int generate(len(nums), &amp;amp;array, &amp;amp;result) return result } func generate(k int,</description>
     </item>
     

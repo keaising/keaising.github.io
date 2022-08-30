@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Binary Tree on 流水沉微</title>
-    <link>http://shuxiao.wang/tags/binary-tree/</link>
+    <link>https://shuxiao.wang/tags/binary-tree/</link>
     <description>Recent content in Binary Tree on 流水沉微</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Wed, 02 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://shuxiao.wang/tags/binary-tree/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://shuxiao.wang/tags/binary-tree/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>236. Lowest Common Ancestor of a Binary Tree</title>
-      <link>http://shuxiao.wang/leetcode/236.-lowest-common-ancestor-of-a-binary-tree/</link>
+      <link>https://shuxiao.wang/leetcode/236.-lowest-common-ancestor-of-a-binary-tree/</link>
       <pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://shuxiao.wang/leetcode/236.-lowest-common-ancestor-of-a-binary-tree/</guid>
+      <guid>https://shuxiao.wang/leetcode/236.-lowest-common-ancestor-of-a-binary-tree/</guid>
       <description>Explain Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree. According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itsel</description>
     </item>
     
