@@ -32,6 +32,6 @@ weight: 0
 + 看我珍视之物：[Instagram](https://www.instagram.com/asukayui/)
 + 守护远古遗迹：[Steam](https://steamcommunity.com/id/asukayui/)
 + 保持一些联系：[MailTo](mailto:keaising@gmail.com)
-+ 一起玩RingCon：SW-7494-8785-2103
++ 一起玩RingCon：SW-7483-5070-7627
 
 **つづく** 
