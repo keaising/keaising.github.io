@@ -6,6 +6,7 @@ on:
       - source # Set a branch name to trigger deployment
     paths:
       - share/**
+  workflow_dispatch:
 
 jobs:
   deploy:
