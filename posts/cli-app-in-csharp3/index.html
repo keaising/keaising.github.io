@@ -121,20 +121,20 @@
 <p>以上编译结果中有好几百个文件，传输、部署和使用都不太方便，经常会有打包成一个单文件exe的需求，这个需求可以借助<a href="https://github.com/dgiagio/warp">warp-packer</a>解决</p>
 <p>warp-paker是一个在命令行下将可执行文件打包成一个单文件的工具，支持三大平台的部分编译方式。安装非常简单，在Windows平台直接下载exe文件放到一个被环境变量<code>PATH</code>包含了的目录下就可以全局使用了，如果不需要全局使用，直接放在当前目录运行就行</p>
 <p>用warp-packer打包一个64位Windows架构、源目录在<code>./bin/Release/netcoreapp2.1/win10-64/publish</code>、输出结果叫<code>gen-packed.exe</code>的单文件exe，命令如下：</p>
-<pre tabindex="0"><code class="language-pwsh" data-lang="pwsh">warp-packer --arch windows-x64 --input_dir bin\Release\netcoreapp2.1\win10-x64\publish --exec gen.exe --output gen-packed.exe
-</code></pre><p>完成后，可以在当前目录下找到名为<code>gen-packed.exe</code>的最终文件，至此，单文件的可执行文件的打包介绍结束</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-pwsh" data-lang="pwsh"><span class="line"><span class="cl"><span class="nb">warp-packer</span> <span class="p">-</span><span class="n">-arch</span> <span class="nb">windows-x64</span> <span class="p">-</span><span class="n">-input_dir</span> <span class="n">bin</span><span class="p">\</span><span class="n">Release</span><span class="p">\</span><span class="n">netcoreapp2</span><span class="p">.</span><span class="mf">1</span><span class="p">\</span><span class="nb">win10-x64</span><span class="p">\</span><span class="n">publish</span> <span class="p">-</span><span class="n">-exec</span> <span class="n">gen</span><span class="p">.</span><span class="py">exe</span> <span class="p">-</span><span class="n">-output</span> <span class="nb">gen-packed</span><span class="p">.</span><span class="py">exe</span>
+</span></span></code></pre></div><p>完成后，可以在当前目录下找到名为<code>gen-packed.exe</code>的最终文件，至此，单文件的可执行文件的打包介绍结束</p>
 <h2 id="dotnet-core-global-tool全局工具">dotnet core global tool（全局工具）</h2>
 <p>dotnet core global tool 的打包和部署都依赖于nuget包，nuget包的打包子命令是pack，本地打包和调试常用的是以下几条命令</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="p">//</span><span class="n">打包</span>
-</span></span><span class="line"><span class="cl"><span class="n">dotnet</span> <span class="n">pack</span> <span class="p">-</span><span class="n">-output</span> <span class="p">./.</span><span class="n">nupkg</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="p">//</span><span class="err">打包</span>
+</span></span><span class="line"><span class="cl"><span class="n">dotnet</span> <span class="n">pack</span> <span class="p">-</span><span class="n">-output</span> <span class="p">./.</span><span class="py">nupkg</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">//</span><span class="n">从本地源安装到本地全局工具</span>
-</span></span><span class="line"><span class="cl"><span class="n">dotnet</span> <span class="n">tool</span> <span class="n">install</span> <span class="n">-g</span> <span class="n">gen</span> <span class="p">-</span><span class="n">-add-source</span> <span class="p">./.</span><span class="n">nupkg</span>
+</span></span><span class="line"><span class="cl"><span class="p">//</span><span class="err">从本地源安装到本地全局工具</span>
+</span></span><span class="line"><span class="cl"><span class="n">dotnet</span> <span class="n">tool</span> <span class="n">install</span> <span class="n">-g</span> <span class="n">gen</span> <span class="p">-</span><span class="n">-add-source</span> <span class="p">./.</span><span class="py">nupkg</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">//</span><span class="n">从本地源更新本地全局工具</span>
-</span></span><span class="line"><span class="cl"><span class="n">dotnet</span> <span class="n">tool</span> <span class="n">update</span> <span class="n">-g</span> <span class="n">gen</span> <span class="p">-</span><span class="n">-add-source</span> <span class="p">./.</span><span class="n">nupkg</span>
+</span></span><span class="line"><span class="cl"><span class="p">//</span><span class="err">从本地源更新本地全局工具</span>
+</span></span><span class="line"><span class="cl"><span class="n">dotnet</span> <span class="n">tool</span> <span class="n">update</span> <span class="n">-g</span> <span class="n">gen</span> <span class="p">-</span><span class="n">-add-source</span> <span class="p">./.</span><span class="py">nupkg</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">//</span><span class="n">卸载</span>
+</span></span><span class="line"><span class="cl"><span class="p">//</span><span class="err">卸载</span>
 </span></span><span class="line"><span class="cl"><span class="n">dotnet</span> <span class="n">tool</span> <span class="n">uninstall</span> <span class="n">-g</span> <span class="n">gen</span> 
 </span></span></code></pre></div><h3 id="调整项目配置-1">调整项目配置</h3>
 <p>为了能打包成dotnet core global tool可用的nuget包，需要对项目文件进行一些修改，为了跟上一节中的exe项目文件区分，这里新建一个项目文件<code>gen-nuget.csproj</code>，内容如下：</p>
@@ -186,7 +186,7 @@
 <p>调整完配置之后使用指令<code>dotnet pack --output ./.nupkg</code>就可以开始打包nuget了</p>
 <p>命令比较简单，且在dotnet core官网都有文档说明，此处不再赘述。</p>
 <p>需要说明的是，生成的nuget包可以通过上传到<a href="https://www.nuget.org/">nuget.org</a>的方式让其他人安装该全局工具，<a href="https://www.nuget.org/">nuget.org</a>生成的默认安装指令为</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">dotnet</span> <span class="n">tool</span> <span class="n">install</span> <span class="p">-</span><span class="n">-global</span> <span class="n">gen</span> <span class="p">-</span><span class="n">-version</span> <span class="n">1</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">dotnet</span> <span class="n">tool</span> <span class="n">install</span> <span class="p">-</span><span class="n">-global</span> <span class="n">gen</span> <span class="p">-</span><span class="n">-version</span> <span class="mf">1.0</span><span class="p">.</span><span class="py">0</span>
 </span></span></code></pre></div><p>可以看出，nuget包安装dotnet core global tool的工具相对来说比较简单，而且在打包的时候也比较简单，不用考虑跨平台的问题，dotnet core SDK会自动处理好。</p>
 <h2 id="打包脚本">打包脚本</h2>
 <p>每次打包过程都需要输入一系列命令，其实可以将这一系列命令都包装成一个脚本文件，好处有两点</p>
@@ -252,8 +252,8 @@
 </span></span><span class="line"><span class="cl"><span class="nv">$genExe</span> <span class="p">=</span> <span class="s1">&#39;gen.csproj&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$genNuget</span> <span class="p">=</span> <span class="s1">&#39;gen-nuget.csproj&#39;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">$xml</span> <span class="p">=</span> <span class="no">[Xml]</span> <span class="p">(</span><span class="nb">Get-Content</span> <span class="nv">$genExe</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nv">$version</span> <span class="p">=</span> <span class="no">[Version]</span> <span class="nv">$xml</span><span class="p">.</span><span class="n">Project</span><span class="p">.</span><span class="n">PropertyGroup</span><span class="p">.</span><span class="n">Version</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$xml</span> <span class="p">=</span> <span class="p">[</span><span class="no">Xml</span><span class="p">]</span> <span class="p">(</span><span class="nb">Get-Content</span> <span class="nv">$genExe</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$version</span> <span class="p">=</span> <span class="p">[</span><span class="no">Version</span><span class="p">]</span> <span class="nv">$xml</span><span class="p">.</span><span class="py">Project</span><span class="p">.</span><span class="py">PropertyGroup</span><span class="p">.</span><span class="py">Version</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$zip</span> <span class="p">=</span> <span class="s1">&#39;gen-v&#39;</span> <span class="p">+</span> <span class="nv">$version</span> <span class="p">+</span> <span class="s1">&#39;.zip&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$genExeName</span> <span class="p">=</span> <span class="s1">&#39;gen.&#39;</span> <span class="p">+</span> <span class="nv">$version</span> <span class="p">+</span> <span class="s1">&#39;.exe&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$genNugetName</span> <span class="p">=</span> <span class="s1">&#39;gen.&#39;</span> <span class="p">+</span><span class="nv">$version</span> <span class="p">+</span> <span class="s1">&#39;.nupkg&#39;</span>
@@ -267,7 +267,7 @@
 </span></span><span class="line"><span class="cl"><span class="n">dotnet</span> <span class="n">publish</span> <span class="n">-r</span> <span class="nb">win10-x64</span> <span class="p">-</span><span class="n">-self-contained</span> <span class="n">true</span> <span class="n">-c</span> <span class="n">Release</span> <span class="n">-o</span> <span class="nv">$exePath</span> <span class="nv">$genExe</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nb">write </span><span class="s1">&#39;&gt;&gt;&gt; 2. warp-packer package &lt;&lt;&lt;&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="nb">warp-packer</span> <span class="p">-</span><span class="n">-arch</span> <span class="nb">windows-x64</span> <span class="p">-</span><span class="n">-input_dir</span> <span class="nv">$exePath</span> <span class="p">-</span><span class="n">-exec</span> <span class="n">gen</span><span class="p">.</span><span class="n">exe</span> <span class="p">-</span><span class="n">-output</span> <span class="p">(</span><span class="nv">$nugetPath</span> <span class="p">+</span> <span class="s1">&#39;/&#39;</span> <span class="p">+</span> <span class="nv">$genExeName</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">warp-packer</span> <span class="p">-</span><span class="n">-arch</span> <span class="nb">windows-x64</span> <span class="p">-</span><span class="n">-input_dir</span> <span class="nv">$exePath</span> <span class="p">-</span><span class="n">-exec</span> <span class="n">gen</span><span class="p">.</span><span class="py">exe</span> <span class="p">-</span><span class="n">-output</span> <span class="p">(</span><span class="nv">$nugetPath</span> <span class="p">+</span> <span class="s1">&#39;/&#39;</span> <span class="p">+</span> <span class="nv">$genExeName</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nb">write </span><span class="s1">&#39;&gt;&gt;&gt; 3. dotnet pack &lt;&lt;&lt;&#39;</span>

@@ -76,7 +76,7 @@
 <p><img src="/images/cli-in-csharp/new-console-app.png" alt="new console app"></p>
 <h2 id="添加引用">添加引用</h2>
 <p>在项目目录下输入如下命令，添加对CommandLineUtils项目的引用</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">dotnet</span> <span class="n">add</span> <span class="n">package</span> <span class="n">McMaster</span><span class="p">.</span><span class="n">Extensions</span><span class="p">.</span><span class="n">CommandLineUtils</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">dotnet</span> <span class="n">add</span> <span class="n">package</span> <span class="n">McMaster</span><span class="p">.</span><span class="py">Extensions</span><span class="p">.</span><span class="py">CommandLineUtils</span>
 </span></span></code></pre></div><p>这一步是通过命令行的方式引入nuget包，也可以在Visual Studio里进行nuget包管理，效果完全一样</p>
 <p>添加完成之后，项目文件<code>gen.csproj</code>可见<code>ItemGroup</code>中已经有了对<a href="https://github.com/natemcmaster/CommandLineUtils"><code>CommandLineUtils</code></a>的引用</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;Project</span> <span class="na">Sdk=</span><span class="s">&#34;Microsoft.NET.Sdk&#34;</span><span class="nt">&gt;</span>
@@ -181,24 +181,24 @@
 </span></span></code></pre></div><h2 id="调试--运行">调试 &amp; 运行</h2>
 <p>至此，命令行工具<code>gen</code>的所有功能都已经实现，可以通过以下几个命令来调用功能和调试</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="p">//</span><span class="n">查看gen的帮助和版本信息</span>
+</span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="p">//</span><span class="err">查看</span><span class="n">gen</span><span class="err">的帮助和版本信息</span>
 </span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="n">dotnet</span> <span class="n">run</span> <span class="p">--</span> <span class="n">-h</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="p">//</span><span class="n">查看gen</span> <span class="n">mobile的帮助信息</span>
+</span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="p">//</span><span class="err">查看</span><span class="n">gen</span> <span class="n">mobile</span><span class="err">的帮助信息</span>
 </span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="n">dotnet</span> <span class="n">run</span> <span class="p">--</span> <span class="n">mobile</span> <span class="n">-h</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="p">//</span><span class="n">运用gen</span> <span class="n">mobile</span><span class="p">,</span> <span class="n">生成一个随机手机号</span>
+</span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="p">//</span><span class="err">运用</span><span class="n">gen</span> <span class="n">mobile</span><span class="p">,</span> <span class="err">生成一个随机手机号</span>
 </span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="n">dotnet</span> <span class="n">run</span> <span class="p">--</span> <span class="n">mobile</span> 
-</span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="n">15810458877</span>
+</span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="mf">15810458877</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="p">//</span><span class="n">查看gen</span> <span class="n">id的帮助信息</span>
+</span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="p">//</span><span class="err">查看</span><span class="n">gen</span> <span class="n">id</span><span class="err">的帮助信息</span>
 </span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="n">dotnet</span> <span class="n">run</span> <span class="p">--</span> <span class="n">id</span> <span class="n">-h</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="p">//</span><span class="n">运行gen</span> <span class="n">id</span><span class="p">,</span> <span class="n">生成一个随机的18位身份证号</span>
+</span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="p">//</span><span class="err">运行</span><span class="n">gen</span> <span class="n">id</span><span class="p">,</span> <span class="err">生成一个随机的</span><span class="n">18</span><span class="err">位身份证号</span>
 </span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="n">dotnet</span> <span class="n">run</span> <span class="p">--</span> <span class="n">id</span> <span class="n">-l</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="p">//</span><span class="n">运行gen</span> <span class="n">id</span><span class="p">,</span> <span class="n">以110为开头</span><span class="p">,</span> <span class="n">生成一个随机的15位身份证号</span>
-</span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="n">dotnet</span> <span class="n">run</span> <span class="p">--</span> <span class="n">id</span> <span class="n">-s</span> <span class="n">110</span>
+</span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="p">//</span><span class="err">运行</span><span class="n">gen</span> <span class="n">id</span><span class="p">,</span> <span class="err">以</span><span class="n">110</span><span class="err">为开头</span><span class="p">,</span> <span class="err">生成一个随机的</span><span class="n">15</span><span class="err">位身份证号</span>
+</span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">gen</span><span class="p">&gt;</span>  <span class="n">dotnet</span> <span class="n">run</span> <span class="p">--</span> <span class="n">id</span> <span class="n">-s</span> <span class="mf">110</span>
 </span></span></code></pre></div><p>此外，也可以通过配置Visual Studio的Debug参数实现在VS里运行和实时调试，例如要运行<code>gen id -s 100</code>，只需要在 Project Property -&gt; Debug -&gt; Application arguments里填写<code>id -s 100</code>即可，如下图</p>
 <p><img src="/images/cli-in-csharp/project-property.png" alt="project property"></p>
 <p><strong>つづく</strong></p>
