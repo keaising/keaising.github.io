@@ -76,7 +76,7 @@
       <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://shuxiao.wang/posts/zsh-refresh/</guid>
-      <description>如果你折腾过 shell，那你肯定遇到过 oh-my-zsh，这个巨大的框架什么都好，就是有点慢。在用了一年多 oh-my-zsh 之后，我有点烦了那种卡卡的感觉，</description>
+      <description>2023.05.02 更新：大巧不工，爷换 fish 了，老了，不想弄那么麻烦的配置了，也不想装插件，也懒得折腾补全，fish提供了一个足够可用的“又不是不能用”方案，可</description>
     </item>
     
     <item>
