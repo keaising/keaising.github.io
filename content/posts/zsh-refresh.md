@@ -6,6 +6,8 @@ tags:
   - dotfiles
 ---
 
+> **2023.05.02 更新**：大巧不工，爷换 fish 了，老了，不想弄那么麻烦的配置了，也不想装插件，也懒得折腾补全，fish提供了一个足够可用的“又不是不能用”方案，可以在这里看到我的配置 [fish config](https://github.com/keaising/dotfile/blob/master/fish/.config/fish/config.fish)
+
 如果你折腾过 shell，那你肯定遇到过 [oh-my-zsh](https://ohmyz.sh/)，这个巨大的框架什么都好，就是有点慢。在用了一年多 oh-my-zsh 之后，我有点烦了那种卡卡的感觉，想换一个 shell 试试。在尝试 fish 之后我放弃了这种所谓的现代 shell，我还是更喜欢完全文本化的配置，fish 的语法跟 bash 差别太大我也不是很喜欢，毕竟 bash 的语法是日常绕不过的坎，我希望尽量贴合 bash。这个思路下可选的其实并不多，要么是 bash，要么是曾经要兼容 bash 但是后来放弃了不过也勉强能兼容的 zsh
 
 所以问题就变成了，怎么把 zsh 搞快一点？
